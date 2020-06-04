@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="room"
+            type="com.appster.turtle.model.Room" />
+    </data>
+
+
+    <com.daimajia.swipe.SwipeLayout
+        android:id="@+id/sl_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:show_mode="pull_out">
+
+        <!--layout for left action-->
+        <include
+            android:id="@+id/included_favourite_layout"
+            layout="@layout/item_room_list_favourite" />
+
+        <!--layout for right action-->
+        <include
+            android:id="@+id/included_leave_layout"
+            layout="@layout/item_room_list_leave" />
+
+        <!--layout for recycler view main item-->
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_main_item_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dimen_34_6"
+            android:background="@android:color/transparent"
+            android:paddingStart="@dimen/dimen_18_2"
+            android:paddingEnd="@dimen/width_0"
+            android:paddingTop="@dimen/dimen_10">
+
+            <ImageView
+                android:id="@+id/iv_read_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dimen_11_5"
+                android:src="@drawable/oval"
+                android:visibility="@{room.unread ? View.VISIBLE : View.INVISIBLE}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription" />
+
+            <com.appster.turtle.widget.CustomTextView
+                android:id="@+id/tv_room_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_11_6"
+                android:gravity="start|center_vertical"
+                android:includeFontPadding="false"
+                android:lineSpacingExtra="-8.1sp"
+                android:text="@{room.roomName}"
+                android:textColor="#000000"
+                android:textSize="@dimen/textsize_58"
+                app:customFont="@string/bruta_condensed_glb_bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@id/iv_read_status"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_special"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_7"
+                android:contentDescription="@null"
+                android:src="@drawable/notes_icon"
+                android:visibility="@{room.pinned ? View.VISIBLE : View.GONE}"
+                app:layout_constraintStart_toEndOf="@id/tv_room_name"
+                app:layout_constraintTop_toTopOf="@id/tv_room_name" />
+
+        </android.support.constraint.ConstraintLayout>
+    </com.daimajia.swipe.SwipeLayout>
+</layout>

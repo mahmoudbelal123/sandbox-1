@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="java.lang.String" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="notes"
+            type="com.appster.turtle.model.NotesModel" />
+    </data>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cl_notes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="@dimen/dp_3"
+        app:cardCornerRadius="@dimen/dimen_12">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:layout_marginBottom="@dimen/dimen_10">
+
+
+            <ImageView
+                android:id="@+id/iv_notes"
+                android:layout_width="match_parent"
+                android:layout_height="138dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/bg"
+                app:noteimageUrl="@{notes.snippetUrl}"
+                tools:ignore="ContentDescription" />
+
+
+            <com.appster.turtle.widget.CustomTextView
+                android:id="@+id/tv_notes_class"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/iv_notes"
+                android:layout_marginStart="@dimen/margin_23"
+                android:layout_marginTop="@dimen/margin_21"
+                android:text="@{notes.className}"
+                android:textAllCaps="true"
+                android:textColor="@color/unselected_grey"
+                android:textSize="@dimen/textsize_12"
+                app:customFont="@string/eina_01_semibold" />
+
+            <me.zhanghai.android.materialratingbar.MaterialRatingBar
+                android:id="@+id/ratingBar"
+                android:layout_width="@dimen/dimen_30"
+                android:layout_height="@dimen/dimen_30"
+                android:layout_below="@+id/iv_notes"
+                android:layout_marginStart="@dimen/margin_13"
+                android:layout_toEndOf="@+id/tv_notes_class"
+                android:layout_alignTop="@id/tv_notes_class"
+                android:layout_alignBottom="@id/tv_notes_class"
+                android:isIndicator="true"
+                android:numStars="1"
+                app:mrb_fillBackgroundStars="true"
+                app:mrb_progressBackgroundTint="@color/unselected_grey"
+                app:mrb_progressTint="@color/unselected_grey" />
+
+            <com.appster.turtle.widget.CustomTextView
+                android:id="@+id/tv_rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/iv_notes"
+                android:layout_marginEnd="@dimen/dimen_30"
+                android:layout_marginStart="@dimen/dimen_4"
+                android:layout_alignTop="@id/tv_notes_class"
+                android:layout_alignBottom="@id/tv_notes_class"
+                android:layout_toEndOf="@+id/ratingBar"
+                android:layout_toStartOf="@+id/tv_notes_price"
+                android:gravity="start|center_vertical"
+                android:textSize="@dimen/textsize_12" />
+
+            <com.appster.turtle.widget.CustomTextView
+                android:id="@+id/tv_notes_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@+id/iv_notes"
+                android:layout_marginEnd="@dimen/margin_20"
+                android:layout_alignTop="@id/tv_notes_class"
+                android:layout_alignBottom="@id/tv_notes_class"
+                android:gravity="end|center_vertical"
+                android:textColor="@color/bright_teal"
+                android:textSize="@dimen/textSizeNormal"
+                app:customFont="@string/eina_01_semibold" />
+
+            <com.appster.turtle.widget.CustomTextView
+                android:id="@+id/tv_notes_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/tv_notes_class"
+                android:layout_marginBottom="@dimen/margin_17"
+                android:layout_marginStart="@dimen/margin_23"
+                android:layout_marginTop="@dimen/dimen_4"
+                android:layout_toStartOf="@+id/iv_menu"
+                android:lineSpacingExtra="@dimen/textsize_8"
+                android:text="@{notes.title}"
+                android:textAllCaps="true"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/textsize_24"
+                app:customFont="@string/eina_01_semibold" />
+
+            <ImageView
+                android:id="@+id/iv_menu"
+                android:layout_width="@dimen/dimen_24"
+                android:layout_height="@dimen/dimen_28_8"
+                android:layout_alignTop="@id/tv_notes_title"
+                android:layout_alignBottom="@id/tv_notes_title"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/dimen_15_4"
+                android:scaleType="center"
+                android:src="@drawable/ic_post_menu"
+                android:visibility="@{notes.postedByMe ? View.VISIBLE : View.INVISIBLE}"
+                tools:ignore="ContentDescription" />
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+</layout>

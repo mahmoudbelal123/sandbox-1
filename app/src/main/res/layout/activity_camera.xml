@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"
+        tools:context="com.appster.turtle.ui.media.CameraActivity">
+
+
+        <include
+            android:id="@+id/rl_camera_control"
+            layout="@layout/camera_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <include
+            android:id="@+id/rl_preview_control"
+            layout="@layout/camera_preview_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="@dimen/dp_30_6"
+            android:layout_marginTop="@dimen/margin_21"
+            android:padding="@dimen/dimen_4"
+            android:scaleType="fitXY"
+            android:onClick="onBackClicked"
+            android:src="@drawable/ic_close"
+            tools:ignore="ContentDescription" />
+
+
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <com.flipboard.bottomsheet.BottomSheetLayout
+        android:id="@+id/bs_review"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_notes"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:focusableInTouchMode="true"
+            tools:context="com.appster.turtle.ui.notes.NotesListingActivity">
+
+            <include
+                android:id="@+id/header"
+                layout="@layout/layout_header"
+                android:layout_width="@dimen/width_0"
+                android:layout_height="@dimen/dimen_50"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.appster.turtle.widget.CustomTextView
+                android:id="@+id/featuredLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bright_teal_radius"
+                android:gravity="center"
+                android:letterSpacing="0.1"
+                android:padding="@dimen/dimen_4"
+                android:text="@string/featured"
+                android:textColor="@color/dark_bg"
+                android:textSize="@dimen/textSmall"
+                app:customFont="@string/eina_01_semibold"
+                app:layout_constraintBottom_toBottomOf="@id/header"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.appster.turtle.widget.CustomTextView
+                android:id="@+id/tv_notes"
+                android:layout_width="@dimen/width_0"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:includeFontPadding="false"
+                android:padding="@dimen/width_0"
+                android:text="@string/notes"
+                android:textColor="@color/dark_bg"
+                android:textSize="@dimen/text_57_6"
+                app:customFont="@string/eina_01_bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/featuredLabel" />
+
+
+            <com.appster.turtle.widget.CustomTextView
+                android:id="@+id/tv_notes_des"
+                android:layout_width="@dimen/width_0"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dimen_38"
+                android:layout_marginStart="@dimen/dimen_38"
+                android:layout_marginTop="-3dp"
+                android:gravity="center_horizontal"
+                android:lineSpacingExtra="@dimen/text_7_7"
+                android:text="@string/buy_sell_class_notes_with_other_college_students"
+                android:textColor="@color/dark_bg"
+                android:textSize="@dimen/textsize_15_plus"
+                app:customFont="@string/eina_01_regular"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_notes" />
+
+            <include
+                android:id="@+id/included_cl_search"
+                layout="@layout/search_layout_thin_footer"
+                android:layout_width="@dimen/width_0"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dimen_38"
+                android:layout_marginEnd="@dimen/dimen_23"
+                android:layout_marginStart="@dimen/dimen_23"
+                android:layout_marginTop="@dimen/dimen_17_3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_notes_des" />
+
+            <android.support.v4.widget.SwipeRefreshLayout
+                android:id="@+id/swipe_refresh"
+                android:layout_width="@dimen/width_0"
+                android:layout_height="@dimen/width_0"
+                android:layout_marginEnd="@dimen/margin_5"
+                android:layout_marginStart="@dimen/margin_5"
+                android:layout_marginTop="@dimen/dimen_25"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/included_cl_search">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_notes"
+                    android:layout_width="@dimen/width_0"
+                    android:layout_height="@dimen/width_0"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/included_cl_search" />
+            </android.support.v4.widget.SwipeRefreshLayout>
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:layout_margin="@dimen/fab_margin"
+                android:onClick="onClick"
+                android:scaleType="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:srcCompat="@drawable/selector_circle_white" />
+
+        </android.support.constraint.ConstraintLayout>
+    </com.flipboard.bottomsheet.BottomSheetLayout>
+</layout>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<com.akexorcist.roundcornerprogressbar.TextRoundCornerProgressBar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/animate_progress_bar"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_36"
+    app:rcBackgroundColor="@color/bar_pro2_color"
+    app:rcProgressColor="@color/bar_pro_color"
+    app:rcRadius="@dimen/margin_48" />

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <size android:width="1.5dp" />
+    <solid android:color="@color/bright_teal" />
+</shape>

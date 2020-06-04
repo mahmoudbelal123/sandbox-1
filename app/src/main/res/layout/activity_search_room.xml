@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <com.flipboard.bottomsheet.BottomSheetLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context="com.appster.turtle.ui.rooms.SearchRoomActivity">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_87"
+                android:background="@color/black">
+
+
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/image_content"
+                android:paddingStart="@dimen/margin_17"
+                android:paddingEnd="@dimen/margin_17"
+                android:paddingTop="@dimen/margin_20"
+                android:paddingBottom="@dimen/margin_20"
+
+                android:src="@drawable/ic_back_arrow_white" />
+
+            <FrameLayout
+                android:id="@+id/frame_search"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_48"
+                android:layout_below="@+id/iv_back"
+                android:layout_marginEnd="@dimen/margin_23"
+                android:layout_marginStart="@dimen/margin_23"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:background="@drawable/rounded_bg_white_new"
+                android:elevation="@dimen/margin_10">
+
+                <com.appster.turtle.widget.CustomEditText
+                    android:id="@+id/et_search"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="@dimen/margin_10"
+                    android:layout_marginStart="@dimen/margin_10"
+                    android:background="@null"
+                    android:drawablePadding="@dimen/margin_14"
+                    android:drawableStart="@drawable/ic_search"
+                    android:elevation="@dimen/margin_10"
+                    android:gravity="start"
+                    android:hint="@string/search_name_topic"
+                    android:maxLines="1"
+                    android:textColor="@color/textcolor_room_name"
+                    android:textColorHint="@color/textcolor_room_name_40"
+                    android:textSize="@dimen/textsize_15"
+                    app:customFont="@string/eina_01_regular" />
+
+
+                <ImageView
+                    android:id="@+id/iv_clear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|center"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_cross_pink"
+                    android:visibility="invisible" />
+            </FrameLayout>
+
+            <im.ene.toro.widget.Container
+                android:id="@+id/rv_post"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/frame_search"
+                android:fadeScrollbars="true"
+                android:paddingTop="@dimen/margin_10"
+                android:scrollbars="vertical"
+
+
+                />
+
+            <com.appster.turtle.widget.CustomTextView
+                android:id="@+id/tv_hint"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/frame_search"
+                android:gravity="center"
+                android:paddingTop="@dimen/margin_10"
+                android:text="@string/no_result_found"
+                android:visibility="invisible"
+
+
+                />
+
+
+        </RelativeLayout>
+
+    </com.flipboard.bottomsheet.BottomSheetLayout>
+</layout>

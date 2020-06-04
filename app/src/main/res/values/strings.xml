@@ -1,0 +1,658 @@
+<!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <string name="device_token">deviceId</string>
+
+    <string name="email_digits">ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_.@</string>
+    <!-- font style name-->
+    <string name="font_medium">Roboto-Medium.ttf</string>
+
+    <!--  Intro screen string-->
+    <string name="skip_button">Skip</string>
+    <string name="done_button">Done</string>
+
+    <string name="joyride_page1_text1">Search</string>
+    <string name="joyride_page1_text2">An easy way to find local businesses, services and products. Get only the most relevant results. No fluff.</string>
+
+    <string name="joyride_page2_text1">Curated List</string>
+    <string name="joyride_page2_text2">Create, maintain and share your own curated list of businesses. You can also browse other people’s curated lists.</string>
+
+    <string name="joyride_page3_text1">Rate and Review</string>
+    <string name="joyride_page3_text2">Share your thoughts on local businesses and services through ratings and reviews.</string>
+
+    <string name="joyride_page4_text1">Shop</string>
+    <string name="joyride_page4_text2">Buy products and services spanning across multiple categories and track them with ease.</string>
+
+    <!--Location Param-->
+    <string name="enter_distance">Enter Distance</string>
+    <string name="enter_time_interval">Enter time interval</string>
+    <string name="set_priority">Set Priority</string>
+    <string name="save_parameters">Save Parameters</string>
+    <array name="priority">
+        <item>PRIORITY LOW POWER</item>
+        <item>PRIORITY_NO_POWER</item>
+        <item>PRIORITY_HIGH_ACCURACY</item>
+        <item>PRIORITY_BALANCED_POWER_ACCURACY</item>
+    </array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="sign_in">LOG IN</string>
+    <string name="enter_your_email_hint">Enter your email</string>
+    <string name="enter_your_email_username_hint">Enter your email/username</string>
+
+    <!--fonts-->
+    <string name="bruta_condensed_glb_bold">fonts/bruta_condensed_glb_bold.otf</string>
+    <string name="bruta_normal_glb_semi_bold_italic">fonts/bruta_normal_glb_semi_bold_italic.otf</string>
+    <string name="bruta_condensed_glb_regular">fonts/bruta_condensed_glb_regular.otf</string>
+    <string name="bruta_condensed_glb_semi_bold">fonts/bruta_condensed_glb_semi_bold.otf</string>
+    <string name="bruta_normal_glb_semi_bold">fonts/bruta_normal_glb_semi_bold.otf</string>
+    <string name="bruta_normal_glb_regular">fonts/bruta_normal_glb_regular.otf</string>
+    <string name="bruta_normal_glb_light">fonts/bruta_normal_glb_light.otf</string>
+
+    <string name="eina_01_bold">fonts/Eina 01 Bold.otf</string>
+    <string name="eina_01_regular">fonts/Eina 01 Regular.otf</string>
+    <string name="eina_01_semibold">fonts/Eina 01 SemiBold.otf</string>
+    <string name="arty_signature">fonts/arty_signature.otf</string>
+
+    <string name="sign_in_button_text">Log In</string>
+    <string name="forgot_your_password">Forgot your password?</string>
+    <string name="reset_password_message">To reset your password, please follow the instructions sent to your email</string>
+    <string name="send">Send</string>
+
+
+    <string name="password_reset_msg">Link to reset your password has been sent to your email.</string>
+    <string name="email_empty_msg">Please enter an Email</string>
+    <string name="email_valid_msg">Please enter a valid email</string>
+    <string name="password_empty_msg">Please enter password</string>
+    <string name="password_valid_msg">Password must be 6 digits or more</string>
+
+    <string name="search">Search</string>
+    <string name="favourite">Favourite</string>
+    <string name="unfavourite">Unfavourite</string>
+    <string name="leave">Leave</string>
+    <string name="notes">Notes</string>
+    <string name="create_room">CREATE SPACE</string>
+    <string name="next">Next</string>
+    <string name="placeholder_users_found">14 Users Found</string>
+    <string name="no_users_found">No Users Found</string>
+
+    <string name="add_users">Invite people to your space</string>
+    <string name="create_room_small">Create Space</string>
+    <string name="add">Add</string>
+
+    <string name="privacy_title">Privacy</string>
+    <string name="privacy_desc">Select space privacy</string>
+
+    <string name="private_title">Private</string>
+    <string name="private_desc">Make this space invite only</string>
+
+    <string name="public_title">Public</string>
+    <string name="public_desc">Space visible to everyone</string>
+
+    <string name="hidden_title">Hidden</string>
+    <string name="hidden_desc">Space only visible to members</string>
+
+    <string name="memebers_can_post_title">Only admins can post</string>
+    <string name="memebers_can_post_desc">Other members can only like\nand comment on your posts</string>
+
+    <string name="tags_title">Tags</string>
+    <string name="tags_desc">Add multiple #tags</string>
+    <string name="hash_prefix">#</string>
+    <string name="at_prefix">@</string>
+    <string name="please_select_room_type">Please select space type</string>
+    <string name="capture_camera_text">Hold for video, tap for photo</string>
+    <string name="mime_gif">image/gif</string>
+    <string name="gif_extension">.gif</string>
+    <string name="turtle_folder">Turtle</string>
+    <string name="use">Use</string>
+
+    <string name="global_campus_title">Global / Campus</string>
+    <string name="global_campus_desc">Toggle for Global or Campus</string>
+
+    <!--Tag related  Error Messages-->
+    <string name="tag_error_add_hash">Please add # before the tag</string>
+    <string name="tag_error_add_tag">Please add tag after the #</string>
+    <string name="tag_error_empty">Please enter a tag</string>
+
+
+    <string name="loading">loading</string>
+
+    <string name="cre_by">Space created by\u0020</string>
+    <string name="on">\u0020on\u0020</string>
+    <string name="percent">%</string>
+    <string name="on_a">ON</string>
+
+
+    <!--Common Error Messages-->
+    <string name="common_err_msg">Something went wrong</string>
+    <string name="no_internet_msg">Please check your connectivity</string>
+    <!-- Poll String Constants-->
+    <string name="txt_ask_qtn">Ask a question…</string>
+    <string name="txt_add_opt">Add a choice</string>
+    <string name="txt_add_tag">Add Tags</string>
+    <string name="txt_hnt_opt">Choice\u0020</string>
+    <string name="hash">#</string>
+    <string name="space">\u0020</string>
+
+    <string name="meetup_creator_placeholder">&#160;wants to…</string>
+    <string name="placeholder_meetup_title">Meetup Title</string>
+    <string name="placeholder_duration">Duration</string>
+    <string name="meetup_location_prefix">at&#160;</string>
+    <string name="placeholder_location">Location</string>
+    <string name="create_meetup">CREATE MEETUP</string>
+    <string name="edit_meetup">EDIT MEETUP</string>
+    <string name="post">Post</string>
+    <string name="at_symbol">\@</string>
+    <string name="invalid_time_error">Please select a time in the future</string>
+    <string name="set">Set</string>
+    <string name="cancel">Cancel</string>
+    <string name="create_post">CREATE POST</string>
+    <string name="edit_post">Edit Post</string>
+    <string name="textpost_hint">Start typing</string>
+
+    <!--item meetup strings-->
+    <string name="wants_to">&#160;wants to &#8230; &#160;</string>
+    <string name="wants_to_meetUp">Wants to </string>
+
+    <string name="character_remaining">%d character remaining</string>
+    <string name="character_remaining_half_string">%d character remaining</string>
+    <string name="characters_remaining">%d characters remaining</string>
+    <string name="characters_remaining_half_string">%d characters remaining</string>
+    <string name="characters_remaining1">%s characters remaining</string>
+    <string name="characters_max">%d characters max</string>
+    <string name="interested">INTERESTED</string>
+    <string name="attending">ATTENDING</string>
+    <string name="add_caption">Add Caption…</string>
+    <string name="add_friends">ADD FRIENDS</string>
+    <string name="search_people_hint">Search name, username</string>
+    <string name="add_caption_header">ADD CAPTION</string>
+    <string name="edit_caption_header">EDIT CAPTION</string>
+    <string name="room_creation_msg">Space created successfully</string>
+    <string name="type_message">Type Message</string>
+    <string name="liked_by">LIKED BY</string>
+    <string name="meetup">Meetups</string>
+    <string name="meetupcap">MEETUPS</string>
+    <string name="leave_room">Leave Space</string>
+    <string name="members">Space Members</string>
+    <string name="Members">Members</string>
+    <string name="edit_room">Edit Space</string>
+    <string name="invitation_sent">Invitation sent</string>
+    <string name="profile">Profile</string>
+
+    <string name="of">&#160;of&#160;</string>
+    <string name="contacts">Contacts</string>
+    <string name="yes">Yes</string>
+    <string name="no_alert">No</string>
+
+    <string name="is_now_admin">&#160;is now Admin of this space</string>
+
+
+    <!-- Tutorial Constants-->
+    <string name="txt_btn_sgn">Sign up</string>
+    <string name="txt_sgn_in">Log in</string>
+    <string name="txt_tut_1">exclusively for college students</string>
+    <string name="txt_tut_2">TBD</string>
+    <string name="txt_tut_3">start &amp; explore spaces\ncampus or global\nfrom shower thoughts
+to study groups</string>
+    <string name="txt_tut_4">featured spaces\nwill make your life easier \nbuy &amp; sell class notes
+find local jobs
+rideshare
+&amp; more…</string>
+    <string name="txt_tut_5">meet students\nfrom campuses\n
+around the country\nby interests • hometown\n
+courses • skills\n
+dorm • greek life </string>
+
+    <!-- Sign Up Constants-->
+    <string name="txt_signUp_ttl">Sign Up</string>
+    <string name="txt_signUp_nxt">Next</string>
+    <string name="txt_signUp_wlc">Welcome to Vibe.\nPlease sign up to continue</string>
+    <string name="txt_signUp_tnc">By signing up, you agree to our <u>Terms</u> \u0026\n<u>Privacy Policy</u></string>
+    <string name="txt_fn_hnt">Enter your first name</string>
+    <string name="txt_ln_hnt">Enter your last name</string>
+    <string name="txt_ea_hnt">Enter your email address</string>
+    <string name="txt_un">, what username would you like?</string>
+    <string name="txt_unm_ttl">Username</string>
+    <string name="txt_un_hnt">Enter your username</string>
+    <string name="txt_pwd_hnt">password</string>
+    <string name="txt_rpw_hnt">Re-Type Password</string>
+    <string name="txt_wry_un">Don’t worry, you can change your username later if you want to.</string>
+    <string name="txt_vrf_hdr">We’re almost there, just\nenter the code we sent you\nvia email in the box below</string>
+    <string name="txt_vrf_ttl">Verify</string>
+    <string name="txt_vfy_un">To ensure that you are who you say you are, you will receive a 4 digit code via email.</string>
+    <string name="txt_vrf_nr">Not received an email? <u><b>Re-Send</b></u></string>
+    <string name="txt_cpf_mjr_1">Congrats\u0020</string>
+    <string name="txt_cpf_mjr_2">\u0020\nyou’ve successfully\n</string>
+    <string name="txt_cpf_mjr_3">verified your\nregistration.</string>
+    <string name="txt_cpf_mnr">Please continue to personalise\nyour experience.</string>
+    <string name="txt_cyp">Complete your profile</string>
+    <string name="txt_ca_ttl">Avatar</string>
+    <string name="txt_avatar_lbl">You can use one of our default avatars, or upload an image of your own.</string>
+
+    <string name="done">Done</string>
+    <string name="crop_amp_resize">POSITION IMAGE</string>
+    <string name="remove_this_user">Remove from Space</string>
+    <string name="profile_2_header">, Just a few more questions.</string>
+
+    <string name="report_flag_this_user">Report / Flag</string>
+    <string name="report_flag_this_user_ed">Reported / Flagged</string>
+    <string name="block_this_user">Block this User</string>
+    <string name="make_this_user_admin">Make Admin</string>
+    <string name="make_room_information_private">Make space information private</string>
+    <string name="privacy">Privacy</string>
+    <string name="tags">Tags</string>
+    <string name="take_photo">Take Photo</string>
+    <string name="camera_roll">Camera Roll</string>
+    <string name="edit_room_name">EDIT SPACE NAME</string>
+    <string name="edit_room_msg">Are you sure you want update this data?</string>
+    <string name="privacy_header_small">Privacy</string>
+    <string name="you_are_admin">You are the admin of this space</string>
+    <string name="room_admin_prefix">Admin</string>
+    <string name="friends">Friends</string>
+    <string name="invite">Invite</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="welcome_message">Welcome %s you’ve\nsuccessfully completed\nyour Vibe profile.</string>
+    <string name="take_tour">Take a quick tour</string>
+    <string name="lets_start">Let’s get started</string>
+    <string name="dashboard">dashboard</string>
+    <string name="finish_tour">Finish Tour</string>
+    <string name="tour_title_search">Search</string>
+    <string name="tour_desc_home">This shows all the Spaces you\nbelong too and your also\nyour favorites.</string>
+    <string name="tour_desc_search">Search  for Spaces, Friends,\nColleges, and Subjects on ooni.</string>
+    <string name="tour_desc_create_room">Create a Space and invite your \nfriends to post comments, videos \nmeetups and more.</string>
+    <string name="finally_tell_us_a_little_about_yourself">Finally a little more about you </string>
+    <string name="provide_bio_info">Providing this additional information will greatly enhance your Vibe experience.</string>
+    <string name="no_of_characters_remaining">%s characters remaining</string>
+    <string name="bio">BIO</string>
+    <string name="bio_small">Bio</string>
+    <string name="bio_hint">Write something about yourself</string>
+    <string name="tour_start1">Tap an icon to learn\nabout the features of the\nVibe app.</string>
+    <string name="tour_start2">You can quit the tour at any point by tapping the “Finish Tour” button.</string>
+    <string name="name_your_room">Name your space</string>
+    <string name="notes_search_placeholder">Search by: a particular class or set of notes</string>
+    <string name="i_want_to_sell_notes_on">I want to sell notes on</string>
+    <string name="price_placeholder">Price</string>
+    <string name="title">Title</string>
+    <string name="class_hint">Class</string>
+    <string name="activity_hint">Activity</string>
+    <string name="notifications">NOTIFICATIONS</string>
+    <string name="notifications_hint">Notifications</string>
+    <string name="image_content">image_content</string>
+
+    <!--Notes-->
+    <string name="drive">DRIVE</string>
+    <string name="gallery">GALLERY</string>
+    <string name="add_notes_description">Add notes description</string>
+    <string name="write_review">Write a Review</string>
+    <string name="skip_review">Skip Review</string>
+    <string name="rating">Rating</string>
+    <string name="notes_small">Notes</string>
+    <string name="posted">POSTED</string>
+    <string name="purchased">PURCHASED</string>
+    <string name="settings">Settings</string>
+    <string name="change_password">Change Password</string>
+    <string name="account_settings">Account Settings</string>
+    <string name="manage_payments">Manage Payments</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="terms_and_conditions"><![CDATA[Terms & Conditions]]></string>
+    <string name="change_password_validity_text">Password must be eight characters. Must not contain spaces or special characters.</string>
+    <string name="change_password_caps">Change Password</string>
+    <string name="confirm">Confirm</string>
+    <string name="current_password">Current Password</string>
+    <string name="new_password">New Password</string>
+    <string name="re_type_password">Re-Type Password</string>
+    <string name="passwords_match">Passwords Match</string>
+    <string name="privacy_policy_caps">PRIVACY POLICY</string>
+    <string name="terms_and_conditions_caps">TERMS AND CONDITIONS</string>
+    <string name="unblock_this_user">Unblock this user</string>
+    <string name="password_reset_caps">PASSWORD RESET</string>
+    <string name="are_you_sure_you_want_to_sign_out">Are you sure you want\nto sign out?</string>
+    <string name="popular_suggestions">Popular Suggestions</string>
+    <string name="skills">SKILLS</string>
+    <string name="Skills">Skills</string>
+    <string name="add_skills">Add your Skills</string>
+    <string name="skip_this_step">Skip this step</string>
+    <string name="add_interest_title">Tell us the kind of things you’re interested in.</string>
+    <string name="add_interests">Add your interests</string>
+    <string name="title_select_skills">List your skills, and find\nlike minded people.</string>
+    <string name="add_card" tools:ignore="PrivateResource">Add Card</string>
+    <string name="card_num">Card Number</string>
+    <string name="card_expiry_hint">MM / YY</string>
+    <string name="card_cvc">CVC</string>
+    <string name="confrm_password">Confirm New Password</string>
+    <string name="card_detail_validation_err">Please enter valid the Card Details</string>
+    <string name="card_num_empty_err">Please enter the Card Number</string>
+    <string name="card_cvc_err">Please enter the Card CVC</string>
+    <string name="card_name_err">Please enter the Name on the Card</string>
+    <string name="card_expiry_err">Please enter the Card Expiry</string>
+    <string name="cards_empty_err">Looks like you currently have no\n credit card added.</string>
+    <string name="delete">Delete</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="bank_details">Bank Details</string>
+    <string name="bank_first_name_err">Please enter the first name</string>
+    <string name="post_edit_message">Post edited successfully.</string>
+    <string name="meetup_edit_message">Meetup updated successfully.</string>
+    <string name="post_created_message">Post created successfully</string>
+    <string name="meetup_created_message">Meetup created successfully</string>
+    <string name="save">Save</string>
+    <string name="search_tags">Search tags</string>
+    <string name="routing_number">Routing Number</string>
+    <string name="account_number">Account Number</string>
+    <string name="confirm_account_number">Confirm Account Number</string>
+    <string name="date_of_birth">Date of Birth</string>
+    <string name="address">Address</string>
+    <string name="city">City</string>
+    <string name="state">State</string>
+    <string name="postal_code">Postal Code</string>
+    <string name="social_security_number_9_digits">Social Security Number (9 digits)</string>
+    <string name="add_verification_documents">Add verification documents (Optional)</string>
+    <string name="what_is_this">What is this</string>
+    <string name="edit_change">Edit / Change</string>
+    <string name="time_amp_date"><![CDATA[Time & Date]]></string>
+    <string name="post_notes">Post Notes</string>
+    <string name="card_number">Card Number</string>
+    <string name="card_holder_name">Card Holder Name</string>
+    <string name="expiration_date">Expiration Date</string>
+    <string name="pending">PENDING</string>
+    <string name="for_str">for\u0020</string>
+    <string name="posted_by_placeholder">Posted by @%s</string>
+    <string name="write_a_review">Write a review</string>
+    <string name="purchase_notes_str">Purchase Notes</string>
+    <string name="dollar_prefix">$%s</string>
+    <string name="permission_denied">Permission Denied</string>
+    <string name="change_attachment">The document you submitted is under verification. In case you wish to replace this document you can do so now.</string>
+    <string name="delete_notes_message">Are you sure you want to delete notes?</string>
+    <string name="delete_notes_action">turtle.deleteNotes</string>
+    <string name="review_bottom_head">Thank you! Your notes will be \nsent to your email.</string>
+    <string name="edit">Edit</string>
+    <string name="flag">Flag</string>
+    <string name="title_activity_notes_review">NotesReviewActivity</string>
+    <string name="read_reviews">REVIEWS</string>
+    <string name="poll_created_message">Poll created successfully</string>
+    <string name="image_posted_successfully">Image posted successfully</string>
+    <string name="media_edited_successfully">Media edited successfully</string>
+    <string name="video_posted_successfully">Video posted successfully</string>
+    <string name="edit_notes">Edit Notes</string>
+    <string name="snippet">Snippet</string>
+    <string name="title_cannot_be_blank">Title cannot be blank</string>
+    <string name="class_cannot_be_blank">Class name cannot be blank</string>
+    <string name="desc_cannot_be_blank">Description cannot be blank</string>
+    <string name="add_bank_details_alert">Add your bank account info to receive payments when people purchase your notes.</string>
+    <string name="ok">OK</string>
+    <string name="email_sent_msg">Email sent successfully</string>
+    <string name="invite_friends">Invite Friends</string>
+    <string name="user_blocked_message">You cannot perform any action, Since you are blocked for this space.</string>
+    <string name="document_verified">All set! The document you submitted has been verified.</string>
+    <string name="bank_what_msg">This document is required to complete the KYC (Know Your Customer) compliance by Stripe . The details to be verified are Name, DOB, Address, Bank Account details. Please share valid details that can pass the KYC compliance.</string>
+    <string name="cancelled">Cancelled</string>
+    <string name="via_sms">Via SMS</string>
+    <string name="a_sms_invitation_with_a_link_will_be_sent_to_the_selected_contacts">A SMS invitation with a link will be sent to the selected contacts</string>
+    <string name="via_email">Via Email</string>
+    <string name="an_email_invitation_with_a_link_will_be_sent_to_the_selected_contacts">An Email invitation with a link will be sent to the selected contacts</string>
+    <string name="rooms">SPACES</string>
+    <string name="people">PEOPLE</string>
+    <string name="search_by_name_skill_interest_dorm_hometown_or_major">Search by name, skill, interest, dorm, hometown, or major</string>
+    <string name="view_more">View More</string>
+    <string name="july_26_2017">July 26, 2017</string>
+    <string name="email">Email</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="confirm_pwd">Confirm Password</string>
+    <string name="graduation">Graduation</string>
+    <string name="select_a_hometown">Select a Hometown</string>
+    <string name="select_year">Select a year</string>
+    <string name="major">Major</string>
+    <string name="select_your_major">Select your major</string>
+    <string name="minor">Minor</string>
+    <string name="select_your_minor">Select your Minor</string>
+    <string name="profile_1_footer">Swipe left and right and tap to choose an avatar, alternatively upload your own</string>
+    <string name="profile_2_footer">Providing this additional information will greatly enhance your Vibe experience.</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="search_major">Search Major</string>
+    <string name="search_minor">Search Minor</string>
+    <string name="your_prfl_text">Your Profile</string>
+    <string name="search_hometown">Search Hometown</string>
+    <string name="dorm">Dorm</string>
+    <string name="select_dorm">Select your Dorm</string>
+    <string name="greek_life">Greek Life</string>
+    <string name="search_dorm">Search Dorm</string>
+    <string name="select_greek_life">Select Greek life</string>
+    <string name="interests">Interests</string>
+    <string name="Interests">INTERESTS</string>
+    <string name="create">Create</string>
+    <string name="menu_tut">Menu</string>
+    <string name="menu_tut_sub">Update your profile, add friends,\nchange settings, view your notes\nand more.</string>
+    <string name="avatar">Avatar</string>
+    <string name="send_invites">Send Invites</string>
+    <string name="search_name_or_college">Search a name or college</string>
+    <string name="add_members_small">Add members</string>
+    <string name="invite_people_to_your_room">Invite people to your space</string>
+    <string name="search_name_username">Search name, username</string>
+    <string name="add_tags_small">Add Tags</string>
+    <string name="add_tags_caps">ADD TAGS</string>
+    <string name="search_hint_room_side_menu">e.g #meets #competition</string>
+    <string name="join_room">Join Space</string>
+    <string name="enter_valid_room_name">Enter valid space name</string>
+    <string name="my_friends">My Friends</string>
+    <string name="requests">Requests</string>
+    <string name="request_sent">Request Sent</string>
+    <string name="mutual_friends">Mutual Friends</string>
+    <string name="my_rooms">My Spaces</string>
+    <string name="menu_notes">Notes</string>
+    <string name="menu_notifications">Notifications</string>
+    <string name="description">Description</string>
+    <string name="desc_characters_remaining">140 Characters Remaining</string>
+
+    <string name="create_space">CREATE SPACE</string>
+    <string name="show">Show</string>
+    <string name="hometown">Hometown</string>
+    <string name="hide">Hide</string>
+
+    <string name="profile_visibility">Profile Visibility</string>
+    <string name="fraternities">Fraternities</string>
+    <string name="sororities">Sororities</string>
+    <string name="search_filters">Search - Filters - Menu</string>
+    <string name="search_for_rooms_friends_colleges_and_subjects_on_noise_you_can_also_see_what_s_hot_new_and_top">Search for friends and spaces.\nSee what’s hot, new, and top.\nView your profile, spaces, and\nnotifications.</string>
+    <string name="hot">HOT</string>
+    <string name="newText">NEW</string>
+    <string name="top">TOP</string>
+    <string name="tour_title_find_room">Your Vibe</string>
+    <string name="tour_find_room">This is where you can find the space you have joined, notes you have shared/purchased.</string>
+    <string name="campus_small">Campus</string>
+    <string name="CAMPUS">CAMPUS</string>
+    <string name="global_small">Global</string>
+    <string name="GLOBAL">GLOBAL</string>
+    <string name="dont"> Don\'t</string>
+    <string name="do_str">Allow</string>
+    <string name="space_name">Space Name</string>
+    <string name="edit_space">EDIT SPACE</string>
+    <string name="email_username">Username/Email</string>
+    <string name="let_s_go">Let’s Go</string>
+    <string name="select_a_greek_life">Select a greek life</string>
+    <string name="exclusively_for_college_students">Exclusively for college students</string>
+    <string name="log_in">Log in</string>
+    <string name="title_activity_user_profile">UserProfileActivity</string>
+
+    <string name="graduation_year">Graduation Year</string>
+    <string name="view_full_profile">View Full Profile</string>
+    <string name="spaces">Spaces</string>
+    <string name="connections">Friends</string>
+    <string name="posts">Posts</string>
+    <string name="title_activity_edit_profile">EditProfileActivity</string>
+    <string name="connect">Connect</string>
+    <string name="pending_str">Pending</string>
+    <string name="connected">Connected</string>
+    <string name="username_small">Username</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="enter_card_number">Enter your card number</string>
+    <string name="name_on_card">Name on Card</string>
+    <string name="enter_name_on_card">Enter name on card</string>
+    <string name="cv_code">CVV Code</string>
+    <string name="expiry_code">Expiry date</string>
+    <string name="enter_your_routing_number">Enter your routing number</string>
+    <string name="enter_account_number">Enter your account number</string>
+    <string name="bank_acc_details">Bank Account Details</string>
+    <string name="enter_your_city">Enter your city</string>
+    <string name="select_your_state">Select your state</string>
+    <string name="select_your_postal_code">Select your postal code</string>
+    <string name="enter_your_social_security_number">Enter your social security number</string>
+    <string name="no_mutual_friend">No Mutual Friend</string>
+    <string name="space_desc">Description</string>
+    <string name="enter_desc">Please enter a description</string>
+    <string name="search_user_hint">Search name, username</string>
+
+    <string name="explore"> Explore</string>
+    <string name="you_ll_find_joined_spaces_in_home_tap_explore_to_discover_more_spaces">You’ll find joined spaces in ‘Home’.\nTap ‘Explore’ to discover more\n spaces.</string>
+    <string name="home_explore">Home - Explore</string>
+    <string name="create_space_invite">Create a space, and invite your friends to post comments, videos meetups and more.</string>
+    <string name="buy_sell_class_notes_with_other_college_students"><![CDATA[Buy & sell class notes with\nother college students]]></string>
+    <string name="posted_by_user">Posted by @</string>
+    <string name="invaild_note_title">Empty or invalid notes title</string>
+    <string name="invaild_notes_class">Empty or invalid notes class</string>
+    <string name="invaild_price">Empty or invalid notes price</string>
+    <string name="note_price_limit">Notes price must be less than $</string>
+    <string name="desc_hint_notes">Write a brief description of what your notes include</string>
+    <string name="crop_resize"><![CDATA[CROP & RESIZE]]></string>
+    <string name="home">Home</string>
+
+
+    <plurals name="new_requests">
+        <item quantity="zero">No New Requests</item>
+        <item quantity="one">%d New Request</item>
+        <item quantity="other">%d New Requests</item>
+    </plurals>
+
+    <plurals name="char_remaining">
+        <item quantity="zero">0 Characters Remaining</item>
+        <item quantity="one">1 Character Remaining</item>
+        <item quantity="other">%d Characters Remaining</item>
+    </plurals>
+
+
+    <plurals name="votes">
+        <item quantity="one">1 Vote</item>
+        <item quantity="other">%d Votes</item>
+    </plurals>
+    <string name="posted_small">Posted</string>
+
+    <string name="search_name_topic">Search name, topic, interest…</string>
+    <string name="see_more">SEE MORE…</string>
+    <string name="no_result_found">No results found</string>
+    <string name="purchase_small">Purchased</string>
+    <string name="err_username_msg">Username already exists</string>
+    <string name="search_notes_on_noise">Search for notes on Vibe</string>
+    <string name="create_notes">Create note</string>
+    <string name="err_valid_username_msg">Please enter a Username.</string>
+    <string name="please_try_again">Please try again.</string>
+    <string name="password_equal_err">Current password and New password cannot be same.</string>
+    <string name="error_attactments">You can\'t upload more than 10 attachments</string>
+    <string name="problem_to_fetch_metadata">Problem while trying to fetch metadata</string>
+    <string name="enable_share_file">Please enable sharing for this file or select another file</string>
+    <string name="remove_snippet">Remove Snippet</string>
+    <string name="msg_snippet">Do you want to upload new image for snippet</string>
+    <string name="update_note">Update Notes</string>
+    <string name="disconnect">Disconnect</string>
+    <string name="search_fraternities">Search Fraternities</string>
+    <string name="search_sororities">Search Sororities</string>
+    <string name="i">i</string>
+    <string name="view_all">View All</string>
+    <string name="show_less">Show less</string>
+    <string name="error_choice">Atleast 2 choices are required.</string>
+    <string name="cant_make_10_choices">Maximum 10 choices are allowed.</string>
+    <string name="flaged">Flagged</string>
+    <string name="flag_post">Flag Post</string>
+    <string name="reason_to_report">Reason to report</string>
+    <string name="report">Report</string>
+    <string name="title_activity_my_spaces">MySpacesActivity</string>
+    <string name="accepted">Accepted</string>
+    <string name="rejected">Rejected</string>
+    <string name="otp_send_to_email">The OTP has been sent to your registered email</string>
+    <string name="my_notes_cap">MY NOTES</string>
+    <string name="email_sub">Join \"Vibe\" your own Global University network!</string>
+    <string name="email_text">Missing all the fun? Sign up and check what is buzzing in your university! Download: https://play.google.com/store/apps/details?id=com.appster.turtle</string>
+    <string name="no_comments_found">No comments found</string>
+    <string name="room_empty_string">Be the first to say something in this\nspace. You can write text, upload an\nimage or create a meetup.</string>
+    <string name="join_space">Join Space</string>
+    <string name="flag_comment">Flag Comment</string>
+    <string name="cant_add_more_card">You can\'t add more than 3 cards</string>
+
+    <string name="reaction">REACTED BY</string>
+
+
+    <plurals name="reactionCount">
+        <item quantity="zero">No Reactions</item>
+        <item quantity="one">%d reaction</item>
+        <item quantity="other">%d reactions</item>
+    </plurals>
+
+    <string name="read_more">read more…</string>
+    <string name="global">Global</string>
+    <string name="campus">Campus</string>
+    <string name="popular_people">POPULAR PEOPLE</string>
+    <string name="cap_people">PEOPLE</string>
+    <string name="popular_space">POPULAR SPACES</string>
+    <string name="cap_space">SPACES</string>
+    <string name="respond_to_request">Respond to request</string>
+    <string name="off">OFF</string>
+    <string name="Ok">OK</string>
+    <string name="txt_hey">Hey</string>
+    <string name="profile_1_header">Let’s find out a little more about you</string>
+    <string name="add_tag_hint">Add tags to your space.</string>
+    <string name="no_user_found">No user found</string>
+    <string name="no_post_found">No posts found</string>
+    <string name="no_spaces_found">No spaces found</string>
+    <string name="no_meetUp">No data found</string>
+    <string name="no_user">No user found</string>
+    <string name="sms_body">Missing all the fun? Sign up and check what is buzzing in your university! Download: </string>
+    <string name="add_tag_to_your_space">Add tags to your space</string>
+    <string name="reported_flagged"> has been reported/flagged.</string>
+    <string name="meetUptag">MEET UP</string>
+    <string name="delete_comment">Delete Comment</string>
+    <string name="mutual_friend">You have %d Mutual Friends</string>
+    <string name="min_2_char">Minimum 2 characters required for search</string>
+    <string name="room_updated">Space Updated</string>
+    <string name="update_room">Are you sure you want to leave without updating the space?</string>
+    <string name="member_cap">MEMBERS</string>
+    <string name="my_friends_cap">MY_FRIENDS</string>
+    <string name="request_cap">REQUEST</string>
+    <string name="found_result">Found %s result</string>
+    <string name="found_results">Found %s results</string>
+    <string name="cureent_password">Please enter Current Password</string>
+    <string name="entre_new_password">Please enter New Password</string>
+    <string name="retype_password">Please retype Password</string>
+    <string name="error_new_password">New password and confirm password are not same.</string>
+    <string name="vaild_password">Please enter a valid password.</string>
+    <string name="change_password_done">Password change successful</string>
+    <string name="invite_friend">Invite Friends</string>
+    <string name="no_member_found">No members found</string>
+    <string name="featured">FEATURED</string>
+    <string name="todo">TODO</string>
+    <string name="accept">Accept</string>
+    <string name="reject">Reject</string>
+    <string name="hello">hello</string>
+    <string name="delete_post">Delete Post</string>
+    <string name="poste_deleted">Post deleted successfully</string>
+    <string name="post_flagged">Post flagged successfully</string>
+    <string name="posting_to">Posting to</string>
+    <string name="atleast_2_choices">Atleast 2 choices are required.</string>
+    <string name="question_cant_empy">Question can\'t be empty</string>
+    <string name="empty_des">Post description can\'t be empty</string>
+    <string name="no_image">No recent images available</string>
+    <string name="max_2">Max limit is 2</string>
+    <string name="delete_note">Delete Note</string>
+    <string name="space_left">Space left</string>
+
+    <plurals name="member_found">
+        <item quantity="zero">No member found</item>
+        <item quantity="one">%d member found</item>
+        <item quantity="other">%d members found</item>
+    </plurals>
+</resources>

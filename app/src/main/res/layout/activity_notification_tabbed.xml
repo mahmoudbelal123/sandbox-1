@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        tools:context="com.appster.turtle.ui.activity.ActivitiesNotificationActivity">
+
+        <include
+            android:id="@+id/cl_header"
+            layout="@layout/layout_header_text_bg_light"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_switch_tab"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_43"
+            android:layout_below="@+id/cl_header"
+
+            android:layout_marginEnd="@dimen/margin_23"
+            android:layout_marginStart="@dimen/dimen_23"
+            android:layout_marginTop="@dimen/margin_27"
+            android:background="@drawable/white_selector_bg_radius_21"
+            android:elevation="@dimen/dimen_6">
+
+            <RelativeLayout
+                android:id="@+id/cl_notification_header"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:layout_constraintEnd_toStartOf="@+id/tv_activity_header"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <ImageButton
+                    android:id="@+id/v_notification"
+                    android:layout_width="@dimen/dimen_5_8"
+                    android:layout_height="@dimen/dimen_5_8"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/ic_notification"
+                    android:layout_marginTop="@dimen/dimen_2_9"
+                    android:visibility="invisible"
+                    android:background="@android:color/transparent" />
+
+                <com.appster.turtle.widget.CustomTextView
+                    android:id="@+id/tv_notifications_header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@string/notifications_hint"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/text_13_3"
+                    android:layout_centerInParent="true"
+                    app:customFont="@string/eina_01_semibold" />
+            </RelativeLayout>
+
+            <com.appster.turtle.widget.CustomTextView
+                android:id="@+id/tv_activity_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:paddingTop="@dimen/dimen_12"
+                android:text="@string/activity_hint"
+                android:textColor="#b2b2b2"
+                android:textSize="@dimen/text_13_3"
+                app:customFont="@string/eina_01_semibold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/cl_notification_header"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <View
+                android:id="@+id/v_activity_indicator"
+                android:layout_width="@dimen/dimen_55"
+                android:layout_height="@dimen/dimen_2_9"
+                android:layout_marginTop="@dimen/margin_7"
+                android:background="@color/bright_teal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/tv_activity_header"
+                app:layout_constraintStart_toStartOf="@id/tv_activity_header" />
+
+            <View
+                android:id="@+id/v_notifications_indicator"
+                android:layout_width="@dimen/dimen_55_7"
+                android:layout_height="@dimen/dimen_2_9"
+                android:layout_marginTop="@dimen/margin_7"
+                android:background="@color/bright_teal"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/cl_notification_header"
+                app:layout_constraintStart_toStartOf="@id/cl_notification_header" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/cl_switch_tab"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    </RelativeLayout>
+</layout>

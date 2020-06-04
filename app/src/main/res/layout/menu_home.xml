@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="user"
+            type="com.appster.turtle.model.UserBaseModel" />
+
+        <variable
+            name="univ"
+            type="com.appster.turtle.model.University" />
+    </data>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        android:background="@color/black"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/fl_image"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_201_6"
+            android:layout_centerHorizontal="true">
+
+            <!--<com.mikhaellopez.circularimageview.CircularImageView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_centerInParent="true"-->
+            <!--android:src="@{user.profileUrlType==3 ? @drawable/ic_pp_name:@drawable/ic_transparent}"-->
+            <!--app:civ_border_width="@dimen/width_0" />-->
+
+            <!--<com.mikhaellopez.circularimageview.CircularImageView-->
+            <!--android:layout_width="@dimen/image_l"-->
+            <!--android:layout_height="@dimen/image_l"-->
+            <!--android:layout_centerInParent="true"-->
+            <!--android:background="@color/transparent"-->
+            <!--android:contentDescription="@null"-->
+            <!--android:visibility="@{user.profileUrlType==3 ? View.INVISIBLE:View.VISIBLE}"-->
+
+            <!--app:civ_border_width="@dimen/width_0"-->
+            <!--app:profileImageurl="@{user.profileUrl}" />-->
+
+            <ImageView
+                android:id="@+id/iv_circle"
+                android:layout_width="@dimen/dp_100"
+                android:layout_centerInParent="true"
+                android:background="@drawable/ic_pp_cred"
+                android:visibility="gone"
+                android:layout_height="@dimen/dp_100" />
+
+            <ImageView
+                android:id="@+id/iv_menu_user"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:background="@color/transparent"
+                android:contentDescription="@null" />
+
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/iv_menu_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/dimen_13_4"
+            android:layout_marginTop="@dimen/dimen_13_4"
+            android:onClick="menuClicked"
+            android:padding="@dimen/dimen_10"
+            android:src="@drawable/ic_close"
+            tools:ignore="ContentDescription" />
+
+
+        <com.appster.turtle.widget.CustomTextView
+            android:id="@+id/tv_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fl_image"
+            android:layout_marginTop="@dimen/dimen_19"
+            android:gravity="center"
+            android:paddingStart="@dimen/dimen_25"
+            android:paddingEnd="@dimen/dimen_25"
+            android:lines="1"
+            android:ellipsize="end"
+            android:text="@{user.name}"
+            android:textColor="@color/app_white"
+            android:textSize="@dimen/text_25"
+            app:customFont="@string/eina_01_semibold" />
+
+
+        <com.appster.turtle.widget.CustomTextView
+            android:id="@+id/tv_user_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_name"
+            android:layout_marginTop="@dimen/dimen_4"
+            android:gravity="center"
+            android:lines="1"
+            android:ellipsize="end"
+            android:text='@{"@"+user.userName}'
+            android:textColor="@color/label_color_name"
+            android:textSize="@dimen/textsize_15_plus"
+            app:customFont="@string/eina_01_regular" />
+
+
+        <com.appster.turtle.widget.CustomTextView
+            android:id="@+id/tv_univ"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_user_name"
+            android:layout_marginTop="@dimen/dimen_4"
+            android:gravity="center"
+            android:lines="1"
+            android:textAllCaps="true"
+            android:text="@{univ.displayName}"
+            android:textColor="@color/app_white"
+            android:textSize="@dimen/text_space_9_6"
+            app:customFont="@string/eina_01_regular" />
+
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_sign_out_confirm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="@dimen/dimen_30_7"
+            android:layout_marginBottom="@dimen/dp_26_7"
+            android:layout_marginStart="@dimen/dimen_30_7"
+            android:layout_marginTop="@dimen/margin_20"
+            android:visibility="gone">
+
+            <View
+                android:id="@+id/div"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_1"
+                app:layout_constraintTop_toTopOf="parent"
+                android:background="@color/unselected_grey" />
+
+
+            <com.appster.turtle.widget.CustomTextView
+                android:id="@+id/tv_sign_out_confirm_msg"
+                android:layout_width="@dimen/width_0"
+                android:layout_height="wrap_content"
+                android:text="@string/are_you_sure_you_want_to_sign_out"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/textSizeExtLarge"
+                android:layout_marginTop="@dimen/dimen_12"
+                app:customFont="@string/eina_01_regular"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/div" />
+
+            <com.appster.turtle.widget.CustomTextView
+                android:id="@+id/tv_sign_out_confirm"
+                style="@style/RoundedTextView_Border"
+                android:layout_width="@dimen/width_0"
+                android:layout_height="@dimen/margin_46"
+                android:layout_marginTop="@dimen/dimen_32"
+                android:onClick="menuClicked"
+                android:paddingBottom="@dimen/marign_14"
+                android:paddingEnd="@dimen/margin_22"
+                android:paddingStart="@dimen/margin_22"
+                android:paddingTop="@dimen/marign_14"
+                android:textSize="@dimen/textsize_13_4"
+                android:text="@string/sign_out"
+                app:customFont="@string/eina_01_semibold"
+                app:layout_constraintEnd_toStartOf="@id/tv_cancel"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_sign_out_confirm_msg" />
+
+            <com.appster.turtle.widget.CustomTextView
+                android:id="@+id/tv_cancel"
+                android:layout_width="@dimen/width_0"
+                android:layout_height="@dimen/margin_46"
+                android:layout_marginStart="@dimen/margin_13"
+                android:layout_marginTop="@dimen/dimen_32"
+                android:background="@drawable/orange_btn_stroke"
+                android:gravity="center"
+                android:minWidth="@dimen/min_width_105"
+                android:onClick="menuClicked"
+                android:paddingBottom="@dimen/marign_14"
+                android:paddingEnd="@dimen/margin_22"
+                android:paddingStart="@dimen/margin_22"
+                android:paddingTop="@dimen/marign_14"
+                android:text="@string/cancel"
+                android:textColor="@color/bright_teal"
+                android:textSize="@dimen/textsize_13_4"
+                app:customFont="@string/eina_01_semibold"
+                app:layout_constraintBottom_toBottomOf="@id/tv_sign_out_confirm"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tv_sign_out_confirm"
+                app:layout_constraintTop_toBottomOf="@id/tv_sign_out_confirm_msg" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <ScrollView
+            android:id="@+id/sv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/divider"
+            android:layout_below="@+id/tv_univ"
+            android:layout_marginTop="@dimen/margin_20">
+
+            <LinearLayout
+                android:id="@+id/ll_menu_home_options"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingEnd="@dimen/padding_30"
+                android:gravity="center"
+                android:paddingStart="@dimen/padding_30">
+
+                <com.appster.turtle.widget.CustomTextView
+                    android:id="@+id/tv_menu_profile"
+                    style="@style/homeMenuTextStyle"
+                    android:layout_marginBottom="@dimen/margin_7_8"
+                    android:onClick="menuClicked"
+                    android:text="@string/profile"
+                    app:customFont="@string/eina_01_regular" />
+
+                <LinearLayout
+                    android:id="@+id/ll_my_activity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_7_8"
+                    android:onClick="menuClicked"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.appster.turtle.widget.CustomTextView
+                        android:id="@+id/tv_menu_my_activity"
+                        style="@style/homeMenuTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/menu_notifications"
+                        app:customFont="@string/eina_01_regular" />
+
+                    <com.appster.turtle.widget.CustomTextView
+                        android:id="@+id/tv_notification_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:minWidth="@dimen/dimen_30"
+                        android:layout_marginStart="@dimen/margin_5_9"
+                        android:background="@drawable/btn_orange_rounded"
+                        android:gravity="center|center_horizontal"
+                        android:paddingStart="@dimen/dimen_4"
+                        android:paddingEnd="@dimen/dimen_4"
+                        android:paddingTop="@dimen/dimen_2"
+                        android:paddingBottom="@dimen/dimen_4"
+                        android:layout_marginTop="@dimen/dp_1_5"
+                        android:letterSpacing="-0.02"
+                        android:textColor="@color/app_white"
+                        android:textSize="11.4sp"
+                        android:visibility="gone"
+                        app:customFont="@string/eina_01_semibold"
+                        tools:text="2" />
+
+                </LinearLayout>
+
+                <com.appster.turtle.widget.CustomTextView
+                    android:id="@+id/tv_menu_my_rooms"
+                    style="@style/homeMenuTextStyle"
+                    android:layout_marginBottom="@dimen/margin_7_8"
+                    android:onClick="menuClicked"
+                    android:text="@string/my_rooms"
+                    android:visibility="gone"
+                    app:customFont="@string/eina_01_regular" />
+
+                <com.appster.turtle.widget.CustomTextView
+                    android:id="@+id/tv_menu_my_notes"
+                    style="@style/homeMenuTextStyle"
+                    android:layout_marginBottom="@dimen/margin_7_8"
+                    android:onClick="menuClicked"
+                    android:text="@string/menu_notes"
+                    app:customFont="@string/eina_01_regular" />
+
+                <com.appster.turtle.widget.CustomTextView
+                    android:id="@+id/tv_menu_friends"
+                    style="@style/homeMenuTextStyle"
+                    android:layout_marginBottom="@dimen/margin_7_8"
+                    android:onClick="menuClicked"
+                    android:text="@string/friends"
+                    app:customFont="@string/eina_01_regular" />
+
+                <com.appster.turtle.widget.CustomTextView
+                    android:id="@+id/tv_menu_settings"
+                    style="@style/homeMenuTextStyle"
+                    android:layout_marginBottom="@dimen/margin_7_8"
+                    android:onClick="menuClicked"
+                    android:text="@string/settings"
+                    app:customFont="@string/eina_01_regular" />
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_1"
+            android:layout_above="@+id/btn_sign_out"
+            android:layout_marginEnd="@dimen/dimen_30_7"
+            android:layout_marginStart="@dimen/dimen_30_7"
+            android:layout_marginTop="@dimen/margin_22"
+            android:background="@color/unselected_grey" />
+
+        <com.appster.turtle.widget.CustomTextView
+            android:id="@+id/btn_sign_out"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_46"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/margin_22"
+            android:layout_marginTop="@dimen/margin_20"
+            android:layout_alignStart="@id/divider"
+            android:layout_alignEnd="@id/divider"
+
+            android:background="@drawable/rounded_tv_bg"
+            android:gravity="center"
+            android:onClick="menuClicked"
+            android:text="@string/sign_out"
+            android:textAllCaps="false"
+            android:textColor="@color/app_white"
+            android:textSize="@dimen/textsize_13_4"
+            app:customFont="@string/eina_01_semibold" />
+
+    </RelativeLayout>
+</layout>

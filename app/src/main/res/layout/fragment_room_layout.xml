@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <!--<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--android:layout_width="match_parent"-->
+
+    <!--android:id="@+id/nested_scroll"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_marginTop="@dimen/margin_16"-->
+    <!--android:fillViewport="true"-->
+    <!--android:background="@color/app_white"-->
+    <!--android:orientation="horizontal">-->
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:background="@color/room_transparent_bg"
+        android:fillViewport="true">
+
+        <TextView
+            android:id="@+id/tv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:visibility="gone" />
+
+
+        <!--<pl.droidsonroids.gif.GifImageView-->
+            <!--android:id="@+id/loading"-->
+            <!--android:layout_width="@dimen/dimen_55"-->
+            <!--android:layout_height="@dimen/dimen_55"-->
+            <!--android:layout_centerInParent="true"-->
+            <!--android:background="@drawable/white_selector_bg"-->
+            <!--android:padding="@dimen/pad_2"-->
+            <!--android:src="@drawable/loading_progress"-->
+            <!--android:visibility="gone" />-->
+
+        <com.appster.turtle.widget.CustomProgressBar
+            android:layout_width="@dimen/dimen_55"
+            android:layout_centerInParent="true"
+            android:visibility="gone"
+            android:id="@+id/loading"
+            android:foreground="@color/transparent"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_height="@dimen/dimen_55" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_rooms"
+            android:layout_width="match_parent"
+            android:layout_height="165dp"
+            android:visibility="gone"
+            android:paddingTop="@dimen/margin_5" />
+
+        <im.ene.toro.widget.Container
+            android:id="@+id/rv_post"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/rv_rooms"
+            android:fadeScrollbars="true"
+            android:background="@color/room_transparent_bg"
+            android:fitsSystemWindows="true"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            android:paddingTop="@dimen/margin_5"
+            android:scrollbars="vertical" />
+
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cv_empty"
+            android:layout_width="match_parent"
+            android:background="@color/room_transparent_bg"
+            app:cardCornerRadius="@dimen/padding_11"
+            app:cardElevation="@dimen/dimen_19"
+            android:visibility="invisible"
+            android:layout_marginTop="@dimen/dimen_10"
+            android:layout_marginStart="@dimen/dimen_5_8"
+            android:layout_marginEnd="@dimen/dimen_5_8"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:background="@color/room_transparent_bg"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/iv_add"
+                    android:layout_width="wrap_content"
+                    android:src="@drawable/ic_plus_big"
+                    android:layout_marginTop="@dimen/dp_38_4"
+                    android:layout_centerHorizontal="true"
+                    android:layout_height="wrap_content" />
+
+                <com.appster.turtle.widget.CustomTextView
+                    android:id="@+id/tv_empty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/textsize_15_plus"
+                    android:layout_below="@+id/iv_add"
+                    android:textColor="#212121"
+                    android:gravity="center"
+                    android:layout_marginBottom="@dimen/dp_41_3"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20.2dp"
+                    app:customFont="@string/eina_01_regular"
+                    android:text="@string/room_empty_string" />
+
+
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+
+    </RelativeLayout>
+
+    <!--</android.support.v4.widget.NestedScrollView>-->
+
+</layout>

@@ -1,0 +1,76 @@
+<!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_white"
+        tools:context="com.appster.turtle.ui.media.MediaBottomFragment">
+
+        <!--<android.support.v4.widget.NestedScrollView-->
+        <!--android:id="@+id/scrollView"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:scrollbars="none">-->
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_media_bottom"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+            </android.support.v7.widget.RecyclerView>
+
+            <!--<com.otaliastudios.cameraview.CameraView-->
+            <!--android:id="@+id/camera"-->
+            <!--android:layout_width="240dp"-->
+            <!--android:layout_height="240dp"-->
+            <!--android:layout_gravity="center_horizontal"-->
+            <!--android:clickable="false"-->
+            <!--android:keepScreenOn="true"-->
+            <!--app:cameraCropOutput="false"-->
+            <!--app:cameraFacing="back"-->
+            <!--app:cameraFlash="off"-->
+            <!--android:visibility="invisible"-->
+            <!--app:cameraGestureLongTap="none"-->
+            <!--app:cameraGesturePinch="none"-->
+            <!--app:cameraGestureScrollHorizontal="none"-->
+            <!--app:cameraGestureScrollVertical="none"-->
+            <!--app:cameraGestureTap="none"-->
+            <!--app:cameraGrid="off"-->
+            <!--app:cameraJpegQuality="100"-->
+            <!--app:cameraSessionType="picture"-->
+            <!--app:layout_constraintDimensionRatio="w,1:1" />-->
+
+            <!--<ImageView-->
+            <!--android:id="@+id/iv_overlay"-->
+            <!--android:layout_width="144dp"-->
+            <!--android:layout_height="144dp"-->
+            <!--android:background="#99212121"-->
+            <!--android:clickable="true"-->
+            <!--android:focusable="true"-->
+            <!--android:visibility="invisible"-->
+            <!--android:layout_alignStart="@+id/camera"-->
+            <!--android:layout_alignEnd="@+id/camera"-->
+            <!--android:layout_alignBottom="@+id/camera"-->
+            <!--android:layout_alignTop="@+id/camera"-->
+            <!--android:scaleType="centerInside"-->
+            <!--android:src="@drawaic_camera_upmera"-->
+            <!--tools:ignore="ContentDescription" />-->
+
+        </RelativeLayout>
+        <!--</android.support.v4.widget.NestedScrollView>-->
+
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--<data>-->
+
+    <!--<variable-->
+    <!--name="user"-->
+    <!--type="com.appster.turtle.model.UserProfileData" />-->
+    <!--</data>-->
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/bottom_sheet_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dimen_5_8"
+        android:layout_marginStart="@dimen/dimen_5_8"
+
+        android:background="@drawable/rounded_bg_white_profile"
+
+
+        >
+
+        <RelativeLayout
+            android:id="@+id/cl_unscrolled_lay"
+            android:layout_width="match_parent"
+            android:visibility="gone"
+            android:layout_height="wrap_content">
+
+            <com.appster.turtle.widget.CustomTextView
+                android:id="@+id/tv_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:lineSpacingExtra="@dimen/text_space_9_6"
+                android:textColor="#090909"
+                android:textSize="@dimen/text_25"
+                app:customFont="@string/eina_01_semibold" />
+
+            <com.appster.turtle.widget.CustomTextView
+                android:id="@+id/tv_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_name"
+                android:layout_marginBottom="@dimen/dimen_11_5"
+                android:gravity="center_horizontal"
+                android:textColor="#a9aab1"
+                android:textSize="@dimen/textsize_15_plus"
+                app:customFont="@string/eina_01_regular" />
+
+
+            <com.appster.turtle.widget.CustomTextView
+                android:id="@+id/tv_university"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_username"
+                android:layout_marginBottom="@dimen/dimen_11_5"
+
+                android:gravity="center_horizontal"
+                android:letterSpacing="0.12"
+                android:textColor="#090909"
+                android:textSize="@dimen/text_space_9_6"
+
+                app:customFont="@string/eina_01_semibold" />
+
+
+        </RelativeLayout>
+
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_member_actions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cl_unscrolled_lay"
+            android:paddingBottom="@dimen/dimen_25"
+            android:paddingEnd="@dimen/dimen_30"
+            android:paddingStart="@dimen/dimen_30"
+            android:paddingTop="@dimen/dimen_25">
+
+            <com.appster.turtle.widget.CustomTextView
+                android:id="@+id/tv_cancel"
+                style="@style/RoundedTextView_Border"
+                android:layout_width="@dimen/width_0"
+                android:layout_height="@dimen/curve_button_height"
+                android:background="@drawable/grey_round"
+                android:textColor="#090909"
+
+                android:padding="@dimen/width_0"
+                android:text="@string/cancel"
+                app:customFont="@string/eina_01_semibold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/cl_actions"
+                android:layout_width="@dimen/width_0"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dimen_15_4"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/tv_cancel"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+
+                <com.appster.turtle.widget.CustomTextView
+                    android:id="@+id/tv_accept"
+                    style="@style/RoundedTextView_New"
+                    android:layout_width="@dimen/width_0"
+                    android:layout_height="@dimen/curve_button_height"
+                    android:layout_marginTop="@dimen/dimen_17_3"
+                    android:padding="@dimen/width_0"
+                    android:text="@string/accept"
+                    app:customFont="@string/eina_01_semibold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_block_user" />
+
+                <com.appster.turtle.widget.CustomTextView
+                    android:id="@+id/tv_reject"
+                    style="@style/RoundedTextView_New"
+                    android:layout_width="@dimen/width_0"
+                    android:layout_height="@dimen/curve_button_height"
+                    android:layout_marginTop="@dimen/dimen_17_3"
+                    android:padding="@dimen/width_0"
+                    android:text="@string/reject"
+                    app:customFont="@string/eina_01_semibold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_accept" />
+
+            </android.support.constraint.ConstraintLayout>
+
+        </android.support.constraint.ConstraintLayout>
+
+
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="room"
+            type="com.appster.turtle.model.Room" />
+    </data>
+
+    <com.flipboard.bottomsheet.BottomSheetLayout
+        android:id="@+id/bottom_sheet_members"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.appster.turtle.ui.rooms.MembersActivity">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:background="@android:color/white"
+            tools:context="com.appster.turtle.ui.rooms.EditRoomActivity">
+
+            <include
+                android:id="@+id/cl_header"
+                layout="@layout/layout_header_text_bg_light"
+                android:layout_width="@dimen/width_0"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ScrollView
+                android:layout_width="@dimen/width_0"
+                android:layout_height="@dimen/width_0"
+                android:scrollbars="none"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cl_header">
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="@dimen/margin_22"
+                    android:paddingStart="@dimen/margin_22"
+                    android:paddingTop="@dimen/dimen_38">
+
+                    <!--avatar-->
+                    <RelativeLayout
+                        android:id="@+id/coordinator_avatar"
+                        android:layout_width="@dimen/width_0"
+                        android:layout_height="@dimen/room_image_height"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <include
+                            android:id="@+id/cl_included_avatar"
+                            layout="@layout/layout_avatar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:visibility="invisible" />
+
+                        <ImageView
+                            android:id="@+id/iv_room_image"
+                            recImageUrl="@{room.roomUrl}"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/room_image_bg"
+                            android:contentDescription="@null"
+                            android:onClick="showImageSelector"
+                            android:scaleType="centerCrop"
+                            app:layout_anchor="@id/cl_included_avatar"
+                            app:layout_anchorGravity="top|end"
+
+                            />
+
+                        <ImageView
+                            android:id="@+id/iv_edit_room_image"
+                            android:layout_width="@dimen/dimen_29_8"
+                            android:layout_height="@dimen/dimen_29_8"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_margin="@dimen/dimen_9_6"
+                            android:onClick="showImageSelector"
+                            android:src="@drawable/ic_edit_image"
+                            app:layout_anchor="@id/cl_included_avatar"
+                            app:layout_anchorGravity="top|end"
+                            android:contentDescription="@string/image_content" />
+
+                    </RelativeLayout>
+
+                    <com.appster.turtle.widget.CustomTextView
+                        android:id="@+id/tv_room_name"
+                        android:layout_width="@dimen/width_0"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5.3dp"
+                        android:text="@string/space_name"
+                        android:textColor="@color/label_color_name"
+                        android:textSize="@dimen/textsize_13_4"
+
+                        app:customFont="@string/eina_01_semibold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/coordinator_avatar" />
+
+                    <com.appster.turtle.widget.CustomEditText
+                        android:id="@+id/et_room_name"
+                        style="@style/noise_edittxt_style"
+                        android:layout_width="@dimen/width_0"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_8"
+                        android:text="@{room.roomName}"
+                        android:textSize="@dimen/textsize_18"
+                        app:emojiFilter='@{true}'
+                        app:size='@{20}'
+                        app:customFont="@string/eina_01_semibold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_room_name" />
+
+
+                    <com.appster.turtle.widget.CustomTextView
+                        android:id="@+id/tv_room_desc"
+                        android:layout_width="@dimen/width_0"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen_19_2"
+                        android:text="@string/space_desc"
+                        android:textColor="@color/textcolor_room_name"
+                        android:textSize="@dimen/textSize_15_4"
+                        app:customFont="@string/eina_01_semibold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/et_room_name" />
+
+                    <com.appster.turtle.widget.CustomEditText
+                        android:id="@+id/et_room_desc"
+                        style="@style/noise_edittxt_style"
+                        android:layout_width="@dimen/width_0"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen_2"
+
+                        android:inputType="textMultiLine"
+                        android:maxLength="140"
+                        android:maxLines="20"
+                        android:text="@{room.roomDesc}"
+                        android:textColor="@color/text_font_color_grey"
+                        android:textSize="@dimen/textSize_15_4"
+                        app:customFont="@string/eina_01_regular"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_room_desc" />
+
+                    <com.appster.turtle.widget.CustomTextView
+                        android:id="@+id/tv_desc_length"
+                        style="@style/noise_edit_header_style"
+                        android:text="@string/desc_characters_remaining"
+                        app:customFont="@string/eina_01_regular"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/et_room_desc" />
+
+
+                    <include
+                        android:id="@+id/cl_members"
+                        layout="@layout/item_room_info"
+                        android:layout_width="@dimen/width_0"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen_19"
+
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/cl_edit_room_tags"
+                        app:title="@{@string/members}" />
+
+                    <include
+                        android:id="@+id/cl_privacy"
+                        layout="@layout/item_room_info"
+                        android:layout_width="@dimen/width_0"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen_19"
+
+                        app:description="@{@string/make_room_information_private}"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/cl_members"
+                        app:title="@{@string/privacy}" />
+
+
+                    <include
+                        android:id="@+id/cl_edit_room_tags"
+                        layout="@layout/item_room_info"
+                        android:layout_width="@dimen/width_0"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen_19"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_desc_length"
+                        app:title="@{@string/tags}" />
+
+
+                    <android.support.constraint.ConstraintLayout
+                        android:id="@+id/cl_members_can_post"
+                        android:layout_width="@dimen/width_0"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen_19"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/cl_privacy">
+
+                        <com.appster.turtle.widget.CustomTextView
+                            android:id="@+id/tv_allow_title"
+                            android:layout_width="@dimen/width_0"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/dimen_60"
+                            android:text="@string/memebers_can_post_title"
+                            android:textColor="@color/textcolor_room_name"
+                            android:textSize="@dimen/textSize_15_4"
+                            app:customFont="@string/eina_01_semibold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.appster.turtle.widget.CustomTextView
+                            android:id="@+id/tv_allow_desc"
+                            android:layout_width="@dimen/width_0"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/dimen_60"
+                            android:text="@string/memebers_can_post_desc"
+                            android:textColor="@color/text_font_color_grey"
+                            android:textSize="@dimen/textSize_15_4"
+                            app:customFont="@string/eina_01_regular"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/switch_allow"
+                            app:layout_constraintStart_toStartOf="parent"
+                         app:layout_constraintTop_toBottomOf="@id/tv_allow_title" />
+
+                        <com.kyleduo.switchbutton.SwitchButton
+                            android:id="@+id/switch_allow"
+                            style="@style/switch_style"
+                            app:kswBackDrawable="@drawable/sw_back"
+                            app:kswTextExtra="@dimen/dimen_10"
+                            app:kswTextOff="@string/dont"
+                            app:kswTextOn="@string/do_str"
+                            app:kswThumbColor="@color/app_white"
+                            app:kswThumbMargin="@dimen/dimen_3_8"
+                            app:kswThumbWidth="@dimen/image_w_initials"
+                            app:layout_constraintBottom_toBottomOf="@id/tv_allow_desc"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/tv_allow_title"
+                            app:layout_constraintTop_toTopOf="@id/tv_allow_title" />
+
+
+                        <View
+                            android:id="@+id/footer_desc"
+                            android:layout_width="@dimen/width_0"
+                            android:layout_height="@dimen/dp_0_5"
+                            android:layout_marginTop="@dimen/dimen_6_8"
+
+                            android:background="@color/text_font_color_grey"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_allow_desc" />
+
+                    </android.support.constraint.ConstraintLayout>
+
+                    <!--global/campus-->
+                    <android.support.constraint.ConstraintLayout
+                        android:id="@+id/cl_global_campus"
+                        android:layout_width="@dimen/width_0"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen_19"
+                        android:paddingBottom="@dimen/dimen_15_4"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/cl_members_can_post">
+
+                        <com.appster.turtle.widget.CustomTextView
+                            android:id="@+id/tv_global_campus_title"
+                            android:layout_width="@dimen/width_0"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/dimen_60"
+                            android:text="@string/global_campus_title"
+                            android:textColor="@color/textcolor_room_name"
+                            android:textSize="@dimen/textSize_15_4"
+                            app:customFont="@string/eina_01_semibold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.appster.turtle.widget.CustomTextView
+                            android:id="@+id/tv_global_campus_desc"
+                            android:layout_width="@dimen/width_0"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/dimen_60"
+                            android:maxLines="3"
+                            android:text="@string/global_campus_desc"
+                            android:textColor="@color/text_font_color_grey"
+                            android:textSize="@dimen/textSize_15_4"
+
+                            app:customFont="@string/eina_01_regular"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_global_campus_title" />
+
+                        <com.kyleduo.switchbutton.SwitchButton
+                            android:id="@+id/switch_global_campus"
+                            style="@style/switch_style"
+                            app:kswBackDrawable="@drawable/sw_back"
+                            app:kswTextExtra="@dimen/dimen_10"
+                            app:kswTextOff="@string/campus"
+                            app:kswTextOn="@string/global"
+                            app:kswThumbColor="@color/app_white"
+                            app:kswThumbMargin="@dimen/dimen_3_8"
+                            app:kswThumbWidth="@dimen/image_w_initials"
+                            app:layout_constraintBottom_toBottomOf="@id/tv_global_campus_desc"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/tv_global_campus_title"
+                            app:layout_constraintTop_toTopOf="@id/tv_global_campus_title" />
+
+                        <View
+                            android:id="@+id/v_footer"
+                            android:layout_width="@dimen/width_0"
+                            android:layout_height="@dimen/dimen_1"
+                            android:layout_marginTop="@dimen/dimen_6_8"
+                            android:alpha="0.2"
+
+                            android:background="@color/color_search_footer"
+                            android:visibility="gone"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_global_campus_desc" />
+
+                    </android.support.constraint.ConstraintLayout>
+
+                </android.support.constraint.ConstraintLayout>
+            </ScrollView>
+        </android.support.constraint.ConstraintLayout>
+    </com.flipboard.bottomsheet.BottomSheetLayout>
+</layout>

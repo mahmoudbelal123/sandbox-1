@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingEnd="@dimen/dimen_31_2"
+        android:paddingStart="@dimen/dimen_31_2"
+        android:paddingTop="@dimen/image_w">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_activity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true" />
+
+        <!--to fix date at top when scrolling activities of current date-->
+        <include
+            android:id="@+id/rl_date"
+            layout="@layout/item_activity_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@id/rv_activity"
+            android:layout_alignStart="@id/rv_activity"
+            android:layout_alignTop="@id/rv_activity"
+            android:background="@android:color/white" />
+
+    </RelativeLayout>
+</layout>

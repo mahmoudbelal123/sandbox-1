@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/cl_gallery_actions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:paddingBottom="@dimen/dp_36"
+        android:paddingEnd="@dimen/margin_34"
+        android:paddingStart="@dimen/margin_34"
+        android:paddingTop="@dimen/margin_xlarge">
+
+        <com.appster.turtle.widget.CustomTextView
+            android:id="@+id/tv_cancel"
+            style="@style/RoundedTextView_White_New"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/cancel"
+            app:customFont="@string/eina_01_semibold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.appster.turtle.widget.CustomTextView
+            android:id="@+id/tv_take_photo"
+            style="@style/RoundedTextView_New"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp_42"
+            android:gravity="center"
+            android:text="@string/take_photo"
+            app:customFont="@string/eina_01_semibold"
+            app:layout_constraintBottom_toTopOf="@id/tv_cancel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.appster.turtle.widget.CustomTextView
+            android:id="@+id/tv_camera_roll"
+            style="@style/RoundedTextView_New"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/marign_14"
+            android:gravity="center"
+            android:text="@string/camera_roll"
+            app:customFont="@string/eina_01_semibold"
+            app:layout_constraintBottom_toTopOf="@id/tv_take_photo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+    </android.support.constraint.ConstraintLayout>
+
+</layout>

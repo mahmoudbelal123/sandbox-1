@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/cl_switch_tab"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_42_2"
+        android:outlineProvider="background"
+        android:minHeight="@dimen/margin_42_2"
+        android:layout_marginEnd="@dimen/margin_23"
+        android:layout_marginStart="@dimen/margin_23"
+        android:background="@drawable/friend_tab_bg"
+        android:elevation="@dimen/margin_5"
+        tools:showIn="@layout/activity_friend_list">
+
+
+        <com.appster.turtle.widget.CustomTextView
+            android:id="@+id/tv_tab_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/purchased"
+            android:textColor="#000000"
+            android:textSize="@dimen/textsize_13_4"
+            app:customFont="@string/eina_01_semibold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tv_tab_2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.appster.turtle.widget.CustomTextView
+            android:id="@+id/tv_tab_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/posted"
+            android:textColor="#b2b2b2"
+            android:textSize="@dimen/textsize_13_4"
+            app:customFont="@string/eina_01_semibold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tv_tab_1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <View
+            android:id="@+id/v_tab_1"
+            android:layout_width="@dimen/dimen_55"
+            android:layout_height="@dimen/dimen_2_9"
+            android:layout_marginTop="@dimen/margin_7"
+            android:background="@color/bright_teal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/tv_tab_1"
+            app:layout_constraintStart_toStartOf="@id/tv_tab_1" />
+
+        <View
+            android:id="@+id/v_tab_2"
+            android:layout_width="@dimen/dimen_55_7"
+            android:layout_height="@dimen/dimen_2_9"
+            android:layout_marginTop="@dimen/margin_7"
+            android:background="@color/bright_teal"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/tv_tab_2"
+            app:layout_constraintStart_toStartOf="@id/tv_tab_2" />
+
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="room"
+            type="com.appster.turtle.model.Room" />
+    </data>
+
+    <com.flipboard.bottomsheet.BottomSheetLayout
+        android:id="@+id/bottom_sheet_members"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            tools:context="com.appster.turtle.ui.rooms.RoomInfoActivity">
+
+            <include
+                android:id="@+id/header"
+                layout="@layout/layout_header_text_bg_light"
+                android:layout_width="@dimen/width_0"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ScrollView
+                android:layout_width="@dimen/width_0"
+                android:layout_height="@dimen/width_0"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/header">
+
+                <android.support.constraint.ConstraintLayout
+                    android:id="@+id/cl_child"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/dp_34_5"
+                    android:paddingEnd="@dimen/dimen_23"
+                    android:paddingStart="@dimen/dimen_23"
+                    android:paddingTop="@dimen/dimen_10">
+
+                    <!--avatar-->
+                    <include
+                        android:id="@+id/cl_included_avatar"
+                        layout="@layout/layout_avatar"
+                        android:layout_width="@dimen/width_0"
+                        android:layout_height="@dimen/room_image_height"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/iv_avatar_image"
+                        android:layout_width="@dimen/width_0"
+                        android:layout_height="@dimen/room_image_height"
+                        android:layout_margin="@dimen/dimen_4"
+                        android:contentDescription="@null"
+                        android:scaleType="centerCrop"
+                        android:visibility="invisible"
+                        app:layout_constraintBottom_toBottomOf="@id/cl_included_avatar"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/cl_included_avatar" />
+
+
+                    <android.support.constraint.ConstraintLayout
+                        android:id="@+id/cl_room_type"
+                        android:layout_width="@dimen/width_0"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen_32"
+
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/cl_included_avatar">
+
+                        <com.appster.turtle.widget.CustomTextView
+                            android:id="@+id/tv_room_type_title"
+                            android:layout_width="@dimen/width_0"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/dimen_60"
+                            android:text="@string/privacy_title"
+                            android:textColor="@color/textcolor_room_name"
+                            android:textSize="@dimen/textSize_15_4"
+                            app:customFont="@string/eina_01_semibold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.appster.turtle.widget.CustomTextView
+                            android:id="@+id/tv_room_type_desc"
+                            android:layout_width="@dimen/width_0"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/dimen_60"
+                            android:layout_marginTop="@dimen/dimen_2"
+                            android:text="@string/privacy_desc"
+                            android:textColor="@color/text_font_color_grey"
+                            android:textSize="@dimen/textSize_15_4"
+                            app:customFont="@string/eina_01_regular"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_room_type_title" />
+
+                        <View
+
+                            android:layout_width="@dimen/width_0"
+                            android:layout_height="@dimen/dimen_1"
+                            android:layout_marginTop="@dimen/dimen_16_6"
+                            android:alpha="0.2"
+                            android:background="@color/text_font_color_grey"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_room_type_desc" />
+
+                    </android.support.constraint.ConstraintLayout>
+
+                    <android.support.constraint.ConstraintLayout
+                        android:id="@+id/cl_dont_allow_members_to_post"
+                        android:layout_width="@dimen/width_0"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_14"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/cl_room_type">
+
+                        <com.appster.turtle.widget.CustomTextView
+                            android:id="@+id/tv_dont_allow_title"
+                            android:layout_width="@dimen/width_0"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/dimen_60"
+                            android:text="@string/memebers_can_post_title"
+                            android:textColor="@color/textcolor_room_name"
+                            android:textSize="@dimen/textSize_15_4"
+                            app:customFont="@string/eina_01_semibold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.appster.turtle.widget.CustomTextView
+                            android:id="@+id/tv_dont_allow_desc"
+                            android:layout_width="@dimen/width_0"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/dimen_60"
+                            android:text="@string/memebers_can_post_desc"
+                            android:textColor="@color/text_font_color_grey"
+                            android:textSize="@dimen/textSize_15_4"
+                            app:customFont="@string/eina_01_regular"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_dont_allow_title" />
+
+
+                        <com.kyleduo.switchbutton.SwitchButton
+                            android:id="@+id/switch_dont_allow"
+                            app:kswTextExtra="@dimen/dimen_10"
+                            app:kswTextOff="@string/dont"
+                            app:kswTextOn="@string/do_str"
+                            app:kswThumbMargin="@dimen/dimen_3_8"
+                            app:kswThumbWidth="@dimen/image_w_initials"
+                            app:kswBackDrawable="@drawable/sw_back"
+                            app:kswThumbColor="@color/app_white"
+                            app:layout_constraintBottom_toBottomOf="@id/tv_dont_allow_desc"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/tv_dont_allow_title"
+                            app:layout_constraintTop_toTopOf="@id/tv_dont_allow_title"
+                            style="@style/switch_style" />
+
+                        <View
+
+                            android:layout_width="@dimen/width_0"
+                            android:layout_height="@dimen/dimen_1"
+                            android:layout_marginTop="@dimen/dimen_16_6"
+                            android:alpha="0.2"
+                            android:background="@color/text_font_color_grey"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_dont_allow_desc" />
+
+                    </android.support.constraint.ConstraintLayout>
+
+                    <include
+                        android:id="@+id/cl_tags"
+                        layout="@layout/item_room_info"
+                        android:layout_width="@dimen/width_0"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_14"
+                        app:description="@{@string/tags_desc}"
+
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/cl_global_campus"
+                        app:title="@{@string/tags_title}" />
+
+                    <!--global/campus-->
+                    <android.support.constraint.ConstraintLayout
+                        android:id="@+id/cl_global_campus"
+                        android:layout_width="@dimen/width_0"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_14"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/cl_dont_allow_members_to_post">
+
+                        <com.appster.turtle.widget.CustomTextView
+                            android:id="@+id/tv_global_campus_title"
+                            android:layout_width="@dimen/width_0"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/dimen_60"
+                            android:text="@string/global_campus_title"
+                            android:textColor="@color/textcolor_room_name"
+                            android:textSize="@dimen/textSize_15_4"
+                            app:customFont="@string/eina_01_semibold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.appster.turtle.widget.CustomTextView
+                            android:id="@+id/tv_global_campus_desc"
+                            android:layout_width="@dimen/width_0"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/dimen_60"
+                            android:text="@string/global_campus_desc"
+                            android:textColor="@color/text_font_color_grey"
+                            android:textSize="@dimen/textSize_15_4"
+                            app:customFont="@string/eina_01_regular"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_global_campus_title" />
+
+
+                        <com.kyleduo.switchbutton.SwitchButton
+                            android:id="@+id/switch_global_campus"
+                            app:kswTextExtra="@dimen/dimen_10"
+                            app:kswTextOff="@string/campus"
+                            app:kswTextOn="@string/global"
+                            app:kswThumbMargin="@dimen/dimen_3_8"
+                            app:kswThumbWidth="@dimen/image_w_initials"
+                            android:checked="true"
+                            app:kswBackDrawable="@drawable/sw_back"
+                            app:kswThumbColor="@color/app_white"
+                            app:layout_constraintBottom_toBottomOf="@id/tv_global_campus_desc"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/tv_global_campus_title"
+                            app:layout_constraintTop_toTopOf="@id/tv_global_campus_title"
+                            style="@style/switch_style" />
+
+                        <View
+
+                            android:layout_width="@dimen/width_0"
+                            android:layout_height="@dimen/margin_1"
+                            android:layout_marginTop="@dimen/dimen_16_6"
+                            android:alpha="0.2"
+                            android:background="@color/text_font_color_grey"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_global_campus_desc" />
+
+                    </android.support.constraint.ConstraintLayout>
+
+                    <com.appster.turtle.widget.CustomTextView
+                        android:id="@+id/tv_create_room"
+                        style="@style/RoundedTextView_New"
+                        android:layout_width="@dimen/width_0"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/padding_30"
+                        android:layout_marginTop="@dimen/dimen_39"
+                        android:enabled="true"
+                        android:gravity="center"
+                        android:paddingBottom="@dimen/margin_22"
+                        android:paddingTop="@dimen/margin_22"
+                        android:text="@string/create_room_small"
+                        app:customFont="@string/eina_01_semibold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/cl_tags" />
+
+                </android.support.constraint.ConstraintLayout>
+            </ScrollView>
+
+        </android.support.constraint.ConstraintLayout>
+
+    </com.flipboard.bottomsheet.BottomSheetLayout>
+</layout>

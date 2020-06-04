@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="userName"
+            type="java.lang.String" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_white">
+
+        <ImageView
+            android:id="@+id/bg_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="centerInside"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dimen_19_2"
+            android:src="@drawable/ic_app_icon"
+            tools:ignore="ContentDescription" />
+
+
+        <com.appster.turtle.widget.CustomTextView
+            android:id="@+id/tvMjr"
+            android:layout_width="wrap_content"
+            android:layout_height="122.9dp"
+            android:layout_above="@+id/tv_label"
+            android:layout_below="@+id/bg_img"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="@dimen/margin_25"
+            android:gravity="center|center_horizontal"
+            android:lineSpacingExtra="-4.9sp"
+            android:textColor="@color/black"
+           android:textSize="32sp"
+            app:customFont="@string/eina_01_bold" />
+        <!--android:text="@{@string/txt_cpf_mjr_1+userName+@string/txt_cpf_mjr_2}"-->
+
+
+        <com.appster.turtle.widget.CustomTextView
+            android:id="@+id/tv_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/tvCmpProf"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_horizontal"
+            android:lineSpacingExtra="5.8sp"
+            android:text="@string/txt_cpf_mnr"
+            android:textColor="@color/black"
+            android:layout_marginBottom="@dimen/dimen_19_2"
+            android:textSize="@dimen/textsize_17_3"
+            app:customFont="@string/eina_01_bold" />
+
+        <com.appster.turtle.widget.CustomTextView
+            android:id="@+id/tvCmpProf"
+            style="@style/CurveTextView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/curve_button_height"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/margin_40"
+            android:layout_marginEnd="@dimen/margin_30"
+            android:layout_marginStart="@dimen/margin_30"
+            android:background="@drawable/rounded_bg"
+            android:enabled="true"
+            android:paddingEnd="@dimen/margin_30"
+            android:paddingStart="@dimen/margin_30"
+            android:text="@string/txt_cyp"
+            android:textColor="@android:color/white"
+            app:customFont="@string/eina_01_semibold" />
+
+    </RelativeLayout>
+</layout>

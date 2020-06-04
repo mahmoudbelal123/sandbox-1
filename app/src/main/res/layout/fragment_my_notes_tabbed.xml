@@ -1,0 +1,52 @@
+<!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        tools:context="com.appster.turtle.ui.notes.MyNotesTabbedActivity$PlaceholderFragment">
+
+        <include
+            android:id="@+id/included_cl_search"
+            layout="@layout/search_layout_thin_footer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dimen_35"
+            android:visibility="gone"
+
+            android:layout_marginStart="@dimen/dimen_35"
+            android:layout_marginTop="@dimen/dimen_38" />
+
+        <com.appster.turtle.widget.CustomTextView
+            android:id="@+id/tv_search_placeholder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@id/included_cl_search"
+            android:layout_alignStart="@id/included_cl_search"
+            android:layout_below="@id/included_cl_search"
+            android:layout_marginTop="@dimen/margin_20"
+            android:lineSpacingExtra="@dimen/text_size_3_3"
+            android:text="@string/notes_search_placeholder"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/textSizeNormal"
+            android:visibility="gone"
+            app:customFont="@string/eina_01_regular" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_purchased_notes"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/margin_5"
+            android:layout_marginEnd="@dimen/margin_5"
+            android:layout_marginTop="@dimen/dimen_25" />
+
+    </RelativeLayout>
+</layout>

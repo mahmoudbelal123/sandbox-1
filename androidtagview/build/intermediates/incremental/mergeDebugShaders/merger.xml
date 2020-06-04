@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3">
+    <dataSet config="main">
+        <source
+            path="/Users/ankita/Documents/AppsterProjects/turtle-2/turtle-2-app-android/androidtagview/src/main/shaders" />
+    </dataSet>
+    <dataSet config="debug">
+        <source
+            path="/Users/ankita/Documents/AppsterProjects/turtle-2/turtle-2-app-android/androidtagview/src/debug/shaders" />
+    </dataSet>
+</merger>

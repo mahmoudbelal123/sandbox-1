@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/textcolor_room_name_90">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/rounded_bg_white_15"
+            android:layout_marginTop="@dimen/margin_40"
+            android:elevation="@dimen/textsize_12"
+            android:layout_marginStart="@dimen/margin_23"
+            android:layout_marginEnd="@dimen/margin_23"
+            android:layout_above="@+id/btn_done"
+            android:layout_marginBottom="@dimen/margin_41">
+
+            <com.appster.turtle.widget.CustomEditText
+                android:id="@+id/et_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:layout_marginStart="@dimen/dimen_24"
+                android:layout_marginEnd="@dimen/dimen_24"
+                android:layout_marginTop="@dimen/margin_23"
+                android:drawableStart="@drawable/ic_search_pink"
+                android:drawablePadding="@dimen/margin_14"
+
+                />
+
+            <View
+                android:id="@+id/line"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_1"
+                android:background="@color/bright_teal"
+                android:layout_below="@+id/et_search"
+                android:layout_marginStart="@dimen/dimen_24"
+                android:layout_marginEnd="@dimen/dimen_24"
+                android:layout_marginTop="@dimen/margin_10"/>
+
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_more_items"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/line"
+                android:layout_marginStart="@dimen/margin_20"
+                android:layout_marginEnd="@dimen/margin_10"
+                android:scrollbarThumbVertical="@drawable/scrollbar"
+                android:scrollbars="vertical"
+                android:scrollbarSize="@dimen/margin_5"
+                android:layout_marginTop="@dimen/margin_5"
+
+                >
+
+            </android.support.v7.widget.RecyclerView>
+
+            <com.appster.turtle.widget.CustomTextView
+                android:id="@+id/tv_no_result_found"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:customFont="@string/eina_01_regular"
+                android:text="@string/no_result_found"
+                android:textColor="@color/search_grey_tag"
+                android:textSize="@dimen/textsize_23"
+                android:gravity="center"
+                android:layout_centerInParent="true"
+                android:layout_centerHorizontal="true"
+                android:visibility="gone"
+
+                />
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/btn_done"
+            style="@style/button_orange_rounded_style"
+            android:layout_alignParentBottom="true"
+            android:text="@string/done"
+            app:customFont="@string/eina_01_regular"
+            android:layout_marginStart="@dimen/margin_31"
+            android:layout_marginEnd="@dimen/dimen_24"
+            android:layout_marginBottom="@dimen/margin_20"
+            android:textAllCaps="false"
+            android:textColor="@color/app_white"
+
+
+            />
+
+
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<layout>
+
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_white"
+        tools:context="com.appster.turtle.ui.settings.PrivacyPolicyActivity">
+
+        <include
+            android:id="@+id/header"
+            layout="@layout/layout_header"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="126.6dp"
+            android:scaleType="centerInside"
+            android:adjustViewBounds="true"
+            android:id="@+id/bg_img"
+            android:background="@color/app_white"
+            app:layout_constraintTop_toBottomOf="@id/header"
+            android:src="@drawable/ic_app_icon"
+            android:layout_marginBottom="25.9dp"
+            tools:ignore="ContentDescription" />
+
+        <WebView
+            android:id="@+id/wv_privacy_policy"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="@dimen/width_0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bg_img" />
+
+        <com.appster.turtle.widget.CustomProgressBar
+            android:id="@+id/progressBar1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

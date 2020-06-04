@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <com.flipboard.bottomsheet.BottomSheetLayout
+        android:id="@+id/bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/rl_root"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alpha="0.8"
+                android:background="@color/done_unselected_color" />
+
+            <FrameLayout
+                android:id="@+id/fl_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/rl_tab"
+                android:layout_marginTop="@dimen/pad_70" />
+
+            <RelativeLayout
+                android:id="@+id/rl_tab"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_50"
+                android:layout_alignParentBottom="true"
+                android:background="@color/app_white"
+                android:paddingEnd="@dimen/dimen_12"
+                android:paddingStart="@dimen/margin_17">
+
+                <RadioGroup
+                    android:id="@+id/radio_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_toStartOf="@+id/ib_post"
+                    android:checkedButton="@+id/rb_text"
+                    android:orientation="horizontal">
+
+                    <android.support.v7.widget.AppCompatRadioButton
+                        android:id="@+id/rb_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="fill|center"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:button="@drawable/selector_post_text"
+                        android:gravity="center" />
+
+                    <android.support.v7.widget.AppCompatRadioButton
+                        android:id="@+id/rb_poll"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="fill"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:button="@drawable/selector_post_poll"
+                        android:gravity="center" />
+
+                    <android.support.v7.widget.AppCompatRadioButton
+                        android:id="@+id/rb_camera"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="fill"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:button="@drawable/selector_post_camera"
+                        android:gravity="center" />
+
+                    <android.support.v7.widget.AppCompatRadioButton
+                        android:id="@+id/rb_meetUp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="fill"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:button="@drawable/selector_post_meetup"
+                        android:gravity="center" />
+                </RadioGroup>
+
+                <ImageButton
+                    android:id="@+id/ib_post"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginBottom="@dimen/margin_5"
+                    android:layout_marginTop="@dimen/margin_5"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/post_active" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </com.flipboard.bottomsheet.BottomSheetLayout>
+</layout>

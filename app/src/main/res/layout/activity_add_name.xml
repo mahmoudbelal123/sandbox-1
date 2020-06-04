@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        tools:context="com.appster.turtle.ui.rooms.EditRoomActivity">
+
+
+        <include
+            android:id="@+id/cl_header"
+            layout="@layout/layout_header_text_bg_light"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <com.appster.turtle.widget.CustomEditText
+            style="@style/noise_edittxt_style_signup"
+            android:id="@+id/tv_name"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dimen_30"
+            android:layout_marginStart="@dimen/dimen_30"
+            android:layout_marginTop="@dimen/dimen_34_6"
+            android:background="@null"
+            android:gravity="start"
+            android:inputType="textCapSentences"
+            android:lineSpacingExtra="@dimen/text_5"
+            android:textCursorDrawable="@drawable/et_indiciator_auth_black"
+            android:textColor="#000000"
+            android:textSize="@dimen/textSize_19"
+            app:customFont="@string/bruta_normal_glb_light"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cl_header"
+            tools:text="Fantasy Soccer" />
+
+        <View
+            android:id="@+id/v_search_footer"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="@dimen/dimen_1"
+            android:layout_marginEnd="@dimen/margin_30"
+            android:layout_marginStart="@dimen/margin_30"
+            android:layout_marginTop="@dimen/dimen_10_6"
+            android:background="#abb1b8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_name" />
+
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

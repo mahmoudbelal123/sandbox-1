@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@android:color/white" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="bottom"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dimen_1"
+            android:background="@android:color/darker_gray"
+            tools:ignore="ContentDescription" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.appster.turtle.widget.CustomButton
+                android:id="@+id/skip"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_gravity="start"
+                android:layout_weight="0.2"
+                android:paddingEnd="@dimen/width_0"
+                android:paddingStart="@dimen/margin_16"
+                android:text="@string/skip_button"
+                android:textColor="@android:color/white"
+                app:customBackground="@drawable/intro_button_selector"
+                app:customFont="Roboto-Medium.ttf" />
+
+            <FrameLayout
+                android:id="@+id/indicator_container"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center"
+                android:layout_weight="0.8" />
+
+            <ImageButton
+                android:id="@+id/next"
+                style="?attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center"
+                android:layout_weight="0.2"
+                android:background="@drawable/intro_button_selector"
+                android:src="@drawable/ic_navigate_next_white_24dp"
+                tools:ignore="ContentDescription" />
+
+            <com.appster.turtle.widget.CustomButton
+                android:id="@+id/done"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_gravity="start"
+                android:layout_weight="0.2"
+                android:paddingEnd="@dimen/margin_16"
+                android:paddingStart="@dimen/width_0"
+                android:text="@string/done_button"
+                android:textColor="@android:color/white"
+                android:visibility="gone"
+                app:customBackground="@drawable/intro_button_selector"
+                app:customFont="Roboto-Medium.ttf" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

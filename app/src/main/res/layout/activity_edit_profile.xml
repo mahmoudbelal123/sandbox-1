@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="user"
+            type="com.appster.turtle.model.UserProfileData" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.flipboard.bottomsheet.BottomSheetLayout
+            android:id="@+id/bottom_sheet"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context="com.appster.turtle.ui.rooms.MembersActivity">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/white"
+                tools:context="com.appster.turtle.ui.rooms.EditRoomActivity">
+
+                <include
+                    android:id="@+id/cl_header"
+                    layout="@layout/layout_header_text_bg_light"
+                    android:layout_width="@dimen/width_0"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ScrollView
+                    android:layout_width="@dimen/width_0"
+                    android:layout_height="@dimen/width_0"
+                    android:scrollbars="none"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cl_header">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingBottom="@dimen/margin_16"
+                        android:paddingEnd="@dimen/margin_22"
+                        android:paddingStart="@dimen/margin_22"
+                        android:paddingTop="@dimen/dimen_38">
+
+                        <!--avatar-->
+                        <RelativeLayout
+                            android:id="@+id/coordinator_avatar"
+                            android:layout_width="@dimen/margin_130"
+                            android:layout_height="@dimen/margin_105_6"
+                            android:layout_gravity="center_horizontal">
+
+                            <include
+                                android:id="@+id/cl_included_avatar"
+                                layout="@layout/layout_avatar"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:visibility="invisible" />
+
+                            <com.mikhaellopez.circularimageview.CircularImageView
+                                android:id="@+id/iv_room_image"
+
+                                android:layout_width="@dimen/margin_105_6"
+                                android:layout_height="@dimen/margin_105_6"
+
+                                android:contentDescription="@null"
+                                android:onClick="showImageSelector"
+                                android:layout_centerInParent="true"
+                                android:src="@drawable/group"
+                                app:layout_anchor="@id/cl_included_avatar"
+                                app:layout_anchorGravity="top" />
+
+                            <ImageView
+                                android:id="@+id/iv_room_image_initials"
+
+                                android:layout_width="@dimen/margin_63"
+                                android:layout_height="@dimen/margin_63"
+
+                                android:contentDescription="@null"
+                                android:onClick="showImageSelector"
+                                android:layout_centerInParent="true"
+                                android:src="@drawable/group"
+                                app:layout_anchor="@id/cl_included_avatar"
+                                app:layout_anchorGravity="top" />
+
+                            <ImageView
+                                android:id="@+id/iv_edit_room_image"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:onClick="showImageSelector"
+                                android:src="@drawable/ic_edit_image"
+                                android:layout_alignEnd="@id/iv_room_image"
+                                app:layout_anchor="@id/cl_included_avatar"
+                                app:layout_anchorGravity="top|end"
+                                android:contentDescription="@string/image_content" />
+
+                        </RelativeLayout>
+
+                        <com.appster.turtle.widget.CustomTextView
+                            android:id="@+id/txt_error"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/dimen_10"
+                            android:layout_marginTop="@dimen/margin_10"
+                            android:drawablePadding="@dimen/dimen_10"
+                            android:drawableStart="@drawable/ic_error_img"
+                            android:paddingEnd="@dimen/dimen_23"
+                            android:textColor="@color/red_error"
+                            android:visibility="invisible" />
+
+
+                        <com.appster.turtle.widget.CustomTextView
+                            style="@style/edit_profile_head"
+                            android:text="@string/first_name"
+                            android:id="@+id/tv_f_name"
+                            android:layout_marginTop="@dimen/margin_10"
+
+                            app:customFont="@string/eina_01_semibold" />
+
+                        <com.appster.turtle.widget.CustomEditText
+                            android:id="@+id/et_f_name"
+                            style="@style/noise_edittxt_style_dark"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_8"
+                            android:textSize="@dimen/textsize_17_3"
+                            android:maxLength="30"
+                            android:hint="@string/txt_fn_hnt"
+
+                            android:lines="1"
+                            app:emojiFilter="@{true}"
+                            app:size="@{30}"
+                            android:singleLine="true"
+                            app:customFont="@string/eina_01_regular" />
+
+                        <com.appster.turtle.widget.CustomTextView
+                            style="@style/edit_profile_head"
+                            android:text="@string/last_name"
+                            android:id="@+id/tv_l_name"
+
+                            app:customFont="@string/eina_01_semibold" />
+
+                        <com.appster.turtle.widget.CustomEditText
+                            android:id="@+id/et_l_name"
+                            style="@style/noise_edittxt_style_dark"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_8"
+                            android:textSize="@dimen/textsize_17_3"
+                            android:maxLength="20"
+                            android:hint="@string/txt_ln_hnt"
+
+                            android:lines="1"
+                            android:singleLine="true"
+                            app:emojiFilter="@{true}"
+                            app:size="@{20}"
+                            app:customFont="@string/eina_01_regular" />
+
+
+                        <com.appster.turtle.widget.CustomTextView
+                            style="@style/edit_profile_head"
+                            android:text="@string/username_small"
+                            android:id="@+id/tv_username"
+
+                            app:customFont="@string/eina_01_semibold" />
+
+                        <com.appster.turtle.widget.CustomEditText
+                            android:id="@+id/et_username"
+                            style="@style/noise_edittxt_style_dark"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_4"
+                            android:text='@{"@"+user.userModel.userName}'
+                            android:textSize="@dimen/textsize_17_3"
+                            android:maxLines="1"
+                            app:onlyEmojiFilter='@{true}'
+                            android:hint="@string/txt_un_hnt"
+
+                            app:size="@{31}"
+                            app:isWhiteSpace='@{true}'
+                            app:customFont="@string/eina_01_regular" />
+
+                        <com.appster.turtle.widget.CustomTextView
+                            style="@style/edit_profile_head"
+                            android:text="@string/profile_visibility"
+                            android:id="@+id/tv_profile_visibility"
+
+                            app:customFont="@string/eina_01_semibold" />
+
+                        <com.appster.turtle.widget.CustomTextView
+                            android:id="@+id/et_profile_visibility"
+                            style="@style/noise_edittxt_style_dark"
+                            android:layout_width="match_parent"
+                            android:onClick="onEditTextClick"
+
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_8"
+                            android:text='@{user.userModel.publicProfile? "Global":"Campus"}'
+                            android:textSize="@dimen/textsize_17_3"
+                            app:customFont="@string/eina_01_regular" />
+
+                        <com.appster.turtle.widget.CustomTextView
+
+                            style="@style/edit_profile_head"
+                            android:text="@string/hometown"
+                            android:id="@+id/tv_hometown"
+
+                            app:customFont="@string/eina_01_semibold" />
+
+                        <com.appster.turtle.widget.CustomTextView
+                            android:id="@+id/et_hometown"
+                            android:onClick="onEditTextClick"
+
+                            android:hint="@string/select_a_hometown"
+
+                            style="@style/noise_edittxt_style_dark"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_8"
+                            android:maxLines="1"
+                            android:ellipsize="end"
+                            android:text="@{user.userModel.homeTown}"
+                            android:textSize="@dimen/textsize_17_3"
+                            app:customFont="@string/eina_01_regular" />
+
+
+                        <com.appster.turtle.widget.CustomTextView
+
+                            style="@style/edit_profile_head"
+                            android:text="@string/major"
+                            android:id="@+id/tv_major"
+
+                            app:customFont="@string/eina_01_semibold" />
+
+                        <com.appster.turtle.widget.CustomTextView
+                            android:id="@+id/et_major"
+                            android:onClick="onEditTextClick"
+                            android:text="@{user.userModel.majorStr}"
+                            android:hint="@string/select_your_major"
+
+                            style="@style/noise_edittxt_style_dark"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_8"
+                            android:maxLines="1"
+                            android:ellipsize="end"
+                            android:textSize="@dimen/textsize_17_3"
+                            app:customFont="@string/eina_01_regular" />
+
+
+                        <com.appster.turtle.widget.CustomTextView
+
+                            style="@style/edit_profile_head"
+                            android:text="@string/minor"
+                            android:id="@+id/tv_minor"
+
+                            app:customFont="@string/eina_01_semibold" />
+
+                        <com.appster.turtle.widget.CustomTextView
+                            android:id="@+id/et_minor"
+                            android:onClick="onEditTextClick"
+                            android:text="@{user.userModel.minorStr}"
+                            android:hint="@string/select_your_minor"
+
+                            style="@style/noise_edittxt_style_dark"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_8"
+                            android:maxLines="1"
+                            android:ellipsize="end"
+                            android:textSize="@dimen/textsize_17_3"
+                            app:customFont="@string/eina_01_regular" />
+
+
+                        <com.appster.turtle.widget.CustomTextView
+
+                            style="@style/edit_profile_head"
+                            android:text="@string/Skills"
+                            android:id="@+id/tv_skill"
+
+                            app:customFont="@string/eina_01_semibold" />
+
+                        <com.appster.turtle.widget.CustomTextView
+                            android:id="@+id/et_skill"
+                            android:onClick="onEditTextClick"
+
+                            style="@style/noise_edittxt_style_dark"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_8"
+                            android:maxLines="1"
+                            android:hint="@string/add_skills"
+
+                            android:ellipsize="end"
+                            android:drawableEnd="@drawable/ic_next_half_arrow"
+                            android:text="@{user.userModel.skillStr}"
+                            android:textSize="@dimen/textsize_17_3"
+                            app:customFont="@string/eina_01_regular" />
+
+
+                        <com.appster.turtle.widget.CustomTextView
+
+                            style="@style/edit_profile_head"
+                            android:text="@string/interests"
+                            android:id="@+id/tv_interest"
+
+                            app:customFont="@string/eina_01_semibold" />
+
+                        <com.appster.turtle.widget.CustomTextView
+                            android:id="@+id/et_interest"
+                            android:onClick="onEditTextClick"
+
+                            style="@style/noise_edittxt_style_dark"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_8"
+                            android:maxLines="1"
+                            android:hint="@string/add_interests"
+
+                            android:ellipsize="end"
+                            android:drawableEnd="@drawable/ic_next_half_arrow"
+                            android:text="@{user.userModel.interestStr}"
+                            android:textSize="@dimen/textsize_17_3"
+                            app:customFont="@string/eina_01_regular" />
+
+                        <com.appster.turtle.widget.CustomTextView
+
+                            style="@style/edit_profile_head"
+                            android:text="@string/greek_life"
+                            android:id="@+id/tv_greek_life"
+
+                            app:customFont="@string/eina_01_semibold" />
+
+                        <com.appster.turtle.widget.CustomTextView
+                            android:id="@+id/et_greek_life"
+                            android:onClick="onEditTextClick"
+
+                            style="@style/noise_edittxt_style_dark"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_8"
+                            android:hint="@string/select_a_greek_life"
+
+                            android:maxLines="1"
+                            android:ellipsize="end"
+                            android:text="@{user.userModel.greekLivesStr}"
+                            android:textSize="@dimen/textsize_17_3"
+                            app:customFont="@string/eina_01_regular" />
+
+
+                        <com.appster.turtle.widget.CustomTextView
+
+                            style="@style/edit_profile_head"
+                            android:text="@string/graduation_year"
+                            android:id="@+id/tv_academic_year"
+
+                            app:customFont="@string/eina_01_semibold" />
+
+                        <com.appster.turtle.widget.CustomTextView
+                            android:id="@+id/et_academic_year"
+                            android:onClick="onEditTextClick"
+
+                            style="@style/noise_edittxt_style_dark"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_8"
+                            android:hint="@string/select_year"
+                            android:maxLines="1"
+                            android:ellipsize="end"
+                            android:text="@{user.userModel.academicYearStr}"
+                            android:textSize="@dimen/textsize_17_3"
+                            app:customFont="@string/eina_01_regular" />
+
+                        <com.appster.turtle.widget.CustomTextView
+                            android:id="@+id/tv_dorm"
+
+                            style="@style/edit_profile_head"
+                            android:text="@string/dorm"
+
+                            app:customFont="@string/eina_01_semibold" />
+
+                        <com.appster.turtle.widget.CustomTextView
+                            android:id="@+id/et_dorm"
+                            android:onClick="onEditTextClick"
+
+                            style="@style/noise_edittxt_style_dark"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_8"
+                            android:maxLines="1"
+                            android:hint="@string/select_dorm"
+
+                            android:ellipsize="end"
+                            android:text="@{user.userModel.dormitoryStr}"
+                            android:textSize="@dimen/textsize_17_3"
+                            app:customFont="@string/eina_01_regular" />
+
+                        <com.appster.turtle.widget.CustomTextView
+
+                            style="@style/edit_profile_head"
+                            android:text="@string/bio_small"
+                            android:id="@+id/tv_bio"
+
+                            app:customFont="@string/eina_01_semibold" />
+
+                        <com.appster.turtle.widget.CustomEditText
+                            android:id="@+id/et_bio"
+                            style="@style/noise_edittxt_style_dark"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_8"
+                            android:lineSpacingExtra="@dimen/text_size_6"
+                            android:maxLength="260"
+                            android:hint="@string/bio_hint"
+
+                            android:maxLines="4"
+                            android:text="@{user.userModel.bio}"
+                            android:textSize="@dimen/textsize_17_3"
+                            app:customFont="@string/eina_01_regular" />
+
+
+                    </LinearLayout>
+                </ScrollView>
+
+
+            </android.support.constraint.ConstraintLayout>
+        </com.flipboard.bottomsheet.BottomSheetLayout>
+
+        <FrameLayout
+            android:id="@+id/flContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </RelativeLayout>
+</layout>

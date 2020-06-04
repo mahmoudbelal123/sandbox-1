@@ -1,0 +1,185 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:id="@+id/rl_transparent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F2212121">
+
+        <com.appster.turtle.widget.CustomTextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/textsize_13_4"
+            android:textColor="#ffffff"
+            android:alpha="0.4"
+            tools:text="Greek Life"
+            app:customFont="@string/eina_01_semibold"
+            android:layout_marginStart="@dimen/margin_23"
+            android:layout_marginTop="@dimen/dp_57_6"
+
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/tvDone"
+            android:layout_marginBottom="@dimen/margin_34"
+            android:layout_marginEnd="@dimen/margin_23"
+            android:layout_marginStart="@dimen/margin_23"
+            android:layout_marginTop="@dimen/dp_5_6"
+            android:layout_below="@id/tv_title"
+            android:background="@drawable/selector_bg"
+            android:clickable="true"
+            android:focusable="true"
+
+
+            tools:context="com.appster.turtle.ui.signUp.SelectorFragment">
+
+            <LinearLayout
+                android:id="@+id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_alignParentTop="true">
+
+                <com.appster.turtle.widget.CustomTextView
+                    android:id="@+id/tv_frat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dimen_50"
+                    android:layout_weight="1"
+                    android:gravity="center"
+
+                    android:text="@string/fraternities"
+                    android:textColor="#090909"
+                    android:textSize="@dimen/textsize_17_3" />
+
+                <com.appster.turtle.widget.CustomTextView
+                    android:id="@+id/tv_sor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dimen_50"
+                    android:layout_weight="1"
+                    android:scrollbars="vertical"
+                    android:background="@drawable/bg_tab_right_unselected"
+                    android:gravity="center"
+                    android:text="@string/sororities"
+                    android:textColor="#090909"
+                    android:textSize="@dimen/textsize_17_3" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_frat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tabs"
+                android:paddingBottom="@dimen/dimen_23"
+                android:paddingEnd="@dimen/dimen_23"
+                android:paddingStart="@dimen/dimen_23"
+                android:paddingTop="@dimen/dimen_10">
+
+                <com.appster.turtle.widget.CustomEditText
+                    android:id="@+id/et_frat_search"
+                    style="@style/AuthEditText_Teel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dimen_6"
+                    android:drawablePadding="@dimen/margin_10"
+                    android:drawableStart="@drawable/ic_orange_search"
+                    android:gravity="top"
+                    android:hint="@string/search_fraternities"
+                    android:imeOptions="actionSearch"
+                    android:padding="@dimen/height_0"
+                    android:textSize="@dimen/textSizeLarge"
+                    app:customFont="@string/eina_01_regular" />
+
+                <View
+                    android:id="@+id/vFrat"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin_1"
+                    android:layout_below="@id/et_frat_search"
+                    android:background="@color/colorTeelAlpha" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_frat"
+                    android:scrollbarThumbVertical="@drawable/scrollbar"
+                    android:scrollbars="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/vFrat"
+                    android:layout_marginTop="@dimen/margin_23" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/rl_sor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tabs"
+                android:paddingBottom="@dimen/dimen_23"
+                android:paddingEnd="@dimen/dimen_23"
+                android:paddingStart="@dimen/dimen_23"
+                android:paddingTop="@dimen/dimen_10"
+                android:visibility="invisible">
+
+                <com.appster.turtle.widget.CustomEditText
+                    android:id="@+id/et_sor_search"
+                    style="@style/AuthEditText_Teel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dimen_6"
+                    android:drawablePadding="@dimen/margin_10"
+                    android:drawableStart="@drawable/ic_orange_search"
+                    android:gravity="top"
+                    android:hint="@string/search_sororities"
+                    android:imeOptions="actionSearch"
+                    android:padding="@dimen/height_0"
+                    android:textSize="@dimen/textSizeLarge"
+                    app:customFont="@string/eina_01_regular" />
+
+                <View
+                    android:id="@+id/vSor"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin_1"
+                    android:layout_below="@id/et_sor_search"
+                    android:background="@color/colorTeelAlpha" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_sor"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/vSor"
+                    android:scrollbarThumbVertical="@drawable/scrollbar"
+                    android:scrollbars="vertical"
+                    android:layout_marginTop="@dimen/margin_23" />
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+        <com.appster.turtle.widget.CustomTextView
+            android:id="@+id/tvDone"
+            style="@style/CurveTextView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/curve_button_height"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/margin_30"
+            android:layout_marginEnd="@dimen/margin_30"
+            android:layout_marginStart="@dimen/margin_30"
+            android:background="@drawable/btn_unselected_bg"
+            android:clickable="true"
+            android:focusable="true"
+
+            android:enabled="true"
+            android:text="@string/done"
+            android:textColor="@color/done_unselected_color"
+            app:customFont="@string/eina_01_semibold" />
+
+
+    </RelativeLayout>
+
+</layout>

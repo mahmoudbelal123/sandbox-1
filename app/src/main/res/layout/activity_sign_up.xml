@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.appster.turtle.viewmodel.SignUpViewModel" />
+    </data>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/rootView"
+        android:background="@color/app_white"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/header"
+            layout="@layout/layout_header_text_bg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/header"
+            android:fillViewport="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.appster.turtle.widget.CustomTextView
+                    android:id="@+id/signup_head"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_xlarge"
+                    android:paddingEnd="@dimen/dimen_23"
+                    android:paddingStart="@dimen/dimen_23"
+                    android:text="@string/txt_signUp_wlc"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/textSizeExtLarge"
+                    app:customFont="@string/eina_01_bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:layout_editor_absoluteX="" />
+
+                <com.appster.turtle.widget.CustomTextView
+                    android:id="@+id/txt_error"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/signup_head"
+                    android:layout_marginTop="@dimen/margin_27"
+                    android:layout_marginBottom="@dimen/dimen_11_3"
+                    android:drawablePadding="@dimen/dimen_10"
+                    android:drawableStart="@drawable/ic_error_img"
+                    android:paddingEnd="@dimen/dimen_23"
+                    android:paddingStart="@dimen/dimen_23"
+                    android:textColor="@color/red_error"
+                    android:visibility="invisible" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt_error">
+
+                    <RelativeLayout
+                        android:id="@+id/rlContent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingEnd="@dimen/dimen_23"
+                        android:layout_marginBottom="@dimen/default_padding_20"
+                        android:paddingStart="@dimen/dimen_23">
+
+                        <com.appster.turtle.widget.CustomTextView
+                            android:id="@+id/tvFirstNameHeader"
+                            style="@style/noise_edit_header_style"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/first_name"
+                            android:textSize="@dimen/edit_text_sub"
+                            app:customFont="@string/eina_01_semibold" />
+
+                        <com.appster.turtle.widget.CustomEditText
+                            android:id="@+id/etFstName"
+                            style="@style/noise_edittxt_style_signup"
+                            android:layout_width="match_parent"
+                            android:layout_alignParentStart="true"
+                            android:layout_below="@+id/tvFirstNameHeader"
+                            android:layout_marginTop="7dp"
+                            android:hint="@string/txt_fn_hnt"
+                            android:imeOptions="actionNext"
+                            android:inputType="textCapWords"
+                            android:maxLength="30"
+                            android:text="@={viewModel.signUp.firstName}"
+                            android:textSize="@dimen/textSizeLarge"
+                            app:customFont="@string/eina_01_regular"
+                            app:emojiFilter='@{true}'
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvFirstNameHeader"
+                            app:size="@{30}"
+                            app:textChangedListener="@{viewModel.firstNameWatcher}" />
+
+
+                        <!--<ImageView-->
+                        <!--android:id="@+id/ivFstName"-->
+                        <!--android:layout_width="@dimen/edit_text_tick"-->
+                        <!--android:layout_height="@dimen/edit_text_tick"-->
+                        <!--android:layout_alignParentEnd="true"-->
+                        <!--android:layout_below="@+id/tvFirstNameHeader"-->
+                        <!--android:layout_marginBottom="@dimen/dimen_3_4"-->
+                        <!--android:src="@drawable/ic_right"-->
+                        <!--android:visibility="invisible" />-->
+
+
+                        <com.appster.turtle.widget.CustomTextView
+                            android:id="@+id/tvLastNameHeader"
+                            style="@style/noise_edit_header_style"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/etFstName"
+                            android:layout_marginTop="@dimen/margin_18"
+                            android:text="@string/last_name"
+                            android:textSize="@dimen/edit_text_sub"
+                            app:customFont="@string/eina_01_semibold"
+                            app:layout_constraintTop_toBottomOf="@id/etFstName" />
+
+
+                        <com.appster.turtle.widget.CustomEditText
+                            android:id="@+id/etLstName"
+                            style="@style/noise_edittxt_style_signup"
+                            android:layout_width="match_parent"
+                            android:layout_below="@+id/tvLastNameHeader"
+                            android:maxLength="20"
+                            android:hint="@string/txt_ln_hnt"
+                            android:imeOptions="actionNext"
+                            android:inputType="textCapWords"
+                            android:lineSpacingExtra="@dimen/text_size_6"
+                            app:size="@{20}"
+
+                            android:text="@={viewModel.signUp.lastName}"
+                            android:textSize="@dimen/textSizeLarge"
+                            app:customFont="@string/eina_01_regular"
+                            app:emojiFilter='@{true}'
+                            app:textChangedListener="@{viewModel.lastNameWatcher}" />
+
+
+                        <!--<ImageView-->
+                        <!--android:id="@+id/ivLstName"-->
+                        <!--android:layout_width="@dimen/edit_text_tick"-->
+                        <!--android:layout_height="@dimen/edit_text_tick"-->
+                        <!--android:layout_alignParentEnd="true"-->
+                        <!--android:layout_below="@+id/tvLastNameHeader"-->
+                        <!--android:layout_marginBottom="@dimen/dimen_3_4"-->
+                        <!--android:src="@drawable/ic_right"-->
+                        <!--android:visibility="invisible" />-->
+
+                        <!--<ImageView-->
+                        <!--android:id="@+id/ivEmail"-->
+                        <!--android:layout_width="@dimen/edit_text_tick"-->
+                        <!--android:layout_height="@dimen/edit_text_tick"-->
+                        <!--android:layout_alignParentEnd="true"-->
+                        <!--android:layout_below="@+id/tvEmailHeader"-->
+                        <!--android:layout_marginBottom="@dimen/dimen_3_4"-->
+                        <!--android:src="@drawable/ic_right"-->
+                        <!--android:visibility="invisible" />-->
+
+
+                        <com.appster.turtle.widget.CustomTextView
+                            android:id="@+id/tvEmailHeader"
+                            style="@style/noise_edit_header_style"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/etLstName"
+                            android:layout_marginTop="@dimen/margin_18"
+                            android:text="@string/email"
+                            android:textSize="@dimen/edit_text_sub"
+                            app:customFont="@string/eina_01_semibold" />
+
+                        <com.appster.turtle.widget.CustomEditText
+                            android:id="@+id/et_email"
+                            style="@style/noise_edittxt_style_signup"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tvEmailHeader"
+                            android:digits="@string/email_digits"
+                            android:hint="@string/txt_ea_hnt"
+                            android:imeOptions="actionDone"
+                            android:inputType="textEmailAddress"
+                            android:lineSpacingExtra="@dimen/text_size_6"
+                            android:text="@={viewModel.signUp.email}"
+                            android:textSize="@dimen/textSizeLarge"
+                            app:customFont="@string/eina_01_regular"
+                            app:textChangedListener="@{viewModel.emailWatcher}" />
+
+                        <com.appster.turtle.widget.CustomTextView
+                            android:id="@+id/tv_unviversity_name"
+                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:layout_centerHorizontal="true"
+                            android:layout_below="@+id/et_email"
+                            android:layout_marginTop="@dimen/dimen_19"
+                            android:gravity="center"
+                            android:textSize="@dimen/textsize_13_4"
+                            android:textColor="@color/black"
+                            app:customFont="@string/eina_01_regular" />
+                    </RelativeLayout>
+
+
+                    <com.appster.turtle.widget.CustomTextView
+                        android:id="@+id/tvTerms"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/black"
+                        android:gravity="center"
+                        android:maxHeight="@dimen/margin_69"
+                        android:paddingBottom="@dimen/margin_16"
+                        android:paddingEnd="@dimen/margin_23"
+                        android:paddingStart="@dimen/margin_23"
+                        android:paddingTop="@dimen/margin_14"
+                        android:text="@string/txt_signUp_tnc"
+                        android:textColor="@color/app_white"
+                        android:textSize="@dimen/textsize_12"
+                        app:customFont="@string/eina_01_regular" />
+                </RelativeLayout>
+
+            </RelativeLayout>
+        </ScrollView>
+
+
+    </RelativeLayout>
+</layout>

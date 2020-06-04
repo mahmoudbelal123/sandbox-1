@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.appster.turtle.viewmodel.RoomViewModel" />
+
+    </data>
+
+    <com.flipboard.bottomsheet.BottomSheetLayout
+        android:id="@+id/bottom_sheet_members"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.appster.turtle.ui.rooms.MeetupsActivity">
+
+        <RelativeLayout
+            android:id="@+id/rl_room"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:animateLayoutChanges="true"
+            android:background="@android:color/white"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/header"
+                layout="@layout/layout_header_room" />
+
+            <!--<com.appster.turtle.widget.CustomTextView-->
+            <!--android:id="@+id/tv_room_info"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@id/header"-->
+            <!--android:layout_marginEnd="@dimen/margin_17"-->
+            <!--android:layout_marginStart="@dimen/margin_17"-->
+            <!--android:layout_marginTop="@dimen/margin_18"-->
+            <!--android:textSize="@dimen/textSizeMed"-->
+            <!--app:customFont="@string/bruta_normal_glb_regular" />-->
+
+            <android.support.v4.widget.SwipeRefreshLayout
+                android:id="@+id/swipeRoom"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@id/tv_remaining_characters"
+                android:layout_below="@id/header"
+                android:layout_marginTop="@dimen/margin_10"
+                android:paddingEnd="@dimen/default_padding"
+                android:paddingStart="@dimen/default_padding"
+                app:isRefreshing="@{viewModel.refreshing}"
+                app:refreshListener="@{viewModel.meetupsRefreshListener}">
+                <!--android:layout_below="@id/tv_room_info"-->
+
+                <im.ene.toro.widget.Container
+                    android:id="@+id/rv_room_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="@dimen/default_padding"
+                    android:paddingStart="@dimen/default_padding"
+                    app:adapter="@{viewModel.adapter}"
+                    app:layoutManager="@{viewModel.layoutManager}"
+                    app:scrollListener="@{viewModel.meetupsScrollListener}" />
+
+            </android.support.v4.widget.SwipeRefreshLayout>
+        </RelativeLayout>
+    </com.flipboard.bottomsheet.BottomSheetLayout>
+</layout>

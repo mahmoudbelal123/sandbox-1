@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"
+        tools:context="com.appster.turtle.ui.media.CropperActivity">
+
+        <com.appster.turtle.widget.CustomTextView
+            android:id="@+id/crop_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/margin_19_5"
+            android:letterSpacing="-0.02"
+            android:padding="@dimen/dimen_4"
+            android:text="@string/crop_resize"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/textSizeNormal"
+            app:customFont="@string/eina_01_semibold" />
+
+        <com.appster.turtle.widget.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/crop_header"
+            android:layout_marginStart="@dimen/dp_30_6"
+            android:alpha="0.5"
+            android:onClick="onBackClicked"
+            android:padding="@dimen/dimen_4"
+            android:text="@string/cancel"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/textSizeNormal"
+            app:customFont="@string/eina_01_regular"
+
+            />
+
+        <com.appster.turtle.widget.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@id/crop_header"
+            android:layout_marginEnd="@dimen/dp_30_6"
+            android:onClick="onDoneClicked"
+            android:padding="@dimen/dimen_4"
+            android:text="@string/done"
+            android:textColor="@color/bright_teal"
+            android:textSize="@dimen/textSizeNormal"
+            app:customFont="@string/eina_01_regular"
+
+            tools:ignore="RelativeOverlap" />
+
+        <com.steelkiwi.cropiwa.CropIwaView
+            android:id="@+id/crop_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/crop_header"
+            android:layout_centerInParent="true"
+            android:layout_marginEnd="@dimen/margin_21"
+            android:layout_marginStart="@dimen/margin_21"
+            app:ci_aspect_ratio_h="1"
+            app:ci_aspect_ratio_w="1"
+            app:ci_border_color="@android:color/white"
+            app:ci_corner_color="@android:color/white"
+            app:ci_crop_shape="rectangle"
+            app:ci_draw_grid="false"
+            app:ci_dynamic_aspect_ratio="false"
+            app:ci_min_crop_height="@dimen/margin_5"
+            app:ci_min_crop_width="@dimen/margin_5"
+            app:ci_border_width="@dimen/dp_1_9"
+            app:ci_scale_enabled="true"
+            app:ci_translation_enabled="true" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="@dimen/margin_21"
+            android:layout_below="@+id/crop_header"
+            android:layout_marginTop="@dimen/default_padding_20"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="@dimen/margin_21"
+            tools:ignore="ContentDescription" />
+
+
+    </RelativeLayout>
+</layout>

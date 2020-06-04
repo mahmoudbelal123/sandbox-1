@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.appster.turtle.ui.rooms.HomeActivity">
+
+    <data>
+
+
+        <variable
+            name="viewModel"
+            type="com.appster.turtle.viewmodel.HomeViewModel" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:focusableInTouchMode="true">
+
+
+        <ImageView
+            android:id="@+id/iv_babble_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_36"
+            android:contentDescription="@null"
+            android:src="@drawable/angled"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@null"
+            android:onClick="searchIconClicked"
+            android:paddingEnd="@dimen/width_0"
+            android:paddingStart="@dimen/dimen_34_6"
+            android:paddingTop="@dimen/dimen_33_6"
+            android:src="@drawable/search_black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@null"
+            android:onClick="toggleMenu"
+            android:paddingEnd="@dimen/dimen_34_6"
+            android:paddingStart="@dimen/width_0"
+            android:paddingTop="@dimen/dimen_33_6"
+            android:src="@drawable/ic_menu_hamburger"
+            app:layout_constraintBottom_toBottomOf="@id/iv_search"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/iv_search" />
+
+        <com.appster.turtle.widget.CustomEditText
+            android:id="@+id/et_search"
+            style="@style/noise_edittxt_style_signup"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dimen_19_2"
+            android:layout_marginStart="@dimen/dimen_19_2"
+            android:layout_marginTop="@dimen/dimen_33_6"
+            android:focusable="false"
+            android:hint="@string/search"
+            android:maxLines="1"
+            android:onClick="searchEditTextClicked"
+            app:layout_constraintBottom_toBottomOf="@id/iv_search"
+            app:layout_constraintEnd_toStartOf="@id/iv_menu"
+            app:layout_constraintStart_toEndOf="@id/iv_search"
+            app:layout_constraintTop_toTopOf="@id/iv_search" />
+
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/swipeRoom"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="@dimen/width_0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_search">
+
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_rooms"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                android:clipToPadding="false"
+                android:paddingTop="@dimen/margin_27.4" />
+            <!--app:adapter="@{viewModel.adapter}"-->
+            <!--app:itemDecoration="@{viewModel.itemDecoration}"-->
+            <!--app:layoutManager="@{viewModel.linearLayoutManager}"-->
+            <!--app:scrollListener="@{viewModel.scrollListener}"/>-->
+
+        </android.support.v4.widget.SwipeRefreshLayout>
+
+
+    </android.support.constraint.ConstraintLayout>
+
+
+</layout>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="constants"
+            type="com.appster.turtle.ui.Constants" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/cl_textpost"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        tools:context="com.appster.turtle.ui.textpost.CreateTextPostActivity">
+
+        <include
+            android:id="@+id/cl_header"
+            layout="@layout/layout_header_text_bg_light"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.appster.turtle.widget.CustomTextView
+            android:id="@+id/tv_remaining_characters"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_17"
+            android:lineSpacingExtra="@dimen/text_size_3_3"
+            android:textColor="@color/colorTxtHint"
+            android:textSize="@dimen/textSizeNormal"
+            app:customFont="@string/bruta_normal_glb_regular"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_hashtag_suggestions"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="@dimen/dimen_80"
+            android:layout_marginBottom="@dimen/dimen_2"
+            android:layout_marginEnd="@dimen/margin_17"
+            android:layout_marginStart="@dimen/margin_17"
+            android:layout_marginTop="@dimen/dimen_2"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/tv_remaining_characters"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <View
+            android:id="@+id/v_tag_header"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="@dimen/dimen_4_8"
+            android:layout_marginEnd="@dimen/margin_17"
+            android:layout_marginStart="@dimen/margin_17"
+            android:layout_marginTop="@dimen/dimen_2"
+            android:background="@android:color/black"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/rv_hashtag_suggestions"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.appster.turtle.widget.KeyboardHolderCustomEditText
+            android:id="@+id/et_post_text"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="@dimen/width_0"
+            android:layout_marginEnd="@dimen/margin_17"
+            android:layout_marginStart="@dimen/margin_17"
+            android:backgroundTint="@android:color/transparent"
+            android:gravity="top"
+            android:hint="@string/textpost_hint"
+            android:lineSpacingExtra="@dimen/textsize_9"
+            android:maxLength="@{constants.MAX_CHARACTERS_TEXT_POST}"
+            android:textColor="@android:color/black"
+            android:textColorHint="@color/textPostTextColor"
+            android:textCursorDrawable="@drawable/et_indiciator_auth_black"
+            android:textSize="@dimen/textsize_16"
+            app:customFont="@string/bruta_normal_glb_regular"
+            app:layout_constraintBottom_toTopOf="@id/v_tag_header"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cl_header" />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

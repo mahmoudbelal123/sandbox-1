@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <data>
+
+        <variable
+            name="userModel"
+            type="com.appster.turtle.model.UserBaseModel" />
+    </data>
+
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_white"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/header"
+            layout="@layout/layout_header_text_bg"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="@dimen/margin_8" />
+
+        <com.appster.turtle.widget.CustomTextView
+            android:id="@+id/tvHead"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_xlarge"
+            android:paddingEnd="@dimen/margin_xlarge"
+            android:paddingStart="@dimen/margin_xlarge"
+            android:text="@{@string/Ok+' '+userModel.Name+@string/profile_2_header}"
+            android:textColor="@color/black"
+            android:textSize="@dimen/textSizeExtLarge"
+            app:customFont="@string/eina_01_bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/header"
+            tools:layout_editor_absoluteX="@dimen/width_0" />
+
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="@dimen/width_0"
+            android:layout_height="@dimen/width_0"
+            android:layout_marginTop="@dimen/dimen_40"
+            android:orientation="vertical"
+            android:paddingEnd="@dimen/margin_xlarge"
+            android:paddingStart="@dimen/margin_xlarge"
+            android:layout_marginBottom="@dimen/dimen_15_4"
+            app:layout_constraintBottom_toTopOf="@+id/skip"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvHead">
+
+            <com.appster.turtle.widget.CustomTextView
+                android:id="@+id/tvDorm"
+                style="@style/noise_edit_header_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dorm"
+                android:textSize="@dimen/edit_text_sub"
+                app:customFont="@string/eina_01_semibold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.appster.turtle.widget.CustomTextView
+                android:id="@+id/etDorm"
+                style="@style/noise_edittxt_style_signup"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="@dimen/dimen_10"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:hint="@string/select_dorm"
+                android:lineSpacingExtra="@dimen/text_size_6"
+                android:onClick="onTextClick"
+                android:textSize="@dimen/textSizeLarge"
+                app:customFont="@string/eina_01_regular"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvDorm" />
+
+            <!--<View-->
+            <!--android:id="@+id/vDorm"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="@dimen/margin_1"-->
+            <!--android:background="@color/unselected_grey"-->
+            <!---->
+            <!--app:layout_constraintTop_toBottomOf="@id/etDorm" />-->
+
+            <com.appster.turtle.widget.CustomTextView
+                android:id="@+id/tvGreekLife"
+                style="@style/noise_edit_header_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/greek_life"
+                android:layout_marginTop="@dimen/margin_18"
+                android:textSize="@dimen/edit_text_sub"
+                app:customFont="@string/eina_01_semibold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/etDorm" />
+
+            <com.appster.turtle.widget.CustomTextView
+                android:id="@+id/etGreekLife"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="@dimen/dimen_10"
+                android:hint="@string/select_a_greek_life"
+                android:lineSpacingExtra="@dimen/text_size_6"
+                style="@style/noise_edittxt_style_signup"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:onClick="onTextClick"
+                android:textSize="@dimen/textSizeLarge"
+                app:customFont="@string/eina_01_regular"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvGreekLife" />
+
+            <!--<View-->
+            <!--android:id="@+id/vGreekLife"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="@dimen/margin_1"-->
+            <!--android:background="@color/unselected_grey"-->
+
+            <!--app:layout_constraintTop_toBottomOf="@id/etGreekLife" />-->
+
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/cl_global_campus"
+                android:layout_width="@dimen/width_0"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:onClick="onTextClick"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/etGreekLife">
+
+                <com.appster.turtle.widget.CustomTextView
+                    android:id="@+id/tv_global_campus_title"
+                    android:layout_width="@dimen/width_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/dimen_60"
+                    android:text="@string/profile_visibility"
+                    style="@style/noise_edit_header_style"
+                    android:layout_marginTop="@dimen/margin_18"
+                    android:textSize="@dimen/edit_text_sub"
+                    android:textColor="@color/text_font_color_grey"
+                    app:customFont="@string/eina_01_semibold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.appster.turtle.widget.CustomTextView
+                    style="@style/noise_edittxt_style_signup"
+                    android:id="@+id/tv_global_campus_desc"
+                    android:layout_width="@dimen/width_0"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/textSizeLarge"
+                    android:text="@string/global"
+                    android:textColor="@color/black"
+                    app:customFont="@string/eina_01_regular"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_global_campus_title" />
+
+
+            </android.support.constraint.ConstraintLayout>
+
+
+        </android.support.constraint.ConstraintLayout>
+
+        <com.appster.turtle.widget.CustomTextView
+            android:id="@+id/skip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_tv_bg_teal"
+            android:onClick="onTextClick"
+            android:paddingBottom="@dimen/margin_10"
+            android:paddingEnd="@dimen/margin_18"
+            android:paddingStart="@dimen/margin_18"
+            android:paddingTop="@dimen/margin_10"
+            android:text="@string/skip_this_step"
+            android:textColor="@color/bright_teal"
+            android:textSize="@dimen/textSmall"
+            app:customFont="@string/eina_01_semibold"
+
+            app:layout_constraintBottom_toTopOf="@+id/tvFooter"
+            android:layout_marginBottom="@dimen/dimen_15_4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+        <!--</ScrollView>-->
+
+        <!--<com.appster.turtle.widget.CustomTextView-->
+        <!--android:layout_width="@dimen/width_0"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:background="@color/bar_pro_color"-->
+        <!--android:drawablePadding="@dimen/padding_11"-->
+        <!--android:drawableStart="@drawable/ic_info"-->
+        <!--android:gravity="start|top"-->
+        <!--android:lineSpacingExtra="@dimen/dimen_4"-->
+        <!--android:paddingBottom="@dimen/padding_34"-->
+        <!--android:paddingEnd="@dimen/padding_36"-->
+        <!--android:paddingStart="@dimen/padding_36"-->
+        <!--android:paddingTop="@dimen/padding_34"-->
+        <!--android:text="@string/txt_wry_un"-->
+        <!--android:textColor="@color/colorTxtNormal"-->
+        <!--android:textSize="@dimen/textSmall"-->
+        <!--app:customFont="@string/bruta_normal_glb_regular"-->
+        <!--app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--app:layout_constraintEnd_toEndOf="parent"-->
+        <!--app:layout_constraintStart_toStartOf="parent" />-->
+
+        <RelativeLayout
+            android:id="@+id/tvFooter"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="wrap_content"
+            android:background="@color/black"
+            android:gravity="start"
+            android:paddingBottom="@dimen/margin_16"
+            android:paddingEnd="@dimen/margin_23"
+            android:paddingStart="@dimen/margin_23"
+            android:paddingTop="@dimen/margin_14"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ImageView
+                android:id="@+id/footer_iv"
+                android:layout_width="wrap_content"
+                android:layout_alignTop="@id/footer_tv"
+                android:layout_marginTop="@dimen/dimen_2"
+                android:src="@drawable/ic_info"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/image_content" />
+
+            <com.appster.turtle.widget.CustomTextView
+                android:id="@+id/footer_tv"
+                android:layout_width="wrap_content"
+                android:text="@string/provide_bio_info"
+                android:textColor="@color/app_white"
+                android:layout_marginStart="@dimen/dimen_15_4"
+                android:lineSpacingExtra="@dimen/dimen_2"
+                android:layout_toEndOf="@id/footer_iv"
+                android:textSize="@dimen/textsize_12"
+                app:customFont="@string/eina_01_regular"
+                android:layout_height="wrap_content" />
+
+
+        </RelativeLayout>
+
+
+        <FrameLayout
+            android:id="@+id/flContainer"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="@dimen/width_0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

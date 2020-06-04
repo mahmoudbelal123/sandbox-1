@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.appster.turtle.viewmodel.RoomViewModel" />
+
+        <variable
+            name="constants"
+            type="com.appster.turtle.ui.Constants" />
+    </data>
+
+    <com.flipboard.bottomsheet.BottomSheetLayout
+        android:id="@+id/bottom_sheet_members"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.appster.turtle.ui.rooms.MembersActivity">
+
+        <android.support.v4.widget.DrawerLayout
+            android:id="@+id/drawer_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/rl_room"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:animateLayoutChanges="true"
+                android:background="@android:color/white"
+                android:orientation="vertical">
+
+                <include
+                    android:id="@+id/header"
+                    layout="@layout/layout_header_room"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_57_6"
+                    android:layout_alignParentTop="true" />
+
+                <com.appster.turtle.widget.CustomTextView
+                    android:id="@+id/tv_room_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/header"
+                    android:layout_marginEnd="@dimen/margin_17"
+                    android:layout_marginStart="@dimen/margin_17"
+                    android:layout_marginTop="@dimen/margin_18"
+                    android:textSize="@dimen/textSizeMed"
+                    app:customFont="@string/bruta_normal_glb_regular" />
+
+                <FrameLayout
+                    android:id="@+id/fl_media_bottom"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_400"
+                    android:layout_alignParentBottom="true"
+                    android:visibility="gone" />
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cl_post_buttons"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@id/fl_media_bottom"
+                    android:layout_alignWithParentIfMissing="true"
+                    app:cardElevation="@dimen/margin_5">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:animateLayoutChanges="true"
+                        android:focusableInTouchMode="true"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/ivPoll"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="@null"
+                            android:onClick="@{viewModel.onPollClickListener}"
+                            android:padding="@dimen/dimen_12"
+                            android:src="@drawable/polls" />
+
+                        <ImageView
+                            android:id="@+id/ivMedia"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="@null"
+                            android:onClick="@{viewModel.onMediaClickListener}"
+                            android:padding="@dimen/dimen_12"
+                            android:src="@drawable/camera" />
+
+                        <ImageView
+                            android:id="@+id/ivMeetUp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="@null"
+                            android:onClick="@{viewModel.onMeetUpClickListener}"
+                            android:padding="@dimen/dimen_12"
+                            android:src="@drawable/event" />
+
+                        <ImageView
+                            android:id="@+id/iv_text_post_back"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="@null"
+                            android:padding="@dimen/dimen_12"
+                            android:src="@drawable/back_text_post"
+                            android:visibility="gone" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:layout_weight="1"
+                            android:background="@drawable/create_textpost_bg"
+                            android:orientation="horizontal">
+
+                            <com.appster.turtle.widget.CustomEditText
+                                android:id="@+id/et_text_post"
+                                style="@style/noise_edittxt_style_signup"
+                                android:layout_width="@dimen/width_0"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:backgroundTint="@android:color/transparent"
+                                android:gravity="center_vertical"
+                                android:hint="@string/type_message"
+                                android:inputType="textMultiLine"
+                                android:maxHeight="@dimen/dp_100"
+                                android:maxLength="@{constants.MAX_CHARACTERS_TEXT_POST}"
+                                android:paddingEnd="@dimen/dimen_12"
+                                android:paddingStart="@dimen/dimen_12"
+                                android:src="@drawable/ic_post"
+                                android:textColor="@android:color/black"
+                                android:textColorHint="@color/textPostTextColor"
+                                android:textCursorDrawable="@drawable/et_indiciator_auth_black"
+                                android:textSize="@dimen/textsize_15_plus" />
+
+                            <ImageView
+                                android:id="@+id/iv_post"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="bottom"
+                                android:padding="@dimen/dimen_12"
+                                android:src="@drawable/text_post_selector"
+                                tools:ignore="ContentDescription" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <com.appster.turtle.widget.CustomTextView
+                    android:id="@+id/tv_remaining_characters"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@id/cl_post_buttons"
+                    android:background="@android:color/white"
+                    android:lineSpacingExtra="@dimen/text_size_3_3"
+                    android:maxLength="@{constants.MAX_CHARACTERS_TEXT_POST}"
+                    android:paddingBottom="@dimen/dimen_4"
+                    android:paddingEnd="@dimen/dimen_10"
+                    android:paddingStart="@dimen/margin_20"
+                    android:paddingTop="@dimen/dimen_4"
+                    android:text="@{String.format(@string/characters_max, constants.MAX_CHARACTERS_TEXT_POST)}"
+                    android:textColor="@color/colorTxtHint"
+                    android:textSize="@dimen/textSizeNormal"
+                    android:visibility="gone"
+                    app:customFont="@string/bruta_normal_glb_regular" />
+
+                <android.support.v4.widget.SwipeRefreshLayout
+                    android:id="@+id/swipeRoom"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_above="@id/tv_remaining_characters"
+                    android:layout_below="@id/tv_room_info"
+                    android:paddingEnd="@dimen/default_padding"
+                    android:paddingStart="@dimen/default_padding"
+                    android:paddingTop="@dimen/default_padding"
+                    app:isRefreshing="@{viewModel.refreshing}"
+                    app:refreshListener="@{viewModel.refreshListener}">
+
+                    <im.ene.toro.widget.Container
+                        android:id="@+id/rv_room_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingEnd="@dimen/default_padding"
+                        android:paddingStart="@dimen/default_padding"
+                        android:paddingTop="@dimen/default_padding"
+                        app:adapter="@{viewModel.adapter}"
+                        app:layoutManager="@{viewModel.layoutManager}"
+                        app:scrollListener="@{viewModel.scrollListener}" />
+
+                </android.support.v4.widget.SwipeRefreshLayout>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_hashtag_suggestions"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_120"
+                    android:layout_above="@id/tv_remaining_characters"
+                    android:background="@android:color/white"
+                    android:padding="@dimen/margin_10"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="end"
+                android:background="@android:color/white">
+
+                <include
+                    android:id="@+id/lay_room_menu"
+                    layout="@layout/room_menu" />
+
+            </RelativeLayout>
+
+        </android.support.v4.widget.DrawerLayout>
+    </com.flipboard.bottomsheet.BottomSheetLayout>
+</layout>

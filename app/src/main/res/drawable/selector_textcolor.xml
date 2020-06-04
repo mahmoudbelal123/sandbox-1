@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:color="@color/unselected_grey" android:state_enabled="false" />
+    <item android:color="@android:color/white" android:state_enabled="true" />
+</selector>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+
+        <variable
+            name="user"
+            type="com.appster.turtle.model.User" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_26_4"
+        android:background="@android:color/white"
+        android:paddingEnd="@dimen/dimen_10"
+        android:paddingStart="@dimen/dimen_10">
+
+        <!--<FrameLayout-->
+        <!--android:id="@+id/profPicContainer"-->
+        <!--android:layout_width="@dimen/dimen_40"-->
+        <!--android:layout_height="@dimen/dimen_40"-->
+        <!--app:layout_constraintStart_toStartOf="parent"-->
+        <!--app:layout_constraintTop_toTopOf="parent">-->
+
+        <!--<ImageView-->
+        <!--android:layout_width="@dimen/dimen_40"-->
+        <!--android:layout_height="@dimen/dimen_40"-->
+        <!--android:padding="@dimen/prof_pic_pad"-->
+        <!--android:src="@drawable/usr_dummy_pic"-->
+        <!--app:imageurl="@{user.profileUrl}" />-->
+
+        <!--<ImageView-->
+        <!--android:id="@+id/usrProfPic"-->
+        <!--android:layout_width="@dimen/dimen_38"-->
+        <!--android:layout_height="@dimen/dimen_38"-->
+        <!--android:src="@drawable/ic_prof_mask" />-->
+        <!--</FrameLayout>-->
+
+        <RelativeLayout
+            android:id="@+id/profPicContainer"
+            android:layout_width="@dimen/prof_pic_wh"
+            android:layout_height="@dimen/prof_pic_wh">
+
+
+            <ImageView
+                android:layout_width="@dimen/image_w"
+                android:layout_height="@dimen/image_w"
+                android:layout_centerInParent="true"
+                android:background="@{user.profileUrlType==3 ? @drawable/ic_pp_cred:@drawable/ic_transparent}"
+                android:contentDescription="@null" />
+
+            <ImageView
+                android:id="@+id/usrProfPic"
+                android:layout_width="@dimen/image_w"
+                android:layout_height="@dimen/image_w"
+                android:layout_centerInParent="true"
+                android:width="@{user.profileUrlType==3 ? @dimen/image_w_initials : @dimen/image_w}"
+                android:height="@{user.profileUrlType==3 ? @dimen/image_w_initials : @dimen/image_w}"
+                android:contentDescription="@null"
+                app:profileImageurl="@{user.profileUrl}" />
+
+            <ImageView
+                android:layout_width="@dimen/dimen_38"
+                android:layout_height="@dimen/dimen_38"
+                android:layout_centerInParent="true"
+                android:contentDescription="@null"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_prof_mask" />
+        </RelativeLayout>
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="@id/profPicContainer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintGuide_percent="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/profPicContainer" />
+
+        <com.appster.turtle.widget.CustomTextView
+            android:id="@+id/tv_user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_12"
+            android:text="@{user.Name}"
+
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/textsize_13_4"
+            app:customFont="@string/bruta_condensed_glb_semi_bold"
+            app:layout_constraintBottom_toTopOf="@id/guideline"
+            app:layout_constraintStart_toEndOf="@id/profPicContainer"
+            app:layout_constraintTop_toTopOf="@id/profPicContainer" />
+
+        <com.appster.turtle.widget.CustomTextView
+            android:id="@+id/tv_user_fullname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_12"
+            android:text="@{user.fullName}"
+
+            android:textColor="#abb1b8"
+            android:textSize="@dimen/textsize_13_4"
+            app:customFont="@string/bruta_normal_glb_regular"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/profPicContainer"
+            app:layout_constraintTop_toBottomOf="@id/guideline" />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

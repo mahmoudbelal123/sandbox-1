@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/cl_search_rooms"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        android:background="@android:color/black"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <!--<android.support.v4.widget.SwipeRefreshLayout-->
+        <!--android:id="@+id/srl_rooms"-->
+        <!--android:layout_width="@dimen/width_0"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:paddingEnd="@dimen/dp_34_6"-->
+        <!--android:paddingStart="@dimen/dp_34_6"-->
+        <!--android:paddingTop="@dimen/dp_34_6"-->
+        <!--app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--app:layout_constraintEnd_toEndOf="parent"-->
+        <!--app:layout_constraintStart_toStartOf="parent"-->
+        <!--app:layout_constraintTop_toTopOf="parent">-->
+
+        <com.appster.turtle.widget.CustomTextView
+            android:id="@+id/tv_results_found"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp_34_6"
+            android:layout_marginStart="@dimen/dp_34_6"
+            android:layout_marginTop="@dimen/margin_20"
+            android:background="@android:color/black"
+            android:text="@string/july_26_2017"
+            android:textColor="@color/bright_teal"
+            android:textSize="@dimen/textSizeNormal"
+            android:visibility="gone"
+            app:customFont="@string/bruta_normal_glb_regular"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_rooms"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp_34_6"
+            android:layout_marginStart="@dimen/dp_34_6"
+            android:layout_marginTop="@dimen/margin_20"
+            android:paddingBottom="@dimen/dimen_40"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_results_found" />
+
+        <!--</android.support.v4.widget.SwipeRefreshLayout>-->
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

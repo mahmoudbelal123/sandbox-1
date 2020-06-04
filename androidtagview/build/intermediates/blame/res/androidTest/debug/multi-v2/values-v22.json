@@ -1,0 +1,20 @@
+{
+  "logs": [
+    {
+      "outputFile": "/Users/ankita/Documents/AppsterProjects/turtle-2/turtle-2-app-android/androidtagview/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values-v22/values-v22.xml",
+      "map": [
+        {
+          "source": "/Users/ankita/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.3.1.aar/eb3c83a9a0ab8415ab7a9e045dbad949/res/values-v22/values-v22.xml",
+          "from": {
+            "startLines": "2,3,4,9",
+            "startColumns": "4,4,4,4",
+            "startOffsets": "55,130,217,553",
+            "endLines": "2,3,8,13",
+            "endColumns": "74,86,12,12",
+            "endOffsets": "125,212,548,896"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="bank"
+            type="com.appster.turtle.model.BankModel" />
+    </data>
+
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_white"
+        tools:context="com.appster.turtle.ui.payment.BankAccountActivity">
+
+        <include
+            android:id="@+id/header"
+            layout="@layout/layout_header_text_bg_light"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+
+
+            />
+
+        <ScrollView
+            android:layout_width="@dimen/width_0"
+            android:layout_height="@dimen/width_0"
+            app:layout_constraintBottom_toTopOf="@+id/tv_next_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/header">
+
+            <LinearLayout
+                android:id="@+id/ll_card_cont"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dimen_31_2"
+                android:layout_marginStart="@dimen/dimen_31_2"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/header">
+
+                <com.appster.turtle.widget.CustomTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_first_name_header"
+                    android:text="@string/first_name"
+                    app:customFont="@string/eina_01_semibold"
+                    style="@style/noise_card_header_style" />
+
+                <com.appster.turtle.widget.CustomEditText
+                    android:id="@+id/tv_first_name"
+                    style="@style/noise_edittxt_style_signIn"
+                    android:hint="@string/txt_fn_hnt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:layout_marginTop="@dimen/margin_8"
+                    android:inputType="textPersonName"
+                    android:maxLength="20"
+                    android:digits="0123456789qwertzuiopasdfghjklyxcvbnm "
+                    android:text="@{bank.firstName}"
+                    app:customFont="@string/eina_01_regular" />
+
+
+
+                <com.appster.turtle.widget.CustomTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_last_name_header"
+                    android:text="@string/last_name"
+                    app:customFont="@string/eina_01_semibold"
+                    android:layout_marginTop="@dimen/margin_21"
+                    style="@style/noise_card_header_style" />
+
+                <com.appster.turtle.widget.CustomEditText
+                    android:id="@+id/tv_last_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/noise_edittxt_style_signIn"
+                    android:hint="@string/txt_ln_hnt"
+                    android:text="@{bank.lastName}"
+                    android:layout_marginTop="@dimen/margin_8"
+                    android:imeOptions="actionNext"
+                    android:maxLength="20"
+                    android:digits="0123456789qwertzuiopasdfghjklyxcvbnm "
+                    android:inputType="textPersonName"
+                    app:customFont="@string/eina_01_regular" />
+
+
+
+                <com.appster.turtle.widget.CustomTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_rounting_header"
+                    android:text="@string/routing_number"
+                    android:layout_marginTop="@dimen/dimen_21"
+                    style="@style/noise_card_header_style"
+                    app:customFont="@string/eina_01_semibold" />
+
+                <com.appster.turtle.widget.CustomEditText
+                    android:id="@+id/tv_routing_num"
+                    style="@style/noise_edittxt_style_signIn"
+                    android:layout_marginTop="@dimen/dimen_8"
+                    android:hint="@string/enter_your_routing_number"
+                    android:imeOptions="actionNext"
+                    android:text="@{bank.routingNumber}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    app:customFont="@string/eina_01_regular" />
+
+                <com.appster.turtle.widget.CustomTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_account_num_header"
+                    android:text="@string/account_number"
+                    android:layout_marginTop="@dimen/dimen_21"
+                    style="@style/noise_card_header_style"
+                    app:customFont="@string/eina_01_semibold" />
+
+                <com.appster.turtle.widget.CustomEditText
+                    android:id="@+id/tv_account_num"
+                    style="@style/noise_edittxt_style_signIn"
+                    android:layout_marginTop="@dimen/dimen_8"
+                    android:hint="@string/enter_account_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:inputType="numberPassword"
+                    android:text="@{bank.accountNumber}"
+                    app:customFont="@string/eina_01_regular" />
+
+
+                <com.appster.turtle.widget.CustomTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_account_num_confrm_header"
+                    android:text="@string/confirm_account_number"
+                    android:layout_marginTop="@dimen/dimen_21"
+                    style="@style/noise_card_header_style"
+                    app:customFont="@string/eina_01_semibold" />
+
+
+                <com.appster.turtle.widget.CustomEditText
+                    android:id="@+id/tv_confirm_account_num"
+                    style="@style/noise_edittxt_style_signIn"
+                    android:layout_marginTop="@dimen/margin_8"
+                    android:hint="@string/confirm_account_number"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:layout_marginBottom="@dimen/dimen_10"
+                    android:text="@{bank.accountNumber}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:customFont="@string/eina_01_regular" />
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+
+        <com.appster.turtle.widget.CustomTextView
+            android:id="@+id/tv_next_btn"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="@dimen/dimen_58"
+            android:layout_marginBottom="@dimen/dimen_34_1"
+            android:layout_marginEnd="@dimen/dimen_31_2"
+            android:layout_marginStart="@dimen/dimen_31_2"
+            android:background="@drawable/grey_soild_roun_rect"
+            android:gravity="center"
+            android:text="@string/next"
+            android:textColor="#abb1b8"
+            android:textSize="@dimen/textSizeNormal"
+            app:customFont="@string/eina_01_semibold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+    </android.support.constraint.ConstraintLayout>
+
+</layout>

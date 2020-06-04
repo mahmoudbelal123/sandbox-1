@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="review"
+            type="com.appster.turtle.network.response.NotesReview" />
+
+
+    </data>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/white_selector_bg_radius_21"
+        android:layout_marginStart="@dimen/dimen_23"
+        android:layout_marginEnd="@dimen/dimen_23"
+        android:layout_marginTop="@dimen/default_padding_20"
+        android:padding="@dimen/margin_15">
+
+
+        <RelativeLayout
+            android:id="@+id/profPicContainer"
+            android:layout_width="@dimen/prof_pic_wh"
+            app:bindShowProfileId="@{review.reviewByUserId}"
+            android:layout_height="@dimen/prof_pic_wh">
+
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:src="@{review.profileUrlType==3 ? @drawable/ic_pp_cred:@drawable/ic_transparent}"
+                app:civ_border_width="@dimen/width_0" />
+
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:layout_width="@dimen/image_w"
+                android:layout_height="@dimen/image_w"
+                android:layout_centerInParent="true"
+                android:background="@color/transparent"
+                android:contentDescription="@null"
+                android:visibility="@{review.profileUrlType==3 ? View.INVISIBLE:View.VISIBLE}"
+                app:civ_border_width="@dimen/width_0"
+                app:profileImageurl="@{review.profileUrl}" />
+
+            <ImageView
+                android:layout_width="@dimen/post_user_init"
+                android:layout_height="@dimen/post_user_init"
+                android:layout_centerInParent="true"
+                android:background="@color/transparent"
+                android:contentDescription="@null"
+                android:visibility="@{review.profileUrlType==3 ? View.VISIBLE:View.INVISIBLE}"
+                app:profileImageurl="@{review.profileUrl}" />
+
+
+        </RelativeLayout>
+
+        <com.appster.turtle.widget.CustomTextView
+            android:id="@+id/tv_user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_11_5"
+            android:layout_toEndOf="@id/profPicContainer"
+            android:layout_toStartOf="@+id/tv_time_and_date"
+            android:lineSpacingExtra="@dimen/text_size_3_3"
+            android:text='@{"@"+review.userName}'
+            android:textColor="#000000"
+            android:textSize="@dimen/textSizeNormal"
+            android:maxLines="1"
+            android:ellipsize="end"
+            app:customFont="@string/eina_01_semibold"
+            tools:text=" @TomHeaton fgcvgfvgv ghghvgggggh" />
+
+        <me.zhanghai.android.materialratingbar.MaterialRatingBar
+            android:id="@+id/ratingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/margin_16"
+            style="@style/Widget.MaterialRatingBar.RatingBar"
+            android:layout_alignStart="@id/tv_user_name"
+            android:layout_below="@id/tv_user_name"
+            android:layout_marginTop="@dimen/dp_5_6"
+            app:mrb_fillBackgroundStars="true"
+            app:mrb_progressTint="@color/bright_teal"
+            app:mrb_progressBackgroundTint="@color/unselected_grey"
+            android:numStars="5"
+            android:maxHeight="@dimen/dimen_24"
+            android:maxWidth="@dimen/edit_text_tick" />
+
+        <com.appster.turtle.widget.CustomTextView
+            android:id="@+id/tv_time_and_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/dimen_10"
+            android:gravity="end"
+            android:lineSpacingExtra="@dimen/textsize_7_2"
+            android:text='@{review.createdAt}'
+            android:textColor="#abb1b8"
+            android:textSize="@dimen/textSizeMed"
+            app:customFont="@string/eina_01_regular"
+
+            tools:text="Today" />
+
+        <com.appster.turtle.widget.CustomTextView
+            android:id="@+id/tv_review"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@id/tv_time_and_date"
+            android:layout_alignStart="@id/profPicContainer"
+
+            android:layout_below="@id/ratingBar"
+            android:layout_marginTop="@dimen/dimen_15_4"
+            android:lineSpacingExtra="@dimen/textsize_7_2"
+            android:text='@{review.details}'
+            android:textColor="@color/black"
+            android:textSize="@dimen/textsize_15_plus"
+            tools:text="Really helpful, would recommend to any friends thinking of taking up Geography.
+
+Tom has gone far to make sure all the details of Plate Tectonics has been covered." />
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+
+        <variable
+            name="comment"
+            type="com.appster.turtle.model.Comment" />
+    </data>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dimen_15_4"
+        android:layout_marginStart="@dimen/dimen_15_4"
+        android:layout_marginTop="@dimen/dimen_9_6"
+        app:cardCornerRadius="@dimen/dimen_11_5"
+        app:cardElevation="@dimen/width_0">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_15"
+            android:paddingEnd="@dimen/dimen_12"
+            android:paddingStart="@dimen/dimen_12">
+
+
+            <RelativeLayout
+                android:id="@+id/fl_image_user"
+                android:layout_width="@dimen/post_user_image"
+                android:layout_height="@dimen/post_user_image"
+                android:layout_marginStart="@dimen/dimen_15_4"
+                android:layout_marginTop="@dimen/dimen_10"
+                app:bindShowProfile="@{comment.createdBy}"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.mikhaellopez.circularimageview.CircularImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:src="@{comment.createdBy.profileUrlType==3 ? @drawable/ic_pp_cred:@drawable/ic_transparent}"
+                    app:civ_border_width="@dimen/width_0" />
+
+                <com.mikhaellopez.circularimageview.CircularImageView
+                    android:layout_width="@dimen/image_w"
+                    android:layout_height="@dimen/image_w"
+                    android:layout_centerInParent="true"
+                    android:background="@color/transparent"
+                    android:contentDescription="@null"
+                    android:visibility="@{comment.createdBy.profileUrlType==3 ? View.INVISIBLE:View.VISIBLE}"
+                    app:civ_border_width="@dimen/width_0"
+                    app:profileImageurl="@{comment.createdBy.profileUrl}" />
+
+                <ImageView
+                    android:layout_width="@dimen/post_user_init"
+                    android:layout_height="@dimen/post_user_init"
+                    android:layout_centerInParent="true"
+                    android:background="@color/transparent"
+                    android:contentDescription="@null"
+                    android:visibility="@{comment.createdBy.profileUrlType==3 ? View.VISIBLE:View.INVISIBLE}"
+                    app:profileImageurl="@{comment.createdBy.profileUrl}" />
+
+
+            </RelativeLayout>
+
+
+            <com.appster.turtle.widget.CustomTextView
+                android:id="@+id/tv_user_name"
+                android:layout_width="@dimen/width_0"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_9"
+                android:layout_marginTop="@dimen/dimen_5_8"
+                android:lineSpacingExtra="@dimen/text_size_3_3"
+                android:text='@{"@"+comment.createdBy.userName}'
+                android:lines="1"
+                android:ellipsize="end"
+                android:textColor="#000000"
+                android:textSize="@dimen/textsize_17"
+                app:customFont="@string/eina_01_semibold"
+                app:layout_constraintEnd_toStartOf="@+id/iv_like"
+                app:layout_constraintStart_toEndOf="@+id/fl_image_user"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text=" @Tom" />
+
+
+            <com.appster.turtle.widget.CustomTextView
+                android:id="@+id/tv_unviversity_name"
+                android:layout_width="@dimen/width_0"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_12"
+                android:lineSpacingExtra="@dimen/text_size_3_3"
+                android:text='@{comment.createdBy.universityBaseModel.displayName}'
+                android:textColor="@color/unselected_grey"
+                android:textSize="@dimen/textSizeMed"
+                app:customFont="@string/eina_01_semibold"
+                app:layout_constraintEnd_toStartOf="@+id/iv_like"
+                app:layout_constraintStart_toEndOf="@+id/fl_image_user"
+                app:layout_constraintTop_toBottomOf="@+id/tv_user_name"
+                tools:text=" TomHeaton" />
+
+            <ImageView
+                android:id="@+id/iv_like"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dimen_6"
+                android:padding="@dimen/margin_1"
+                android:src="@{comment.reaction==0 ? @drawable/ic_like : @drawable/ic_liked}"
+                app:layout_constraintEnd_toStartOf="@id/tv_like_count"
+                app:layout_constraintBottom_toBottomOf="@id/tv_date"
+                app:layout_constraintTop_toTopOf="@id/tv_date" />
+
+            <com.appster.turtle.widget.CustomTextView
+                android:id="@+id/tv_like_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dimen_10"
+                android:text='@{comment.totalLikesCount+""}'
+                android:textColor="#000000"
+                android:textSize="@dimen/textsize_13_4"
+                app:customFont="@string/eina_01_semibold"
+                app:layout_constraintBottom_toBottomOf="@id/tv_date"
+                app:layout_constraintEnd_toEndOf="@id/iv_menu"
+                app:layout_constraintTop_toTopOf="@id/tv_date" />
+
+
+            <ImageView
+                android:id="@+id/iv_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_15"
+                android:padding="@dimen/margin_5"
+                android:scaleType="center"
+                android:src="@drawable/ic_post_menu"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription" />
+
+            <com.appster.turtle.tag.SocialTextView
+                android:id="@+id/tv_text"
+                android:layout_width="@dimen/width_0"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dimen_10"
+                android:layout_marginStart="@dimen/dimen_10"
+                android:layout_marginTop="@dimen/margin_8"
+                android:gravity="start"
+                android:lineSpacingExtra="@dimen/textsize_7_2"
+                android:text='@{comment.comment}'
+                android:textColor="@color/black"
+                android:textSize="@dimen/textSizeNormal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_unviversity_name"
+                tools:text="Really " />
+
+            <com.appster.turtle.widget.CustomTextView
+                android:id="@+id/tv_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dimen_10"
+                android:layout_marginStart="@dimen/dimen_10"
+                android:layout_marginTop="@dimen/dimen_12"
+                android:gravity="start"
+                android:text="@{comment.formatedPostDate}"
+                android:textColor="#000000"
+                android:textSize="@dimen/textsize_12_5"
+                app:customFont="@string/eina_01_semibold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_text" />
+
+
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v7.widget.CardView>
+</layout>

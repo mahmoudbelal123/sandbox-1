@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="user"
+            type="com.appster.turtle.model.UserBaseModel" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_white"
+        tools:context="com.appster.turtle.ui.signUp.WelcomeUserActivity">
+
+        <ScrollView
+            android:layout_width="@dimen/width_0"
+            android:layout_height="@dimen/width_0"
+            android:fillViewport="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!--<RelativeLayout-->
+                <!--android:id="@+id/iv_user_profile"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_marginTop="82.6dp"-->
+
+                <!--android:layout_height="wrap_content">-->
+
+                <!--<com.mikhaellopez.circularimageview.CircularImageView-->
+                <!--android:layout_width="@dimen/image_l"-->
+                <!--android:layout_height="@dimen/image_l"-->
+                <!--android:layout_centerInParent="true"-->
+                <!--tools:ignore="ContentDescription"-->
+                <!--android:background="@{user.profileUrlType==3 ? @drawable/ic_pp_cred:@drawable/ic_transparent}" />-->
+
+                <!--<com.mikhaellopez.circularimageview.CircularImageView-->
+                <!--android:id="@+id/usrProfPic"-->
+                <!--android:layout_width="@dimen/image_w"-->
+                <!--android:layout_height="@dimen/image_w"-->
+                <!--android:layout_centerInParent="true"-->
+
+                <!--tools:ignore="ContentDescription"-->
+                <!--android:width="@{user.profileUrlType==3 ? @dimen/image_l_initials : @dimen/image_l}"-->
+                <!--android:height="@{user.profileUrlType==3 ? @dimen/image_l_initials : @dimen/image_l}"-->
+                <!--app:profileImageurl="@{user.profileUrl}"-->
+
+                <!--/>-->
+                <!--&lt;!&ndash;-->
+                <!--<ImageView-->
+                <!--android:layout_width="135dp"-->
+                <!--android:layout_height="135dp"-->
+                <!--android:layout_centerInParent="true"-->
+                <!--android:scaleType="fitXY"-->
+
+                <!--tools:ignore="ContentDescription"-->
+                <!--android:src="@drawable/onion_ring" />&ndash;&gt;-->
+                <!--</RelativeLayout>-->
+
+                <RelativeLayout
+                    android:id="@+id/iv_user_profile"
+                    android:layout_width="@dimen/menu_image"
+                    android:layout_height="@dimen/menu_image"
+                    android:layout_above="@+id/tv_welcome_msg"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="54dp">
+
+                    <com.mikhaellopez.circularimageview.CircularImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        android:src="@{user.profileUrlType==3 ? @drawable/ic_pp_cred:@drawable/ic_transparent}"
+                        app:civ_border_width="@dimen/width_0" />
+
+                    <com.mikhaellopez.circularimageview.CircularImageView
+                        android:layout_width="@dimen/image_l"
+                        android:layout_height="@dimen/image_l"
+                        android:layout_centerInParent="true"
+                        android:background="@color/transparent"
+                        android:contentDescription="@null"
+                        android:visibility="@{user.profileUrlType==3 ? View.INVISIBLE:View.VISIBLE}"
+
+                        app:civ_border_width="@dimen/width_0"
+                        app:profileImageurl="@{user.profileUrl}" />
+
+                    <ImageView
+                        android:layout_width="@dimen/image_l_initials"
+                        android:layout_height="@dimen/image_l_initials"
+                        android:layout_centerInParent="true"
+                        android:background="@color/transparent"
+                        android:contentDescription="@null"
+                        android:visibility="@{user.profileUrlType==3 ? View.VISIBLE:View.INVISIBLE}"
+                        app:profileImageurl="@{user.profileUrl}" />
+
+
+                </RelativeLayout>
+
+
+                <!--<ImageView-->
+                <!--android:id="@+id/iv_user_profile"-->
+                <!--android:layout_width="128.7dp"-->
+                <!--android:layout_height="128.7dp"-->
+                <!--android:layout_centerHorizontal="true"-->
+                <!--android:layout_marginTop="82.6dp"-->
+                <!--android:src="@drawable/usr_dummy_pic"-->
+                <!--app:imageurl="@{user.profileUrl}" />-->
+
+                <!--<ImageView-->
+                <!--android:id="@+id/usrProfPic"-->
+                <!--android:layout_width="@dimen/dimen_38"-->
+                <!--android:layout_height="@dimen/dimen_38"-->
+                <!--android:layout_alignBottom="@+id/iv_user_profile"-->
+                <!--android:layout_alignEnd="@+id/iv_user_profile"-->
+                <!--android:layout_alignStart="@+id/iv_user_profile"-->
+                <!--android:layout_alignTop="@+id/iv_user_profile"-->
+                <!--android:scaleType="fitXY"-->
+                <!--android:src="@drawable/ic_prof_mask_yellow" />-->
+
+
+                <com.appster.turtle.widget.CustomTextView
+                    android:id="@+id/tv_welcome_msg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/tv_tour"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginBottom="@dimen/dimen_50"
+                    android:layout_marginEnd="@dimen/margin_30"
+                    android:layout_marginStart="@dimen/margin_30"
+                    android:gravity="center_horizontal"
+                    android:text="@{String.format(@string/welcome_message, user.name.split(&quot; &quot;)[0])}"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/textSizeExtLarge"
+                    app:customFont="@string/eina_01_bold"
+                    tools:layout_editor_absoluteX="@dimen/width_0" />
+
+
+                <com.appster.turtle.widget.CustomTextView
+                    android:id="@+id/tv_tour"
+                    style="@style/CurveTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/curve_button_height"
+                    android:layout_above="@+id/tv_start"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginEnd="@dimen/dimen_30"
+                    android:layout_marginStart="@dimen/dimen_30"
+                    android:layout_marginTop="@dimen/margin_69"
+                    android:background="@drawable/rounded_bg"
+                    android:elevation="@dimen/dimen_4"
+                    android:enabled="true"
+                    android:minWidth="235dp"
+                    android:onClick="onClick"
+                    android:text="@string/take_tour"
+                    android:textColor="@color/app_white"
+                    android:textSize="@dimen/textsize_15_plus"
+                    app:customFont="@string/eina_01_semibold" />
+
+                <com.appster.turtle.widget.CustomTextView
+                    android:id="@+id/tv_start"
+                    style="@style/CurveTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/curve_button_height"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="30.4dp"
+                    android:layout_marginEnd="@dimen/dimen_30"
+                    android:layout_marginStart="@dimen/dimen_30"
+                    android:layout_marginTop="@dimen/dimen_24"
+                    android:background="@drawable/circle_white_button"
+                    android:elevation="@dimen/dimen_4"
+                    android:enabled="true"
+                    android:minWidth="235dp"
+                    android:onClick="onClick"
+                    android:text="@string/lets_start"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/textsize_15_plus"
+                    app:customFont="@string/eina_01_semibold" />
+
+            </RelativeLayout>
+        </ScrollView>
+    </android.support.constraint.ConstraintLayout>
+</layout>

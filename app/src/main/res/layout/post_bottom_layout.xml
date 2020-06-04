@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="android.view.ViewGroup" />
+
+        <variable
+            name="post"
+            type="com.appster.turtle.network.response.Posts" />
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <com.appster.turtle.widget.CustomTextView
+            android:id="@+id/tv_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/iv_comment"
+            android:layout_alignTop="@id/iv_comment"
+            android:text="@{post.formatedPostDate}"
+            android:textColor="#000000"
+            android:textSize="@dimen/textsize_12_5"
+            app:customFont="@string/eina_01_semibold" />
+
+
+        <com.appster.turtle.widget.CustomTextView
+            android:id="@+id/tv_like_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/iv_like"
+            android:layout_alignBottom="@id/iv_like"
+            android:gravity="center"
+            android:paddingStart="@dimen/margin_1"
+            android:text='@{post.likesCount+""}'
+            android:textColor="#000000"
+            android:textSize="@dimen/textsize_13_4"
+            app:customFont="@string/eina_01_semibold" />
+
+
+
+        <ImageView
+            android:id="@+id/iv_like"
+            android:layout_width="@dimen/margin_21"
+            android:layout_height="@dimen/margin_21"
+            android:layout_marginEnd="@dimen/dimen_5_8"
+            android:layout_marginTop="@dimen/dimen_2"
+            android:layout_toStartOf="@id/tv_like_count"
+            android:src="@{post.likeStatus==0?@drawable/ic_like:(post.likeStatus ==1 ? @drawable/ic_like_thumb: (post.likeStatus == 2 ? @drawable/ic_heart:(post.likeStatus == 3 ? @drawable/ic_angry:  (post.likeStatus == 4 ? @drawable/ic_surprised:  (post.likeStatus == 5 ? @drawable/ic_tear:  @drawable/ic_grin)))))}" />
+
+
+        <com.appster.turtle.widget.CustomTextView
+            android:id="@+id/tv_comment_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dimen_12"
+            android:layout_toStartOf="@id/iv_like"
+            android:layout_alignBottom="@id/iv_comment"
+            android:layout_alignTop="@id/iv_comment"
+            android:paddingEnd="@dimen/margin_1"
+            android:gravity="center"
+            android:paddingStart="@dimen/margin_1"
+            android:text='@{post.commentsCount+""}'
+            android:textColor="#000000"
+            android:textSize="@dimen/textsize_13_4"
+            app:customFont="@string/eina_01_semibold" />
+
+        <ImageView
+            android:id="@+id/iv_comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dimen_5_8"
+            android:layout_marginTop="@dimen/dimen_2"
+            android:layout_toStartOf="@id/tv_comment_count"
+            android:paddingEnd="@dimen/margin_1"
+            android:paddingStart="@dimen/margin_1"
+            android:paddingTop="@dimen/margin_1"
+            android:src="@drawable/ic_comment" />
+
+
+    </RelativeLayout>
+</layout>

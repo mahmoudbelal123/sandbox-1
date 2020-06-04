@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/white_alpha_upr_rounded">
+
+        <RelativeLayout
+            android:id="@+id/rl_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.appster.turtle.widget.CustomTextView
+                android:id="@+id/tv_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/margin_15"
+                android:textSize="@dimen/textsize_13_4"
+                app:customFont="@string/eina_01_semibold" />
+
+            <ImageView
+                android:id="@+id/iv_close_bottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/margin_15"
+                android:layout_marginTop="@dimen/dimen_18"
+                android:padding="@dimen/dimen_6"
+                android:src="@drawable/tut_close" />
+        </RelativeLayout>
+
+        <com.appster.turtle.tag.SocialEditText
+            android:id="@+id/et_description"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/rv_hashtag_suggestions"
+            android:layout_below="@+id/rl_header"
+            android:layout_marginEnd="@dimen/dimen_30"
+            android:layout_marginStart="@dimen/dimen_23"
+            android:layout_marginTop="@dimen/marign_14"
+            android:background="@color/transparent"
+            android:gravity="start"
+            android:textSize="@dimen/textsize_16"
+            android:maxLength="2000"
+            app:customFont="@string/eina_01_regular" />
+
+        <com.appster.turtle.widget.CustomTextView
+
+            android:id="@+id/tv_char_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/dimen_12"
+            android:layout_marginEnd="@dimen/dimen_34_6"
+            android:layout_marginStart="@dimen/dimen_17_3"
+            android:layout_marginTop="@dimen/dp_8_2"
+            android:lineSpacingExtra="@dimen/text_size_3_3"
+
+            android:textColor="#abb1b8"
+            android:textSize="@dimen/textSizeNormal"
+            app:customFont="@string/eina_01_regular" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_hashtag_suggestions"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_80"
+            android:layout_above="@+id/tv_char_count"
+            android:layout_marginBottom="@dimen/dimen_2"
+            android:layout_marginEnd="@dimen/margin_17"
+            android:layout_marginStart="@dimen/margin_17"
+            android:layout_marginTop="@dimen/dimen_2"
+            android:background="@color/white_aplha"
+            android:scrollbarThumbVertical="@drawable/scrollbar"
+            android:scrollbars="vertical"
+            android:visibility="gone" />
+    </RelativeLayout>
+</layout>

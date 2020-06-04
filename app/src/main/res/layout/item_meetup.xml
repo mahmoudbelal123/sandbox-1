@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="user"
+            type="com.appster.turtle.model.User" />
+
+        <variable
+            name="post"
+            type="com.appster.turtle.network.response.Posts" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:background="@drawable/shadow">
+
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cv_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/room_50_bg"
+            app:cardElevation="@dimen/width_0"
+
+            app:cardCornerRadius="@dimen/dimen_11_5">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/margin_15"
+                android:paddingEnd="@dimen/dimen_12"
+                android:paddingStart="@dimen/dimen_15_4">
+
+                <!--TODO replace image src with profileUrl of userListModel-->
+
+                <!--<FrameLayout-->
+                <!--android:id="@+id/profPicContainer"-->
+                <!--android:layout_width="@dimen/dimen_38"-->
+                <!--android:layout_height="@dimen/dimen_38"-->
+                <!--app:layout_constraintStart_toStartOf="parent"-->
+                <!--app:layout_constraintTop_toTopOf="parent">-->
+
+                <!--<ImageView-->
+                <!--android:layout_width="@dimen/dimen_40"-->
+                <!--android:layout_height="@dimen/dimen_40"-->
+                <!--android:padding="@dimen/prof_pic_pad"-->
+                <!--android:src="@drawable/usr_dummy_pic"-->
+                <!--app:imageurl="@{post.usersListModel.profileUrl}" />-->
+
+                <!--<ImageView-->
+                <!--android:id="@+id/usrProfPic"-->
+                <!--android:layout_width="@dimen/dimen_38"-->
+                <!--android:layout_height="@dimen/dimen_38"-->
+                <!--android:src="@drawable/ic_prof_mask" />-->
+                <!--</FrameLayout>-->
+
+                <RelativeLayout
+                    android:id="@+id/profPicContainer"
+                    android:layout_width="@dimen/image_w"
+                    android:layout_height="@dimen/image_w"
+                    android:layout_marginTop="@dimen/dimen_10"
+                    app:bindShowProfile="@{post.usersListModel}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.mikhaellopez.circularimageview.CircularImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        android:src="@{post.usersListModel.profileUrlType==3 ? @drawable/ic_pp_cred:@drawable/ic_transparent}"
+                        app:civ_border_width="@dimen/width_0" />
+
+                    <com.mikhaellopez.circularimageview.CircularImageView
+                        android:layout_width="@dimen/image_w"
+                        android:layout_height="@dimen/image_w"
+                        android:layout_centerInParent="true"
+                        android:background="@color/transparent"
+                        android:contentDescription="@null"
+                        android:visibility="@{post.usersListModel.profileUrlType==3 ? View.INVISIBLE:View.VISIBLE}"
+                        app:civ_border_width="@dimen/width_0"
+                        app:profileImageurl="@{post.usersListModel.profileUrl}" />
+
+                    <ImageView
+                        android:layout_width="@dimen/post_user_init"
+                        android:layout_height="@dimen/post_user_init"
+                        android:layout_centerInParent="true"
+                        android:background="@color/transparent"
+                        android:contentDescription="@null"
+                        android:visibility="@{post.usersListModel.profileUrlType==3 ? View.VISIBLE:View.INVISIBLE}"
+                        app:profileImageurl="@{post.usersListModel.profileUrl}" />
+
+
+                </RelativeLayout>
+
+
+                <com.appster.turtle.widget.CustomTextView
+                    android:id="@+id/tv_post_user"
+                    android:layout_width="@dimen/width_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_9"
+                    android:layout_marginTop="@dimen/dimen_5_8"
+                    android:ellipsize="end"
+                    android:lineSpacingExtra="@dimen/text_size_3_3"
+
+                    android:lines="1"
+                    android:text='@{"@"+user.userName}'
+                    android:textColor="#000000"
+                    android:textSize="@dimen/textsize_17"
+                    app:customFont="@string/eina_01_semibold"
+                    app:layout_constraintEnd_toStartOf="@+id/iv_menu"
+                    app:layout_constraintStart_toEndOf="@+id/profPicContainer"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text=" @TomHeaton" />
+                <!--app:customFont="@string/bruta_condensed_glb_semi_bold"-->
+                <!--android:text="@{user.name + @string/wants_to + post.postDetail.title}"-->
+
+                <ImageView
+                    android:id="@+id/iv_menu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_12"
+                    android:padding="@dimen/margin_8"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_post_menu"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="ContentDescription" />
+
+
+                <com.appster.turtle.widget.CustomTextView
+                    android:id="@+id/tv_room"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:textColor="#212121"
+                    android:textSize="@dimen/textsize_13_4"
+                    app:customFont="@string/eina_01_semibold"
+                    app:layout_constraintEnd_toEndOf="@id/iv_menu"
+                    app:layout_constraintTop_toBottomOf="@id/iv_menu"
+                    tools:text="in Need A TV Show" />
+
+
+                <com.appster.turtle.widget.CustomTextView
+                    android:id="@+id/tv_unviversity_name"
+                    android:layout_width="@dimen/width_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_12"
+                    android:lineSpacingExtra="@dimen/text_size_3_3"
+                    android:text='@{user.universityBaseModel.displayName}'
+                    android:textColor="@color/unselected_grey"
+                    android:textSize="@dimen/textSizeMed"
+                    app:customFont="@string/eina_01_semibold"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_room"
+                    app:layout_constraintStart_toEndOf="@+id/profPicContainer"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_post_user"
+                    tools:text=" TomHeaton" />
+
+
+                <com.appster.turtle.widget.CustomTextView
+                    android:id="@+id/tv_post_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/dimen_10"
+                    android:layout_marginStart="@dimen/dimen_10"
+                    android:layout_marginTop="@dimen/dimen_9_8"
+                    android:lineSpacingExtra="@dimen/textsize_7_2"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_16_3"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_room"
+                    tools:text="Really helpful, would recommend to any friends thinking of taking up Geography." />
+
+                <android.support.constraint.ConstraintLayout
+                    android:id="@+id/cl_meetup_status"
+                    android:layout_width="@dimen/width_0"
+                    android:layout_height="31dp"
+                    android:layout_marginBottom="@dimen/dimen_10"
+                    android:layout_marginTop="@dimen/dimen_10"
+                    android:background="@color/room_transparent_bg"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_post_text">
+
+                    <com.appster.turtle.widget.CustomTextView
+                        android:id="@+id/tv_attending"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen_6"
+                        android:drawablePadding="@dimen/dimen_4"
+                        android:drawableStart="@drawable/ic_attending_icon"
+                        android:gravity="center"
+                        android:paddingEnd="@dimen/margin_15"
+                        android:paddingStart="@dimen/width_0"
+                        android:text="@string/attending"
+                        android:textColor="@color/gray"
+                        android:textSize="@dimen/textsize_12"
+                        app:customFont="@string/eina_01_semibold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.appster.turtle.widget.CustomTextView
+                        android:id="@+id/tv_interested"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen_6"
+                        android:drawablePadding="@dimen/dimen_4"
+                        android:drawableStart="@drawable/ic_interested_icon"
+                        android:gravity="center"
+                        android:text="@string/interested"
+                        android:textColor="@color/gray"
+                        android:textSize="@dimen/textsize_12"
+                        app:customFont="@string/eina_01_semibold"
+                        app:layout_constraintStart_toEndOf="@id/tv_attending"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                </android.support.constraint.ConstraintLayout>
+
+                <com.appster.turtle.widget.CustomTextView
+                    android:id="@+id/tv_haghTag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_5"
+                    android:gravity="end"
+                    android:maxLines="1"
+                    android:textColor="@color/bright_teal"
+                    android:textSize="11sp"
+                    app:customFont="@string/eina_01_regular"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cl_meetup_status"
+                    tools:ignore="SmallSp" />
+
+                <include
+                    android:id="@+id/cl_reply_comment_like"
+                    layout="@layout/post_bottom_layout"
+                    android:layout_width="@dimen/width_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="0.2dp"
+                    android:layout_marginTop="@dimen/margin_7"
+
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/profPicContainer"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_haghTag" />
+
+
+            </android.support.constraint.ConstraintLayout>
+        </android.support.v7.widget.CardView>
+    </FrameLayout>
+</layout>

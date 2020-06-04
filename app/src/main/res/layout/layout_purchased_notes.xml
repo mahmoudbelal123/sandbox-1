@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/cl_gallery_actions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="217dp"
+        android:background="@drawable/white_rounded_upr_14dp"
+        android:paddingEnd="@dimen/margin_34"
+        android:paddingStart="@dimen/margin_34"
+        android:paddingTop="@dimen/margin_22">
+
+        <com.appster.turtle.widget.CustomTextView
+            android:id="@+id/tv_head"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingBottom="@dimen/margin_16"
+            android:text="@string/review_bottom_head"
+            android:textSize="@dimen/textsize_16"
+            android:textColor="@color/black"
+            android:layout_marginBottom="@dimen/dimen_30"
+            android:lineSpacingExtra="5.8sp"
+            app:customFont="@string/eina_01_semibold"
+            app:layout_constraintBottom_toTopOf="@+id/tv_write_review"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.appster.turtle.widget.CustomTextView
+            android:id="@+id/tv_skip"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingBottom="@dimen/dp_12_5"
+            android:paddingTop="@dimen/dp_12_5"
+            android:layout_marginTop="@dimen/dp_12_5"
+            android:layout_marginBottom="@dimen/dp_12_5"
+            android:text="@string/skip_review"
+            android:textColor="#abb1b8"
+            android:textSize="15sp"
+            app:customFont="@string/eina_01_regular"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.appster.turtle.widget.CustomTextView
+            android:id="@+id/tv_write_review"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_bg_light"
+            android:gravity="center"
+            android:paddingBottom="@dimen/margin_22"
+            android:paddingTop="@dimen/margin_22"
+            android:text="@string/write_review"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/textSizeNormal"
+            app:customFont="@string/eina_01_semibold"
+            app:layout_constraintBottom_toTopOf="@id/tv_skip"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+    </android.support.constraint.ConstraintLayout>
+
+</layout>

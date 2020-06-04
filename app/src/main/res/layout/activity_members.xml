@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <com.flipboard.bottomsheet.BottomSheetLayout
+        android:id="@+id/bottom_sheet_members"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.appster.turtle.ui.rooms.MembersActivity">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_members_listing"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white">
+
+            <include
+                android:id="@+id/cl_members_header"
+                layout="@layout/layout_header_text_bg_light"
+                android:layout_width="@dimen/width_0"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!--<android.support.constraint.ConstraintLayout-->
+            <!--android:id="@+id/header"-->
+            <!--android:layout_width="@dimen/width_0"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="@dimen/margin_27"-->
+            <!--app:layout_constraintEnd_toEndOf="parent"-->
+            <!--app:layout_constraintStart_toStartOf="parent"-->
+            <!--app:layout_constraintTop_toBottomOf="@id/cl_members_header">-->
+
+            <!--<com.appster.turtle.widget.CustomTextView-->
+            <!--android:id="@+id/tv_member_header"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:gravity="center_horizontal"-->
+            <!--android:textColor="#000000"-->
+            <!--android:textSize="@dimen/textsize_12_5"-->
+            <!--app:customFont="@string/bruta_condensed_glb_semi_bold"-->
+            <!--app:layout_constraintEnd_toStartOf="@+id/tv_request_header"-->
+            <!--app:layout_constraintStart_toStartOf="parent"-->
+            <!--android:text="@string/member_head" />-->
+
+            <!--<com.appster.turtle.widget.CustomTextView-->
+            <!--android:id="@+id/tv_request_header"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:gravity="center_horizontal"-->
+            <!--android:textColor="#b2b2b2"-->
+            <!--android:textSize="@dimen/textsize_12_5"-->
+            <!--app:customFont="@string/bruta_condensed_glb_semi_bold"-->
+            <!--app:layout_constraintEnd_toEndOf="parent"-->
+            <!--app:layout_constraintStart_toEndOf="@+id/tv_member_header"-->
+            <!--app:layout_constraintVertical_chainStyle="packed"-->
+            <!--android:text="@string/requests_head" />-->
+
+            <!--</android.support.constraint.ConstraintLayout>-->
+
+            <com.appster.turtle.widget.CustomTextView
+                android:id="@+id/tv_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cl_members_header"
+                android:layout_marginEnd="@dimen/dimen_23"
+                android:layout_marginStart="@dimen/dimen_23"
+                android:layout_marginTop="@dimen/dp_34_6"
+                android:text="@string/search"
+                android:textColor="@color/text_font_color_grey"
+                android:textSize="@dimen/textsize_13_4"
+                app:customFont="@string/eina_01_semibold"
+                app:layout_constraintTop_toBottomOf="@id/cl_members_header" />
+
+            <com.appster.turtle.widget.CustomEditText
+                android:id="@+id/et_search"
+                android:inputType="text"
+                android:drawablePadding="@dimen/dimen_7_9"
+                android:drawableStart="@drawable/search_grey"
+                android:maxLines="1"
+
+                android:layout_marginEnd="@dimen/dimen_23"
+                android:layout_marginStart="@dimen/dimen_23"
+                android:layout_marginTop="@dimen/margin_8"
+                app:customFont="@string/eina_01_regular"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_search"
+                style="@style/noise_edittxt_style_signup" />
+
+            <!--<include-->
+            <!--android:id="@+id/included_cl_search"-->
+            <!--layout="@layout/search_layout"-->
+            <!--android:layout_width="@dimen/width_0"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginEnd="@dimen/dimen_23"-->
+            <!--android:layout_marginStart="@dimen/dimen_23"-->
+            <!--android:layout_marginTop="@dimen/margin_8"-->
+            <!--android:visibility="gone"-->
+            <!--app:layout_constraintEnd_toEndOf="parent"-->
+            <!--app:layout_constraintStart_toStartOf="parent"-->
+            <!--app:layout_constraintTop_toBottomOf="@id/tv_search" />-->
+
+
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_members_added"
+                android:layout_width="@dimen/width_0"
+                android:layout_height="@dimen/width_0"
+                android:layout_marginTop="@dimen/dimen_17_5"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/et_search" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </com.flipboard.bottomsheet.BottomSheetLayout>
+</layout>

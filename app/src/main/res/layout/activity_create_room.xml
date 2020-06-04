@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/header"
+            layout="@layout/layout_header_text_bg_light"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <android.support.v4.widget.NestedScrollView
+            android:id="@+id/sv_create_room"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="@dimen/width_0"
+            android:fillViewport="true"
+            android:paddingEnd="@dimen/margin_23"
+            android:paddingStart="@dimen/margin_23"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/header">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+
+                android:layout_height="match_parent">
+
+                <com.appster.turtle.widget.CustomTextView
+                    android:id="@+id/tv_name_your_room"
+                    style="@style/noise_edit_header_style"
+                    android:layout_marginTop="@dimen/dimen_19_2"
+                    android:text="@string/name_your_room"
+                    app:customFont="@string/eina_01_semibold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.appster.turtle.widget.CustomEditText
+                    android:id="@+id/et_room_name"
+                    style="@style/noise_edittxt_style"
+                    android:maxLength="20"
+                    app:emojiFilter='@{true}'
+                    app:size='@{20}'
+                    android:inputType="textCapWords"
+                    app:customFont="@string/eina_01_semibold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_name_your_room" />
+
+
+                <com.appster.turtle.widget.CustomTextView
+                    android:id="@+id/tv_desc"
+                    style="@style/noise_edit_header_style"
+                    android:layout_marginTop="@dimen/dimen_19_2"
+                    android:text="@string/description"
+                    app:customFont="@string/eina_01_semibold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/et_room_name" />
+
+                <com.appster.turtle.widget.CustomEditText
+                    android:id="@+id/et_desc"
+                    style="@style/noise_edittxt_style"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginTop="@dimen/dimen_2"
+                    android:inputType="textMultiLine"
+                    android:maxLength="140"
+                    android:maxLines="20"
+                    app:customFont="@string/eina_01_regular"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_desc" />
+
+                <com.appster.turtle.widget.CustomTextView
+                    android:id="@+id/tv_desc_length"
+                    style="@style/noise_edit_header_style"
+                    android:text="@string/desc_characters_remaining"
+                    app:customFont="@string/eina_01_regular"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/et_desc" />
+
+
+                <com.appster.turtle.widget.CustomTextView
+                    android:id="@+id/tv_add_users"
+                    android:layout_width="@dimen/width_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_19_4"
+                    android:imeOptions="actionSearch"
+                    android:text="@string/add_users"
+                    android:textColor="@color/text_font_color"
+                    android:textSize="@dimen/textsize_13_4"
+                    app:customFont="@string/eina_01_semibold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_desc_length" />
+
+
+                <com.appster.turtle.widget.CustomEditText
+                    android:id="@+id/et_search"
+                    style="@style/noise_edittxt_style"
+                    android:layout_marginTop="@dimen/dimen_2"
+                    android:drawablePadding="@dimen/dimen_7_9"
+                    android:drawableStart="@drawable/search_grey"
+                    android:imeOptions="actionSearch"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    app:customFont="@string/eina_01_regular"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_add_users" />
+
+
+
+                <com.appster.turtle.widget.CustomTextView
+                    android:id="@+id/tv_users_found"
+                    android:layout_width="@dimen/width_0"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginTop="@dimen/margin_5"
+                    android:gravity="start"
+                    android:text="@string/placeholder_users_found"
+                    android:textColor="@color/bright_teal"
+                    android:textSize="@dimen/textSizeNormal"
+                    android:visibility="gone"
+                    app:customFont="@string/eina_01_regular"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/et_search" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_users"
+                    android:layout_width="@dimen/width_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_9_8"
+                    android:nestedScrollingEnabled="false"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_users_found" />
+
+
+            </android.support.constraint.ConstraintLayout>
+        </android.support.v4.widget.NestedScrollView>
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

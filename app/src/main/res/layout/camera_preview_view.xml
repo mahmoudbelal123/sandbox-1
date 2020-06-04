@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:autofit="http://schemas.android.com/tools"
+    android:orientation="vertical">
+
+
+    <data>
+
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.appster.turtle.viewmodel.CameraPreviewModel" />
+    </data>
+
+
+    <RelativeLayout
+        android:id="@+id/rl_preview_control"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="@{viewModel.preview  ? View.VISIBLE :View.GONE}"
+
+        >
+
+
+        <ImageView
+            android:id="@+id/iv_preview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:visibility="@{viewModel.bitmap ==null ? View.GONE :View.VISIBLE}"
+            app:bitmap="@{viewModel.bitmap}"
+            autofit:ignore="ContentDescription" />
+
+        <VideoView
+            android:id="@+id/vv_preview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:visibility='@{(viewModel.uri !=null &amp;&amp; !viewModel.uri.toString().contains("gif") ) ? View.VISIBLE :View.GONE}'
+            app:videouri="@{viewModel.uri}" />
+
+
+        <ImageView
+            android:id="@+id/iv_gif"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:visibility='@{(viewModel.uri !=null &amp;&amp; viewModel.uri.toString().contains("gif") ) ? View.VISIBLE :View.GONE}'
+            app:gifuri="@{viewModel.uri}"
+
+            autofit:ignore="ContentDescription" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:clickable="true"
+            android:onClick="@{viewModel.textEditingListener}"
+            android:layout_height="match_parent">
+
+        </FrameLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/rl_canvas"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            app:align="@{viewModel.uri!=null ? @id/vv_preview : @id/iv_preview}">
+
+            <me.grantland.widget.AutofitTextView
+                android:id="@+id/tv_image_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:background="@null"
+                android:gravity="center"
+                android:padding="@dimen/default_padding_20"
+                android:text="@={viewModel.textToAdd}"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/textsize_24"
+                android:visibility="gone"
+                autofit:minTextSize="10sp" />
+
+        </RelativeLayout>
+
+        <com.xiaopo.flying.sticker.StickerView
+            android:id="@+id/sticker_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:onClick="@{viewModel.textEditingListener}"
+            app:showBorder="false"
+            app:showIcons="false" />
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/iv_camera_back"
+            android:layout_alignParentEnd="true"
+            android:gravity="center">
+
+            <com.appster.turtle.widget.CustomTextView
+                android:id="@+id/tv_use"
+                android:layout_width="@dimen/margin_69"
+                android:layout_height="@dimen/margin_30_7"
+                android:layout_marginEnd="22.2dp"
+                android:background="@drawable/rounded_tv_bg"
+                android:gravity="center"
+
+                android:text="@string/use"
+                android:textColor="#ffffff"
+                android:textSize="@dimen/textsize_12"
+                app:customFont="@string/eina_01_semibold" />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/rl_camera_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="@dimen/dimen_17_3"
+
+            android:layout_marginTop="@dimen/margin_21"
+            android:onClick="@{viewModel.textEditingListener}">
+
+
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:id="@+id/iv_camera_text"
+                android:layout_width="@dimen/margin_40"
+                android:layout_height="@dimen/margin_40"
+                android:contentDescription="@null"
+                android:padding="@dimen/dimen_4" />
+
+            <ImageView
+                android:layout_width="@dimen/dimen_30"
+                android:layout_height="@dimen/dimen_30"
+                android:layout_centerInParent="true"
+                android:contentDescription="@null"
+                android:padding="@dimen/dimen_4"
+                android:src="@drawable/ic_camera_text" />
+        </RelativeLayout>
+
+
+        <!--android:visibility="@{viewModel.textEditing ?View.VISIBLE: View.GONE}"-->
+
+
+        <ImageView
+            android:id="@+id/iv_camera_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/dp_53_5"
+            android:layout_marginStart="@dimen/dp_30_6"
+            android:layout_marginTop="@dimen/dp_30_6"
+            android:onClick="onBackClicked"
+            android:padding="@dimen/dimen_4"
+
+            android:src="@drawable/ic_camera_up"
+            autofit:ignore="ContentDescription" />
+
+
+        <com.skydoves.colorpickerview.ColorPickerView
+            android:id="@+id/colorPickerView"
+            android:layout_width="@dimen/dp_16_3"
+            android:layout_height="@dimen/dp_200"
+            android:layout_marginEnd="@dimen/dimen_17_3"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@id/rl_camera_text"
+            android:layout_marginTop="@dimen/dimen_10"
+            android:visibility="gone"
+            app:src="@drawable/color_pallete" />
+
+
+        <View
+            android:id="@+id/caption_view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_2"
+            android:layout_above="@+id/et_caption"
+            android:background="#e0e0e0" />
+
+        <com.appster.turtle.tag.SocialTextView
+            android:id="@+id/et_caption"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="102dp"
+            android:layout_marginEnd="@dimen/dp_34_6"
+            android:layout_marginTop="@dimen/dimen_18"
+            android:layout_marginStart="@dimen/dp_34_6"
+            android:background="@null"
+            android:minHeight="@dimen/dimen_18"
+            android:hint="@string/add_caption"
+            android:maxLines="1"
+            android:lines="1"
+            android:singleLine="true"
+            android:padding="@dimen/margin_5"
+            android:onClick="@{viewModel.captionClickListener}"
+            android:text="@={viewModel.caption}"
+            android:textColor="#ffffff"
+            android:textColorHint="#ffffff"
+            android:textSize="@dimen/textSizeLarge"
+            app:customFont="@string/bruta_normal_glb_regular" />
+
+
+    </RelativeLayout>
+
+
+</layout>

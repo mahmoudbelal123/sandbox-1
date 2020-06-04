@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--suppress ALL -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="co.lujun.androidtagview.test">
+
+    <uses-sdk
+        android:minSdkVersion="16"
+        android:targetSdkVersion="26" />
+
+    <instrumentation
+        android:name="android.test.InstrumentationTestRunner"
+        android:functionalTest="false"
+        android:handleProfiling="false"
+        android:label="Tests for co.lujun.androidtagview.test"
+        android:targetPackage="co.lujun.androidtagview.test" />
+
+    <meta-data
+        android:name="android.support.VERSION"
+        android:value="25.3.1" />
+
+    <application
+        android:debuggable="true"
+        android:label="@string/app_name">
+        <uses-library android:name="android.test.runner" />
+    </application>
+
+</manifest>

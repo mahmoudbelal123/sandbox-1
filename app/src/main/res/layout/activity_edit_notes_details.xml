@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="notes"
+            type="com.appster.turtle.model.NotesModel" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/cl_parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:focusableInTouchMode="true"
+        tools:context="com.appster.turtle.ui.notes.editNotes.EditNotesDetailsActivity">
+
+        <include
+            android:id="@+id/header"
+            layout="@layout/layout_header_text_bg_light"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.appster.turtle.widget.CustomEditText
+            style="@style/noise_edittxt_style_signup"
+            android:id="@+id/et_notes_title"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dimen_34"
+            android:layout_marginStart="@dimen/dimen_34"
+            android:layout_marginTop="@dimen/dimen_50"
+            android:background="@drawable/create_room_name_selector"
+            android:gravity="start"
+            android:hint="@string/title"
+            android:inputType="text|textCapWords"
+            android:lineSpacingExtra="@dimen/text_size_3_3"
+            android:maxLines="1"
+            android:paddingBottom="@dimen/dimen_14_9"
+            android:paddingEnd="@dimen/dimen_23_5"
+            android:paddingStart="@dimen/dimen_23_5"
+            android:paddingTop="@dimen/dimen_15_8"
+            android:text="@{notes.title}"
+            android:textColor="@android:color/black"
+            android:textColorHint="@color/gray"
+            android:textCursorDrawable="@drawable/et_indiciator_auth_black"
+            android:textSize="@dimen/textsize_14"
+            app:customFont="@string/bruta_normal_glb_regular"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/header" />
+
+        <com.appster.turtle.widget.CustomEditText
+            style="@style/noise_edittxt_style_signup"
+            android:id="@+id/et_notes_class"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_34"
+            android:layout_marginStart="@dimen/dimen_34"
+            android:layout_marginTop="@dimen/dimen_19"
+            android:background="@drawable/create_room_name_selector"
+            android:gravity="start"
+            android:hint="@string/class_hint"
+            android:inputType="text|textCapWords"
+            android:lineSpacingExtra="@dimen/text_size_3_3"
+            android:maxLines="1"
+            android:paddingBottom="@dimen/dimen_14_9"
+            android:paddingEnd="@dimen/dimen_23_5"
+            android:paddingStart="@dimen/dimen_23_5"
+            android:paddingTop="@dimen/dimen_15_8"
+            android:text="@{notes.className}"
+            android:textColor="@android:color/black"
+            android:textColorHint="@color/gray"
+            android:textCursorDrawable="@drawable/et_indiciator_auth_black"
+            android:textSize="@dimen/textsize_14"
+            app:customFont="@string/bruta_normal_glb_regular"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_notes_title" />
+
+        <com.appster.turtle.widget.CustomTextView
+            android:id="@+id/tv_done"
+            style="@style/RoundedTextView"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_34"
+            android:text="@string/done"
+            app:customFont="@string/bruta_normal_glb_semi_bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.appster.turtle.widget.CustomEditText
+            style="@style/noise_edittxt_style_signup"
+            android:id="@+id/et_notes_description"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="@dimen/width_0"
+            android:layout_marginBottom="@dimen/margin_40"
+            android:layout_marginEnd="@dimen/margin_34"
+            android:layout_marginStart="@dimen/margin_34"
+            android:layout_marginTop="@dimen/margin_40"
+            android:background="@drawable/black_border"
+            android:gravity="start"
+            android:hint="@string/add_notes_description"
+            android:lineSpacingExtra="@dimen/text_size_3_3"
+            android:paddingBottom="@dimen/dimen_14_9"
+            android:paddingEnd="@dimen/dimen_23_5"
+            android:paddingStart="@dimen/dimen_23_5"
+            android:paddingTop="@dimen/dimen_15_8"
+            android:text="@{notes.details}"
+            android:textColor="@android:color/black"
+            android:textColorHint="@color/gray"
+            android:textCursorDrawable="@drawable/et_indiciator_auth_black"
+            android:textSize="@dimen/textsize_14"
+            app:customFont="@string/bruta_normal_glb_regular"
+            app:layout_constraintBottom_toTopOf="@id/tv_done"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_notes_class" />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

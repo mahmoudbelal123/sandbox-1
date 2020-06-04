@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <com.appster.turtle.widget.CustomTextView
+        android:id="@+id/tv_prediction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dimen_4"
+        android:textSize="@dimen/textsize_22"
+        app:customFont="@string/bruta_condensed_glb_regular"
+        tools:text="Appster" />
+
+
+</layout>

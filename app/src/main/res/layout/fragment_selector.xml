@@ -1,0 +1,107 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:id="@+id/rl_transparent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.8"
+            android:background="@color/done_unselected_color"
+            android:contentDescription="@string/image_content" />
+
+        <com.appster.turtle.widget.CustomTextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_23"
+            android:layout_marginTop="@dimen/dp_57_6"
+            android:alpha="0.4"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/textsize_13_4"
+            app:customFont="@string/eina_01_semibold"
+            tools:text="Home Town"
+
+            />
+
+        <RelativeLayout
+            android:id="@+id/rl_over"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/tvDone"
+            android:layout_below="@id/tv_title"
+            android:layout_marginBottom="@dimen/margin_34"
+            android:layout_marginEnd="@dimen/margin_23"
+            android:layout_marginStart="@dimen/margin_23"
+            android:layout_marginTop="@dimen/dp_5_6"
+
+            android:background="@drawable/selector_bg"
+            android:clickable="true"
+            android:focusable="true"
+
+
+            android:padding="@dimen/margin_23"
+            tools:context="com.appster.turtle.ui.signUp.SelectorFragment">
+
+            <com.appster.turtle.widget.CustomEditText
+                android:id="@+id/et_search"
+                style="@style/AuthEditText_Teel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dimen_6"
+                android:drawablePadding="@dimen/margin_10"
+                android:drawableStart="@drawable/ic_orange_search"
+                android:gravity="top"
+                android:hint="@string/select_your_major"
+
+                android:imeOptions="actionSearch"
+                android:padding="@dimen/height_0"
+                android:textSize="@dimen/textSizeLarge"
+                app:customFont="@string/eina_01_regular" />
+
+            <View
+                android:id="@+id/vMajor"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_1"
+                android:layout_below="@id/et_search"
+                android:background="@color/colorTeelAlpha" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/vMajor"
+                android:layout_marginTop="@dimen/dimen_18"
+                android:scrollbarSize="@dimen/dimen_3_8"
+                android:scrollbarThumbVertical="@drawable/scroll_bright"
+                android:scrollbars="vertical" />
+
+
+        </RelativeLayout>
+
+        <com.appster.turtle.widget.CustomTextView
+            android:id="@+id/tvDone"
+            style="@style/CurveTextView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/curve_button_height"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/margin_30"
+            android:layout_marginEnd="@dimen/margin_30"
+            android:layout_marginStart="@dimen/margin_30"
+            android:background="@drawable/btn_unselected_bg"
+            android:clickable="true"
+            android:focusable="true"
+
+            android:enabled="true"
+            android:text="@string/done"
+            android:textColor="@color/done_unselected_color"
+            app:customFont="@string/eina_01_semibold" />
+
+
+    </RelativeLayout>
+
+</layout>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <android.support.constraint.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="@dimen/default_padding_20">
+
+        <com.appster.turtle.widget.CustomTextView
+            android:id="@+id/txt_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="1.9sp"
+            android:textColor="#090909"
+            android:textSize="@dimen/textsize_17_3"
+            android:layout_marginStart="@dimen/dimen_23"
+            app:layout_constraintStart_toStartOf="parent"
+            app:customFont="@string/eina_01_regular" />
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/swipeReaction"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="@dimen/width_0"
+            android:layout_marginTop="@dimen/margin_15"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_count">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_reaction"
+                android:scrollIndicators="end"
+                android:scrollbarThumbVertical="@drawable/et_indiciator_auth_orange"
+                android:scrollbars="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </android.support.v4.widget.SwipeRefreshLayout>
+    </android.support.constraint.ConstraintLayout>
+</layout>

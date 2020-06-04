@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.support.v4.content.ContextCompat" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="user"
+            type="com.appster.turtle.model.User" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.appster.turtle.widget.CustomTextView
+            android:id="@+id/tv_student_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_15_4"
+
+            android:layout_toEndOf="@+id/fl_image"
+            android:layout_toStartOf="@+id/iv_selection"
+            android:gravity="start|center"
+            android:lines="1"
+            android:ellipsize="end"
+            android:textColor="@color/text_font_color_grey"
+            android:textSize="@dimen/textSize_15_4"
+            app:customFont="@string/eina_01_regular" />
+
+
+        <RelativeLayout
+            android:id="@+id/fl_image"
+            android:layout_width="@dimen/friends_image"
+            android:layout_height="@dimen/friends_image"
+            app:bindShowProfile="@{user}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:src="@{user.profileUrlType==3 ? @drawable/ic_pp_cred:@drawable/ic_transparent}"
+                app:civ_border_width="@dimen/width_0" />
+
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:width="@{user.profileUrlType==3 ? @dimen/image_w_initials : @dimen/image_w}"
+                android:height="@{user.profileUrlType==3 ? @dimen/image_w_initials : @dimen/image_w}"
+                android:background="@color/transparent"
+                android:contentDescription="@null"
+                android:visibility="@{user.profileUrlType==3 ? View.INVISIBLE:View.VISIBLE}"
+
+                app:civ_border_width="@dimen/width_0"
+                app:profileImageurl="@{user.profileUrl}" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:width="@{user.profileUrlType==3 ? @dimen/image_w_initials : @dimen/image_w}"
+                android:height="@{user.profileUrlType==3 ? @dimen/image_w_initials : @dimen/image_w}"
+                android:background="@color/transparent"
+                android:contentDescription="@null"
+                android:visibility="@{user.profileUrlType==3 ? View.VISIBLE:View.INVISIBLE}"
+                app:profileImageurl="@{user.profileUrl}" />
+
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/iv_selection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/tv_student_address"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/tv_student_name"
+            tools:ignore="ContentDescription" />
+
+        <com.appster.turtle.widget.CustomTextView
+            android:id="@+id/tv_pending"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@id/iv_selection"
+            android:layout_marginTop="@dimen/dp_6_7"
+            android:gravity="center"
+            android:letterSpacing="-0.02"
+            android:text="@string/pending"
+            android:textColor="@color/text_font_color_grey"
+            android:textSize="@dimen/textsize_12"
+            android:visibility="gone"
+            app:customFont="@string/eina_01_semibold" />
+
+        <com.appster.turtle.widget.CustomTextView
+            android:id="@+id/tv_student_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_student_name"
+            android:layout_marginStart="@dimen/dimen_15_4"
+            android:layout_marginTop="@dimen/dimen_2"
+            android:layout_toEndOf="@+id/fl_image"
+            android:lines="1"
+            android:ellipsize="end"
+            android:layout_toStartOf="@+id/iv_selection"
+            android:text="@{user.universityBaseModel.name}"
+            android:textColor="@color/text_font_color_grey"
+            android:textSize="@dimen/textSize_15_4"
+            app:customFont="@string/eina_01_regular" />
+
+        <com.appster.turtle.widget.CustomTextView
+            android:id="@+id/tv_respond"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_15_4"
+            android:layout_marginTop="4.9dp"
+            android:layout_toEndOf="@+id/fl_image"
+            android:layout_toStartOf="@+id/iv_selection"
+            android:text="@string/respond_to_request"
+            android:textColor="#161616"
+            android:visibility="gone"
+
+            android:layout_alignTop="@+id/iv_accept"
+            android:layout_alignBottom="@+id/iv_accept"
+            android:textSize="@dimen/textsize_13_4" />
+
+        <ImageView
+            android:id="@+id/iv_accept"
+            android:layout_width="@dimen/margin_30_7"
+            android:layout_height="@dimen/margin_30_7"
+            android:layout_marginEnd="@dimen/dimen_7_7"
+            android:contentDescription="@string/image_content"
+            android:src="@drawable/circle_tick_stroke"
+            android:layout_toStartOf="@id/iv_decline"
+            android:layout_below="@id/tv_student_address"
+            android:visibility="gone"
+
+            />
+
+        <ImageView
+            android:id="@+id/iv_decline"
+            android:layout_width="@dimen/margin_30_7"
+            android:layout_height="@dimen/margin_30_7"
+            android:layout_below="@id/tv_student_address"
+            android:contentDescription="@string/image_content"
+            android:src="@drawable/ic_circle_cross_grey"
+            android:layout_alignParentEnd="true"
+            android:visibility="gone"
+
+            />
+    </RelativeLayout>
+</layout>

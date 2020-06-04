@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:layout_height="match_parent">
+
+        <com.appster.turtle.widget.CustomTextView
+            android:id="@+id/tv_join_room"
+            android:layout_width="@dimen/join_dimen"
+            android:layout_height="46.1dp"
+            android:background="@drawable/btn_orange_rounded"
+            android:gravity="center"
+            android:paddingHorizontal="@dimen/margin_20"
+            android:text="@string/join_space"
+            android:textColor="@color/app_white"
+            android:textSize="@dimen/textsize_13_4"
+            app:customFont="@string/eina_01_semibold"
+
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+        <com.appster.turtle.widget.CustomTextView
+            android:id="@+id/tv_accept"
+            android:layout_width="@dimen/join_dimen"
+            android:layout_height="46.1dp"
+            android:background="@drawable/orange_btn_stroke_white"
+
+            android:gravity="center"
+            android:paddingHorizontal="@dimen/margin_20"
+            android:text="@string/accept"
+            android:textColor="@color/bright_teal"
+            app:customFont="@string/eina_01_semibold"
+
+            android:textSize="@dimen/textsize_13_4"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toEndOf="@id/tv_reject" />
+
+        <com.appster.turtle.widget.CustomTextView
+            android:id="@+id/tv_reject"
+            android:layout_width="@dimen/join_dimen"
+            android:layout_height="46.1dp"
+            android:layout_marginEnd="@dimen/margin_10"
+            android:background="@drawable/orange_btn_stroke_white"
+            android:gravity="center"
+            android:paddingHorizontal="@dimen/margin_20"
+            android:text="@string/reject"
+            android:textColor="@color/bright_teal"
+            android:textSize="@dimen/textsize_13_4"
+            app:customFont="@string/eina_01_semibold"
+            android:visibility="gone"
+            app:layout_constraintEnd_toStartOf="@id/tv_accept"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

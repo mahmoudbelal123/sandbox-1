@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:id="@+id/rl_bg"
+        android:layout_height="@dimen/dp_38_4"
+        android:layout_marginEnd="@dimen/dp_6_7"
+        android:layout_marginTop="@dimen/dimen_7_7"
+        android:background="@drawable/orange_btn_stroke"
+        android:paddingEnd="@dimen/margin_15"
+        android:paddingStart="@dimen/margin_15">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_height="wrap_content">
+
+            <com.appster.turtle.widget.CustomTextView
+                android:id="@+id/tv_tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLength="20"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:textColor="@color/bright_teal"
+                android:textSize="@dimen/textsize_13_4"
+                app:customFont="@string/eina_01_semibold" />
+
+
+            <ImageView
+                android:id="@+id/iv"
+                android:layout_width="@dimen/dimen_10"
+                android:layout_height="@dimen/dimen_10"
+                android:layout_alignBottom="@id/tv_tag"
+                android:layout_alignTop="@id/tv_tag"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/dimen_4"
+                android:layout_toEndOf="@id/tv_tag"
+                android:src="@drawable/ic_combined_shape"
+                android:contentDescription="@string/image_content" />
+        </RelativeLayout>
+    </RelativeLayout>
+</layout>

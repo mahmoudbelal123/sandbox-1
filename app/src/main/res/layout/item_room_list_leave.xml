@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/cl_bottom_wrapper_leave"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@android:color/black">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_bottom_wrapper_leave_child"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/iv_leave_room"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@null"
+                android:src="@drawable/leave"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <com.appster.turtle.widget.CustomTextView
+                android:id="@+id/tv_leave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dimen_27_8"
+                android:layout_marginStart="@dimen/dimen_32_6"
+                android:layout_marginTop="@dimen/dimen_2"
+                android:text="@string/leave"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/textsize_14"
+                app:customFont="@string/bruta_normal_glb_regular"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_leave_room" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

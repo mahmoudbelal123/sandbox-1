@@ -1,0 +1,19 @@
+<!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="11dp"
+    android:height="17dp"
+    android:viewportWidth="11.0"
+    android:viewportHeight="17.0">
+    <path
+        android:pathData="M0.626,8.696L8.772,0.55l1.358,1.358 -8.146,8.146z"
+        android:fillColor="#000" />
+    <path
+        android:pathData="M0.719,8.78l1.358,-1.357 8.145,8.146 -1.357,1.358z"
+        android:fillColor="#000" />
+</vector>

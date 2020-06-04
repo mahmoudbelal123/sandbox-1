@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <com.flipboard.bottomsheet.BottomSheetLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/app_white"
+            tools:context="com.appster.turtle.ui.profile.MySpacesActivity">
+
+
+            <im.ene.toro.widget.Container
+                android:id="@+id/rv_post"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/cl_header"
+                android:fadeScrollbars="true"
+                android:paddingTop="@dimen/margin_5"
+
+                android:scrollbars="vertical"
+
+
+                />
+
+            <TextView
+                android:id="@+id/tv_no"
+                android:layout_width="match_parent"
+                android:text="@string/no_post_found"
+                android:gravity="center"
+                android:visibility="gone"
+                android:layout_height="match_parent" />
+
+
+            <include
+                android:id="@+id/cl_header"
+                layout="@layout/layout_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/app_white" />
+
+
+        </RelativeLayout>
+    </com.flipboard.bottomsheet.BottomSheetLayout>
+</layout>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cl_settings_item"
+        android:background="@android:color/white">
+
+        <ImageView
+            android:id="@+id/iv_settings_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_right_black_arrow"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_settings_title"
+            app:layout_constraintBottom_toBottomOf="@id/tv_settings_title"
+            tools:ignore="ContentDescription" />
+
+        <com.appster.turtle.widget.CustomTextView
+            android:id="@+id/tv_settings_title"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_36"
+            android:textColor="@color/textcolor_room_name"
+            android:textSize="@dimen/textsize_16"
+            android:layout_marginTop="@dimen/dimen_13_4"
+            app:customFont="@string/eina_01_semibold"
+            app:layout_constraintEnd_toStartOf="@id/iv_settings_icon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/change_password" />
+
+        <View
+            android:layout_width="@dimen/width_0"
+            android:background="@color/text_font_color_grey"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/dimen_16_3"
+            android:alpha="0.2"
+            app:layout_constraintTop_toBottomOf="@id/tv_settings_title"
+            android:layout_height="@dimen/margin_1" />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

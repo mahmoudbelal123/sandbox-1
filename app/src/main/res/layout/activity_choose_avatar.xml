@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.flipboard.bottomsheet.BottomSheetLayout
+        android:id="@+id/bottom_sheet_members"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/app_white"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/header"
+                layout="@layout/layout_header_text_bg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <com.appster.turtle.widget.CustomTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/header"
+                android:layout_marginTop="@dimen/margin_27"
+                android:paddingEnd="@dimen/padding_23"
+                android:paddingStart="@dimen/padding_23"
+                android:text="@string/txt_avatar_lbl"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textSizeExtLarge"
+                app:customFont="@string/eina_01_bold" />
+
+            <com.appster.turtle.widget.PagerContainer
+                android:id="@+id/pager_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true">
+
+                <android.support.v4.view.ViewPager
+                    android:layout_width="125dp"
+                    android:layout_height="125dp"
+                    android:layout_gravity="center_horizontal" />
+            </com.appster.turtle.widget.PagerContainer>
+
+
+            <com.appster.turtle.widget.CustomTextView
+                android:id="@+id/tv_edit"
+                style="@style/CurveTextViewTeal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/pager_container"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:lineSpacingExtra="@dimen/text_size_6_2"
+                android:layout_marginTop="@dimen/dimen_32_6"
+                android:layout_centerHorizontal="true"
+                android:text="@string/edit_change"
+                android:visibility="gone"
+                android:textColor="@color/bright_teal"
+                android:padding="@dimen/margin_16"
+                android:textSize="@dimen/textsize_14"
+                app:customFont="@string/bruta_normal_glb_regular" />
+
+            <RelativeLayout
+                android:id="@+id/tvFooter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="@color/black"
+                android:gravity="start"
+                android:paddingBottom="@dimen/margin_16"
+                android:paddingEnd="@dimen/margin_23"
+                android:paddingStart="@dimen/margin_23"
+                android:paddingTop="@dimen/margin_14"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <ImageView
+                    android:id="@+id/footer_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_alignTop="@id/footer_tv"
+                    android:layout_marginTop="@dimen/dimen_2"
+                    android:src="@drawable/ic_info"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/image_content" />
+
+                <com.appster.turtle.widget.CustomTextView
+                    android:id="@+id/footer_tv"
+                    android:layout_width="wrap_content"
+                    android:text="@string/profile_1_footer"
+                    android:textColor="@color/app_white"
+                    android:layout_marginStart="@dimen/dimen_15_4"
+                    android:lineSpacingExtra="@dimen/dimen_2"
+                    android:layout_toEndOf="@id/footer_iv"
+                    android:textSize="@dimen/textsize_12"
+                    app:customFont="@string/eina_01_regular"
+                    android:layout_height="wrap_content" />
+
+
+            </RelativeLayout>
+
+
+            <FrameLayout
+                android:id="@+id/fl_media_bottom"
+                android:layout_width="match_parent"
+                android:layout_height="144dp"
+                android:layout_alignParentBottom="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+        </RelativeLayout>
+    </com.flipboard.bottomsheet.BottomSheetLayout>
+</layout>

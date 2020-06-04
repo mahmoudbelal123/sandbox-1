@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_admin_created"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/black"
+    android:paddingBottom="@dimen/margin_27"
+    android:paddingEnd="@dimen/dimen_32"
+    android:paddingStart="@dimen/dimen_38"
+    android:paddingTop="@dimen/margin_27">
+
+    <ImageView
+        android:id="@+id/iv_snackbar_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_liked"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_action_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@null"
+        android:paddingEnd="@dimen/width_0"
+        android:paddingStart="@dimen/dimen_10"
+        android:src="@drawable/ic_arrow_white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.appster.turtle.widget.CustomTextView
+        android:id="@+id/tv_snackbar_message"
+        android:layout_width="@dimen/width_0"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/marign_14"
+        android:gravity="start"
+        android:lineSpacingExtra="@dimen/text_8_6"
+        android:textColor="@color/app_white"
+        android:textSize="@dimen/textSmall"
+        app:customFont="@string/bruta_normal_glb_regular"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/iv_action_icon"
+        app:layout_constraintStart_toEndOf="@id/iv_snackbar_icon"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="rohan likes your post in Fustsal." />
+
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="user"
+            type="com.appster.turtle.model.User" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/margin_20"
+        android:paddingVertical="@dimen/padding_11">
+
+        <RelativeLayout
+            android:id="@+id/fl_image"
+            android:layout_width="@dimen/friends_image"
+            android:layout_height="@dimen/friends_image"
+            app:bindShowProfile="@{user}">
+
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:src="@{user.profileUrlType==3 ? @drawable/ic_pp_cred:@drawable/ic_transparent}"
+                app:civ_border_width="@dimen/width_0" />
+
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:layout_width="@dimen/image_w"
+                android:layout_height="@dimen/image_w"
+                android:layout_centerInParent="true"
+                android:background="@color/transparent"
+                android:contentDescription="@null"
+                android:visibility="@{user.profileUrlType==3 ? View.INVISIBLE:View.VISIBLE}"
+
+                app:civ_border_width="@dimen/width_0"
+                app:profileImageurl="@{user.profileUrl}" />
+
+            <ImageView
+                android:layout_width="@dimen/image_w_initials"
+                android:layout_height="@dimen/image_w_initials"
+                android:layout_centerInParent="true"
+                android:background="@color/transparent"
+                android:contentDescription="@null"
+                android:visibility="@{user.profileUrlType==3 ? View.VISIBLE:View.INVISIBLE}"
+                app:profileImageurl="@{user.profileUrl}" />
+
+
+        </RelativeLayout>
+
+
+        <com.appster.turtle.widget.CustomTextView
+            android:id="@+id/tv_tag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/fl_image"
+            android:layout_alignTop="@id/fl_image"
+            android:layout_marginStart="@dimen/margin_10"
+            android:layout_toEndOf="@id/fl_image"
+            android:background="@color/transparent"
+            android:ellipsize="end"
+            android:lines="1"
+            android:gravity="start|center"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/text_16_3"
+
+            app:customFont="@string/eina_01_semibold">
+
+        </com.appster.turtle.widget.CustomTextView>
+
+    </RelativeLayout>
+</layout>

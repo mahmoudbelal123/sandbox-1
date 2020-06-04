@@ -1,0 +1,81 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:id="@+id/rl_transparent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/iv_bg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.8"
+            android:background="@color/done_unselected_color"
+            android:contentDescription="@string/image_content" />
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="@dimen/dimen_19_2"
+            android:layout_height="@dimen/dimen_19_2"
+            android:layout_marginStart="@dimen/margin_34"
+            android:layout_marginTop="@dimen/margin_21"
+            android:src="@drawable/close" />
+
+
+        <RelativeLayout
+            android:id="@+id/rl_over"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_309"
+            android:layout_below="@id/tv_title"
+            android:layout_marginBottom="@dimen/margin_34"
+            android:layout_marginEnd="@dimen/margin_23"
+            android:layout_marginStart="@dimen/margin_23"
+            android:layout_marginTop="131dp"
+
+            android:background="@drawable/selector_bg"
+            android:clickable="true"
+            android:focusable="true"
+
+
+            android:padding="@dimen/margin_23"
+            tools:context="com.appster.turtle.ui.signUp.SelectorFragment">
+
+
+            <com.appster.turtle.widget.CustomTextView
+                android:id="@+id/tv_head"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:gravity="center_horizontal"
+                android:textColor="#212121"
+                android:textSize="@dimen/text_28_8"
+                app:customFont="@string/eina_01_bold"
+                tools:text="Shower Thoughts" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_below="@id/tv_head"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:layout_height="match_parent">
+
+                <com.appster.turtle.widget.CustomTextView
+                    android:id="@+id/tv_desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+
+                    android:gravity="center_horizontal"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/textsize_15_plus"
+                    app:customFont="@string/eina_01_regular"
+                    tools:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a typeLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type" />
+
+            </ScrollView>
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+</layout>

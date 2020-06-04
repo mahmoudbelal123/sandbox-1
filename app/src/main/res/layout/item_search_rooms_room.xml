@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/black">
+
+        <ImageView
+            android:id="@+id/iv_room_entry_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/add_white"
+            android:contentDescription="@null"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.appster.turtle.widget.CustomTextView
+            android:id="@+id/tv_room_name"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="wrap_content"
+            tools:text="GoT Season 8 Fan Club"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/textsize_22"
+            app:customFont="@string/bruta_condensed_glb_semi_bold"
+            app:layout_constraintEnd_toStartOf="@id/iv_room_entry_status"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.appster.turtle.widget.CustomTextView
+            android:id="@+id/tv_room_subtext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_4"
+            tools:text="July 26, 2017"
+            android:textColor="#abb1b8"
+            android:textSize="@dimen/textsize_16"
+            app:customFont="@string/bruta_normal_glb_regular"
+            app:layout_constraintTop_toBottomOf="@id/tv_room_name" />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

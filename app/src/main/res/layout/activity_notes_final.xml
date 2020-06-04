@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="notes"
+            type="com.appster.turtle.model.NotesModel" />
+
+    </data>
+
+    <com.flipboard.bottomsheet.BottomSheetLayout
+        android:id="@+id/bs_review"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alpha="0.8"
+                android:background="@color/done_unselected_color"
+                android:contentDescription="@string/image_content" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/pad_70"
+                android:background="@drawable/white_upr_rounded">
+
+                <include
+                    android:id="@+id/header"
+                    layout="@layout/layout_header_text_bg_light"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.appster.turtle.widget.CustomTextView
+                    android:id="@+id/tv_post_notes"
+                    style="@style/RoundedTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_13_4"
+                    android:layout_marginStart="@dimen/margin_34"
+                    android:layout_marginEnd="@dimen/margin_34"
+                    android:layout_marginBottom="@dimen/dimen_15_4"
+                    android:textColor="@color/app_white"
+                    android:text="@string/post_notes"
+                    app:customFont="@string/eina_01_semibold"
+                    android:layout_alignParentBottom="true" />
+
+                <RelativeLayout
+                    android:id="@+id/cl_heading"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/room_image_bg"
+                    android:layout_below="@+id/header"
+                    android:paddingTop="@dimen/dimen_30"
+                    android:paddingBottom="@dimen/dimen_25">
+
+                    <com.appster.turtle.widget.CustomTextView
+                        android:id="@+id/tv_notes_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:lineSpacingExtra="-1.7sp"
+                        android:text='@{"$"+notes.formattedPrice}'
+                        android:textColor="@color/bright_teal"
+                        android:textSize="@dimen/textSize_19"
+                        android:layout_marginEnd="@dimen/margin_23"
+                        app:customFont="@string/eina_01_semibold"
+                        android:layout_alignParentEnd="true"
+                        tools:text="$15" />
+                    <!--android:text='@{"$"+notes.price}'-->
+
+                    <com.appster.turtle.widget.CustomTextView
+                        android:id="@+id/tv_notes_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignStart="@+id/tv_notes_class"
+                        android:layout_toEndOf="@+id/tv_notes_price"
+                        android:text="@={notes.className}"
+                        android:textAllCaps="true"
+                        android:textColor="@color/unselected_grey"
+                        android:textSize="@dimen/textSmall"
+                        app:customFont="@string/eina_01_semibold"
+                        tools:text="Rohan Taneja" />
+
+
+                    <com.appster.turtle.widget.CustomTextView
+                        android:id="@+id/tv_notes_class"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen_4"
+                        android:lineSpacingExtra="@dimen/text_space_9_6"
+                        android:text="@{notes.title}"
+                        android:textColor="@color/black"
+                        android:textAllCaps="true"
+                        android:textSize="@dimen/textSizeExtLarge"
+                        android:layout_marginEnd="@dimen/margin_23"
+                        android:layout_marginStart="@dimen/margin_23"
+                        app:customFont="@string/eina_01_semibold"
+                        android:layout_toEndOf="@id/tv_notes_price"
+                        android:layout_alignParentStart="true"
+                        android:layout_below="@id/tv_notes_title"
+                        tools:text="Geography 2B" />
+                </RelativeLayout>
+
+                <android.support.v4.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fillViewport="true"
+                    android:overScrollMode="never"
+                    android:fadingEdge="none"
+                    android:layout_above="@id/tv_post_notes"
+                    android:layout_below="@+id/cl_heading">
+
+                    <android.support.constraint.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/dimen_23"
+                        android:background="@android:color/white">
+
+                        <com.appster.turtle.util.RoundRectCornerImageView
+                            android:id="@+id/iv_snippet"
+                            android:contentDescription="@null"
+                            noteimageUrl="@{notes.snippetUrl}"
+                            android:src="@drawable/ic_join_black"
+                            android:layout_width="@dimen/width_0"
+                            android:layout_height="@dimen/margin_176"
+                            android:scaleType="fitXY"
+                            android:layout_marginEnd="@dimen/margin_23"
+
+                            android:layout_marginStart="@dimen/margin_23"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                        <com.appster.turtle.widget.CustomTextView
+                            android:id="@+id/tv_notes_details"
+                            android:layout_width="@dimen/width_0"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dimen_25"
+                            android:lineSpacingExtra="@dimen/text_space_9_6"
+                            android:text="@{notes.details}"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/textsize_17_3"
+                            android:layout_marginEnd="@dimen/margin_23"
+                            android:layout_marginStart="@dimen/margin_23"
+                            app:customFont="@string/eina_01_regular"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/iv_snippet"
+                            tools:text="These notes teach Plate Tectonics, a theory that  the Earth's outer shell is divided into several plates." />
+
+                        <View
+                            android:id="@+id/v_divider"
+                            android:layout_width="@dimen/width_0"
+                            android:layout_height="@dimen/margin_1"
+                            android:layout_marginTop="@dimen/margin_8"
+                            android:layout_marginEnd="@dimen/margin_23"
+                            android:layout_marginStart="@dimen/margin_23"
+                            android:background="@color/edittext_bg_hint"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_notes_details" />
+
+                        <com.appster.turtle.widget.CustomTextView
+                            android:id="@+id/tv_notes"
+                            android:layout_width="@dimen/width_0"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_16"
+                            android:gravity="bottom"
+                            android:lineSpacingExtra="@dimen/textsize_9"
+                            android:text="@string/notes_small"
+                            android:layout_marginEnd="@dimen/margin_23"
+                            android:layout_marginStart="@dimen/margin_23"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/textsize_16"
+                            android:visibility="visible"
+                            app:customFont="@string/eina_01_semibold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/v_divider" />
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/rv_attachments"
+                            android:layout_width="@dimen/width_0"
+                            android:visibility="visible"
+                            android:layout_marginEnd="@dimen/margin_23"
+                            android:layout_marginStart="@dimen/margin_23"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dimen_12"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_notes" />
+
+                        <com.appster.turtle.widget.CustomTextView
+                            android:id="@+id/tv_posted_by"
+                            android:layout_width="@dimen/width_0"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_21"
+                            android:lineSpacingExtra="@dimen/text_size_3_3"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/textSizeNormal"
+                            android:layout_marginStart="@dimen/margin_23"
+                            android:visibility="gone"
+                            app:customFont="@string/eina_01_regular"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/rv_attachments"
+                            tools:text="Posted by @TomHeaton" />
+
+                    </android.support.constraint.ConstraintLayout>
+
+                </android.support.v4.widget.NestedScrollView>
+            </RelativeLayout>
+        </android.support.constraint.ConstraintLayout>
+
+    </com.flipboard.bottomsheet.BottomSheetLayout>
+
+</layout>

@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <!--<import type="java.lang.String" />-->
+
+        <variable
+            name="noteModel"
+            type="com.appster.turtle.model.NotesModel" />
+    </data>
+
+    <com.flipboard.bottomsheet.BottomSheetLayout
+        android:id="@+id/bs_upload_notes"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.appster.turtle.ui.notes.UploadAttachmentsActivity">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alpha="0.8"
+                android:background="@color/done_unselected_color"
+                android:contentDescription="@string/image_content" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/pad_70"
+                android:background="@drawable/white_upr_rounded">
+
+                <include
+                    android:id="@+id/header"
+                    layout="@layout/layout_header_text_bg_light"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <RelativeLayout
+                    android:id="@+id/cl_heading"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/header"
+                    android:paddingBottom="@dimen/dimen_24"
+                    android:background="@color/room_image_bg">
+
+                    <com.appster.turtle.widget.CustomTextView
+                        android:id="@+id/tv_notes_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="@dimen/dimen_24"
+                        android:layout_marginTop="@dimen/dimen_30"
+                        android:layout_toStartOf="@+id/tv_notes_price"
+                        android:text="@{noteModel.className}"
+                        android:textAllCaps="true"
+                        android:textColor="@color/unselected_grey"
+                        android:textSize="@dimen/textSmall"
+                        app:customFont="@string/eina_01_semibold"
+                        app:layout_constraintEnd_toStartOf="@+id/tv_notes_price"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="The Weimar Republic" />
+
+                    <com.appster.turtle.widget.CustomTextView
+                        android:id="@+id/tv_notes_class"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_below="@+id/tv_notes_title"
+                        android:layout_marginEnd="@dimen/dimen_24"
+                        android:layout_marginStart="@dimen/dimen_24"
+                        android:layout_marginTop="@dimen/dimen_4"
+                        android:layout_toStartOf="@+id/tv_notes_price"
+                        android:text="@{noteModel.title}"
+                        android:textAllCaps="true"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/textSizeExtLarge"
+                        app:customFont="@string/eina_01_semibold"
+                        tools:text="History 1C" />
+
+                    <com.appster.turtle.widget.CustomTextView
+                        android:id="@+id/tv_notes_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="@dimen/dimen_24"
+                        android:layout_marginTop="@dimen/dimen_30"
+                        android:gravity="end"
+                        android:textColor="@color/bright_teal"
+                        android:textSize="@dimen/textSizeMed"
+                        app:customFont="@string/eina_01_semibold" />
+                </RelativeLayout>
+
+
+                <android.support.v4.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_above="@+id/cv_snippet_images"
+                    android:layout_below="@+id/cl_heading"
+                    android:fadingEdge="none"
+                    android:fillViewport="true"
+                    android:overScrollMode="never">
+
+                    <android.support.constraint.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+                        <android.support.constraint.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingEnd="@dimen/margin_34"
+                            android:paddingStart="@dimen/margin_34"
+                            android:paddingTop="@dimen/default_padding_20">
+
+                            <com.appster.turtle.widget.CustomTextView
+                                android:id="@+id/tv_desc"
+                                android:layout_width="@dimen/width_0"
+                                android:layout_height="wrap_content"
+                                android:text="@string/description"
+                                android:textColor="@color/unselected_grey"
+                                android:textSize="@dimen/textSizeNormal"
+                                app:customFont="@string/eina_01_semibold"
+                                app:layout_constraintStart_toStartOf="parent" />
+
+                            <com.appster.turtle.widget.CustomEditText
+                                android:id="@+id/tv_desc_header_text"
+                                android:layout_width="@dimen/width_0"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/margin_5"
+                                android:background="@android:color/transparent"
+                                android:gravity="start"
+                                android:hint="@string/desc_hint_notes"
+                                android:inputType="textMultiLine|textCapSentences"
+                                android:lineSpacingExtra="5sp"
+                                android:maxLength="200"
+                                android:textColor="@color/black"
+                                android:textColorHint="@color/unselected_grey"
+                                android:textSize="@dimen/textSizeLarge"
+                                app:customFont="@string/eina_01_regular"
+                                app:layout_constraintEnd_toStartOf="@id/iv_edit_desc"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/tv_desc" />
+
+                            <View
+                                android:id="@+id/v_divider"
+                                android:layout_width="@dimen/width_0"
+                                android:layout_height="@dimen/margin_1"
+                                android:layout_marginTop="@dimen/margin_40"
+                                android:background="@color/color_search_footer"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/tv_desc_header_text" />
+
+                            <com.appster.turtle.widget.CustomTextView
+                                android:id="@+id/tv_word_remaining"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/padding_11"
+                                android:textColor="@color/unselected_grey"
+                                android:textSize="@dimen/textSizeNormal"
+                                app:customFont="@string/eina_01_regular"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/v_divider"
+                                tools:text="24 Characters Remaining" />
+
+
+                            <com.appster.turtle.widget.CustomTextView
+                                android:id="@+id/tv_notes_txt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dimen_19"
+                                android:text="@string/notes"
+                                android:textColor="@color/unselected_grey"
+                                android:textSize="@dimen/textSizeNormal"
+                                app:customFont="@string/eina_01_semibold"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/tv_word_remaining" />
+
+
+                            <com.appster.turtle.widget.CustomTextView
+                                android:id="@+id/tv_notes"
+                                android:layout_width="@dimen/width_0"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dimen_12"
+                                android:background="@drawable/white_alpha_selector_bg_radius_21"
+                                android:drawableEnd="@drawable/ic_join_black"
+                                android:gravity="bottom"
+                                android:lineSpacingExtra="@dimen/textsize_9"
+                                android:paddingBottom="@dimen/padding_11"
+                                android:paddingEnd="@dimen/dimen_23"
+                                android:paddingStart="@dimen/dimen_23"
+                                android:paddingTop="@dimen/padding_11"
+                                android:text="@string/notes"
+                                android:textColor="@color/done_unselected_color"
+                                android:textSize="@dimen/textsize_16"
+                                app:customFont="@string/eina_01_regular"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/tv_notes_txt" />
+
+                            <android.support.v7.widget.RecyclerView
+                                android:id="@+id/rv_attachments"
+                                android:layout_width="@dimen/width_0"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dimen_12"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/tv_notes" />
+                            <!--<RelativeLayout-->
+                            <!--android:id="@+id/rv_attachments"-->
+                            <!--android:layout_width="@dimen/width_0"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_marginTop="@dimen/dimen_12"-->
+                            <!--app:layout_constraintEnd_toEndOf="parent"-->
+                            <!--app:layout_constraintStart_toStartOf="parent"-->
+                            <!--app:layout_constraintTop_toBottomOf="@id/tv_notes" />-->
+                            <com.appster.turtle.widget.CustomTextView
+                                android:id="@+id/tv_snippet_txt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/padding_11"
+                                android:text="@string/snippet"
+                                android:textColor="@color/unselected_grey"
+                                android:textSize="@dimen/textSizeNormal"
+                                app:customFont="@string/eina_01_semibold"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/rv_attachments" />
+
+                            <com.appster.turtle.widget.CustomTextView
+                                android:id="@+id/tv_snippet"
+                                android:layout_width="@dimen/width_0"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/margin_5"
+                                android:layout_marginTop="@dimen/dimen_12"
+                                android:background="@drawable/white_alpha_selector_bg_radius_21"
+                                android:drawableEnd="@drawable/ic_join_black"
+                                android:gravity="bottom"
+                                android:lineSpacingExtra="@dimen/textsize_9"
+                                android:paddingBottom="@dimen/padding_11"
+                                android:paddingEnd="@dimen/dimen_23"
+                                android:paddingStart="@dimen/dimen_23"
+                                android:paddingTop="@dimen/padding_11"
+                                android:text="@string/snippet"
+                                android:textColor="@color/done_unselected_color"
+                                android:textSize="@dimen/textsize_16"
+                                app:customFont="@string/eina_01_regular"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/tv_snippet_txt" />
+
+                            <ImageButton
+                                android:id="@+id/ib_snippet"
+                                android:layout_width="@dimen/width_0"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dimen_12"
+                                android:background="@drawable/white_selector_bg_radius_21"
+                                android:contentDescription="@string/image_content"
+                                android:elevation="@dimen/dimen_4"
+                                android:padding="@dimen/margin_5"
+                                android:src="@drawable/ic_closs_cross"
+                                android:visibility="invisible"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/tv_snippet_txt" />
+
+
+                            <com.appster.turtle.util.RoundRectCornerImageView
+                                android:id="@+id/iv_snippet"
+                                android:layout_width="@dimen/width_0"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/dimen_10"
+                                android:layout_marginTop="@dimen/dimen_12"
+                                android:background="@drawable/white_selector_bg_radius_21"
+                                android:minHeight="@dimen/dp_170"
+                                android:visibility="gone"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/tv_snippet" />
+
+                        </android.support.constraint.ConstraintLayout>
+                    </android.support.constraint.ConstraintLayout>
+
+                </android.support.v4.widget.NestedScrollView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cv_snippet_images"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin_130"
+                    android:layout_alignParentBottom="true"
+                    android:visibility="gone"
+                    app:cardElevation="@dimen/card_elevation">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <View
+                            android:id="@+id/view"
+                            android:layout_width="@dimen/dimen_35"
+                            android:layout_height="@dimen/dimen_2"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="@dimen/margin_20"
+                            android:background="@color/black" />
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/rv_snippet_images"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/view"
+                            android:background="@android:color/white"
+                            android:padding="@dimen/dimen_10" />
+                    </RelativeLayout>
+
+                </android.support.v7.widget.CardView>
+            </RelativeLayout>
+        </android.support.constraint.ConstraintLayout>
+    </com.flipboard.bottomsheet.BottomSheetLayout>
+</layout>

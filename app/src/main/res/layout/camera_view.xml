@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+
+    <data>
+
+        <import type="com.otaliastudios.cameraview.SessionType" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.appster.turtle.viewmodel.CameraViewModel" />
+    </data>
+
+
+    <RelativeLayout
+
+        android:id="@+id/rl_camera_control"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        android:visibility="@{viewModel.cameraPreviewModel.preview  ? View.GONE :View.VISIBLE}"
+        tools:context="com.appster.turtle.ui.media.CameraActivity">
+
+
+        <com.otaliastudios.cameraview.CameraView
+            android:id="@+id/camera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:keepScreenOn="true"
+            app:addCameraListener="@{viewModel.getCameraListener}"
+            app:cameraCropOutput="false"
+            app:cameraFacing="back"
+            app:cameraFlash="off"
+            app:cameraGestureLongTap="none"
+            app:cameraGesturePinch="none"
+            app:cameraGestureScrollHorizontal="none"
+            app:cameraGestureScrollVertical="none"
+            app:cameraGestureTap="none"
+            app:cameraGrid="off"
+            app:cameraJpegQuality="100"
+            app:sessionType="@{viewModel.sessionType}"
+            tools:layout_editor_absoluteX="@dimen/margin_8"
+            tools:layout_editor_absoluteY="@dimen/margin_8" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_gallery"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_72"
+            android:layout_above="@+id/iv_capture"
+            android:layout_marginBottom="@dimen/margin_17_8"
+            app:adapter="@{viewModel.galleryAdapter}"
+            app:animatedVisibility="@{viewModel.recentImages ?View.VISIBLE :View.GONE}"
+            app:layoutManager="@{viewModel.linearLayoutManager}" />
+
+
+        <ImageView
+            android:id="@+id/iv_flash"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="@dimen/dp_30_6"
+            android:layout_marginTop="@dimen/dp_30_6"
+            android:onClick="@{viewModel.toggleFlashClickListener}"
+            android:padding="@dimen/dimen_4"
+            android:src="@{viewModel.isFlash ? @drawable/ic_flash_on:@drawable/ic_flash}"
+            tools:ignore="ContentDescription" />
+
+
+        <ImageView
+            android:id="@+id/iv_capture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/tv_camera_capture"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/dp_5_7"
+            android:src="@{viewModel.cameraType==viewModel.CAMERA_TYPE_PICTURE ? @drawable/ic_capture : @drawable/ic_capture_video}"
+            app:onTouchListener="@{viewModel.onTouchListener}"
+            tools:ignore="ContentDescription" />
+        <!--android:src="@{viewModel.sessionType.equals(SessionType.PICTURE) ? @drawable/ic_capture : @drawable/ic_capture_video}"-->
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/rv_gallery"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/dp_8_2"
+            android:onClick="@{viewModel.recentImageClickListener}"
+            android:padding="@dimen/dimen_10"
+            android:src="@drawable/ic_camera_roll"
+            tools:ignore="ContentDescription" />
+
+        <!--android:src="@{viewModel.recentImages ? @drawable/white_dash : @drawable/ic_camera_roll"-->
+
+
+        <!--android:visibility="@{viewModel.recentImages ?View.VISIBLE :View.GONE}"-->
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/iv_capture"
+            android:layout_alignParentStart="true"
+            android:layout_alignTop="@+id/iv_capture"
+            android:layout_marginStart="@dimen/dp_30_6"
+            android:onClick="@{viewModel.galleryClickListener}"
+            android:padding="@dimen/dimen_4"
+            android:src="@drawable/img_gallery"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/iv_capture"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/iv_capture"
+            android:layout_marginEnd="@dimen/dp_30_6"
+            android:onClick="@{viewModel.toggleCameraClickListener}"
+            android:padding="@dimen/dimen_4"
+            android:src="@drawable/ic_rotate_camera"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/tv_camera_capture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/dp_14_5"
+            android:gravity="center_horizontal"
+            android:shadowColor="#80000000"
+            android:shadowRadius="2"
+            android:text="@string/capture_camera_text"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/textSmall" />
+    </RelativeLayout>
+
+
+</layout>

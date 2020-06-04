@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <com.flipboard.bottomsheet.BottomSheetLayout
+        android:id="@+id/bottom_sheet_members"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.appster.turtle.ui.rooms.MembersActivity">
+
+        <android.support.constraint.ConstraintLayout android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            xmlns:app="http://schemas.android.com/apk/res-auto">
+
+            <include
+                android:id="@+id/header"
+                layout="@layout/layout_header"
+                android:layout_width="@dimen/width_0"
+                android:layout_height="@dimen/dimen_50"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <android.support.v4.widget.SwipeRefreshLayout
+                android:id="@+id/swipe_refresh"
+                android:layout_width="@dimen/width_0"
+                android:layout_height="@dimen/width_0"
+                android:layout_marginEnd="@dimen/margin_5"
+                android:layout_marginStart="@dimen/margin_5"
+                android:layout_marginTop="@dimen/dimen_25"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/header">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_notes"
+                    android:layout_width="@dimen/width_0"
+                    android:layout_height="@dimen/width_0"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/included_cl_search" />
+            </android.support.v4.widget.SwipeRefreshLayout>
+
+
+            <com.appster.turtle.widget.CustomTextView
+                android:id="@+id/tv_no_users"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no_meetUp"
+                android:textColor="@color/text_font_color_grey"
+                android:textSize="@dimen/textSizeNormal"
+                android:visibility="gone"
+                app:customFont="@string/eina_01_regular"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+
+        </android.support.constraint.ConstraintLayout>
+    </com.flipboard.bottomsheet.BottomSheetLayout>
+</layout>

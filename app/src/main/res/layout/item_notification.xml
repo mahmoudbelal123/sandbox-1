@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="messageMeta"
+            type="com.appster.turtle.model.MessageMeta" />
+    </data>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingEnd="@dimen/dimen_18"
+        android:paddingStart="@dimen/dimen_18"
+        android:paddingTop="@dimen/dimen_6"
+        android:padding="@dimen/marign_14"
+        android:paddingBottom="@dimen/dimen_6">
+
+        <RelativeLayout
+            android:id="@+id/profPicContainer"
+            android:layout_width="@dimen/prof_pic_wh"
+            android:layout_height="@dimen/prof_pic_wh"
+            android:layout_marginEnd="@dimen/dimen_12">
+
+
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:id="@+id/iv_user_initials_bg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:src="@{messageMeta.profileUrlType==3 ? @drawable/ic_pp_cred:@drawable/ic_transparent}"
+                app:civ_border_width="@dimen/width_0"
+                android:contentDescription="@null" />
+
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:id="@+id/user_pic"
+                android:layout_width="@dimen/image_w"
+                android:layout_height="@dimen/image_w"
+                android:layout_centerInParent="true"
+                android:contentDescription="@null"
+                app:civ_border_width="@dimen/width_0"
+                android:visibility="@{messageMeta.profileUrlType==3 ? View.INVISIBLE:View.VISIBLE}"
+                android:src="@drawable/usr_dummy_pic"
+                app:profileImageurl="@{messageMeta.url}" />
+
+            <ImageView
+                android:layout_width="@dimen/post_user_init"
+                android:layout_height="@dimen/post_user_init"
+                android:layout_centerInParent="true"
+                android:contentDescription="@null"
+                android:visibility="@{messageMeta.profileUrlType==3 ? View.VISIBLE:View.INVISIBLE}"
+                app:profileImageurl="@{messageMeta.url}"
+                android:background="@color/transparent" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_notification_img"
+            android:layout_width="@dimen/dimen_43_2"
+            android:layout_height="@dimen/dimen_43_2"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="@dimen/dimen_14_4">
+
+            <ImageView
+                android:id="@+id/iv_notification_img"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@null"
+                android:scaleType="centerCrop" />
+
+            <ImageView
+                android:id="@+id/iv_video_play"
+                android:layout_width="@dimen/dimen_18"
+                android:layout_height="@dimen/dimen_18"
+                android:layout_centerInParent="true"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_play"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <com.appster.turtle.widget.CustomTextView
+            android:id="@+id/tv_notification_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignWithParentIfMissing="true"
+            android:layout_marginEnd="@dimen/dimen_10"
+            android:layout_toEndOf="@id/profPicContainer"
+            android:layout_toStartOf="@id/rl_notification_img"
+            android:textColor="@color/textcolor_room_name"
+            android:textSize="@dimen/textSizeNormal"
+            tools:text="XEmilieRileyX and 4 others liked your post" />
+
+        <com.appster.turtle.widget.CustomTextView
+            android:id="@+id/tv_notification_sub_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignWithParentIfMissing="true"
+            android:layout_below="@id/tv_notification_text"
+            android:layout_marginEnd="@dimen/dimen_10"
+            android:layout_marginTop="2.7dp"
+            android:layout_toEndOf="@id/profPicContainer"
+            android:layout_toStartOf="@id/rl_notification_img"
+            android:lineSpacingExtra="@dimen/text_size_3_3"
+            android:textColor="@color/unselected_grey"
+            android:textSize="@dimen/textSizeNormal"
+            app:customFont="@string/eina_01_regular"
+            tools:text="Do you guys prefer to run a Half Marathon on track or trail?" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/dimen_10"
+            android:layout_alignParentEnd="true"
+            android:gravity="end"
+            android:id="@+id/rl_accpect_reject"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_below="@+id/tv_notification_sub_text">
+
+            <com.appster.turtle.widget.CustomButton
+                android:id="@+id/btn_accpected"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dimen_35"
+                android:layout_alignParentEnd="true"
+                android:text="@string/accept"
+                android:minWidth="@dimen/dp_87"
+                app:customFont="@string/eina_01_semibold"
+                android:textColor="@color/bright_teal"
+                android:textSize="@dimen/textsize_12"
+                app:customBackground="@drawable/orange_btn_stroke" />
+
+            <com.appster.turtle.widget.CustomButton
+                android:id="@+id/btn_rejected"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dimen_35"
+                android:layout_alignParentTop="true"
+                android:layout_marginEnd="@dimen/padding_11"
+                android:layout_toStartOf="@+id/btn_accpected"
+                android:minWidth="@dimen/dp_87"
+                android:text="@string/reject"
+                android:textColor="@color/bright_teal"
+                android:textSize="@dimen/textsize_12"
+                app:customBackground="@drawable/orange_btn_stroke"
+                app:customFont="@string/eina_01_semibold" />
+        </RelativeLayout>
+    </RelativeLayout>
+</layout>

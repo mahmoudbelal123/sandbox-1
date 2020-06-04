@@ -1,0 +1,14 @@
+[
+  {
+    "outputType": {
+      "type": "PROCESSED_RES"
+    },
+    "apkInfo": {
+      "type": "MAIN",
+      "splits": [],
+      "versionCode": 310
+    },
+    "path": "resources-debugAndroidTest.ap_",
+    "properties": {}
+  }
+]

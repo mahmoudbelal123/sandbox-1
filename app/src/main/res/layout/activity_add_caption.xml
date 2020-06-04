@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/room_image_bg"
+
+        tools:context="com.appster.turtle.ui.rooms.AddTagsActivity">
+
+        <com.appster.turtle.widget.CustomTextView
+            android:id="@+id/tv_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_17"
+            android:background="@drawable/rounded_bg_light"
+            android:gravity="center"
+            android:letterSpacing="-0.02"
+            android:layout_marginTop="@dimen/dimen_14"
+            android:text="@string/add"
+            android:textColor="@drawable/selector_textcolor_new"
+            android:textSize="@dimen/textsize_11_plus"
+            app:customFont="@string/eina_01_semibold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@null"
+            android:onClick="onBackClicked"
+            android:paddingEnd="@dimen/margin_17"
+            android:paddingTop="@dimen/margin_17"
+            android:paddingBottom="@dimen/margin_17"
+            android:paddingStart="@dimen/margin_17"
+            android:src="@drawable/back_arrow"
+            app:layout_constraintBottom_toBottomOf="@id/tv_next"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.appster.turtle.widget.CustomTextView
+            android:id="@+id/tv_add_tags"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:letterSpacing="-0.02"
+            android:text="@string/add_tags_caps"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/textsize_15_plus"
+            app:customFont="@string/eina_01_semibold"
+            app:layout_constraintBottom_toBottomOf="@id/tv_next"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_next" />
+
+
+        <com.appster.turtle.tag.SocialEditText
+            android:id="@+id/et_tags"
+            style="@style/noise_edittxt_style_signIn"
+            android:layout_marginEnd="34.1dp"
+            android:layout_marginStart="@dimen/dimen_34_6"
+            android:layout_marginTop="40.6dp"
+            android:drawablePadding="@dimen/dimen_9_6"
+            android:drawableStart="@drawable/ic_orange_search"
+            android:focusable="true"
+            android:maxLines="4"
+            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789#@ "
+            android:maxLength="512"
+            android:inputType="textMultiLine"
+            android:hint="@string/search_tags"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="@dimen/text_space_9_6"
+            app:customFont="@string/eina_01_regular"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_add_tags" />
+
+
+
+        <FrameLayout
+            android:id="@+id/fl_list"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="@dimen/width_0"
+            android:background="@color/app_white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginTop="@dimen/dimen_83"
+            android:visibility="invisible"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_tags">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_tags"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="14dp"
+                android:layout_marginStart="14dp"
+                android:scrollbarThumbVertical="@drawable/scrollbar"
+                android:scrollbars="vertical"
+
+                />
+
+        </FrameLayout>
+
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

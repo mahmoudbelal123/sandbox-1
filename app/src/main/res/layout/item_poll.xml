@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="user"
+            type="com.appster.turtle.model.User" />
+
+        <variable
+            name="post"
+            type="com.appster.turtle.network.response.Posts" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:background="@drawable/shadow">
+
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cv_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            app:cardBackgroundColor="@color/room_50_bg"
+            app:cardElevation="@dimen/width_0"
+
+            app:cardCornerRadius="@dimen/dimen_11_5">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/margin_15"
+                android:paddingEnd="@dimen/dimen_12"
+                android:paddingStart="@dimen/margin_15">
+
+                <RelativeLayout
+                    android:id="@+id/profPicContainer"
+                    android:layout_width="@dimen/image_w"
+                    android:layout_height="@dimen/image_w"
+                    android:layout_marginTop="@dimen/dimen_10"
+                    android:layout_marginStart="@dimen/dimen_15_4"
+                    app:bindShowProfile="@{post.usersListModel}"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.mikhaellopez.circularimageview.CircularImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        android:src="@{post.usersListModel.profileUrlType==3 ? @drawable/ic_pp_cred:@drawable/ic_transparent}"
+                        app:civ_border_width="@dimen/width_0" />
+
+                    <com.mikhaellopez.circularimageview.CircularImageView
+                        android:layout_width="@dimen/image_w"
+                        android:layout_height="@dimen/image_w"
+                        android:layout_centerInParent="true"
+                        android:background="@color/transparent"
+                        android:contentDescription="@null"
+                        android:visibility="@{post.usersListModel.profileUrlType==3 ? View.INVISIBLE:View.VISIBLE}"
+                        app:civ_border_width="@dimen/width_0"
+                        app:profileImageurl="@{post.usersListModel.profileUrl}" />
+
+                    <ImageView
+                        android:layout_width="@dimen/post_user_init"
+                        android:layout_height="@dimen/post_user_init"
+                        android:layout_centerInParent="true"
+                        android:background="@color/transparent"
+                        android:contentDescription="@null"
+                        android:visibility="@{post.usersListModel.profileUrlType==3 ? View.VISIBLE:View.INVISIBLE}"
+                        app:profileImageurl="@{post.usersListModel.profileUrl}" />
+
+
+                </RelativeLayout>
+
+
+                <!--<RelativeLayout-->
+                <!--android:id="@+id/profPicContainer"-->
+                <!--android:layout_width="@dimen/prof_pic_wh"-->
+                <!--android:layout_height="@dimen/prof_pic_wh">-->
+
+                <!--&lt;!&ndash;<ImageView&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_height="match_parent"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:padding="@dimen/prof_pic_pad"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:src="@drawable/usr_dummy_pic"&ndash;&gt;-->
+
+
+                <!--&lt;!&ndash;app:imageurl="@{post.usersListModel.profileUrl}" />&ndash;&gt;-->
+
+                <!--&lt;!&ndash;<ImageView&ndash;&gt;-->
+                <!--&lt;!&ndash;android:id="@+id/usrProfPic"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_height="match_parent"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:src="@drawable/ic_prof_mask" />&ndash;&gt;-->
+
+
+                <!--<ImageView-->
+                <!--android:layout_width="@dimen/image_w"-->
+                <!--android:layout_height="@dimen/image_w"-->
+                <!--android:layout_centerInParent="true"-->
+                <!--android:contentDescription="@null"-->
+                <!--android:background="@{post.usersListModel.profileUrlType==3 ? @drawable/ic_pp_name:@drawable/ic_transparent}" />-->
+
+                <!--<ImageView-->
+                <!--android:id="@+id/usrProfPic"-->
+                <!--android:contentDescription="@null"-->
+                <!--android:layout_width="@dimen/image_w"-->
+                <!--android:layout_height="@dimen/image_w"-->
+                <!--android:layout_centerInParent="true"-->
+                <!--android:width="@{post.usersListModel.profileUrlType==3 ? @dimen/image_w_initials : @dimen/image_w}"-->
+                <!--android:height="@{post.usersListModel.profileUrlType==3 ? @dimen/image_w_initials : @dimen/image_w}"-->
+                <!--app:profileImageurl="@{post.usersListModel.profileUrl}" />-->
+
+                <!--<ImageView-->
+                <!--android:layout_width="@dimen/dimen_38"-->
+                <!--android:layout_height="@dimen/dimen_38"-->
+                <!--android:layout_centerInParent="true"-->
+                <!--android:contentDescription="@null"-->
+                <!--android:scaleType="fitXY"-->
+                <!--android:src="@drawable/ic_prof_mask" />-->
+                <!--</RelativeLayout>-->
+
+
+                <com.appster.turtle.widget.CustomTextView
+                    android:id="@+id/tv_user_name"
+                    android:layout_width="@dimen/width_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_9"
+                    android:layout_marginTop="@dimen/dimen_5_8"
+                    android:lineSpacingExtra="@dimen/text_size_3_3"
+                    android:text='@{"@"+user.userName}'
+                    android:textColor="#000000"
+                    android:textSize="@dimen/textsize_17"
+                    android:lines="1"
+                    android:ellipsize="end"
+
+                    app:customFont="@string/eina_01_semibold"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/iv_menu"
+                    app:layout_constraintStart_toEndOf="@+id/profPicContainer"
+                    tools:text=" @TomHeaton" />
+
+
+                <com.appster.turtle.widget.CustomTextView
+                    android:id="@+id/tv_unviversity_name"
+                    android:layout_width="@dimen/width_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_12"
+                    android:layout_marginEnd="@dimen/dimen_4"
+                    android:lineSpacingExtra="@dimen/text_size_3_3"
+                    android:text='@{user.universityBaseModel.displayName}'
+                    android:textColor="@color/unselected_grey"
+                    android:textSize="@dimen/textSizeMed"
+                    app:customFont="@string/eina_01_semibold"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_room"
+                    app:layout_constraintStart_toEndOf="@+id/profPicContainer"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_user_name"
+                    tools:text="TomHeaton" />
+
+                <ImageView
+                    android:id="@+id/iv_menu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/margin_8"
+                    android:layout_marginTop="@dimen/margin_15"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:src="@drawable/ic_post_menu"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:ignore="ContentDescription" />
+
+                <com.appster.turtle.widget.CustomTextView
+                    android:id="@+id/tv_room"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/textsize_13_4"
+                    android:textColor="#212121"
+                    app:customFont="@string/eina_01_semibold"
+                    app:layout_constraintTop_toBottomOf="@id/iv_menu"
+                    app:layout_constraintEnd_toEndOf="@id/iv_menu"
+                    android:gravity="end"
+                    tools:text="in Need A TV Show" />
+
+                <com.appster.turtle.widget.CustomTextView
+                    android:id="@+id/tv_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="6.7sp"
+                    android:text="@{post.postDetail.question}"
+                    android:textColor="@color/done_unselected_color"
+                    android:textSize="@dimen/text_16_3"
+                    android:layout_marginTop="@dimen/margin_13"
+                    app:layout_constraintEnd_toStartOf="@+id/iv_menu"
+                    app:layout_constraintHorizontal_bias="0.016"
+                    app:layout_constraintStart_toStartOf="@id/profPicContainer"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_room"
+                    tools:text="Really helpful, would recommend to any Hello sdhh djjjddjnnn" />
+
+
+                <LinearLayout
+                    android:id="@+id/optAnswerViewContainer"
+                    android:layout_width="@dimen/width_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_13"
+                    android:orientation="vertical"
+                    app:layout_constraintStart_toStartOf="@id/profPicContainer"
+
+                    android:background="@color/room_transparent_bg"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_text">
+
+                </LinearLayout>
+
+
+                <com.appster.turtle.widget.CustomTextView
+                    android:id="@+id/tv_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/view_all"
+                    android:textColor="@color/bright_teal"
+                    android:textSize="@dimen/textSmall"
+                    app:layout_constraintStart_toStartOf="@id/profPicContainer"
+                    app:customFont="@string/eina_01_semibold"
+                    app:layout_constraintTop_toBottomOf="@+id/optAnswerViewContainer" />
+
+                <com.appster.turtle.widget.CustomTextView
+                    android:id="@+id/tv_poll_count"
+                    android:layout_width="@dimen/width_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_12"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:textColor="@color/bright_teal"
+                    android:maxLines="1"
+                    android:gravity="end"
+                    android:textSize="@dimen/textSmall"
+                    app:customFont="@string/eina_01_semibold"
+                    app:layout_constraintStart_toEndOf="@id/tv_view"
+                    app:layout_constraintTop_toBottomOf="@+id/optAnswerViewContainer" />
+
+
+                <include
+                    android:id="@+id/cl_reply_comment_like"
+                    layout="@layout/post_bottom_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="@id/profPicContainer"
+                    android:layout_marginTop="@dimen/margin_6_4"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_poll_count" />
+            </android.support.constraint.ConstraintLayout>
+        </android.support.v7.widget.CardView>
+    </FrameLayout>
+</layout>

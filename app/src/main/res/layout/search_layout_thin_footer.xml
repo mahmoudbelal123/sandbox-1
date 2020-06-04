@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/cl_search"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/white_selector_bg_radius_21"
+        android:elevation="@dimen/margin_5"
+        android:minHeight="@dimen/dp_45"
+        android:paddingEnd="@dimen/margin_15"
+        android:paddingStart="@dimen/margin_15"
+        android:paddingTop="@dimen/margin_15">
+
+
+        <ImageView
+            android:id="@+id/iv_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@null"
+            android:paddingEnd="@dimen/dimen_19_2"
+            android:paddingStart="@dimen/margin_6_4"
+            android:src="@drawable/ic_search_black"
+            app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toTopOf="parent" />
+
+        <com.appster.turtle.widget.CustomEditText
+            android:id="@+id/et_search"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dimen_19_2"
+            android:backgroundTint="@android:color/transparent"
+            android:gravity="start|center_vertical"
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            android:maxLines="1"
+            android:textColor="#212121"
+            android:textSize="@dimen/textsize_13_4"
+            android:textColorHint="#a9aab1"
+            app:customFont="@string/eina_01_regular"
+            app:layout_constraintBottom_toBottomOf="@id/iv_search"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iv_search"
+            app:layout_constraintTop_toTopOf="@id/iv_search" />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

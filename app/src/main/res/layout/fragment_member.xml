@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/cl_members_listing"
+        android:layout_width="match_parent"
+
+        android:layout_height="match_parent"
+        android:background="@android:color/white">
+
+
+        <com.appster.turtle.widget.CustomTextView
+            android:id="@+id/tv_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cl_members_header"
+            android:layout_marginEnd="@dimen/dimen_23"
+            android:layout_marginStart="@dimen/dimen_23"
+            android:layout_marginTop="@dimen/dp_34_6"
+            android:text="@string/search"
+            android:textColor="@color/unselected_grey"
+            android:textSize="@dimen/textsize_13_4"
+            app:customFont="@string/eina_01_semibold"
+            app:layout_constraintTop_toBottomOf="@id/cl_members_header" />
+
+        <com.appster.turtle.widget.CustomEditText
+            android:id="@+id/et_search"
+            style="@style/noise_edittxt_style"
+            android:layout_marginEnd="@dimen/dimen_23"
+            android:layout_marginStart="@dimen/dimen_23"
+            android:layout_marginTop="@dimen/margin_8"
+            android:background="@drawable/grey_edit_text_bg"
+            android:drawablePadding="@dimen/dimen_7_9"
+            android:drawableStart="@drawable/search_grey"
+            android:hint="@string/search_user_hint"
+            android:inputType="text"
+            android:maxLines="1"
+            app:customFont="@string/eina_01_regular"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_search" />
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_members_added"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="@dimen/width_0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_search" />
+
+        <com.appster.turtle.widget.CustomTextView
+            android:id="@+id/tv_no_users"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="@dimen/width_0"
+            android:layout_marginTop="@dimen/dimen_9_6"
+            android:text="@string/no_user_found"
+            android:gravity="center"
+            android:visibility="gone"
+            android:textColor="@color/unselected_grey"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_search" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</layout>

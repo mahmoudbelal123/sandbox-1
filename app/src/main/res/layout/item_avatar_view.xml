@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<layout>
+
+    <data>
+
+        <variable
+            name="avatar"
+            type="com.appster.turtle.model.AvatarModel" />
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent">
+
+
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:id="@+id/usrImgBg"
+            android:layout_width="@dimen/image_l"
+            android:layout_height="@dimen/image_l"
+            android:layout_centerInParent="true"
+            android:contentDescription="@null"
+            android:shadowColor="@color/bright_teal"
+            app:civ_border_color="@color/bright_teal"
+            app:civ_border_width="@dimen/width_0"
+            app:civ_shadow="false" />
+
+        <!--android:background="@{avatar.imageType==3 ? @drawable/ic_pp_name:@drawable/ic_transparent}"-->
+
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:id="@+id/usrProfPic"
+            android:layout_width="@dimen/image_l"
+            android:layout_height="@dimen/image_l"
+            android:layout_centerInParent="true"
+            android:contentDescription="@null"
+            android:shadowColor="@color/bright_teal"
+            app:civ_border_color="@color/bright_teal"
+            app:civ_border_width="@dimen/width_0"
+            app:civ_shadow="false" />
+
+
+        <ImageView
+            android:id="@+id/usrProfPicI"
+            android:layout_width="@dimen/image_l_initials"
+            android:layout_height="@dimen/image_l_initials"
+            android:layout_centerInParent="true"
+            android:contentDescription="@null"
+            android:shadowColor="@color/bright_teal"
+            app:civ_border_color="@color/bright_teal"
+            app:civ_border_width="@dimen/width_0"
+            android:visibility="invisible"
+            app:civ_shadow="false" />
+
+
+        <ImageView
+            android:layout_width="@dimen/image_i"
+            android:layout_height="@dimen/image_i"
+            android:layout_centerInParent="true"
+            android:contentDescription="@null"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_prof_mask"
+            android:visibility="gone" />
+
+
+        <!--<ImageView-->
+        <!--android:id="@+id/ivProfilePic"-->
+        <!--android:layout_width="@dimen/mask_size"-->
+        <!--android:layout_height="@dimen/mask_size"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:layout_centerInParent="true"-->
+        <!--android:src="@drawable/ic_emoji_pp" />-->
+
+        <!--<ImageView-->
+        <!--android:id="@+id/iv_mask"-->
+        <!--android:layout_width="@dimen/avatar_size"-->
+        <!--android:layout_height="@dimen/avatar_size"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:layout_centerInParent="true"-->
+        <!--android:src="@drawable/ic_pp_mask" />-->
+
+        <!--<com.appster.turtle.widget.CustomTextView-->
+        <!--android:id="@+id/userName"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:layout_centerInParent="true"-->
+        <!--android:textColor="@android:color/white"-->
+        <!--android:textSize="@dimen/textExtraLarge" />-->
+
+
+    </RelativeLayout>
+</layout>

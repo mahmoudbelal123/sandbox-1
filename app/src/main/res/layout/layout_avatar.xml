@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/cl_avatar"
+        android:layout_width="match_parent"
+
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/iv_avatar"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="@dimen/width_0"
+            android:src="@drawable/avatar"
+            android:background="@color/textView_color_grey_new"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <com.appster.turtle.widget.CustomTextView
+            android:id="@+id/tv_avatar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/dimen_18"
+            android:text="@string/avatar"
+            android:textColor="@color/textcolor_room_name"
+            android:textSize="@dimen/textsize_13_4"
+            app:customFont="@string/eina_01_semibold"
+            app:layout_constraintBottom_toBottomOf="@id/iv_avatar"
+            app:layout_constraintEnd_toEndOf="@id/iv_avatar"
+            app:layout_constraintStart_toStartOf="@id/iv_avatar"
+            app:layout_constraintTop_toTopOf="@id/iv_avatar" />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

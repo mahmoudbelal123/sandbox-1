@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.appster.turtle.ui.search.SearchRoomsAndPeopleActivity">
+
+    <data>
+
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <include
+            android:id="@+id/cl_search_rooms_people"
+            layout="@layout/search_layout_white"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="wrap_content" />
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_tabs_rooms_people"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_34"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cl_search_rooms_people">
+
+            <com.appster.turtle.widget.CustomTextView
+                android:id="@+id/tv_tab_rooms"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@string/rooms"
+                android:textColor="@android:color/white"
+                app:customFont="@string/bruta_condensed_glb_semi_bold"
+                app:layout_constraintEnd_toStartOf="@+id/tv_tab_people"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <View
+                android:id="@+id/v_rooms_footer"
+                android:layout_width="@dimen/width_0"
+                android:layout_height="@dimen/dimen_2"
+                android:layout_marginTop="@dimen/dp_5_7"
+                android:background="@color/bright_teal"
+                app:layout_constraintEnd_toEndOf="@id/tv_tab_rooms"
+                app:layout_constraintStart_toStartOf="@id/tv_tab_rooms"
+                app:layout_constraintTop_toBottomOf="@id/tv_tab_rooms" />
+
+            <com.appster.turtle.widget.CustomTextView
+                android:id="@+id/tv_tab_people"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@string/people"
+                android:textColor="@android:color/white"
+                app:customFont="@string/bruta_condensed_glb_semi_bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tv_tab_rooms" />
+
+            <View
+                android:id="@+id/v_people_footer"
+                android:layout_width="@dimen/width_0"
+                android:layout_height="@dimen/dimen_2"
+                android:layout_marginTop="@dimen/dp_5_7"
+                android:background="@color/bright_teal"
+                app:layout_constraintEnd_toEndOf="@id/tv_tab_people"
+                app:layout_constraintStart_toStartOf="@id/tv_tab_people"
+                app:layout_constraintTop_toBottomOf="@id/tv_tab_people" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/vp_search_rooms_people"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="@dimen/width_0"
+            android:clickable="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cl_tabs_rooms_people" />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

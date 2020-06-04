@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/padding_11"
+        android:paddingEnd="@dimen/dimen_23"
+        android:paddingStart="@dimen/dimen_23"
+        android:paddingTop="@dimen/padding_11"
+        android:background="@drawable/white_alpha_selector_bg_radius_21">
+
+        <ImageView
+            android:id="@+id/iv_attachment_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_closs_cross"
+            android:padding="@dimen/margin_5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/tv_attachment_title"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <com.appster.turtle.widget.CustomTextView
+            android:id="@+id/tv_attachment_title"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dimen_2"
+            android:textColor="@color/bright_teal"
+            android:textSize="@dimen/textsize_13_4"
+            app:customFont="@string/eina_01_regular"
+            app:layout_constraintEnd_toStartOf="@id/iv_attachment_delete"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

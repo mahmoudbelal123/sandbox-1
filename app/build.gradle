@@ -1,0 +1,314 @@
+buildscript {
+    repositories {
+        maven { url 'https://maven.fabric.io/public' }
+    }
+
+    dependencies {
+        // These docs use an open ended version so that our plugin
+        // can be updated quickly in response to Android tooling updates
+
+        // We recommend changing it to the latest version from our changelog:
+        // https://docs.fabric.io/android/changelog.html#fabric-gradle-plugin
+        classpath 'io.fabric.tools:gradle:1.+'
+    }
+}
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android-extensions'
+dependencies {
+    implementation('com.crashlytics.sdk.android:crashlytics:2.9.4@aar') {
+        transitive = true
+    }
+}
+
+apply plugin: 'kotlin-android'
+apply plugin: 'io.fabric'
+apply plugin: "org.sonarqube"
+
+repositories {
+    maven { url 'https://maven.fabric.io/public' }
+}
+
+/*
+ *
+ *   Copyright © 2017 Noise. All rights reserved.
+ *   Created by Appster.
+ *
+ */
+
+// Create a variable called keystorePropertiesFile, and initialize it to your
+// keystore.properties file, in the rootProject folder.
+def keystorePropertiesFile = rootProject.file("keystore.properties")
+
+// Initialize a new Properties() object called keystoreProperties.
+def keystoreProperties = new Properties()
+
+// Load your keystore.properties file into the keystoreProperties object.
+keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+
+// Application Name
+def appName = "Vibe"
+
+// Application Id
+def final yourApplicationId = 'com.appster.turtle'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 2
+        versionName "1.1"
+        vectorDrawables.useSupportLibrary = true
+        applicationId yourApplicationId
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+        renderscriptTargetApi 24
+        renderscriptSupportModeEnabled true
+    }
+    dexOptions {
+        javaMaxHeapSize "4g"
+        preDexLibraries = false
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    //Signing config for release build
+    signingConfigs {
+        config {
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
+            storeFile file(keystoreProperties['storeFile'])
+            storePassword keystoreProperties['storePassword']
+        }
+    }
+
+    //Build types of App
+    buildTypes {
+        release {
+            lintOptions {
+                disable 'MissingTranslation'
+                abortOnError false
+            }
+            minifyEnabled true
+            shrinkResources true
+            debuggable false
+            zipAlignEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+        }
+        debug {
+            debuggable false
+            minifyEnabled false
+            lintOptions {
+                disable 'MissingTranslation'
+                abortOnError false
+            }
+        }
+    }
+
+    sonarqube {
+        properties {
+            property "sonar.projectName", "Noise-Android"
+            property "sonar.projectKey", "Noise-Android"
+            property "sonar.host.url", "https://sonarqube.appster.in/sonar"
+            property "sonar.sources", "src/main"
+            property "sonar.exclusions", "src/main/**/*.kt"
+            property "sonar.login", "e28ac6913b908f82a238c675ee8f9d7f16f8a0d2"
+            property 'sonar.sourceEncoding', 'UTF-8'
+            property 'sonar.profile', 'AllAndroid'
+            property 'sonar.import_unknown_files', true
+            property 'sonar.android.lint.report', 'build/reports/lint-results.xml'
+        }
+    }
+//    applicationVariants.all { variant ->
+//        variant.outputs.all { output ->
+//            if (outputFileName != null && outputFileName.endsWith('.apk')) {
+//                def fileName = (outputFileName.replace('.apk', "-${versionName}.apk")).replace('app', appName)
+//                outputFileName = new File(output.outputFile.parent, fileName)
+//            }
+//
+
+
+    android.applicationVariants.all { variant ->
+        variant.outputs.all {
+            outputFileName = "${variant.name}-${variant.versionName}.apk"
+        }
+    }
+
+    //Different flavors of build
+    flavorDimensions "environment"
+
+    productFlavors {
+        QA {
+            dimension "environment"
+            applicationId = yourApplicationId + ".qa"
+            buildConfigField "String", "BASE_URL", "\"http://134.209.56.217:3040/turtle/api/v1/\""
+            buildConfigField "String", "BASE_URL_PRIVACY", "\"https://qa.vibe.college/\""
+            buildConfigField "String", "BASE_URL_TERMS_AND_CONDITIONS", "\"https://qa.vibe.college/\""
+            buildConfigField "String", "ORIGINAL_IMAGE_BASE_URL", "\"https://s3-us-west-1.amazonaws.com/qa-turtle/\""
+            minSdkVersion 21
+            resValue "string", "app_name", appName + "_QA"
+        }
+
+        Staging {
+            dimension "environment"
+            applicationId = yourApplicationId + ".stag"
+            buildConfigField "String", "BASE_URL", "\"http://134.209.56.217:3040/turtle/api/v1/\""
+            buildConfigField "String", "BASE_URL_PRIVACY", "\"https://staging.vibe.college/\""
+            buildConfigField "String", "BASE_URL_TERMS_AND_CONDITIONS", "\"https://staging.vibe.college/\""
+            buildConfigField "String", "ORIGINAL_IMAGE_BASE_URL", "\"https://s3-us-west-1.amazonaws.com/stag-turtle/\""
+
+            minSdkVersion 21
+            resValue "string", "app_name", appName + "_STAG"
+        }
+
+        Dev {
+            dimension "environment"
+            applicationId = yourApplicationId + ".dev"
+            buildConfigField "String", "BASE_URL", "\"http://134.209.56.217:3040/turtle/api/v1/\""
+            buildConfigField "String", "BASE_URL_PRIVACY", "\"https://dev.vibe.college/\""
+            buildConfigField "String", "BASE_URL_TERMS_AND_CONDITIONS", "\"https://dev.vibe.college/\""
+            buildConfigField "String", "ORIGINAL_IMAGE_BASE_URL", "\"https://s3-us-west-1.amazonaws.com/dev-turtle/\""
+            minSdkVersion 21
+            resValue "string", "app_name", appName + "_DEV"
+        }
+        Prod {
+            dimension "environment"
+            applicationId = yourApplicationId
+            buildConfigField "String", "BASE_URL", "\"http://134.209.56.217:3040/turtle/api/v1/\""
+            buildConfigField "String", "BASE_URL_PRIVACY", "\"http://165.22.142.237:8080/turtle/\""
+            buildConfigField "String", "BASE_URL_TERMS_AND_CONDITIONS", "\" http://165.22.142.237:8080/turtle/\""
+            buildConfigField "String", "ORIGINAL_IMAGE_BASE_URL", "\"https://s3-us-west-1.amazonaws.com/prod-turtle/\""
+
+            minSdkVersion 21
+            resValue "string", "app_name", appName
+        }
+
+    }
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES.txt'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/dependencies.txt'
+        exclude 'META-INF/LGPL2.1'
+        doNotStrip '*/mips/*.so'
+        doNotStrip '*/mips64/*.so'
+    }
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
+}
+
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+
+    //Firebase libs
+    implementation "com.google.firebase:firebase-messaging:${fireBaseLibrary}"
+
+    //Google Support libs
+
+    //noinspection GradleCompatible
+    implementation "com.android.support:support-v4:${supportLibrary}"
+    implementation "com.android.support:design:${supportLibrary}"
+    implementation "com.android.support:recyclerview-v7:${supportLibrary}"
+    implementation "com.android.support:cardview-v7:${supportLibrary}"
+    implementation "com.android.support:appcompat-v7:${supportLibrary}"
+    implementation "com.android.support:mediarouter-v7:${supportLibrary}"
+    implementation "com.android.support:customtabs:${supportLibrary}"
+    implementation "com.android.support:support-annotations:${supportLibrary}"
+
+    //Google Play service libs
+    implementation "com.google.android.gms:play-services-places:${playServiceVersion}"
+    implementation "com.google.android.gms:play-services-drive:${playServiceVersion}"
+    implementation "com.google.android.gms:play-services-location:${playServiceVersion}"
+    implementation "com.google.android.gms:play-services-auth:${playServiceVersion}"
+
+    //Third party libs
+    debugImplementation "com.squareup.leakcanary:leakcanary-android:$leakCanaryLibrary"
+    releaseImplementation "com.squareup.leakcanary:leakcanary-android-no-op:$leakCanaryLibrary"
+    testImplementation "com.squareup.leakcanary:leakcanary-android-no-op:$leakCanaryLibrary"
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    implementation "com.squareup.retrofit2:adapter-rxjava:$retrofitVersion"
+
+
+    implementation("com.google.android.exoplayer:exoplayer:${rootProject.ext.exoPlayer2Version}") {
+        exclude group: 'com.android.support', module: 'support-annotations'
+        exclude group: 'com.android.support', module: 'support-core-utils'
+    }
+    implementation project(':apng-view')
+    implementation project(':cameraview')
+    implementation 'im.ene.toro3:toro:3.3.0'
+    implementation 'im.ene.toro3:toro-ext-exoplayer:3.3.0'
+    implementation "com.github.bumptech.glide:glide:$rootProject.ext.glideVersion"
+    implementation 'com.nostra13.universalimageloader:universal-image-loader:1.9.4'
+
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation 'com.akexorcist:RoundCornerProgressBar:2.0.3'
+    implementation 'com.github.castorflex.smoothprogressbar:library-circular:1.2.0'
+    implementation 'com.daasuu:animateHorizontalProgressBar:0.2.4'
+    implementation 'com.daimajia.swipelayout:library:1.2.0@aar'
+    implementation 'com.android.support:multidex:1.0.2'
+    implementation 'org.greenrobot:eventbus:3.0.0'
+    implementation 'cat.ereza:customactivityoncrash:1.5.0'
+    implementation 'com.orhanobut:hawk:2.0.1'
+    implementation 'com.facebook.android:facebook-android-sdk:4.12.0'
+    implementation 'com.android.support:support-v4:27.0.2'
+    implementation 'com.stripe:stripe-android:6.0.0'
+    implementation 'com.facebook.stetho:stetho-okhttp3:1.4.1'
+    implementation 'io.reactivex:rxjava:1.3.0'
+    implementation 'io.reactivex:rxandroid:1.2.1'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.4.1'
+    implementation 'com.github.skydoves:colorpickerview:1.0.5'
+    implementation 'com.flying.xiaopo:sticker:1.6.0'
+    implementation 'com.writingminds:FFmpegAndroid:0.3.2'
+    implementation 'me.grantland:autofittextview:0.2.1'
+    implementation 'com.jsibbold:zoomage:1.1.0'
+    implementation 'com.danikula:videocache:2.7.0'
+    implementation 'com.romandanylyk:pageindicatorview:0.2.0'
+    implementation 'com.firebase:firebase-jobdispatcher:0.8.1'
+    implementation 'com.google.firebase:firebase-messaging:11.6.2'
+    implementation 'com.flipboard:bottomsheet-core:1.5.3'
+    implementation 'com.alimuzaffar.lib:pinentryedittext:1.3.1'
+    implementation 'com.iarcuschin:simpleratingbar:0.1.5'
+    implementation 'com.github.Cutta:TagView:1.3'
+    implementation 'com.1gravity:android-contactpicker:1.3.2'
+    implementation 'me.majiajie:swipe-back:1.0.0-alpha2'
+    implementation 'com.mikhaellopez:circularimageview:3.0.2'
+    implementation 'com.kyleduo.switchbutton:library:2.0.0'
+    implementation 'com.sothree.slidinguppanel:library:3.4.0'
+    implementation 'com.wonderkiln:blurkit:1.0.0'
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.10'
+    implementation 'me.zhanghai.android.materialratingbar:library:1.2.0'
+    implementation "me.leolin:ShortcutBadger:1.1.21@aar"
+    testImplementation 'junit:junit:4.12'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.1.1'
+    implementation 'gun0912.ted:tedbottompicker:1.1.0'
+    implementation 'com.google.android:flexbox:0.3.2'
+    implementation 'com.google.android.exoplayer:exoplayer:2.8.4'
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
+    implementation project(':cropiwa')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+}
+// ADD THIS AT THE BOTTOM
+apply plugin: 'com.google.gms.google-services'
+
+
+
+

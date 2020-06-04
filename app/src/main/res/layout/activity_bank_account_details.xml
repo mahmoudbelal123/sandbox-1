@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="bank"
+            type="com.appster.turtle.model.BankModel" />
+    </data>
+
+    <com.flipboard.bottomsheet.BottomSheetLayout
+        android:id="@+id/bottom_sheet_members"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/app_white"
+            tools:context="com.appster.turtle.ui.payment.BankAccountActivity">
+
+            <include
+                android:id="@+id/header"
+                layout="@layout/layout_header_text_bg_light"
+                android:layout_width="@dimen/width_0"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+
+
+                />
+
+            <ScrollView
+                android:layout_width="@dimen/width_0"
+                android:layout_height="@dimen/width_0"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/header">
+
+
+                <LinearLayout
+                    android:id="@+id/ll_card_cont"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/dimen_31_2"
+                    android:layout_marginStart="@dimen/dimen_31_2"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <com.appster.turtle.widget.CustomTextView
+                        android:id="@+id/tv_dob_header"
+                        style="@style/noise_card_header_style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:customFont="@string/eina_01_semibold"
+                        android:text="@string/date_of_birth" />
+
+                    <com.appster.turtle.widget.CustomTextView
+                        android:id="@+id/tv_date_birth"
+                        style="@style/noise_edittxt_style_signIn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_8"
+                        android:hint="@string/date_of_birth"
+                        android:imeOptions="actionNext"
+                        android:inputType="date"
+                        android:maxLength="20"
+                        android:text="@{bank.dob}"
+                        app:customFont="@string/eina_01_regular" />
+
+                    <com.appster.turtle.widget.CustomTextView
+                        android:id="@+id/tv_address_header"
+                        style="@style/noise_card_header_style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_21"
+                        android:text="@string/address"
+                        app:customFont="@string/eina_01_semibold" />
+
+                    <com.appster.turtle.widget.CustomEditText
+                        android:id="@+id/tv_address"
+                        style="@style/noise_edittxt_style_signup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_8"
+                        android:hint="@string/address"
+                        android:imeOptions="actionNext"
+                        android:inputType="textPersonName"
+                        android:text="@{bank.address}"
+
+                        app:customFont="@string/eina_01_regular" />
+
+
+                    <com.appster.turtle.widget.CustomTextView
+                        android:id="@+id/tv_city_header"
+                        style="@style/noise_card_header_style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_21"
+                        android:text="@string/city"
+                        app:customFont="@string/eina_01_semibold" />
+
+                    <com.appster.turtle.widget.CustomEditText
+                        android:id="@+id/tv_city"
+                        style="@style/noise_edittxt_style_signup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_8"
+                        android:hint="@string/enter_your_city"
+                        android:imeOptions="actionNext"
+                        android:inputType="textPersonName"
+                        android:text="@{bank.suburb}"
+
+                        app:customFont="@string/eina_01_regular" />
+
+                    <com.appster.turtle.widget.CustomTextView
+                        android:id="@+id/tv_state_header"
+                        style="@style/noise_card_header_style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_21"
+                        android:text="@string/state"
+                        app:customFont="@string/eina_01_semibold" />
+
+
+                    <com.appster.turtle.widget.CustomEditText
+                        android:id="@+id/tv_state"
+                        style="@style/noise_edittxt_style_signup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_8"
+                        android:hint="@string/select_your_state"
+                        android:imeOptions="actionNext"
+                        android:inputType="textPersonName"
+                        android:text="@{bank.state}"
+
+                        app:customFont="@string/eina_01_regular" />
+
+                    <com.appster.turtle.widget.CustomTextView
+                        android:id="@+id/tv_postal_code_header"
+                        style="@style/noise_card_header_style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_21"
+                        android:text="@string/postal_code"
+                        app:customFont="@string/eina_01_semibold" />
+
+                    <com.appster.turtle.widget.CustomEditText
+                        android:id="@+id/tv_postal_code"
+                        style="@style/noise_edittxt_style_signup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_8"
+                        android:hint="@string/select_your_postal_code"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:text="@{bank.postcode}"
+
+                        app:customFont="@string/eina_01_regular" />
+
+                    <com.appster.turtle.widget.CustomTextView
+                        android:id="@+id/tv_ssn_header"
+                        style="@style/noise_card_header_style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_21"
+                        android:visibility="gone"
+                        android:text="@string/social_security_number_9_digits" />
+
+                    <com.appster.turtle.widget.CustomEditText
+                        android:id="@+id/tv_ssn"
+                        style="@style/noise_edittxt_style_signup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_8"
+                        android:visibility="gone"
+                        android:hint="@string/enter_your_social_security_number"
+                        android:imeOptions="actionDone"
+                        android:inputType="number"
+                        android:maxLength="9"
+                        android:text="@{bank.ssn}"
+                        app:customFont="@string/eina_01_regular" />
+
+
+                    <com.appster.turtle.widget.CustomTextView
+                        android:id="@+id/tv_attachment"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="35.5dp"
+                        android:drawableEnd="@drawable/ic_bank_attachment"
+
+                        android:lineSpacingExtra="@dimen/text_space_9_6"
+                        android:text="@string/add_verification_documents"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/textsize_15_plus"
+                        app:customFont="@string/eina_01_regular" />
+
+                    <com.appster.turtle.widget.CustomTextView
+                        android:id="@+id/tv_what"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/margin_21"
+                        android:layout_marginTop="@dimen/dimen_5_8"
+                        android:drawableEnd="@drawable/ic_question"
+                        android:drawablePadding="@dimen/dimen_4"
+                        android:gravity="center_vertical"
+                        android:lineSpacingExtra="@dimen/text_size_3_8"
+                        android:text="@string/what_is_this"
+                        android:textColor="#b2b2b2"
+                        android:textSize="@dimen/textsize_13_4"
+                        app:customFont="@string/bruta_normal_glb_regular" />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_15"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/iv_attachment"
+                            android:layout_width="232.8dp"
+                            android:layout_height="122.9dp"
+                            android:layout_marginTop="@dimen/margin_5"
+                            android:contentDescription="@null"
+                            android:paddingEnd="@dimen/dimen_5"
+                            android:paddingStart="@dimen/width_0"
+                            android:scaleType="centerCrop" />
+
+                        <ImageView
+                            android:id="@+id/iv_remove_image"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignEnd="@+id/iv_attachment"
+                            android:layout_alignParentTop="true"
+                            android:contentDescription="@null"
+                            android:src="@drawable/ic_remove_image" />
+                    </RelativeLayout>
+
+
+                    <View
+
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/default_padding_20"
+                        android:layout_marginTop="@dimen/margin_17" />
+
+
+                    <com.appster.turtle.widget.CustomTextView
+                        android:id="@+id/tv_next_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dimen_58"
+                        android:layout_marginBottom="34.2dp"
+
+                        android:background="@drawable/grey_soild_roun_rect"
+                        android:gravity="center"
+                        android:text="@string/done"
+                        android:textColor="#abb1b8"
+                        android:textSize="@dimen/textSizeNormal"
+                        app:customFont="@string/eina_01_semibold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                </LinearLayout>
+
+
+            </ScrollView>
+
+
+        </android.support.constraint.ConstraintLayout>
+    </com.flipboard.bottomsheet.BottomSheetLayout>
+
+</layout>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:state_enabled="true">
+        <shape>
+            <padding android:bottom="7dp" android:left="20dp" android:right="20dp" android:top="7dp" />
+            <solid android:color="@color/bright_teal" />
+            <corners android:radius="48dp" />
+        </shape>
+    </item>
+    <item android:state_enabled="false">
+        <shape>
+            <padding android:bottom="7dp" android:left="20dp" android:right="20dp" android:top="7dp" />
+            <solid android:color="@color/textView_color_grey_new" />
+            <!--<solid android:color="#37264f" />-->
+            <corners android:radius="48dp" />
+        </shape>
+    </item>
+</selector>

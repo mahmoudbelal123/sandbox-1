@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="user"
+            type="com.appster.turtle.model.User" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/black"
+        android:paddingEnd="@dimen/dp_34_6"
+        android:paddingStart="@dimen/dp_34_6">
+
+        <ImageView
+            android:id="@+id/iv_request_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/friend_not_added"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <com.appster.turtle.widget.CustomTextView
+            android:id="@+id/tv_people_name"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:text="@{user.userName}"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/textsize_22"
+            android:lines="1"
+            android:ellipsize="end"
+            app:customFont="@string/bruta_condensed_glb_bold"
+            app:layout_constraintBottom_toBottomOf="@id/iv_request_status"
+            app:layout_constraintEnd_toStartOf="@id/iv_request_status"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/iv_request_status"
+            tools:text="VictorJ-94" />
+
+        <com.appster.turtle.widget.CustomTextView
+            android:id="@+id/tv_people_address"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="wrap_content"
+            android:text="@{user.fullName + @string/of + user.homeTown}"
+            android:textColor="@color/text_font_color"
+            android:textSize="@dimen/textsize_16"
+            android:lines="1"
+            android:ellipsize="end"
+            app:customFont="@string/bruta_normal_glb_regular"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_request_status"
+            tools:text="Brett Flowers of Berkley, CA" />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

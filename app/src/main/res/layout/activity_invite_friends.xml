@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<layout>
+
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:background="@color/app_white"
+        android:layout_height="match_parent"
+        tools:context="com.appster.turtle.ui.settings.InviteFriendsActivity">
+
+        <include
+            android:id="@+id/header"
+            layout="@layout/layout_header_text_bg_light"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="@dimen/width_0"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dimen_33_6"
+            android:layout_marginStart="@dimen/dimen_33_6"
+            android:layout_marginTop="@dimen/dimen_10_6"
+            android:background="@color/app_white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/header">
+
+            <com.appster.turtle.widget.CustomTextView
+                android:id="@+id/tv_via_sms"
+                android:layout_width="@dimen/width_0"
+                android:layout_height="@dimen/image_w_initials"
+                android:drawableEnd="@drawable/ic_next_half_arrow"
+                android:text="@string/via_sms"
+                android:onClick="inivteClick"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textsize_22"
+                app:customFont="@string/bruta_condensed_glb_semi_bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <com.appster.turtle.widget.CustomTextView
+                android:id="@+id/tv_via_sms_des"
+                android:layout_width="@dimen/width_0"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/textsize_16"
+                android:layout_marginTop="@dimen/dimen_3_6"
+                android:textColor="#b2b2b2"
+                android:onClick="inivteClick"
+
+                android:paddingTop="@dimen/dimen_2"
+                app:layout_constraintTop_toBottomOf="@id/tv_via_sms"
+                app:customFont="@string/bruta_normal_glb_regular"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:text="@string/a_sms_invitation_with_a_link_will_be_sent_to_the_selected_contacts" />
+
+            <com.appster.turtle.widget.CustomTextView
+                android:id="@+id/tv_via_email"
+                android:layout_width="@dimen/width_0"
+                android:layout_height="@dimen/image_w_initials"
+                android:drawableEnd="@drawable/ic_next_half_arrow"
+                android:text="@string/via_email"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textsize_22"
+                android:onClick="inivteClick"
+
+                android:layout_marginTop="@dimen/margin_17_6"
+                app:layout_constraintTop_toBottomOf="@id/tv_via_sms_des"
+                app:customFont="@string/bruta_condensed_glb_semi_bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <com.appster.turtle.widget.CustomTextView
+                android:id="@+id/tv_via_email_des"
+                android:layout_width="@dimen/width_0"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/textsize_16"
+                android:layout_marginTop="@dimen/dimen_3_6"
+                android:textColor="#b2b2b2"
+                android:onClick="inivteClick"
+                android:paddingTop="@dimen/dimen_2"
+
+                app:layout_constraintTop_toBottomOf="@id/tv_via_email"
+                app:customFont="@string/bruta_normal_glb_regular"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:text="@string/an_email_invitation_with_a_link_will_be_sent_to_the_selected_contacts" />
+
+        </android.support.constraint.ConstraintLayout>
+    </android.support.constraint.ConstraintLayout>
+</layout>

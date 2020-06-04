@@ -1,0 +1,18 @@
+{
+  "web": {
+    "client_id": "1091123044591-r22osr95h8derefmb7vm14s0cdsctspg.apps.googleusercontent.com",
+    "project_id": "turtle-2-app-android",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://accounts.google.com/o/oauth2/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_secret": "IjDDIJlTfTXvDK2lc4FAQLNi",
+    "redirect_uris": [
+      "https://turtle-2-app-android.firebaseapp.com/__/auth/handler"
+    ],
+    "javascript_origins": [
+      "http://localhost",
+      "http://localhost:5000",
+      "https://turtle-2-app-android.firebaseapp.com"
+    ]
+  }
+}

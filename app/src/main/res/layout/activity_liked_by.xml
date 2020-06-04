@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+
+        <variable
+            name="viewModel"
+            type="com.appster.turtle.viewmodel.LikedByViewModel" />
+    </data>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:orientation="vertical"
+        tools:context="com.appster.turtle.ui.rooms.LikedByActivity">
+
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/swipe_refresh"
+            android:layout_below="@id/cl_liked_by_header"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_liked_by"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingHorizontal="@dimen/margin_17"
+
+                app:adapter="@{viewModel.adapter}"
+                app:itemDecoration="@{viewModel.itemDecoration}"
+                app:layoutManager="@{viewModel.linearLayoutManager}"
+                app:scrollListener="@{viewModel.scrollListener}" />
+
+        </android.support.v4.widget.SwipeRefreshLayout>
+
+
+        <include
+            android:id="@+id/cl_liked_by_header"
+            layout="@layout/layout_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            />
+
+    </RelativeLayout>
+</layout>

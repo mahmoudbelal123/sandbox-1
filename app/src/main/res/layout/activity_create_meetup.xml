@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+        android:id="@+id/sv_create_meetup"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        tools:context="com.appster.turtle.ui.meetup.CreateMeetupActivity">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_meetup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:focusableInTouchMode="true">
+
+            <include
+                android:id="@+id/cl_header"
+                layout="@layout/layout_header_text_bg_light"
+                android:layout_width="@dimen/width_0"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="@dimen/width_0"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                android:background="@android:color/white"
+                android:paddingEnd="@dimen/dimen_34_6"
+                android:paddingStart="@dimen/dimen_34_6"
+                android:paddingTop="@dimen/dimen_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cl_header">
+
+                <com.appster.turtle.widget.CustomTextView
+                    android:id="@+id/tv_meetup_creator"
+                    android:layout_width="@dimen/width_0"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:text="@string/meetup_creator_placeholder"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/textsize_16"
+                    app:customFont="@string/bruta_normal_glb_regular"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.appster.turtle.widget.CustomEditText
+                    style="@style/noise_edittxt_style_signup"
+                    android:id="@+id/et_meetup_title"
+                    android:layout_width="@dimen/width_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_19"
+                    android:background="@drawable/create_room_name_selector"
+                    android:gravity="start"
+                    android:hint="@string/placeholder_meetup_title"
+                    android:lineSpacingExtra="@dimen/text_size_3_3"
+                    android:maxLines="1"
+                    android:paddingBottom="@dimen/dimen_14_9"
+                    android:paddingEnd="@dimen/dimen_23_5"
+                    android:paddingStart="@dimen/dimen_23_5"
+                    android:paddingTop="@dimen/dimen_15_8"
+                    android:singleLine="true"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@color/gray"
+                    android:textCursorDrawable="@drawable/et_indiciator_auth_black"
+                    android:textSize="@dimen/textsize_14"
+                    app:customFont="@string/bruta_normal_glb_regular"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_meetup_creator" />
+
+                <com.appster.turtle.widget.CustomTextView
+                    android:id="@+id/tv_time_and_date"
+                    android:layout_width="@dimen/width_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_19"
+                    android:background="@drawable/create_room_name_selector"
+                    android:gravity="start"
+                    android:hint="@string/time_amp_date"
+                    android:lineSpacingExtra="@dimen/text_size_3_3"
+                    android:maxLines="1"
+                    android:paddingBottom="@dimen/dimen_14_9"
+                    android:paddingEnd="@dimen/dimen_23_5"
+                    android:paddingStart="@dimen/dimen_23_5"
+                    android:paddingTop="@dimen/dimen_15_8"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@color/gray"
+                    android:textCursorDrawable="@drawable/et_indiciator_auth_black"
+                    android:textSize="@dimen/textsize_14"
+                    app:customFont="@string/bruta_normal_glb_regular"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/et_meetup_title" />
+
+                <com.appster.turtle.widget.CustomTextView
+                    android:id="@+id/tv_duration"
+                    android:layout_width="@dimen/width_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_19"
+                    android:background="@drawable/create_room_name_selector"
+                    android:gravity="start"
+                    android:hint="@string/placeholder_duration"
+                    android:lineSpacingExtra="@dimen/text_size_3_3"
+                    android:maxLines="1"
+                    android:paddingBottom="@dimen/dimen_14_9"
+                    android:paddingEnd="@dimen/dimen_23_5"
+                    android:paddingStart="@dimen/dimen_23_5"
+                    android:paddingTop="@dimen/dimen_15_8"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@color/gray"
+                    android:textCursorDrawable="@drawable/et_indiciator_auth_black"
+                    android:textSize="@dimen/textsize_14"
+                    app:customFont="@string/bruta_normal_glb_regular"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_time_and_date" />
+
+                <!--<com.appster.turtle.widget.CustomTextView-->
+                <com.appster.turtle.widget.CustomAutoCompleteTextView
+                    android:id="@+id/tv_location"
+                    android:layout_width="@dimen/width_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_19"
+                    android:background="@drawable/create_room_name_selector"
+                    android:completionThreshold="1"
+                    android:gravity="start"
+                    android:hint="@string/placeholder_location"
+                    android:inputType="textAutoComplete"
+                    android:lineSpacingExtra="@dimen/text_size_3_3"
+                    android:maxLines="1"
+                    android:paddingBottom="@dimen/dimen_14_9"
+                    android:paddingEnd="@dimen/dimen_23_5"
+                    android:paddingStart="@dimen/dimen_23_5"
+                    android:paddingTop="@dimen/dimen_15_8"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@color/gray"
+                    android:textCursorDrawable="@drawable/et_indiciator_auth_black"
+                    android:textSize="@dimen/textsize_14"
+                    app:customFont="@string/bruta_normal_glb_regular"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_duration" />
+
+                <com.appster.turtle.widget.CustomTextView
+                    android:id="@+id/tv_tags"
+                    android:layout_width="@dimen/width_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_19"
+                    android:drawableEnd="@drawable/ic_join_black"
+                    android:gravity="center_vertical"
+                    android:onClick="onAddTagClick"
+                    android:text="@string/txt_add_tag"
+                    android:textColor="@color/colorTxtNormal"
+                    android:textSize="@dimen/textSizeNormal"
+                    app:customFont="@string/bruta_normal_glb_regular"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_location" />
+
+                <com.appster.turtle.widget.CustomTextView
+                    android:id="@+id/tv_tag_desc"
+                    android:layout_width="@dimen/width_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_5_8"
+                    android:lineSpacingExtra="@dimen/text_size_3_8"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/textsize_13_4"
+                    app:customFont="@string/bruta_normal_glb_regular"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_tags" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_places_suggestions"
+                    android:layout_width="@dimen/width_0"
+                    android:layout_height="@dimen/dimen_150"
+                    android:background="@android:color/white"
+                    android:paddingTop="@dimen/dimen_4"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_location" />
+
+            </android.support.constraint.ConstraintLayout>
+
+        </android.support.constraint.ConstraintLayout>
+
+    </ScrollView>
+
+</layout>

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="user"
+            type="com.appster.turtle.model.User" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingEnd="@dimen/margin_23"
+        android:paddingStart="@dimen/margin_23">
+
+
+        <RelativeLayout
+            android:id="@+id/fl_image"
+            android:layout_width="@dimen/friends_image"
+            android:layout_height="@dimen/friends_image"
+            app:bindShowProfile="@{user}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:src="@{user.profileUrlType==3 ? @drawable/ic_pp_cred:@drawable/ic_transparent}"
+                app:civ_border_width="@dimen/width_0" />
+
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:width="@{user.profileUrlType==3 ? @dimen/image_w_initials : @dimen/image_w}"
+                android:height="@{user.profileUrlType==3 ? @dimen/image_w_initials : @dimen/image_w}"
+                android:background="@color/transparent"
+                android:contentDescription="@null"
+                android:visibility="@{user.profileUrlType==3 ? View.INVISIBLE:View.VISIBLE}"
+
+                app:civ_border_width="@dimen/width_0"
+                app:profileImageurl="@{user.profileUrl}" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:width="@{user.profileUrlType==3 ? @dimen/image_w_initials : @dimen/image_w}"
+                android:height="@{user.profileUrlType==3 ? @dimen/image_w_initials : @dimen/image_w}"
+                android:background="@color/transparent"
+                android:contentDescription="@null"
+                android:visibility="@{user.profileUrlType==3 ? View.VISIBLE:View.INVISIBLE}"
+                app:profileImageurl="@{user.profileUrl}" />
+
+
+        </RelativeLayout>
+
+        <com.appster.turtle.widget.CustomTextView
+            android:id="@+id/tv_name"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_15_4"
+            android:ellipsize="end"
+            android:gravity="start"
+            android:lines="1"
+            android:text=""
+            android:textColor="@color/done_unselected_color"
+            android:textSize="@dimen/textsize_15_plus"
+            android:layout_marginEnd="4dp"
+            app:customFont="@string/eina_01_semibold"
+            app:layout_constraintEnd_toStartOf="@id/ib_accept"
+            app:layout_constraintStart_toEndOf="@id/fl_image" />
+
+        <com.appster.turtle.widget.CustomTextView
+            android:id="@+id/tv_username"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dimen_15_4"
+            android:layout_marginStart="@dimen/dimen_2"
+            android:ellipsize="end"
+            android:lines="1"
+            android:text='@{"@"+user.userName}'
+            android:textColor="@color/username_color"
+            android:textSize="@dimen/textsize_15_plus"
+            app:customFont="@string/eina_01_regular"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <com.appster.turtle.widget.CustomTextView
+            android:id="@+id/tv_university"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dimen_15_4"
+            android:layout_marginStart="@dimen/dimen_15_4"
+            android:layout_marginTop="@dimen/dimen_2"
+            android:lines="1"
+            android:textColor="@color/text_font_color_grey"
+            android:textSize="@dimen/textsize_15_plus"
+            app:customFont="@string/eina_01_regular"
+            app:layout_constraintEnd_toStartOf="@id/ib_accept"
+            app:layout_constraintStart_toEndOf="@id/fl_image"
+            app:layout_constraintTop_toBottomOf="@id/tv_name" />
+
+        <ImageButton
+            android:id="@+id/ib_reject"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:contentDescription="@string/image_content"
+            android:src="@drawable/ic_reject"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/ib_accept"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dimen_7_7"
+            android:background="@null"
+            android:contentDescription="@string/image_content"
+            android:src="@drawable/circle_tick_stroke"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/ib_reject"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </android.support.constraint.ConstraintLayout>
+
+
+</layout>

@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+
+        <!--<variable-->
+        <!--name="viewModel"-->
+        <!--type="com.appster.turtle.viewmodel.SignInViewModel" />-->
+    </data>
+
+    <RelativeLayout
+
+        android:id="@+id/cl_sign_in"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        android:background="@color/black"
+        tools:context="com.appster.turtle.ui.auth.SignInActivity">
+
+        <include
+            android:id="@+id/header"
+            layout="@layout/layout_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:layout_below="@+id/header">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.appster.turtle.widget.CustomTextView
+                    android:text="Welcome back! Please log in to continue."
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dimen_10"
+                    android:layout_marginTop="@dimen/dimen_30"
+                    android:drawablePadding="@dimen/dimen_10"
+                    android:paddingEnd="@dimen/dimen_23"
+                    android:paddingStart="@dimen/dimen_23"
+                    android:textColor="@color/app_white"
+                    android:textStyle="bold"
+                    tools:ignore="MissingConstraints" />
+
+                <com.appster.turtle.widget.CustomTextView
+                    android:id="@+id/txt_error"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dimen_10"
+                    android:layout_marginTop="@dimen/dimen_30"
+                    android:drawablePadding="@dimen/dimen_10"
+                    android:drawableStart="@drawable/ic_error_img"
+                    android:paddingEnd="@dimen/dimen_23"
+                    android:paddingStart="@dimen/dimen_23"
+                    android:textColor="@color/red_error"
+                    android:visibility="invisible"
+                    tools:ignore="MissingConstraints" />
+
+                <RelativeLayout
+
+                    android:id="@+id/rlContent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/default_padding_20"
+                    android:layout_marginTop="@dimen/dimen_60"
+                    android:paddingEnd="@dimen/dimen_23"
+                    android:paddingStart="@dimen/dimen_23"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_error"
+                    tools:ignore="MissingConstraints">
+
+                    <com.appster.turtle.widget.CustomTextView
+                        android:visibility="gone"
+                        android:id="@+id/tvEmailUserName"
+                        style="@style/noise_edit_header_style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/email_username"
+                        android:textSize="@dimen/edit_text_sub"
+                        app:customFont="@string/eina_01_semibold" />
+
+                    <com.appster.turtle.widget.CustomEditText
+                        android:id="@+id/etEmail"
+                        style="@style/noise_edittxt_style_signIn"
+                        android:layout_width="match_parent"
+                        android:layout_below="@+id/tvEmailUserName"
+                        android:layout_marginTop="@dimen/dimen_7_9"
+                        android:digits="@string/email_digits"
+                        android:hint="@string/email_username"
+                        android:imeOptions="actionNext"
+                        android:inputType="textEmailAddress"
+                        android:textSize="@dimen/textSizeLarge"
+                        app:customFont="@string/eina_01_regular" />
+
+                    <com.appster.turtle.widget.CustomTextView
+                       android:visibility="gone"
+                        android:id="@+id/tvPassword"
+                        style="@style/noise_edit_header_style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/etEmail"
+                        android:layout_marginTop="@dimen/dimen_19_2"
+                        android:text="@string/password"
+                        android:textSize="@dimen/edit_text_sub"
+                        app:customFont="@string/eina_01_semibold" />
+
+                    <com.appster.turtle.widget.CustomEditText
+                        android:id="@+id/etPassword"
+                        style="@style/noise_edittxt_style_signIn"
+                        android:layout_width="match_parent"
+                        android:layout_below="@+id/tvPassword"
+                        android:layout_marginTop="@dimen/dimen_7_9"
+                        android:hint="@string/txt_pwd_hnt"
+                        android:imeOptions="actionNext"
+                        android:inputType="textPassword"
+                        android:textSize="@dimen/textSizeLarge"
+                        app:customFont="@string/eina_01_regular"
+                        app:emojiFilter='@{true}' />
+
+                </RelativeLayout>
+
+
+                <com.appster.turtle.widget.CustomTextView
+                    android:id="@+id/tv_forgot_password"
+                    android:layout_width="@dimen/width_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_46"
+                    android:layout_marginTop="@dimen/dp_26"
+                    android:lineSpacingExtra="@dimen/text_size_3_3"
+                    android:onClick="clicked"
+                    android:paddingStart="@dimen/dimen_23"
+                    android:text="@string/forgot_your_password"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/textSizeNormal"
+                    app:customFont="@string/eina_01_regular"
+                    app:layout_constraintTop_toBottomOf="@id/rlContent"
+                    tools:ignore="MissingConstraints" />
+
+                <View
+                    android:layout_width="@dimen/width_0"
+                    android:layout_height="@dimen/dimen_50"
+                    android:minHeight="@dimen/dimen_50"
+                    app:layout_constraintBottom_toTopOf="@+id/tv_sign_in"
+                    app:layout_constraintTop_toBottomOf="@id/tv_forgot_password"
+                    tools:ignore="MissingConstraints" />
+
+                <com.appster.turtle.widget.CustomTextView
+                    android:id="@+id/tv_sign_in"
+                    style="@style/RoundedTextView_Border"
+                    android:layout_width="@dimen/width_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_22_7"
+                    android:layout_marginEnd="@dimen/dp_36"
+                    android:layout_marginStart="@dimen/margin_34"
+                    android:onClick="clicked"
+                    android:text="@string/sign_in_button_text"
+                    android:enabled="false"
+                    app:customFont="@string/bruta_normal_glb_semi_bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+                <!--android:enabled="@{viewModel.signInEnable}"-->
+                <!--android:onClick="@{viewModel.loginClickListener}"-->
+            </android.support.constraint.ConstraintLayout>
+        </ScrollView>
+    </RelativeLayout>
+</layout>

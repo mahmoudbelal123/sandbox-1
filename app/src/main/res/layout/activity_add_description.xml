@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<layout>
+
+    <data>
+
+        <variable
+            name="constants"
+            type="com.appster.turtle.ui.Constants" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        tools:context="com.appster.turtle.ui.notes.AddNotesDescriptionActivity">
+
+        <include
+            android:id="@+id/header"
+            layout="@layout/layout_header_text_bg_light"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.appster.turtle.widget.CustomTextView
+            android:id="@+id/tv_remaining_characters"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:lineSpacingExtra="@dimen/text_size_3_3"
+            android:maxLength="@{constants.MAX_CHARACTERS_ADD_DESC}"
+            android:paddingBottom="@dimen/dimen_12"
+            android:paddingEnd="@dimen/width_0"
+            android:paddingStart="@dimen/margin_17"
+            android:paddingTop="@dimen/dimen_4"
+            android:textColor="@color/colorTxtHint"
+            android:textSize="@dimen/textSizeNormal"
+            app:customFont="@string/bruta_normal_glb_regular"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.appster.turtle.widget.CustomEditText
+            android:id="@+id/et_description"
+            style="@style/noise_edittxt_style_signup"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="@dimen/width_0"
+            android:layout_marginTop="@dimen/dimen_50"
+            android:backgroundTint="@android:color/transparent"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="top"
+            android:hint="@string/add_notes_description"
+            android:inputType="textMultiLine|textCapSentences"
+            android:lineSpacingExtra="@dimen/textsize_9"
+            android:maxLength="@{constants.MAX_CHARACTERS_ADD_DESC}"
+            android:paddingEnd="@dimen/margin_34"
+            android:paddingStart="@dimen/margin_34"
+            android:textColor="@android:color/black"
+            android:textColorHint="@color/textPostTextColor"
+            android:textCursorDrawable="@drawable/et_indiciator_auth_black"
+            android:textSize="@dimen/textsize_16"
+            app:layout_constraintBottom_toTopOf="@id/tv_remaining_characters"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/header" />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

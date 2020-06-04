@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.appster.turtle.widget.CustomTextView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/tv_tag"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_30"
+        android:gravity="start"
+        android:background="@color/transparent"
+        android:textColor="@color/msg_black"
+        android:textSize="@dimen/textsize_17_3"
+        android:maxLines="1"
+        android:ellipsize="end"
+        app:customFont="@string/eina_01_regular">
+
+    </com.appster.turtle.widget.CustomTextView>
+</layout>

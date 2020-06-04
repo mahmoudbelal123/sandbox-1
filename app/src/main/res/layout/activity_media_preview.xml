@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+
+        <variable
+            name="post"
+            type="com.appster.turtle.network.response.Posts" />
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"
+        tools:context="com.appster.turtle.ui.media.MediaPreviewActivity">
+
+        <com.appster.turtle.widget.TouchImageView
+            android:id="@+id/iv_zoomage_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/black"
+            android:scaleType="center"
+            android:src="@drawable/id_babble" />
+
+        <RelativeLayout
+            android:id="@+id/rl_video_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.exoplayer2.ui.SimpleExoPlayerView
+                android:id="@+id/video_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:clickable="false"
+                app:default_artwork="@anim/fade_in"
+                app:use_controller="false" />
+
+            <RelativeLayout
+                android:id="@+id/rv_play"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/video_view"
+                android:layout_alignTop="@+id/video_view"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="playVideoClicked">
+
+                <ImageView
+                    android:id="@+id/iv_play"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_play"
+                    tools:ignore="ContentDescription" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/iv_cross"
+            android:layout_width="@dimen/dimen_39"
+            android:layout_height="@dimen/dimen_39"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="@dimen/post_user_init"
+            android:layout_marginTop="@dimen/dimen_11_6"
+            android:padding="@dimen/dimen_10"
+            android:onClick="onBackClicked"
+            android:src="@drawable/ic_close"
+            tools:ignore="ContentDescription" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dimen_18_2"
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="@dimen/dimen_31_8">
+
+            <ImageView
+                android:id="@+id/iv_comment"
+                android:layout_width="@dimen/dimen_18_2"
+                android:contentDescription="@null"
+                android:layout_height="@dimen/dimen_18_2"
+                android:layout_alignParentStart="true"
+                android:src="@drawable/ic_comment_white" />
+
+            <com.appster.turtle.widget.CustomTextView
+                android:id="@+id/tv_comments"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/margin_7"
+                android:layout_toEndOf="@id/iv_comment"
+                android:gravity="center"
+                android:text="@{String.valueOf(post.commentsCount)}"
+                android:textColor="#ffffff"
+                android:onClick="onBackClicked"
+                android:textSize="@dimen/textsize_13_4"
+                app:customFont="@string/bruta_condensed_glb_semi_bold"
+
+                />
+
+
+            <ImageView
+                android:id="@+id/iv_like"
+                app:llwidthpreview="@{post.likeStatus}"
+                app:llheightprivew="@{post.likeStatus}"
+                android:layout_width="@dimen/default_padding_20"
+                android:layout_height="@dimen/margin_17_6"
+                android:layout_marginStart="62.9dp"
+                android:contentDescription="@null"
+                android:adjustViewBounds="true"
+                android:src="@{post.likeStatus==0?@drawable/ic_like_white:(post.likeStatus ==1 ? @drawable/ic_like_thumb: (post.likeStatus == 2 ? @drawable/ic_heart:(post.likeStatus == 3 ? @drawable/ic_angry:  (post.likeStatus == 4 ? @drawable/ic_surprised:  (post.likeStatus == 5 ? @drawable/ic_tear:  @drawable/ic_grin)))))}"
+                android:layout_toEndOf="@id/tv_comments" />
+
+            <com.appster.turtle.widget.CustomTextView
+                android:id="@+id/tv_likes"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/margin_7"
+                android:includeFontPadding="false"
+                android:layout_toEndOf="@id/iv_like"
+                android:gravity="center"
+                android:text="@{String.valueOf(post.likesCount)}"
+                android:textColor="#ffffff"
+                android:textSize="@dimen/textsize_13_4"
+                app:customFont="@string/bruta_condensed_glb_semi_bold" />
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+</layout>

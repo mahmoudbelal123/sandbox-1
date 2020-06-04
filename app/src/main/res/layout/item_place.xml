@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.appster.turtle.widget.CustomTextView
+        android:id="@+id/tvPlace"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/textsize_16"
+        app:customFont="@string/eina_01_regular"
+        android:paddingTop="@dimen/dimen_6"
+        android:paddingBottom="@dimen/dimen_6"
+        android:textColor="@color/colorPrimary" />
+</layout>

@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.appster.turtle.ui.rooms.HomeActivity">
+
+
+        <android.support.v4.widget.DrawerLayout
+            android:id="@+id/drawer_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cardviewTab"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:elevation="@dimen/dimen_4"
+                    android:visibility="visible">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="47.7dp">
+
+                        <ImageView
+                            android:id="@+id/iv_home"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/dimen_34_6"
+                            android:src="@drawable/home"
+                            tools:ignore="ContentDescription" />
+
+                        <ImageView
+                            android:id="@+id/iv_create_room"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:onClick="creatRoomClicked"
+                            android:src="@drawable/ic_create_room"
+                            tools:ignore="ContentDescription" />
+
+                        <ImageView
+                            android:id="@+id/iv_trending"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="@dimen/dimen_34_6"
+                            android:src="@drawable/ic_trending"
+                            tools:ignore="ContentDescription" />
+
+                    </RelativeLayout>
+
+                </android.support.v7.widget.CardView>
+
+
+                <RelativeLayout
+                    android:id="@+id/rl_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_above="@+id/cardviewTab" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="end"
+                android:background="@drawable/home_menu_bg"
+
+                >
+
+                <include
+                    android:id="@+id/lay_home_menu"
+                    layout="@layout/menu_home" />
+
+            </RelativeLayout>
+        </android.support.v4.widget.DrawerLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/rl_tour"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/tutorial_bg"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="onTourTap"
+            android:visibility="invisible">
+
+
+            <ImageView
+                android:id="@+id/iv_fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginBottom="@dimen/margin_10"
+                android:layout_marginEnd="@dimen/margin_10"
+                android:contentDescription="@null"
+                android:onClick="onTourTap"
+                android:src="@drawable/ic_fab" />
+
+
+            <RelativeLayout
+                android:id="@+id/rl_bottom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/iv_fab"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="9.4dp"
+                android:layout_marginEnd="@dimen/dp_38_4"
+                android:layout_marginStart="@dimen/dp_38_4"
+                android:background="@drawable/ic_tutorial_bg_bottom"
+                android:paddingEnd="@dimen/margin_16"
+                android:paddingStart="@dimen/margin_16"
+                android:visibility="invisible">
+
+                <ImageView
+                    android:id="@+id/iv_close_bottom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:onClick="onTourTap"
+                    android:padding="@dimen/dimen_6"
+                    android:src="@drawable/tut_close"
+                    android:contentDescription="@string/image_content" />
+
+
+                <com.appster.turtle.widget.CustomTextView
+                    android:id="@+id/tv_bottom_header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/dimen_40"
+                    android:gravity="center"
+                    android:letterSpacing="-0.02"
+                    android:text="@string/dashboard"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/textsize_14"
+                    app:customFont="@string/eina_01_semibold"
+                    tools:ignore="RelativeOverlap" />
+
+                <com.appster.turtle.widget.CustomTextView
+                    android:id="@+id/tv_bottom_msg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_bottom_header"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/margin_8_9"
+                    android:gravity="center_horizontal"
+                    android:text="@string/tour_desc_home"
+                    android:textColor="#0f0f0f"
+                    android:textSize="@dimen/textsize_15_plus"
+                    app:customFont="@string/eina_01_regular" />
+
+
+                <com.appster.turtle.widget.CustomTextView
+                    android:id="@+id/tv_bottom_finish"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/margin_46"
+                    android:layout_below="@id/tv_bottom_msg"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/dp_26"
+                    android:background="@drawable/rounded_tv_bg"
+                    android:gravity="center"
+                    android:lineSpacingExtra="@dimen/textsize_8"
+                    android:minHeight="@dimen/dimen_32_6"
+                    android:minWidth="111.8dp"
+                    android:onClick="onTourTap"
+                    android:text="@string/finish_tour"
+                    android:textColor="@color/app_white"
+                    android:textSize="@dimen/textsize_12"
+                    app:customFont="@string/eina_01_semibold" />
+
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/rl_top"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cl_tour"
+                android:layout_centerHorizontal="true"
+                android:layout_marginEnd="@dimen/dp_38_4"
+                android:layout_marginStart="@dimen/dp_38_4"
+                android:layout_marginTop="@dimen/margin_10"
+                android:background="@drawable/ic_tutorial_bg_top_right"
+                android:paddingEnd="@dimen/margin_16"
+                android:paddingStart="@dimen/margin_16"
+                android:visibility="invisible">
+
+
+                <ImageView
+                    android:id="@+id/iv_close_top"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="24.2dp"
+                    android:onClick="onTourTap"
+                    android:padding="@dimen/dimen_6"
+                    android:src="@drawable/tut_close"
+                    android:contentDescription="@string/image_content" />
+
+
+                <com.appster.turtle.widget.CustomTextView
+                    android:id="@+id/tv_top_header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/dimen_50"
+                    android:gravity="center"
+                    android:letterSpacing="-0.02"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/textsize_14"
+                    app:customFont="@string/eina_01_semibold" />
+
+                <com.appster.turtle.widget.CustomTextView
+                    android:id="@+id/tv_top_desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_top_header"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/margin_8_9"
+                    android:gravity="center_horizontal"
+                    android:textColor="#0f0f0f"
+                    android:textSize="@dimen/textsize_16"
+                    app:customFont="@string/eina_01_regular" />
+
+
+                <com.appster.turtle.widget.CustomTextView
+                    android:id="@+id/tv_top_finish"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/margin_46"
+                    android:layout_below="@id/tv_top_desc"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/dp_26"
+                    android:background="@drawable/rounded_tv_bg"
+                    android:gravity="center"
+                    android:lineSpacingExtra="@dimen/textsize_8"
+                    android:minHeight="@dimen/dimen_32_6"
+                    android:minWidth="111.8dp"
+                    android:onClick="onTourTap"
+                    android:text="@string/finish_tour"
+                    android:textColor="@color/app_white"
+                    android:textSize="@dimen/textsize_12"
+                    app:customFont="@string/eina_01_semibold" />
+
+            </RelativeLayout>
+
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/cl_tour"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="@dimen/margin_16"
+                android:paddingEnd="@dimen/dimen_24"
+                android:paddingStart="@dimen/dimen_24">
+
+                <ImageView
+                    android:id="@+id/iv_search_tour"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@null"
+                    android:onClick="onTourTap"
+                    android:src="@drawable/ic_search_pink" />
+
+                <ImageView
+                    android:id="@+id/iv_menu_tour"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@null"
+                    android:onClick="onTourTap"
+
+                    android:src="@drawable/ic_menu_ooni"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+            </android.support.constraint.ConstraintLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:id="@+id/ll_start_tour"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+
+                    android:orientation="vertical"
+
+                    android:visibility="visible">
+
+
+                    <com.appster.turtle.widget.CustomTextView
+                        android:id="@+id/tv_babble_tour1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/dimen_38"
+                        android:layout_marginStart="@dimen/dimen_38"
+                        android:layout_marginTop="@dimen/margin_19_5"
+                        android:gravity="center"
+                        android:lineSpacingExtra="@dimen/textsize_8"
+                        android:text="@string/tour_start1"
+                        android:textColor="#ffffff"
+                        android:textSize="@dimen/textSizeExtLarge"
+                        app:customFont="@string/eina_01_bold" />
+
+                    <com.appster.turtle.widget.CustomTextView
+                        android:id="@+id/tv_babble_tour2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="51dp"
+                        android:layout_marginStart="58dp"
+                        android:layout_marginTop="21.5dp"
+                        android:gravity="center"
+                        android:lineSpacingExtra="@dimen/textsize_8"
+                        android:onClick="onTourTap"
+                        android:text="@string/tour_start2"
+                        android:textColor="#ffffff"
+                        android:textSize="@dimen/textsize_17"
+                        app:customFont="@string/eina_01_regular" />
+
+
+                    <com.appster.turtle.widget.CustomTextView
+                        android:id="@+id/tv_finish"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/margin_30"
+                        android:layout_marginStart="@dimen/margin_30"
+                        android:layout_marginTop="@dimen/dp_41_3"
+                        android:background="@drawable/circle_white_button"
+                        android:gravity="center"
+                        android:letterSpacing="-0.02"
+                        android:onClick="onTourTap"
+                        android:padding="@dimen/dimen_19"
+                        android:text="@string/finish_tour"
+                        android:textAllCaps="false"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/textsize_15_plus"
+                        app:customFont="@string/eina_01_semibold" />
+
+                </LinearLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+</layout>

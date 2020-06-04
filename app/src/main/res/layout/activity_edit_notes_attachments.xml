@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <com.flipboard.bottomsheet.BottomSheetLayout
+        android:id="@+id/bs_upload_notes"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        tools:context="com.appster.turtle.ui.notes.editNotes.EditNotesAttachmentsActivity">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <include
+                android:id="@+id/header"
+                layout="@layout/layout_header_text_bg_light"
+                android:layout_width="@dimen/width_0"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.appster.turtle.widget.CustomTextView
+                android:id="@+id/tv_done"
+                style="@style/RoundedTextView"
+                android:layout_width="@dimen/width_0"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_34"
+                android:text="@string/done"
+                app:customFont="@string/bruta_normal_glb_semi_bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_attachments"
+                android:layout_width="@dimen/width_0"
+                android:layout_height="@dimen/width_0"
+                android:layout_marginBottom="@dimen/dimen_12"
+                android:layout_marginEnd="@dimen/margin_34"
+                android:layout_marginStart="@dimen/margin_34"
+                android:layout_marginTop="@dimen/margin_48"
+                app:layout_constraintBottom_toTopOf="@id/tv_done"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/header" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </com.flipboard.bottomsheet.BottomSheetLayout>
+</layout>

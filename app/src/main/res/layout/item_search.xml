@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="android.support.v4.content.ContextCompat" />
+
+        <variable
+            name="user"
+            type="com.appster.turtle.model.User" />
+
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+      android:paddingEnd="10dp">
+
+
+        <RelativeLayout
+            android:id="@+id/fl_image"
+            android:layout_width="@dimen/friends_image"
+            android:layout_height="@dimen/friends_image"
+            android:layout_marginBottom="@dimen/margin_11"
+            android:layout_marginEnd="@dimen/margin_10"
+            android:layout_marginTop="@dimen/margin_11"
+            android:visibility="gone"
+            app:bindShowProfile="@{user}">
+
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:src="@{user.profileUrlType==3 ? @drawable/ic_pp_cred:@drawable/ic_transparent}"
+                app:civ_border_width="@dimen/width_0" />
+
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:layout_width="@dimen/image_w"
+                android:layout_height="@dimen/image_w"
+                android:layout_centerInParent="true"
+                android:background="@color/transparent"
+                android:contentDescription="@null"
+                android:visibility="@{user.profileUrlType==3 ? View.INVISIBLE:View.VISIBLE}"
+
+                app:civ_border_width="@dimen/width_0"
+                app:profileImageurl="@{user.profileUrl}" />
+
+            <ImageView
+                android:layout_width="@dimen/image_w_initials"
+                android:layout_height="@dimen/image_w_initials"
+                android:layout_centerInParent="true"
+                android:background="@color/transparent"
+                android:contentDescription="@null"
+                android:visibility="@{user.profileUrlType==3 ? View.VISIBLE:View.INVISIBLE}"
+                app:profileImageurl="@{user.profileUrl}" />
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/rv_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/fl_image"
+            android:layout_toStartOf="@+id/iv_add">
+
+            <com.appster.turtle.widget.CustomTextView
+                android:id="@+id/tv_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:paddingEnd="@dimen/margin_5"
+                android:paddingTop="@dimen/margin_11"
+                android:singleLine="true"
+                android:text=""
+                android:textColor="@color/textcolor_room_name_80"
+                android:textSize="@dimen/textsize_23"
+                app:customFont="@string/eina_01_regular" />
+
+            <com.appster.turtle.widget.CustomTextView
+                android:id="@+id/tv_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_name"
+                android:layout_marginBottom="@dimen/dp_3"
+                android:ellipsize="end"
+                android:paddingEnd="@dimen/margin_5"
+                android:paddingTop="@dimen/margin_5"
+                android:singleLine="true"
+                android:text="@string/hello"
+                android:textColor="@color/unselected_grey"
+                android:textSize="14.4sp"
+                app:customFont="@string/eina_01_regular" />
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/iv_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:paddingBottom="@dimen/margin_11"
+            android:paddingTop="@dimen/margin_11"
+            android:src="@drawable/ic_add_grey" />
+
+
+        <com.appster.turtle.widget.CustomTextView
+            android:id="@+id/tv_response_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/textsize_13_4"
+            android:textColor="#161616"
+            android:text="@string/respond_to_request"
+            android:layout_toEndOf="@+id/fl_image"
+            android:gravity="center"
+            app:customFont="@string/eina_01_regular"
+            android:layout_alignTop="@id/iv_accept"
+            android:layout_alignBottom="@id/iv_accept" />
+
+
+        <ImageView
+            android:id="@+id/iv_accept"
+            android:layout_width="@dimen/margin_30_7"
+            android:layout_height="@dimen/margin_30_7"
+            android:layout_marginEnd="@dimen/dimen_7_7"
+            android:layout_below="@id/rv_name"
+
+            android:contentDescription="@string/image_content"
+            android:src="@drawable/circle_tick_stroke"
+            android:layout_toStartOf="@id/iv_decline"
+
+            />
+
+        <ImageView
+            android:id="@+id/iv_decline"
+            android:layout_width="@dimen/margin_30_7"
+            android:layout_height="@dimen/margin_30_7"
+            android:layout_below="@id/rv_name"
+
+            android:contentDescription="@string/image_content"
+            android:src="@drawable/ic_circle_cross_grey"
+            android:layout_alignParentEnd="true"
+
+            />
+
+    </RelativeLayout>
+</layout>

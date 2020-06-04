@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <data>
+
+        <variable
+            name="user"
+            type="com.appster.turtle.model.UserProfileData" />
+    </data>
+
+    <com.flipboard.bottomsheet.BottomSheetLayout xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/bs_bottom_menu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.design.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:animateLayoutChanges="true"
+            android:background="@color/black"
+            tools:context="com.androidsample.BottomSheetActivity">
+
+
+            <!-- include main content -->
+            <!--add these lines for parallax-->
+            <!--app:layout_anchor="@+id/bottom_sheet"-->
+            <!--app:layout_behavior="com.appster.turtle.widget.CollapseBehavior"-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+
+                android:layout_height="match_parent">
+
+
+                <ImageView
+                    android:id="@+id/iv_circle"
+                    android:layout_width="@dimen/margin_130"
+                    android:layout_height="@dimen/margin_130"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/dp_140"
+                    android:background="@drawable/ic_pp_cred"
+                    android:visibility="invisible"
+                    android:contentDescription="@string/image_content" />
+
+                <ImageView
+                    android:id="@+id/iv_bg"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/image_content" />
+
+                <!--imageurl="@{user.userModel.profileUrl}"-->
+
+                <include
+                    android:id="@+id/header"
+                    layout="@layout/layout_header_text_bg"
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content" />
+
+
+            </RelativeLayout>
+
+            <!-- include app bar -->
+
+
+            <android.support.design.widget.CoordinatorLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+
+                android:layout_marginTop="@dimen/dp_56">
+
+                <!-- include bottom sheet -->
+                <include
+                    android:id="@+id/bottom_sheet"
+                    android:background="@drawable/rounded_bg_white_profile"
+                    layout="@layout/layout_profile_details" />
+
+            </android.support.design.widget.CoordinatorLayout>
+
+            <!--<android.support.design.widget.CoordinatorLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--&gt;-->
+
+            <!--&lt;!&ndash; include bottom sheet &ndash;&gt;-->
+            <!--<include-->
+            <!--android:id="@+id/bottom_sheet_menu"-->
+            <!--layout="@layout/layout_profile_menu" />-->
+
+            <!--</android.support.design.widget.CoordinatorLayout>-->
+
+        </android.support.design.widget.CoordinatorLayout>
+    </com.flipboard.bottomsheet.BottomSheetLayout>
+</layout>

@@ -1,0 +1,17 @@
+[
+  {
+    "outputType": {
+      "type": "MERGED_MANIFESTS"
+    },
+    "apkInfo": {
+      "type": "MAIN",
+      "splits": [],
+      "versionCode": 310
+    },
+    "path": "AndroidManifest.xml",
+    "properties": {
+      "packageId": "im.ene.toro",
+      "split": ""
+    }
+  }
+]

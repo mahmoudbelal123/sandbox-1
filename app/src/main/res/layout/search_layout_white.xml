@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<layout>
+
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/cl_search_rooms_people"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/black"
+        android:paddingEnd="@dimen/margin_34"
+        android:paddingStart="@dimen/margin_34"
+        android:paddingTop="@dimen/margin_34">
+
+        <ImageView
+            android:id="@+id/iv_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_8"
+            android:contentDescription="@null"
+            android:src="@drawable/search"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_8"
+            android:layout_marginTop="@dimen/width_0"
+            android:contentDescription="@null"
+            android:src="@drawable/close"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.appster.turtle.widget.CustomEditText
+            android:id="@+id/et_search"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_20"
+            android:layout_marginStart="@dimen/margin_20"
+            android:backgroundTint="@android:color/transparent"
+            android:hint="@string/search"
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            android:letterSpacing="0.01"
+            android:maxLines="1"
+            android:textColor="@android:color/white"
+            android:textColorHint="@color/edit_text_footer_grey"
+            android:textCursorDrawable="@drawable/et_indiciator_auth"
+            android:textSize="@dimen/textsize_24"
+            app:layout_constraintEnd_toStartOf="@id/iv_close"
+            app:layout_constraintStart_toEndOf="@id/iv_search" />
+
+        <View
+            android:id="@+id/v_footer_search"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="@dimen/dimen_1"
+            android:layout_marginTop="@dimen/dp_14_5"
+            android:background="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_search" />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

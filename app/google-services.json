@@ -1,0 +1,199 @@
+{
+  "project_info": {
+    "project_number": "1091123044591",
+    "firebase_url": "https://turtle-2-app-android.firebaseio.com",
+    "project_id": "turtle-2-app-android",
+    "storage_bucket": "turtle-2-app-android.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1091123044591:android:3cf87a107fb57f9a",
+        "android_client_info": {
+          "package_name": "com.appster.turtle.qa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1091123044591-132hf9qabqeelgp5vl3uc6l4untc3b32.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.appster.turtle.qa",
+            "certificate_hash": "f48bba10e321e4591dc69125fbb0b4a54a4a9d4e"
+          }
+        },
+        {
+          "client_id": "1091123044591-r22osr95h8derefmb7vm14s0cdsctspg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwfXnjOrYJC2Ioil-JplbhW60yn5C0Zv8"
+        },
+        {
+          "current_key": "AIzaSyCN0a4Mca467M8OrPM3_kGPPMtdYyEa2q0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1091123044591-r22osr95h8derefmb7vm14s0cdsctspg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1091123044591:android:87cddd7b031e9f7a",
+        "android_client_info": {
+          "package_name": "com.appster.turtle"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1091123044591-oun2k99ak6f84a53rms92u1pcaqrqont.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.appster.turtle",
+            "certificate_hash": "f48bba10e321e4591dc69125fbb0b4a54a4a9d4e"
+          }
+        },
+        {
+          "client_id": "1091123044591-r22osr95h8derefmb7vm14s0cdsctspg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwfXnjOrYJC2Ioil-JplbhW60yn5C0Zv8"
+        },
+        {
+          "current_key": "AIzaSyCN0a4Mca467M8OrPM3_kGPPMtdYyEa2q0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1091123044591-r22osr95h8derefmb7vm14s0cdsctspg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1091123044591:android:117c66468ef2d247",
+        "android_client_info": {
+          "package_name": "com.appster.turtle.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1091123044591-pido82fgi0svu3kemrcl09vgin9g7ssc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.appster.turtle.dev",
+            "certificate_hash": "f48bba10e321e4591dc69125fbb0b4a54a4a9d4e"
+          }
+        },
+        {
+          "client_id": "1091123044591-r22osr95h8derefmb7vm14s0cdsctspg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwfXnjOrYJC2Ioil-JplbhW60yn5C0Zv8"
+        },
+        {
+          "current_key": "AIzaSyCN0a4Mca467M8OrPM3_kGPPMtdYyEa2q0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1091123044591-r22osr95h8derefmb7vm14s0cdsctspg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1091123044591:android:a9db3ddf827aaa43",
+        "android_client_info": {
+          "package_name": "com.appster.turtle.stag"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1091123044591-ntuiin03om4hukiftobvodadkoj2jdn4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.appster.turtle.stag",
+            "certificate_hash": "f48bba10e321e4591dc69125fbb0b4a54a4a9d4e"
+          }
+        },
+        {
+          "client_id": "1091123044591-r22osr95h8derefmb7vm14s0cdsctspg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwfXnjOrYJC2Ioil-JplbhW60yn5C0Zv8"
+        },
+        {
+          "current_key": "AIzaSyCN0a4Mca467M8OrPM3_kGPPMtdYyEa2q0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1091123044591-r22osr95h8derefmb7vm14s0cdsctspg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,20 @@
+<!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:width="153.6dp"
+        android:height="153.6dp">
+        <shape xmlns:android="http://schemas.android.com/apk/res/android"
+
+            android:shape="oval">
+
+            <stroke
+                android:width="1.9dp"
+                android:color="@color/app_white" />
+        </shape>
+    </item>
+</layer-list>

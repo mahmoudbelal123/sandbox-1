@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <data>
+
+        <variable
+            name="notes"
+            type="com.appster.turtle.model.NotesModel" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        tools:context="com.appster.turtle.ui.notes.editNotes.EditNotesActivity">
+
+        <include
+            android:id="@+id/header"
+            layout="@layout/layout_header"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.appster.turtle.widget.CustomTextView
+            android:id="@+id/tv_save_edited_notes"
+            style="@style/RoundedTextView"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_34"
+            android:text="@string/save"
+            app:customFont="@string/bruta_normal_glb_semi_bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ScrollView
+            android:layout_width="@dimen/width_0"
+            android:layout_height="@dimen/width_0"
+            android:layout_marginBottom="@dimen/dimen_12"
+            android:scrollbars="none"
+            app:layout_constraintBottom_toTopOf="@id/tv_save_edited_notes"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/header">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:paddingEnd="@dimen/margin_34"
+                android:paddingStart="@dimen/margin_34"
+                android:paddingTop="@dimen/dimen_48">
+
+                <com.appster.turtle.widget.CustomTextView
+                    android:id="@+id/tv_notes_title"
+                    android:layout_width="@dimen/width_0"
+                    android:layout_height="wrap_content"
+                    android:text="@{notes.title}"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/textsize_22"
+                    app:customFont="@string/bruta_condensed_glb_semi_bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="The Weimar Republic" />
+
+                <com.appster.turtle.widget.CustomTextView
+                    android:id="@+id/tv_notes_class"
+                    android:layout_width="@dimen/width_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_4"
+                    android:text="@{notes.className}"
+                    android:textColor="@color/text_font_color"
+                    android:textSize="@dimen/textsize_16"
+                    app:customFont="@string/bruta_normal_glb_regular"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_notes_title"
+                    tools:text="History 1C" />
+
+                <ImageView
+                    android:id="@+id/iv_edit_desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/marign_14"
+                    android:contentDescription="@null"
+                    android:src="@drawable/edit_arrow"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_notes_class" />
+
+                <com.appster.turtle.widget.CustomTextView
+                    android:id="@+id/tv_notes_description"
+                    android:layout_width="@dimen/width_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/marign_14"
+                    android:lineSpacingExtra="@dimen/textsize_9"
+                    android:text="@{notes.details}"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/textsize_16"
+                    app:customFont="@string/bruta_normal_glb_regular"
+                    app:layout_constraintEnd_toStartOf="@id/iv_edit_desc"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_notes_class"
+                    tools:text="A detailed timeline of events running through it’s strengths and weaknesses between 1919 – 1923." />
+
+                <View
+                    android:id="@+id/v_divider"
+                    android:layout_width="@dimen/width_0"
+                    android:layout_height="@dimen/margin_1"
+                    android:layout_marginTop="@dimen/dimen_25"
+                    android:background="@android:color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_notes_description" />
+
+                <com.appster.turtle.widget.CustomTextView
+                    android:id="@+id/tv_notes"
+                    android:layout_width="@dimen/width_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_12"
+                    android:drawableEnd="@drawable/edit_arrow"
+                    android:gravity="bottom"
+                    android:lineSpacingExtra="@dimen/textsize_9"
+                    android:text="@string/notes"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/textsize_16"
+                    app:customFont="@string/bruta_normal_glb_semi_bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/v_divider" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_attachments"
+                    android:layout_width="@dimen/width_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_12"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_notes" />
+
+                <com.appster.turtle.widget.CustomTextView
+                    android:id="@+id/tv_snippet"
+                    android:layout_width="@dimen/width_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_12"
+                    android:drawableEnd="@drawable/edit_arrow"
+                    android:gravity="bottom"
+                    android:lineSpacingExtra="@dimen/textsize_9"
+                    android:text="@string/snippet"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/textsize_16"
+                    app:customFont="@string/bruta_normal_glb_semi_bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/rv_attachments" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_snippet"
+                    android:layout_width="@dimen/width_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_4"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_snippet">
+
+                    <ImageView
+                        android:id="@+id/iv_snippet"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/dimen_12"
+                        android:adjustViewBounds="true"
+                        android:contentDescription="@null"
+                        android:minHeight="134dp"
+                        android:src="@drawable/ic_join_black"
+                        app:imageurl="@{notes.snippetUrl}"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                </RelativeLayout>
+
+            </android.support.constraint.ConstraintLayout>
+
+        </ScrollView>
+
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cv_snippet_images"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:cardElevation="@dimen/card_elevation"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_snippet_images"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:padding="@dimen/dimen_10" />
+
+        </android.support.v7.widget.CardView>
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

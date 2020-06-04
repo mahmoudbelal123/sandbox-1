@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.appster.turtle"
+    android:installLocation="auto">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <!--
+         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but are recommended.
+    -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <application
+        android:name=".ApplicationController"
+        android:allowBackup="false"
+        android:fullBackupContent="@xml/backup_descriptor"
+        android:icon="@mipmap/ic_app_icon"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:replace="android:allowBackup">
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBJ32mf_nvdDhb9Q6toTUpHz8KkZQ9n6bQ" />
+
+        <activity android:name=".ui.auth.AppIntroActivity" />
+        <activity
+            android:name=".ui.locationlog.LocationParamActivity"
+            android:screenOrientation="portrait" />
+
+        <receiver
+            android:name=".ui.locationlog.LocationReceiver"
+            android:enabled="true"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.tutorial.TutorialActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/TurtleAppTheme">
+
+        </activity>
+        <activity
+            android:name=".ui.signUp.SignUpActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/TurtleAppTheme"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name=".ui.auth.SignInActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/TurtleAppTheme"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".ui.signUp.UserNameActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/TurtleAppTheme"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name=".ui.signUp.BioActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/TurtleAppTheme" />
+        <activity
+            android:name=".ui.signUp.VerifyCodeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/TurtleAppTheme" />
+        <activity
+            android:name=".ui.signUp.CompleteProfileActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/TurtleAppTheme" />
+        <activity
+            android:name=".ui.signUp.ChooseAvatarActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/TurtleAppTheme" />
+        <activity
+            android:name=".ui.signUp.AddInterestActivity"
+            android:label="addInterest"
+            android:screenOrientation="portrait"
+            android:theme="@style/TurtleAppTheme"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name=".ui.signUp.AddSkillsActivity"
+            android:label="addSkills"
+            android:screenOrientation="portrait"
+            android:theme="@style/TurtleAppTheme"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name=".ui.auth.ForgotPasswordActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/TurtleAppTheme"
+            android:windowSoftInputMode="adjustResize|stateVisible" />
+        <activity
+            android:name=".ui.rooms.HomeActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/TurtleAppTheme" />
+        <activity
+            android:name=".ui.rooms.CreateRoomActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/TurtleAppTheme"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".ui.rooms.RoomInfoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/TurtleAppTheme" />
+        <activity
+            android:name=".ui.rooms.AddTagsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/TurtleAppTheme" />
+        <activity
+            android:name=".ui.rooms.RoomActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/TurtleAppTheme"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.poll.CreatePollActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/TurtleAppTheme"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+
+
+        <activity
+            android:name=".ui.media.CameraActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/TurtleAppTheme" />
+        <activity
+            android:name=".ui.media.TextOnImageActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Transparent"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".ui.meetup.CreateMeetupActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/TurtleAppTheme" />
+        <activity
+            android:name=".ui.textpost.CreateTextPostActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ThemeFullScreenWithResize"
+            android:windowSoftInputMode="adjustResize|stateAlwaysVisible" />
+        <activity
+            android:name=".ui.media.AddCaptionActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/TurtleAppTheme" />
+        <activity
+            android:name=".ui.media.MediaPreviewActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/TurtleAppTheme" />
+        <activity
+            android:name=".ui.rooms.LikedByActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/TurtleAppTheme" />
+        <activity
+            android:name=".ui.rooms.AddMemberActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/TurtleAppTheme" />
+
+        <service
+            android:name=".fcm.MyFireBaseMessagingService"
+            tools:ignore="ExportedService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".fcm.MyFireBaseInstanceIDService"
+            tools:ignore="ExportedService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name=".ui.rooms.MembersActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/TurtleAppTheme" />
+        <activity
+            android:name=".ui.media.CropperActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/TurtleAppTheme" />
+        <activity
+            android:name=".ui.rooms.EditRoomActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/TurtleAppTheme"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".ui.rooms.AddNameActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/TurtleAppTheme" />
+        <activity
+            android:name=".ui.rooms.PrivacyActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/TurtleAppTheme" />
+        <activity
+            android:name=".ui.notes.ReviewNotesActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/TurtleAppTheme"
+            android:windowSoftInputMode="adjustResize" />
+
+        <provider
+            android:name=".util.GenericFileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <activity
+            android:name=".ui.notes.NotesListingActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/TurtleAppTheme" />
+        <activity
+            android:name=".ui.notes.CreateNotesActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Transparent"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".ui.notes.AddNotesDescriptionActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/TurtleAppTheme"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".ui.notes.UploadAttachmentsActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/TurtleAppTheme" />
+        <activity
+            android:name=".ui.notes.PostNotesActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/TurtleAppTheme" />
+        <activity
+            android:name=".ui.media.RectangleCropperActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/TurtleAppTheme" />
+        <activity
+            android:name=".ui.notes.NotesFinalActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/TurtleAppTheme" />
+        <activity
+            android:name=".ui.notes.NotesPurchaseActivity"
+            android:parentActivityName=".ui.home.HomeMainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/TurtleAppTheme" />
+        <activity
+            android:name=".ui.activity.ActivitiesNotificationActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/TurtleAppTheme" />
+        <activity
+            android:name=".ui.signUp.WelcomeUserActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/TurtleAppTheme" />
+        <activity
+            android:name=".ui.notes.MyNotesActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/TurtleAppTheme"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".ui.settings.SettingsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/TurtleAppTheme"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".ui.payment.CardListActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/TurtleAppTheme" />
+        <activity
+            android:name=".ui.settings.ChangePasswordActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/TurtleAppTheme"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".ui.settings.PrivacyPolicyActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/TurtleAppTheme" />
+        <activity
+            android:name=".ui.settings.TermsAndConditionsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/TurtleAppTheme"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".ui.payment.AddCardActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/TurtleAppTheme" />
+        <activity
+            android:name=".ui.payment.BankAccountActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/TurtleAppTheme"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name=".ui.payment.BankAccountDetailsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/TurtleAppTheme"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name=".ui.rooms.MeetupsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/TurtleAppTheme" />
+        <activity
+            android:name=".ui.OthersClickedActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/TurtleAppTheme"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name="com.onegravity.contactpicker.core.ContactPickerActivity"
+            android:enabled="true"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/TurtleAppTheme">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.settings.InviteFriendsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/TurtleAppTheme" />
+        <activity
+            android:name=".ui.notes.ReviewListActivity"
+            android:label="@string/title_activity_notes_review"
+            android:parentActivityName=".ui.home.HomeMainActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ui.notes.editNotes.EditNotesActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/TurtleAppTheme" />
+        <activity
+            android:name=".ui.notes.editNotes.EditNotesDetailsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/TurtleAppTheme" />
+        <activity
+            android:name=".ui.notes.editNotes.EditNotesAttachmentsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/TurtleAppTheme" />
+        <activity
+            android:name=".ui.search.SearchRoomsAndPeopleActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/TurtleAppTheme"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.signUp.ProfileSetup1Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/TurtleAppTheme" />
+        <activity
+            android:name=".ui.signUp.ProfileSetup2Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/TurtleAppTheme" />
+        <activity
+            android:name=".ui.rooms.RoomActivityCoordinator"
+            android:parentActivityName=".ui.home.HomeMainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/TurtleAppTheme" />
+        <activity
+            android:name=".ui.friends.FriendListActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/TurtleAppTheme" />
+        <activity
+            android:name=".ui.signUp.ExploreActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/TurtleAppTheme" />
+        <activity
+            android:name=".ui.profile.UserProfileActivity"
+            android:label="@string/title_activity_user_profile"
+            android:parentActivityName=".ui.home.HomeMainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/TurtleAppTheme" />
+        <activity
+            android:name=".ui.profile.EditProfileActivity"
+            android:label="@string/title_activity_edit_profile"
+            android:screenOrientation="portrait"
+            android:theme="@style/TurtleAppTheme"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".ui.rooms.MemberRequestActivity"
+            android:label="@string/title_activity_edit_profile"
+            android:screenOrientation="portrait"
+            android:theme="@style/TurtleAppTheme" />
+        <activity
+            android:name=".ui.home.HomeMainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/TurtleAppTheme" />
+        <activity
+            android:name=".ui.friends.AddFriendsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/TurtleAppTheme" />
+        <activity
+            android:name=".ui.friends.MutualFriendsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/TurtleAppTheme" />
+        <activity
+            android:name=".ui.search.SearchActivity"
+            android:label="@string/title_activity_edit_profile"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ui.search.SearchSpacesMoreActivity"
+            android:theme="@style/Theme.Transparent"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".ui.search.SearchPeopleMoreActivity"
+            android:theme="@style/Theme.Transparent"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".ui.post.CreatePostActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Transparent"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".ui.ReportActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Transparent"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".ui.post.PostDetailActivity"
+            android:parentActivityName=".ui.home.HomeMainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/TurtleAppTheme" />
+        <activity
+            android:name=".ui.HashTagPostDetailActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/TurtleAppTheme" />
+        <activity
+            android:name=".ui.profile.UserPostActivity"
+            android:label="@string/title_activity_my_spaces"
+            android:screenOrientation="portrait"
+            android:theme="@style/TurtleAppTheme" />
+        <activity
+            android:name=".ui.profile.UserSpacesActivity"
+            android:label="@string/title_activity_my_spaces"
+            android:screenOrientation="portrait"
+            android:theme="@style/TurtleAppTheme" />
+        <activity
+            android:name=".ui.rooms.SearchRoomActivity"
+            android:label="@string/title_activity_my_spaces"
+            android:screenOrientation="portrait"
+            android:theme="@style/TurtleAppTheme" />
+        <activity
+            android:name=".ui.rooms.RoomDescActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Transparent" />
+        <activity
+            android:name=".ui.activity.MeetUpDetailActivity"
+            android:theme="@style/TurtleAppTheme" />
+        <activity
+            android:name=".ui.ReactionByActivity"
+            android:theme="@style/TurtleAppTheme" />
+        <activity android:name=".ui.DeeplinkActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!-- Accepts URIs that begin with "http://www.example.com/gizmos” -->
+                <data android:scheme="noise" />
+                <!-- note that the leading "/" is required for pathPrefix-->
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.activity.OtherByActivity" />
+        <activity
+            android:name=".ui.activity.SplashActivity"
+            android:theme="@style/TurtleAppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="25976bca7600f98e4b0b1a3ddedd78cfd7bb8f39" />
+    </application>
+
+</manifest>

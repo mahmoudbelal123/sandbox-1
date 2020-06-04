@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.appster.turtle.model.CardModel" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_white">
+
+        <include
+            android:id="@+id/header"
+            layout="@layout/layout_header_text_bg_light"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+
+
+            />
+
+        <RelativeLayout
+            android:id="@+id/ll_card_cont"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/header"
+            android:layout_marginEnd="@dimen/dimen_31_2"
+            android:layout_marginStart="@dimen/dimen_31_2"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/header">
+
+            <com.appster.turtle.widget.CustomTextView
+                android:id="@+id/tv_card_number"
+                style="@style/noise_card_header_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_20"
+                android:text="@string/card_num"
+                android:textSize="@dimen/edit_text_sub"
+                app:customFont="@string/eina_01_semibold" />
+
+            <com.appster.turtle.widget.CustomEditText
+                android:id="@+id/et_card_number"
+                style="@style/noise_edittxt_style_signIn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_card_number"
+                android:layout_marginTop="@dimen/margin_8"
+                android:hint="@string/enter_card_number"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:textSize="@dimen/textSizeLarge"
+                app:customFont="@string/eina_01_regular" />
+
+
+            <com.appster.turtle.widget.CustomTextView
+                android:id="@+id/tv_card_name"
+                style="@style/noise_card_header_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/et_card_number"
+                android:layout_marginTop="@dimen/margin_20"
+                android:text="@string/name_on_card"
+
+                android:textSize="@dimen/edit_text_sub"
+                app:customFont="@string/eina_01_semibold" />
+
+            <com.appster.turtle.widget.CustomEditText
+                android:id="@+id/et_card_name"
+                style="@style/noise_edittxt_style_signIn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_card_name"
+                android:layout_marginTop="@dimen/margin_8"
+                android:hint="@string/enter_name_on_card"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:maxLength="20"
+                android:textSize="@dimen/textSizeLarge"
+                app:customFont="@string/eina_01_regular" />
+
+        </RelativeLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="@dimen/width_0"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dimen_31_2"
+            android:layout_marginStart="@dimen/dimen_31_2"
+            android:layout_marginTop="@dimen/margin_20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ll_card_cont">
+
+            <com.appster.turtle.widget.CustomTextView
+                android:id="@+id/tv_card_expiry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/expiry_code"
+                android:textColor="@color/unselected_grey"
+                android:textSize="@dimen/textsize_13_4"
+                app:customFont="@string/eina_01_semibold" />
+
+            <com.appster.turtle.widget.CustomEditText
+                android:id="@+id/et_card_expiry"
+                style="@style/noise_edittxt_style_signIn"
+
+                android:layout_width="@dimen/width_0"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:hint="@string/card_expiry_hint"
+                android:imeOptions="actionNext"
+                android:layout_marginEnd="45dp"
+                android:maxLength="5"
+                app:layout_constraintEnd_toStartOf="@id/et_card_cvc"
+                android:paddingEnd="@dimen/default_padding_20"
+                android:paddingStart="@dimen/width_0"
+                app:customFont="@string/eina_01_regular"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_card_expiry"
+                tools:layout_editor_absoluteX="@dimen/width_0" />
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/margin_1"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:visibility="invisible"
+                android:background="@color/view_date_separator"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/et_card_expiry"
+                tools:layout_editor_absoluteX="@dimen/width_0" />
+
+            <View
+                android:layout_width="@dimen/margin_48"
+                android:layout_height="@dimen/margin_1"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:background="@color/app_white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/et_card_expiry"
+                tools:layout_editor_absoluteX="146dp" />
+
+            <com.appster.turtle.widget.CustomTextView
+                android:id="@+id/tv_card_cvc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="@string/cv_code"
+                android:textColor="@color/unselected_grey"
+                android:textSize="@dimen/textsize_13_4"
+                app:customFont="@string/eina_01_semibold"
+                app:layout_constraintStart_toStartOf="@id/et_card_cvc"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.appster.turtle.widget.CustomEditText
+                android:id="@+id/et_card_cvc"
+                style="@style/noise_edittxt_style_signIn"
+
+                android:layout_width="@dimen/width_0"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_24"
+                android:digits="1234567890"
+                android:hint="@string/card_cvc"
+                android:imeOptions="actionDone"
+                android:inputType="number"
+                android:maxLength="3"
+                android:paddingEnd="@dimen/default_padding_20"
+                android:paddingStart="@dimen/width_0"
+                app:customFont="@string/eina_01_regular"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.549"
+                app:layout_constraintStart_toEndOf="@id/et_card_expiry"
+                app:layout_constraintBottom_toBottomOf="@id/et_card_expiry"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+
+        </android.support.constraint.ConstraintLayout>
+
+        <com.appster.turtle.widget.CustomTextView
+            android:id="@+id/tv_save_btn"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="58dp"
+            android:layout_marginBottom="34.2dp"
+            android:layout_marginEnd="@dimen/dimen_31_2"
+            android:layout_marginStart="@dimen/dimen_31_2"
+            android:background="@drawable/gray_hollow_round_rect"
+            android:gravity="center"
+            android:text="@string/save"
+            android:textColor="#abb1b8"
+            android:textSize="@dimen/textSizeNormal"
+            app:customFont="@string/eina_01_semibold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

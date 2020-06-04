@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/cl_gallery_actions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/member_action_sheet_bg"
+        android:paddingBottom="@dimen/dp_36"
+        android:paddingEnd="@dimen/margin_34"
+        android:paddingStart="@dimen/margin_34"
+        android:paddingTop="@dimen/margin_xlarge">
+
+        <com.appster.turtle.widget.CustomTextView
+            android:id="@+id/tv_cancel"
+            style="@style/RoundedTextView_White_New"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_15_4"
+            android:gravity="center"
+            android:text="@string/cancel"
+            app:customFont="@string/eina_01_semibold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cl_buttons" />
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_buttons"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.appster.turtle.widget.CustomTextView
+                android:id="@+id/tv_flag"
+                style="@style/RoundedTextView_New"
+                android:layout_width="@dimen/width_0"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dimen_10"
+                android:gravity="center"
+                android:text="@string/flag_post"
+                app:customFont="@string/eina_01_semibold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <com.appster.turtle.widget.CustomTextView
+                android:id="@+id/tv_delete"
+                style="@style/RoundedTextView_New"
+                android:layout_width="@dimen/width_0"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_14"
+                android:gravity="center"
+                android:text="@string/delete_post"
+                android:visibility="gone"
+                app:customFont="@string/eina_01_semibold"
+                app:layout_constraintBottom_toTopOf="@id/tv_flag"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <com.appster.turtle.widget.CustomTextView
+                android:id="@+id/tv_edit"
+                style="@style/RoundedTextView_New"
+                android:layout_width="@dimen/width_0"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_14"
+                android:gravity="center"
+                android:text="@string/edit_post"
+                android:visibility="gone"
+                app:customFont="@string/eina_01_semibold"
+                app:layout_constraintBottom_toTopOf="@id/tv_delete"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+
+    </android.support.constraint.ConstraintLayout>
+
+</layout>

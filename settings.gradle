@@ -1,0 +1,2 @@
+include ':app', ':cameraview', ':cropiwa', ':apng-view'
+//':toro-core', ':androidtagview',

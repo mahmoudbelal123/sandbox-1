@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="user"
+            type="com.appster.turtle.model.User" />
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/margin_8"
+        android:paddingTop="@dimen/margin_8">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingEnd="@dimen/margin_10">
+
+            <!--<com.mikhaellopez.circularimageview.CircularImageView-->
+            <!--android:id="@+id/iv_user"-->
+            <!--android:layout_width="@dimen/margin_39"-->
+            <!--android:layout_height="@dimen/margin_39"-->
+            <!--android:visibility="visible"-->
+
+            <!--app:civ_border_color="#EEEEEE"-->
+            <!--app:civ_border_width="@dimen/width_0"-->
+            <!--app:civ_shadow="true"-->
+            <!--app:civ_shadow_radius="1"-->
+            <!--android:layout_marginEnd="@dimen/margin_10"-->
+            <!--android:layout_centerVertical="true"-->
+
+            <!--/>-->
+
+            <RelativeLayout
+                android:id="@+id/iv_user"
+                android:layout_width="@dimen/friends_image"
+                android:layout_height="@dimen/friends_image"
+                android:layout_marginEnd="@dimen/margin_10"
+                app:bindShowProfile="@{user}">
+
+                <com.mikhaellopez.circularimageview.CircularImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:src="@{user.profileUrlType==3 ? @drawable/ic_pp_cred:@drawable/ic_transparent}"
+                    app:civ_border_width="@dimen/width_0" />
+
+                <com.mikhaellopez.circularimageview.CircularImageView
+                    android:layout_width="@dimen/image_w"
+                    android:layout_height="@dimen/image_w"
+                    android:layout_centerInParent="true"
+                    android:background="@color/transparent"
+                    android:contentDescription="@null"
+                    android:visibility="@{user.profileUrlType==3 ? View.INVISIBLE:View.VISIBLE}"
+
+                    app:civ_border_width="@dimen/width_0"
+                    app:profileImageurl="@{user.profileUrl}" />
+
+                <ImageView
+                    android:layout_width="@dimen/image_w_initials"
+                    android:layout_height="@dimen/image_w_initials"
+                    android:layout_centerInParent="true"
+                    android:background="@color/transparent"
+                    android:contentDescription="@null"
+                    android:visibility="@{user.profileUrlType==3 ? View.VISIBLE:View.INVISIBLE}"
+                    app:profileImageurl="@{user.profileUrl}" />
+
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_user"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/iv_user"
+                android:layout_toStartOf="@+id/iv_add"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:paddingEnd="@dimen/margin_15"
+
+                >
+
+                <com.appster.turtle.widget.CustomTextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:textColor="@color/textcolor_room_name"
+                    android:textSize="@dimen/textsize_15_plus"
+                    app:customFont="@string/eina_01_semibold"
+
+                    />
+
+                <com.appster.turtle.widget.CustomTextView
+                    android:id="@+id/tv_collage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textColor="@color/unselected_grey"
+                    android:textSize="@dimen/textsize_15_plus"
+                    app:customFont="@string/eina_01_regular" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/iv_add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/ic_add_grey" />
+
+            <com.appster.turtle.widget.CustomTextView
+                android:id="@+id/tv_response_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/textsize_13_4"
+                android:textColor="#161616"
+                android:text="@string/respond_to_request"
+                android:layout_toEndOf="@+id/iv_user"
+                android:gravity="center"
+                app:customFont="@string/eina_01_regular"
+                android:layout_alignTop="@id/iv_accept"
+                android:layout_alignBottom="@id/iv_accept" />
+
+
+            <ImageView
+                android:id="@+id/iv_accept"
+                android:layout_width="@dimen/margin_30_7"
+                android:layout_height="@dimen/margin_30_7"
+                android:layout_marginEnd="@dimen/dimen_7_7"
+                android:layout_below="@id/layout_user"
+
+                android:contentDescription="@string/image_content"
+                android:src="@drawable/circle_tick_stroke"
+                android:layout_toStartOf="@id/iv_decline"
+
+                />
+
+            <ImageView
+                android:id="@+id/iv_decline"
+                android:layout_width="@dimen/margin_30_7"
+                android:layout_height="@dimen/margin_30_7"
+                android:layout_below="@id/layout_user"
+
+                android:contentDescription="@string/image_content"
+                android:src="@drawable/ic_circle_cross_grey"
+                android:layout_alignParentEnd="true"
+
+                />
+        </RelativeLayout>
+    </RelativeLayout>
+</layout>

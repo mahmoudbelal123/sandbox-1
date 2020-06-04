@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+
+<com.appster.turtle.widget.CustomEditText xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/et_room_name"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:lineSpacingExtra="@dimen/text_size_3_3"
+    android:maxLength="15"
+    android:paddingBottom="@dimen/dimen_15_8"
+    android:paddingEnd="@dimen/dimen_23_5"
+    android:paddingStart="@dimen/dimen_23_5"
+    android:paddingTop="@dimen/dimen_15_8"
+    android:maxLines="1"
+    android:inputType="text"
+    android:textColor="@color/done_unselected_color"
+    android:textColorHint="@color/gray"
+    android:textSize="@dimen/textSizeNormal"
+    android:imeOptions="actionNext"
+    app:emptyOnFocus="true"
+    app:filledBg="@drawable/white_selector_bg_radius_48"
+    app:emptyBg="@drawable/create_notes_selector"
+    app:customFont="@string/eina_01_semibold" />

@@ -1,0 +1,17 @@
+[
+  {
+    "outputType": {
+      "type": "MERGED_MANIFESTS"
+    },
+    "apkInfo": {
+      "type": "MAIN",
+      "splits": [],
+      "versionCode": 114
+    },
+    "path": "AndroidManifest.xml",
+    "properties": {
+      "packageId": "co.lujun.androidtagview",
+      "split": ""
+    }
+  }
+]

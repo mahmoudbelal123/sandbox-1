@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/header"
+            layout="@layout/layout_header_text_bg_light"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <RelativeLayout
+            android:id="@+id/rl_reaction"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="@dimen/margin_44"
+            android:layout_marginEnd="@dimen/margin_23"
+            android:layout_marginStart="@dimen/margin_23"
+            android:layout_marginTop="@dimen/margin_5"
+            android:background="@drawable/white_selector_bg_radius_21"
+            android:elevation="@dimen/margin_5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/header">
+
+
+            <android.support.design.widget.TabLayout
+                android:id="@+id/sliding_tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_23"
+                android:layout_marginEnd="@dimen/dimen_23"
+                app:tabMode="fixed" />
+
+            <RadioGroup
+                android:id="@+id/radiogroup"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                android:checkedButton="@id/iv_like"
+                android:orientation="horizontal">
+
+                <android.support.v7.widget.AppCompatRadioButton
+                    android:id="@+id/iv_like"
+                    android:layout_width="@dimen/margin_40"
+                    android:layout_height="@dimen/dimen_35"
+                    android:layout_gravity="bottom"
+                    android:layout_marginStart="@dimen/margin_15"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="@dimen/dimen_10"
+                    android:background="@drawable/ic_like_thumb"
+                    android:button="@android:color/transparent"
+                    android:scaleType="centerInside" />
+
+                <android.support.v7.widget.AppCompatRadioButton
+                    android:id="@+id/iv_heart"
+                    android:layout_width="@dimen/margin_40"
+                    android:layout_height="@dimen/dimen_35"
+                    android:layout_gravity="bottom"
+                    android:layout_marginBottom="@dimen/margin_1"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="@dimen/dimen_10"
+                    android:layout_marginStart="@dimen/dimen_10"
+                    android:background="@drawable/ic_heart"
+                    android:button="@android:color/transparent"
+                    android:scaleType="centerInside" />
+
+                <android.support.v7.widget.AppCompatRadioButton
+                    android:id="@+id/iv_angry"
+                    android:layout_width="@dimen/margin_40"
+                    android:layout_height="@dimen/dimen_35"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="@dimen/dimen_10"
+                    android:layout_marginStart="@dimen/dimen_10"
+                    android:background="@drawable/ic_angry"
+                    android:button="@android:color/transparent"
+                    android:scaleType="centerInside" />
+
+                <android.support.v7.widget.AppCompatRadioButton
+                    android:id="@+id/iv_surprised"
+                    android:layout_width="@dimen/margin_40"
+                    android:layout_height="@dimen/dimen_35"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="@dimen/dimen_10"
+                    android:layout_marginStart="@dimen/dimen_10"
+                    android:background="@drawable/ic_surprised"
+                    android:button="@android:color/transparent"
+                    android:scaleType="centerInside" />
+
+                <android.support.v7.widget.AppCompatRadioButton
+                    android:id="@+id/iv_tear"
+                    android:layout_width="@dimen/margin_40"
+                    android:layout_height="@dimen/dimen_35"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="@drawable/ic_tear"
+                    android:button="@android:color/transparent"
+                    android:layout_marginEnd="@dimen/dimen_10"
+                    android:layout_marginStart="@dimen/dimen_10"
+                    android:scaleType="centerInside" />
+
+                <android.support.v7.widget.AppCompatRadioButton
+                    android:id="@+id/iv_grinRadio"
+                    android:layout_width="@dimen/margin_40"
+                    android:layout_height="@dimen/dimen_35"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="@dimen/margin_15"
+                    android:layout_marginStart="@dimen/dimen_10"
+                    android:layout_weight="1"
+                    android:background="@drawable/ic_grin"
+                    android:button="@android:color/transparent"
+
+                    android:scaleType="centerInside" />
+            </RadioGroup>
+
+
+        </RelativeLayout>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/container"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="@dimen/width_0"
+            android:layout_marginTop="@dimen/default_padding_20"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rl_reaction" />
+    </android.support.constraint.ConstraintLayout>
+</layout>

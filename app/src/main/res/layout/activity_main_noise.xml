@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black">
+
+        <!--        <ImageView-->
+<!--            android:id="@+id/bg_img"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_alignBottom="@+id/tvSignUp"-->
+<!--            android:layout_alignParentStart="true"-->
+<!--            android:adjustViewBounds="true"-->
+<!--            android:layout_centerInParent="true"-->
+<!--            android:minHeight="126.6dp"-->
+<!--            android:scaleType="centerInside"-->
+<!--            android:src="@drawable/ic_app_icon"-->
+<!--            tools:ignore="ContentDescription" />-->
+
+        <com.appster.turtle.widget.CustomTextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/tvSignIn"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="@dimen/margin_20"
+            android:layout_marginEnd="@dimen/margin_20"
+            android:layout_marginBottom="577dp"
+            android:enabled="true"
+            android:gravity="start"
+            android:text="Sandbox"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:textColor="@color/colorYellow"
+            android:textSize="@dimen/text_57"
+            app:customFont="@string/eina_01_bold" />
+
+        <com.appster.turtle.widget.CustomTextView
+            android:id="@+id/tvTxt"
+            android:layout_width="match_parent"
+            android:layout_height="121dp"
+            android:layout_centerInParent="true"
+            android:gravity="center_horizontal"
+            android:lineSpacingExtra="-0.01sp"
+            android:textColor="@color/bright_teal"
+            android:rotation="-5"
+            android:visibility="gone"
+            app:autoSizeMaxTextSize="@dimen/text_125"
+            app:autoSizeMinTextSize="100sp"
+            app:autoSizeStepGranularity="3sp"
+            app:autoSizeTextType="uniform"
+            android:text="@string/exclusively_for_college_students"
+            app:customFont="@string/arty_signature" />
+
+        <com.appster.turtle.widget.CustomTextView
+            android:textSize="@dimen/text_57"
+            android:id="@+id/tvSignUp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_5_9"
+            android:layout_marginEnd="@dimen/margin_20"
+            android:layout_marginStart="@dimen/margin_20"
+            android:enabled="true"
+            android:gravity="start"
+            android:text="@string/txt_btn_sgn"
+            app:customFont="@string/eina_01_bold"
+            android:textColor="@color/colorRose"
+            android:textAllCaps="false"
+            android:layout_centerHorizontal="true"
+            android:textStyle="bold"
+            android:layout_above="@+id/tvSignIn" />
+
+
+        <com.appster.turtle.widget.CustomTextView
+            android:textSize="@dimen/text_57"
+            android:textStyle="bold"
+            android:layout_marginEnd="@dimen/margin_20"
+            android:layout_marginStart="@dimen/margin_20"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvSignIn"
+            android:textColor="@color/colorBabiBlue"
+            android:letterSpacing="-0.05"
+            android:lineSpacingExtra="@dimen/textSizeExtLarge"
+            android:gravity="start"
+            android:text="@string/log_in"
+            app:customFont="@string/eina_01_bold"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/margin_16"
+            android:layout_alignParentBottom="true" />
+
+    </RelativeLayout>
+</layout>

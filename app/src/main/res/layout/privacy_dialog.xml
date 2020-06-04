@@ -1,0 +1,146 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:background="@color/transparent"
+        android:padding="@dimen/dimen_23"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            android:id="@+id/header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/textsize_13_4"
+            android:textColor="#ffffff"
+            android:alpha="0.4"
+            android:text="@string/privacy" />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/white_selector_bg"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_marginTop="@dimen/dp_7_9"
+            android:layout_below="@id/header"
+            android:orientation="vertical"
+            android:padding="@dimen/dimen_23">
+
+
+            <com.appster.turtle.widget.CustomTextView
+                android:id="@+id/tv_private_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dimen_60"
+                android:text="@string/private_title"
+                android:textColor="@color/textcolor_room_name"
+                android:textSize="@dimen/textSize_15_4"
+                app:customFont="@string/eina_01_semibold"
+
+                tools:ignore="RelativeOverlap" />
+
+            <com.appster.turtle.widget.CustomTextView
+                android:id="@+id/tv_private_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_private_title"
+                android:layout_marginEnd="@dimen/dimen_60"
+
+                android:layout_marginTop="@dimen/dimen_11_5"
+                android:text="@string/private_desc"
+                android:textColor="@color/text_font_color_grey"
+                android:textSize="@dimen/textSize_15_4"
+                app:customFont="@string/eina_01_regular" />
+
+            <ImageView
+                android:id="@+id/iv_private"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/circle_unticked"
+                tools:ignore="ContentDescription" />
+
+
+            <com.appster.turtle.widget.CustomTextView
+                android:id="@+id/tv_public_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_private_desc"
+                android:layout_marginEnd="@dimen/dimen_60"
+                android:layout_marginTop="@dimen/dimen_19_2"
+                android:text="@string/public_title"
+                android:textColor="@color/textcolor_room_name"
+                android:textSize="@dimen/textSize_15_4"
+                app:customFont="@string/eina_01_semibold"
+
+                />
+
+            <com.appster.turtle.widget.CustomTextView
+                android:id="@+id/tv_public_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_public_title"
+                android:layout_marginEnd="@dimen/dimen_60"
+                android:layout_marginTop="@dimen/dimen_11_5"
+                android:text="@string/public_desc"
+                android:textColor="@color/text_font_color_grey"
+                android:textSize="@dimen/textSize_15_4"
+                app:customFont="@string/eina_01_regular" />
+
+            <ImageView
+                android:id="@+id/iv_public"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@id/tv_public_title"
+                android:src="@drawable/circle_unticked"
+                tools:ignore="ContentDescription" />
+
+            <com.appster.turtle.widget.CustomTextView
+                android:id="@+id/tv_hidden_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_public_desc"
+                android:layout_marginEnd="@dimen/dimen_60"
+                android:layout_marginTop="@dimen/dimen_19_2"
+                android:text="@string/hidden_title"
+                android:textColor="@color/textcolor_room_name"
+                android:textSize="@dimen/textSize_15_4"
+                app:customFont="@string/eina_01_semibold"
+
+                />
+
+            <com.appster.turtle.widget.CustomTextView
+                android:id="@+id/tv_hidden_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_hidden_title"
+                android:layout_marginEnd="@dimen/dimen_60"
+                android:layout_marginTop="@dimen/dimen_11_5"
+                android:text="@string/hidden_desc"
+                android:textColor="@color/text_font_color_grey"
+                android:textSize="@dimen/textSize_15_4"
+                app:customFont="@string/eina_01_regular" />
+
+            <ImageView
+                android:id="@+id/iv_hidden"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@id/tv_hidden_title"
+                android:src="@drawable/circle_unticked"
+                tools:ignore="ContentDescription" />
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+</layout>

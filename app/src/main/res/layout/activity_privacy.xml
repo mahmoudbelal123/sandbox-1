@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        tools:context="com.appster.turtle.ui.rooms.PrivacyActivity">
+
+
+        <include
+            android:id="@+id/cl_header"
+            layout="@layout/layout_header_text_bg_light"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <include
+            android:id="@+id/cl_room_type_private"
+            layout="@layout/item_room_info"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp_34_6"
+            android:layout_marginStart="@dimen/dp_34_6"
+            android:layout_marginTop="@dimen/dp_34_6"
+            app:description="@{@string/private_desc}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cl_header"
+
+            app:title="@{@string/private_title}" />
+
+
+        <!--public room-->
+        <include
+            android:id="@+id/cl_room_type_public"
+            layout="@layout/item_room_info"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp_34_6"
+            android:layout_marginStart="@dimen/dp_34_6"
+            android:layout_marginTop="@dimen/margin_21"
+            app:description="@{@string/public_desc}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cl_room_type_private"
+            app:title="@{@string/public_title}" />
+
+        <!--hidden room-->
+        <include
+            android:id="@+id/cl_room_type_hidden"
+            layout="@layout/item_room_info"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp_34_6"
+            android:layout_marginStart="@dimen/dp_34_6"
+            android:layout_marginTop="@dimen/margin_21"
+            app:description="@{@string/hidden_desc}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cl_room_type_public"
+            app:title="@{@string/hidden_title}" />
+
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

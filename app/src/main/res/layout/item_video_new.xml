@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="post"
+            type="com.appster.turtle.network.response.Posts" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:background="@drawable/shadow">
+
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cv_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/room_50_bg"
+            app:cardElevation="@dimen/width_0"
+            app:cardCornerRadius="@dimen/dimen_11_5">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/transparent">
+
+                <RelativeLayout
+                    android:id="@+id/fl_video"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <com.google.android.exoplayer2.ui.SimpleExoPlayerView
+                        android:id="@+id/video_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/media_height"
+                        android:clickable="false"
+                        android:minHeight="@dimen/media_height"
+                        app:default_artwork="@anim/fade_in"
+                        app:resize_mode="fixed_width"
+                        app:surface_type="texture_view"
+                        app:use_controller="false" />
+
+
+                    <RelativeLayout
+                        android:id="@+id/rl_video_click"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignBottom="@id/video_view"
+                        android:layout_alignTop="@id/video_view"
+                        android:clickable="true"
+                        android:focusable="true">
+
+                        <ImageView
+                            android:id="@+id/iv_play"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:contentDescription="@null"
+                            android:scaleType="center"
+                            android:src="@drawable/ic_play" />
+                    </RelativeLayout>
+
+
+                    <ImageView
+                        android:id="@+id/iv_media"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/media_height"
+                        android:layout_centerInParent="true"
+                        android:contentDescription="@null"
+                        android:scaleType="centerCrop" />
+
+                    <ImageView
+                        android:id="@+id/iv_back"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="@dimen/dimen_34_6"
+                        android:paddingEnd="@dimen/dimen_15_4"
+                        android:paddingStart="@dimen/dimen_15_4"
+                        android:paddingTop="@dimen/dimen_34_6"
+                        android:src="@drawable/ic_back_arrow_white"
+                        android:visibility="gone" />
+
+                </RelativeLayout>
+
+                <!--<com.mikhaellopez.circularimageview.CircularImageView-->
+                <!--android:id="@+id/iv_user"-->
+                <!--android:layout_width="@dimen/dimen_34_6"-->
+                <!--android:layout_height="@dimen/dimen_34_6"-->
+                <!--android:layout_below="@id/fl_video"-->
+                <!--android:layout_marginStart="@dimen/dimen_15_4"-->
+
+                <!--android:layout_marginTop="@dimen/dimen_13_4" />-->
+
+                <RelativeLayout
+                    android:id="@+id/fl_image_user"
+                    android:layout_width="@dimen/image_w"
+                    android:layout_height="@dimen/image_w"
+                    android:layout_below="@id/fl_video"
+                    android:layout_marginStart="@dimen/dimen_15_4"
+                    android:layout_marginTop="@dimen/dimen_13_4"
+                    app:bindShowProfile="@{post.usersListModel}">
+
+                    <com.mikhaellopez.circularimageview.CircularImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        android:src="@{post.usersListModel.profileUrlType==3 ? @drawable/ic_pp_cred:@drawable/ic_transparent}"
+                        app:civ_border_width="@dimen/width_0" />
+
+                    <com.mikhaellopez.circularimageview.CircularImageView
+                        android:layout_width="@dimen/image_w"
+                        android:layout_height="@dimen/image_w"
+                        android:layout_centerInParent="true"
+                        android:background="@color/transparent"
+                        android:contentDescription="@null"
+                        android:visibility="@{post.usersListModel.profileUrlType==3 ? View.INVISIBLE:View.VISIBLE}"
+                        app:civ_border_width="@dimen/width_0"
+                        app:profileImageurl="@{post.usersListModel.profileUrl}" />
+
+                    <ImageView
+                        android:layout_width="@dimen/post_user_init"
+                        android:layout_height="@dimen/post_user_init"
+                        android:layout_centerInParent="true"
+                        android:background="@color/transparent"
+                        android:contentDescription="@null"
+                        android:visibility="@{post.usersListModel.profileUrlType==3 ? View.VISIBLE:View.INVISIBLE}"
+                        app:profileImageurl="@{post.usersListModel.profileUrl}" />
+
+
+                </RelativeLayout>
+
+
+                <com.appster.turtle.widget.CustomTextView
+                    android:id="@+id/tv_username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/fl_video"
+                    android:layout_marginStart="@dimen/margin_7_8"
+                    android:layout_marginTop="@dimen/dimen_9_6"
+                    android:layout_toEndOf="@id/fl_image_user"
+                    android:layout_toStartOf="@id/iv_post_menu"
+                    android:includeFontPadding="false"
+                    android:lineSpacingExtra="0sp"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:padding="@dimen/width_0"
+                    android:text='@{"@"+post.usersListModel.userName}'
+                    android:textColor="#090909"
+                    android:textSize="@dimen/text_16_3"
+                    app:customFont="@string/eina_01_semibold" />
+
+                <com.appster.turtle.widget.CustomTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_username"
+                    android:layout_marginStart="@dimen/margin_7_8"
+                    android:layout_toEndOf="@id/fl_image_user"
+                    android:includeFontPadding="false"
+                    android:padding="@dimen/width_0"
+                    android:text="@{post.usersListModel.universityBaseModel.displayName}"
+                    android:textColor="#a9aab1"
+                    android:textSize="@dimen/textsize_12_5"
+                    app:customFont="@string/eina_01_semibold" />
+
+                <ImageView
+                    android:id="@+id/iv_post_menu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/fl_video"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="@dimen/dimen_11_2"
+                    android:layout_marginTop="@dimen/dimen_12"
+                    android:padding="@dimen/margin_8"
+                    android:src="@drawable/ic_post_menu" />
+
+                <com.appster.turtle.widget.CustomTextView
+                    android:id="@+id/tv_room"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/iv_post_menu"
+                    android:layout_toStartOf="@id/iv_post_menu"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="@dimen/dimen_19_2"
+                    android:gravity="end"
+                    android:textColor="#212121"
+                    android:textSize="@dimen/textsize_13_4"
+                    app:customFont="@string/eina_01_semibold"
+                    tools:text="in Need A TV Show" />
+
+
+                <com.appster.turtle.tag.SocialTextView
+                    android:id="@+id/tv_caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@id/fl_image_user"
+                    android:layout_below="@id/tv_room"
+                    android:layout_marginTop="@dimen/dimen_10"
+                    android:paddingEnd="@dimen/dimen_10"
+                    android:text="@{post.postDetail.postMediaList.get(0).caption}"
+                    android:textColor="#212121"
+                    android:textSize="@dimen/text_16_3"
+                    app:customFont="@string/eina_01_regular" />
+
+                <include
+                    android:id="@+id/bottom_layout"
+                    layout="@layout/post_bottom_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/dp_12_2"
+                    android:layout_alignStart="@id/tv_caption"
+                    android:layout_below="@id/tv_caption"
+                    android:layout_marginBottom="@dimen/margin_15"
+                    android:layout_marginTop="@dimen/dp_12_5" />
+            </RelativeLayout>
+
+
+        </android.support.v7.widget.CardView>
+    </FrameLayout>
+
+
+</layout>

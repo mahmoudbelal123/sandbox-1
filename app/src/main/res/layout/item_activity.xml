@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~   Copyright © 2017 Noise. All rights reserved.
+  ~   Created by Appster.
+  ~  */
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:id="@+id/rl_activity"
+        android:layout_height="wrap_content">
+
+
+        <RelativeLayout
+            android:id="@+id/rl_date_cont"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <RelativeLayout
+            android:id="@+id/rl_activity_image"
+            android:layout_width="@dimen/dimen_43_2"
+            android:layout_height="@dimen/dimen_43_2"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/rl_date_cont"
+            android:layout_marginStart="@dimen/dimen_14_4"
+            android:layout_marginTop="@dimen/dimen_14_4">
+
+
+            <ImageView
+                android:id="@+id/iv_activity_img"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                tools:ignore="ContentDescription" />
+
+            <ImageView
+                android:id="@+id/iv_video_play"
+                android:layout_width="@dimen/dimen_18"
+                android:layout_height="@dimen/dimen_18"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_play"
+                android:visibility="gone"
+                tools:ignore="ContentDescription" />
+        </RelativeLayout>
+
+        <com.appster.turtle.widget.CustomTextView
+            android:id="@+id/tv_activity_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignWithParentIfMissing="true"
+            android:layout_below="@+id/rl_date_cont"
+            android:layout_marginEnd="@dimen/dimen_10"
+            android:layout_marginTop="@dimen/dimen_14_4"
+            android:layout_toStartOf="@id/rl_activity_image"
+            android:layout_alignParentStart="true"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/textsize_15_plus"
+            app:customFont="@string/eina_01_regular" />
+
+        <com.appster.turtle.widget.CustomTextView
+            android:id="@+id/tv_activity_sub_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignWithParentIfMissing="true"
+            android:layout_below="@id/tv_activity_text"
+            android:layout_marginEnd="@dimen/dimen_10"
+            android:layout_marginTop="4.1dp"
+            android:layout_toStartOf="@id/rl_activity_image"
+            android:lineSpacingExtra="@dimen/text_size_3_3"
+            android:textColor="#abb1b8"
+            android:textSize="@dimen/textsize_13_4"
+            app:customFont="@string/eina_01_regular" />
+    </RelativeLayout>
+</layout>
