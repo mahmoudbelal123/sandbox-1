@@ -7,6 +7,7 @@ import com.appster.turtle.network.RetrofitRestRepository;
 import com.appster.turtle.util.NetworkMonitor;
 import com.appster.turtle.util.PreferenceUtil;
 import com.appster.turtle.util.StringUtils;
+import com.appster.turtle.util.TypefaceUtil;
 import com.crashlytics.android.Crashlytics;
 import com.danikula.videocache.HttpProxyCacheServer;
 import com.github.sahasbhop.apngview.ApngImageLoader;
@@ -54,6 +55,8 @@ public class ApplicationController extends MultiDexApplication {
 
         FirebaseApp.initializeApp(mAppContext);
         ApngImageLoader.getInstance().init(getApplicationContext());
+
+        TypefaceUtil.overrideFont(getApplicationContext(), "SERIF", "Roboto-Regular.ttf");
 
     }
 
