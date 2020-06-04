@@ -1,2 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="D:\Bilal\vibe_final\app\src\main\shaders"/></dataSet><dataSet config="Prod"><source path="D:\Bilal\vibe_final\app\src\Prod\shaders"/></dataSet><dataSet config="debug"><source path="D:\Bilal\vibe_final\app\src\debug\shaders"/></dataSet><dataSet config="ProdDebug"><source path="D:\Bilal\vibe_final\app\src\ProdDebug\shaders"/></dataSet></merger>

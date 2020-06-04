@@ -1,1 +1,0 @@
-[{"outputType":{"type":"INSTANT_RUN_MERGED_MANIFESTS"},"apkInfo":{"type":"MAIN","splits":[],"versionCode":2,"versionName":"1.1","enabled":true,"outputFile":"ProdDebug-1.1.apk","fullName":"ProdDebug","baseName":"Prod-debug"},"path":"AndroidManifest.xml","properties":{"packageId":"com.appster.turtle","split":"","minSdkVersion":"21"}}]
