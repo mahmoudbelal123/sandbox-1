@@ -85,8 +85,6 @@ public class SignInActivity extends BaseActivity implements View.OnClickListener
     }
 
     private void initUI() {
-        setUpHeader(mBinding.header.clHeader, getString(R.string.sign_in), R.drawable.ic_back_black, 0);
-        mBinding.header.tvHeaderCenter.setTextColor(ContextCompat.getColor(SignInActivity.this, R.color.black));
         setRealDeviceSizeInPixels();
 
         DisplayMetrics dm = new DisplayMetrics();
@@ -105,7 +103,6 @@ public class SignInActivity extends BaseActivity implements View.OnClickListener
             getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
         }
 
-        mBinding.header.ivIconStart.setOnClickListener(this);
 
         //set last signed-in email
         mBinding.etEmail.addTextChangedListener(emailTextWatcher);

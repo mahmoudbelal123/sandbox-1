@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Disable background -->
+    <item android:background="@drawable/but_rounded_outline" android:state_enabled="false" />
+
+    <!-- Enabled background -->
+    <item android:background="@color/dark_yellow" android:state_enabled="true" />
+
+</selector>
+

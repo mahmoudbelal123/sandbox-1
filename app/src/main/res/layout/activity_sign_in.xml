@@ -26,11 +26,6 @@
         android:background="@color/black"
         tools:context="com.appster.turtle.ui.auth.SignInActivity">
 
-        <include
-            android:id="@+id/header"
-            layout="@layout/layout_header"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
 
         <ScrollView
             android:layout_width="match_parent"
@@ -43,30 +38,61 @@
                 android:layout_height="wrap_content">
 
                 <com.appster.turtle.widget.CustomTextView
-                    android:text="Welcome back! Please log in to continue."
+
+                    android:id="@+id/customTextView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/dimen_10"
-                    android:layout_marginTop="@dimen/dimen_30"
-                    android:drawablePadding="@dimen/dimen_10"
-                    android:paddingEnd="@dimen/dimen_23"
-                    android:paddingStart="@dimen/dimen_23"
-                    android:textColor="@color/app_white"
+                    android:layout_above="@+id/tvSignIn"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:enabled="true"
+                    android:gravity="start"
+                    android:text="Log in"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorYellow"
+                    android:textSize="@dimen/text_57"
                     android:textStyle="bold"
+                    app:customFont="@string/eina_01_bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.appster.turtle.widget.CustomTextView
+                    android:id="@+id/customTextView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="16dp"
+                    android:drawablePadding="@dimen/dimen_10"
+                    android:paddingStart="@dimen/dimen_23"
+                    android:paddingEnd="@dimen/dimen_23"
+                    android:text="Welcome back! Please log in to continue."
+                    android:textColor="@color/app_white"
+                    android:textSize="@dimen/dimen_24"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/customTextView"
                     tools:ignore="MissingConstraints" />
 
                 <com.appster.turtle.widget.CustomTextView
                     android:id="@+id/txt_error"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/dimen_10"
-                    android:layout_marginTop="@dimen/dimen_30"
-                    android:drawablePadding="@dimen/dimen_10"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="24dp"
                     android:drawableStart="@drawable/ic_error_img"
-                    android:paddingEnd="@dimen/dimen_23"
+                    android:drawablePadding="@dimen/dimen_10"
                     android:paddingStart="@dimen/dimen_23"
+                    android:paddingEnd="@dimen/dimen_23"
                     android:textColor="@color/red_error"
                     android:visibility="invisible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_forgot_password"
                     tools:ignore="MissingConstraints" />
 
                 <RelativeLayout
@@ -74,21 +100,22 @@
                     android:id="@+id/rlContent"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/default_padding_20"
-                    android:layout_marginTop="@dimen/dimen_60"
-                    android:paddingEnd="@dimen/dimen_23"
+                    android:layout_marginTop="32dp"
                     android:paddingStart="@dimen/dimen_23"
-                    app:layout_constraintTop_toBottomOf="@+id/txt_error"
+                    android:paddingEnd="@dimen/dimen_23"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/customTextView2"
                     tools:ignore="MissingConstraints">
 
                     <com.appster.turtle.widget.CustomTextView
-                        android:visibility="gone"
                         android:id="@+id/tvEmailUserName"
                         style="@style/noise_edit_header_style"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/email_username"
                         android:textSize="@dimen/edit_text_sub"
+                        android:visibility="gone"
                         app:customFont="@string/eina_01_semibold" />
 
                     <com.appster.turtle.widget.CustomEditText
@@ -105,7 +132,6 @@
                         app:customFont="@string/eina_01_regular" />
 
                     <com.appster.turtle.widget.CustomTextView
-                       android:visibility="gone"
                         android:id="@+id/tvPassword"
                         style="@style/noise_edit_header_style"
                         android:layout_width="wrap_content"
@@ -114,6 +140,7 @@
                         android:layout_marginTop="@dimen/dimen_19_2"
                         android:text="@string/password"
                         android:textSize="@dimen/edit_text_sub"
+                        android:visibility="gone"
                         app:customFont="@string/eina_01_semibold" />
 
                     <com.appster.turtle.widget.CustomEditText
@@ -136,8 +163,8 @@
                     android:id="@+id/tv_forgot_password"
                     android:layout_width="@dimen/width_0"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/margin_46"
-                    android:layout_marginTop="@dimen/dp_26"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
                     android:lineSpacingExtra="@dimen/text_size_3_3"
                     android:onClick="clicked"
                     android:paddingStart="@dimen/dimen_23"
@@ -145,20 +172,23 @@
                     android:textColor="@color/gray"
                     android:textSize="@dimen/textSizeNormal"
                     app:customFont="@string/eina_01_regular"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/rlContent"
                     tools:ignore="MissingConstraints" />
 
                 <View
-                    android:layout_width="@dimen/width_0"
-                    android:layout_height="@dimen/dimen_50"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
                     android:minHeight="@dimen/dimen_50"
                     app:layout_constraintBottom_toTopOf="@+id/tv_sign_in"
-                    app:layout_constraintTop_toBottomOf="@id/tv_forgot_password"
-                    tools:ignore="MissingConstraints" />
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_error" />
 
-                <com.appster.turtle.widget.CustomTextView
+                <Button
+                    style="?android:attr/borderlessButtonStyle"
                     android:id="@+id/tv_sign_in"
-                    style="@style/RoundedTextView_Border"
+                    android:textColor="@color/dark_yellow"
                     android:layout_width="@dimen/width_0"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/margin_22_7"
@@ -166,8 +196,9 @@
                     android:layout_marginStart="@dimen/margin_34"
                     android:onClick="clicked"
                     android:text="@string/sign_in_button_text"
+                    android:textSize="@dimen/text_16_3"
                     android:enabled="false"
-                    app:customFont="@string/bruta_normal_glb_semi_bold"
+                    android:background="@drawable/but_rounded_full"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent" />
