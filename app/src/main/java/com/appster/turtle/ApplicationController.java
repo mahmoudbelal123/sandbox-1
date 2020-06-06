@@ -56,7 +56,7 @@ public class ApplicationController extends MultiDexApplication {
         FirebaseApp.initializeApp(mAppContext);
         ApngImageLoader.getInstance().init(getApplicationContext());
 
-        TypefaceUtil.overrideFont(getApplicationContext(), "SERIF", "Roboto-Regular.ttf");
+        TypefaceUtil.overrideFont(getApplicationContext(), "SERIF", "fonts/spartan/Spartan-Regular.ttf");
 
     }
 

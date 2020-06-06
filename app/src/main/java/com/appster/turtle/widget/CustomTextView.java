@@ -135,7 +135,7 @@ public class CustomTextView extends AppCompatTextView {
         if (a.hasValue(R.styleable.CustomTextView_customFont))
             customFont = a.getString(R.styleable.CustomTextView_customFont);
         else
-            customFont = "Roboto-Regular.ttf";
+            customFont = "fonts/spartan/Spartan-Regular.ttf";
         setCustomFont(ctx, customFont);
         a.recycle();
     }

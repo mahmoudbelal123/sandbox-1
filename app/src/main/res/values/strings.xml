@@ -47,18 +47,18 @@
     <string name="enter_your_email_username_hint">Enter your email/username</string>
 
     <!--fonts-->
-    <string name="bruta_condensed_glb_bold">fonts/bruta_condensed_glb_bold.otf</string>
-    <string name="bruta_normal_glb_semi_bold_italic">fonts/bruta_normal_glb_semi_bold_italic.otf</string>
-    <string name="bruta_condensed_glb_regular">fonts/bruta_condensed_glb_regular.otf</string>
-    <string name="bruta_condensed_glb_semi_bold">fonts/bruta_condensed_glb_semi_bold.otf</string>
-    <string name="bruta_normal_glb_semi_bold">fonts/bruta_normal_glb_semi_bold.otf</string>
-    <string name="bruta_normal_glb_regular">fonts/bruta_normal_glb_regular.otf</string>
-    <string name="bruta_normal_glb_light">fonts/bruta_normal_glb_light.otf</string>
+    <string name="bruta_condensed_glb_bold">fonts/spartan/Spartan-Bold.ttf</string>
+    <string name="bruta_normal_glb_semi_bold_italic">fonts/spartan/Spartan-Bold.ttf</string>
+    <string name="bruta_condensed_glb_regular">fonts/spartan/Spartan-Regular.ttf</string>
+    <string name="bruta_condensed_glb_semi_bold">fonts/spartan/Spartan-SemiBold.ttf</string>
+    <string name="bruta_normal_glb_semi_bold">fonts/spartan/Spartan-SemiBold.ttf</string>
+    <string name="bruta_normal_glb_regular">fonts/spartan/Spartan-Regular.ttf</string>
+    <string name="bruta_normal_glb_light">fonts/spartan/Spartan-Light.ttf</string>
 
-    <string name="eina_01_bold">fonts/Eina 01 Bold.otf</string>
-    <string name="eina_01_regular">fonts/Eina 01 Regular.otf</string>
-    <string name="eina_01_semibold">fonts/Eina 01 SemiBold.otf</string>
-    <string name="arty_signature">fonts/arty_signature.otf</string>
+    <string name="eina_01_bold">fonts/spartan/Spartan-Bold.ttf</string>
+    <string name="eina_01_regular">fonts/spartan/Spartan-Regular.ttf</string>
+    <string name="eina_01_semibold">fonts/spartan/Spartan-SemiBold.ttf</string>
+    <string name="arty_signature">fonts/spartan/Spartan-Light.ttf</string>
 
     <string name="sign_in_button_text">Log In</string>
     <string name="forgot_your_password">Forgot your password?</string>
